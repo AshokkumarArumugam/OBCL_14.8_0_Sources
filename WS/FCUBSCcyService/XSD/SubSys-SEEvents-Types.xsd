@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xs:annotation>
+      <xs:documentation xml:lang="en">All Types of SECXALEN
+      </xs:documentation>
+   </xs:annotation>
+   
+
+   <xs:complexType name="SEEvents-Full-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Sevws-Event-Log" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="REFERENCE" minOccurs="1">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="16"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SR_NO" minOccurs="1">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EVENT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="4"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EVENT_DATE" minOccurs="0"  type="xs:date">
+                  </xs:element>
+                  <xs:element name="MAKER_ID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="12"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MAKER_DT_STAMP" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="35"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CHECKER_ID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="12"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CHECKER_DT_STAMP" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="35"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Acvws-All-Ac-Entries" minOccurs="0" maxOccurs="unbounded">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="BRANCH" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="ACCOUNT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="20"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="DR_CR" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="CODE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="DATE" minOccurs="0"  type="xs:date">
+                           </xs:element>
+                           <xs:element name="VALDT" minOccurs="0"  type="xs:date">
+                           </xs:element>
+                           <xs:element name="CCY" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="FCY_AMOUNT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="EXG_RATE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="LCY_AMOUNT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Csvws-Contract-Ovd" minOccurs="0" maxOccurs="unbounded">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="OVDMSGS" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="4000"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Query-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Create-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Sevws-Event-Log" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="REFERENCE" minOccurs="1">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="16"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SR_NO" minOccurs="1">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EVENT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="4"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EVENT_DATE" minOccurs="0"  type="xs:date">
+                  </xs:element>
+                  <xs:element name="MAKER_ID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="12"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MAKER_DT_STAMP" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="35"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CHECKER_ID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="12"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CHECKER_DT_STAMP" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="35"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Acvws-All-Ac-Entries" minOccurs="0" maxOccurs="unbounded">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="BRANCH" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="ACCOUNT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="20"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="DR_CR" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="CODE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="DATE" minOccurs="0"  type="xs:date">
+                           </xs:element>
+                           <xs:element name="VALDT" minOccurs="0"  type="xs:date">
+                           </xs:element>
+                           <xs:element name="CCY" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="FCY_AMOUNT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="EXG_RATE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="LCY_AMOUNT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Csvws-Contract-Ovd" minOccurs="0" maxOccurs="unbounded">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="OVDMSGS" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="4000"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Modify-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Authorize-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Delete-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Close-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Reopen-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Reverse-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Rollover-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Confirm-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Liquidate-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="SEEvents-Summaryquery-IO-Type">
+      <xs:sequence>
+         <xs:element name="LEGREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

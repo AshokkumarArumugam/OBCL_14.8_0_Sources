@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="FcRefType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Cytype">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AmType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3" />
+			<xs:totalDigits value="22" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Vetype">
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="esntype">
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="comptype">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="secidtype">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="waiVetype">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ruletype">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ratcodtype">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LIQINDICAType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SEC-Tax-DetailsType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FNDREFNO" type="FcRefType" />
+			<xs:element minOccurs="0" name="VERSNO" type="Vetype" />
+			<xs:element minOccurs="0" name="SECID" type="secidtype" />
+			<xs:element minOccurs="0" name="TXTREF" type="FcRefType" />
+			<xs:element minOccurs="0" name="SECREF" type="FcRefType" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Issr-Tax-Assoc" type="Issr-Tax-Assoc-Type" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Tran-Tax-Assoc" type="TAX-Tran-Assoc-Type" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Tran-Tax-Appln" type="Tran-Tax-ApplnType1" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Tran-Tax-Liqd-Master" type="Tran-Tax-Liqd-Master-Type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TAX-Tran-Assoc-Type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CRRATESN" type="esntype" />
+			<xs:element minOccurs="0" name="INTCOMP" type="comptype" />
+			<xs:element minOccurs="0" name="RULE" type="ruletype" />
+			<xs:element minOccurs="0" name="WAIVER" type="waiVetype" />
+			<xs:element minOccurs="0" name="CONTREF" type="FcRefType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Issr-Tax-Assoc-Type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CRRATESN" type="esntype" />
+			<xs:element minOccurs="0" name="INTCOMP" type="comptype" />
+			<xs:element minOccurs="0" name="RATECOD" type="ratcodtype" />
+			<xs:element minOccurs="0" name="WAIVER" type="waiVetype" />
+			<xs:element minOccurs="0" name="CONTREF" type="FcRefType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Tran-Tax-ApplnType1">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CRRATESN" type="esntype" />
+			<xs:element minOccurs="0" name="INTCOMP" type="comptype" />
+			<xs:element minOccurs="0" name="TAGCCY" type="Cytype" />
+			<xs:element minOccurs="0" name="TAGAMNT" type="AmType" />
+			<xs:element minOccurs="0" name="TAXCCY" type="Cytype" />
+			<xs:element minOccurs="0" name="TAXAMNT" type="AmType" />
+			<xs:element minOccurs="0" name="WAIVER" type="waiVetype" />
+			<xs:element minOccurs="0" name="LIQINDICAT" type="LIQINDICAType" />
+			<xs:element minOccurs="0" name="CONTREF" type="FcRefType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Tran-Tax-Liqd-Master-Type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="INTCOMP" type="comptype" />
+			<xs:element minOccurs="0" name="TAXCCY" type="Cytype" />
+			<xs:element minOccurs="0" name="TAXAMNT" type="AmType" />
+			<xs:element minOccurs="0" name="CONTREF" type="FcRefType" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

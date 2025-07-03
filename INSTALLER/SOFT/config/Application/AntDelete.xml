@@ -1,0 +1,18 @@
+<project name="FCUBSInstaller_Delete" default="DeleteDirectory">
+
+<target name="DeleteDir">
+	<delete dir="${destination}" failonerror = "false"/>
+</target>
+
+<target name="DeleteFile">
+	<echo>Started Deleting source files.....</echo>
+	
+	<delete failonerror = "false">
+		<fileset dir="${destination}"  includes="${includeList}">
+			<exclude name="${excludeList}"/>
+		</fileset>
+	</delete>
+
+</target>
+
+</project>

@@ -1,0 +1,9 @@
+#!/bin/ksh
+# JAVA HOME 
+
+export JAVA_HOME=$APP_SERVER_HOME/java/bin
+
+# ANT HOME
+export ANT_HOME=$APP_SERVER_HOME/bin
+
+export PATH=$JAVA_HOME:$ANT_HOME:$PATH

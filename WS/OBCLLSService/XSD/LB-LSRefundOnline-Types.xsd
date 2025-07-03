@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xs:annotation>
+      <xs:documentation xml:lang="en">All Types of LBDREFND
+      </xs:documentation>
+   </xs:annotation>
+   <xs:include schemaLocation="SubSys-OLCONDET-Types.xsd"/>
+   
+
+   <xs:complexType name="LSRefundOnline-PK-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Full-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="EVENTSEQNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="22"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="EVENTCODE" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="REFUNDVALUE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="PAIDDT" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="SOURCEREFNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="ACTAMT_F" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="24"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="BOOKDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="BRANCH" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="6"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CONTCCY" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="3"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="COUNTERPARTY" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="12"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="USEREFNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="REFUNDSTATUS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="AUTHSTATUS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value=""/>
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="U"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CONTSTATUS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value=""/>
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="H"/>
+                  <xs:enumeration value="L"/>
+                  <xs:enumeration value="V"/>
+                  <xs:enumeration value="Y"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODCODE" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Lbtb-Pr-Detail" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="COMPONENT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="15"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AMOUNTPAID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                           <xs:fractionDigits value="3"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="REFUNDAMT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                           <xs:fractionDigits value="3"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TOTAMTDUE" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="24"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TOTAMTPAID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="24"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TOTOVERPAIDAMT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="24"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Lbtb-Pr-Amount-Paid" minOccurs="0" maxOccurs="unbounded">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="PAIDDATE" minOccurs="0"  type="xs:date">
+                           </xs:element>
+                           <xs:element name="PARTYINVOLVED" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="EVENTCODE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="4"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PARTYTYPE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="CURRENCY" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="AMTSETT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                    <xs:fractionDigits value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="FLD_TAX_AMT" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                    <xs:fractionDigits value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="ACCOUNTSETTLED" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="34"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="APLYTAX" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Y"/>
+                                    <xs:enumeration value="N"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PARTLIQDSTATUS" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Y"/>
+                                    <xs:enumeration value="N"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="EXCHANGERATE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="16"/>
+                                    <xs:fractionDigits value="8"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="LCYEQUIVALENTSETTLED" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                    <xs:fractionDigits value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PARTPAYMENTESN" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PAYRECIEVE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="AMTDUE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Oltbs-Contract-Event-Log" minOccurs="0">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="MAKERID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="320"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MAKERDTSTAMP" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="35"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CHECKERID" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="320"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CHECKERDTSTAMP" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="35"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TXNSTAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:enumeration value=""/>
+                           <xs:enumeration value="A"/>
+                           <xs:enumeration value="V"/>
+                           <xs:enumeration value="L"/>
+                           <xs:enumeration value="Y"/>
+                           <xs:enumeration value="H"/>
+                           <xs:enumeration value="X"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AUTHSTAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:enumeration value=""/>
+                           <xs:enumeration value="A"/>
+                           <xs:enumeration value="U"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Settlements" type="OLCONDET-Full-Type" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Query-IO-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="EVENTCODE" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Create-IO-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="EVENTSEQNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="22"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="EVENTCODE" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PAIDDT" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="SOURCEREFNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="AUTHSTATUS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value=""/>
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="U"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CONTSTATUS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value=""/>
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="H"/>
+                  <xs:enumeration value="L"/>
+                  <xs:enumeration value="V"/>
+                  <xs:enumeration value="Y"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODCODE" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Lbtb-Pr-Detail" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="REFUNDAMT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                           <xs:fractionDigits value="3"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Lbtb-Pr-Amount-Paid" minOccurs="0" maxOccurs="unbounded">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="PAIDDATE" minOccurs="0"  type="xs:date">
+                           </xs:element>
+                           <xs:element name="PARTYINVOLVED" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="12"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="EVENTCODE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="4"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PARTYTYPE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="ACCOUNTSETTLED" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="34"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="EXCHANGERATE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="16"/>
+                                    <xs:fractionDigits value="8"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="LCYEQUIVALENTSETTLED" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                    <xs:fractionDigits value="3"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PARTPAYMENTESN" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                           <xs:element name="PAYRECIEVE" minOccurs="0">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Settlements" type="OLCONDET-Create-IO-Type" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Modify-IO-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Settlements" type="OLCONDET-Modify-IO-Type" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Authorize-IO-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Delete-IO-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="LSRefundOnline-Reverse-IO-Type">
+      <xs:sequence>
+         <xs:element name="CONREFNO" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

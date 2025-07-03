@@ -1,0 +1,223 @@
+<FCJBATCH>
+<!DOCTYPE weblogic-ejb-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN" "~http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd">
+<weblogic-ejb-jar >
+	<weblogic-enterprise-bean>
+        <ejb-name>BatchEJB</ejb-name>
+        <jndi-name>{REF_LOCATION}/ejb/BatchEJBHome</jndi-name>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+</FCJBATCH>
+<FCJGENERALEJB>
+<!DOCTYPE weblogic-ejb-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN" "~http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd">
+<weblogic-ejb-jar >
+<weblogic-enterprise-bean>
+        <ejb-name>FCJEJB</ejb-name>
+        <jndi-name>{REF_LOCATION}/ejb/FCJEJBHome</jndi-name>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+</FCJGENERALEJB>
+<FCJRTT>
+<!DOCTYPE weblogic-ejb-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN" "~http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd">
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>RecordingMDBBean</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{RTT_RECORDING_QUEUE}</destination-jndi-name>
+      <!--<initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://localhost:7101</provider-url> -->
+      <connection-factory-jndi-name>{RTTDestQCF}</connection-factory-jndi-name>     
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>  
+  <weblogic-enterprise-bean>
+    <ejb-name>OFATSReplayEJB</ejb-name>
+    <jndi-name>{REF_LOCATION}/ejb/OFATSREPLAYEJBHome</jndi-name>
+    <local-jndi-name>ejb/local/OFATSREPLAYEJBHome</local-jndi-name>
+  </weblogic-enterprise-bean>  
+</weblogic-ejb-jar>
+</FCJRTT>
+<FCJSCHEDULER>
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>SchedulerEJB</ejb-name>
+    <jndi-name>{REF_LOCATION}/ejb/SchedulerEJBHome</jndi-name>
+    <local-jndi-name>{REF_LOCATION}/ejb/local/SchedulerEJBHome</local-jndi-name>
+  </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>GWNotifyMDBBean</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{NOTIFY_QUEUE}</destination-jndi-name>
+      <connection-factory-jndi-name>{NOTIFY_MDB_QCF}</connection-factory-jndi-name>
+    
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+  </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>EMSOutMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{EMS_OUT_QUEUE}</destination-jndi-name>
+      <connection-factory-jndi-name>{EMS_OUTQCF}</connection-factory-jndi-name>
+     
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>EMSInMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{EMS_IN_QUEUE}</destination-jndi-name>
+      <!--
+	  <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://127.0.0.1:8003</provider-url>
+      -->
+      <connection-factory-jndi-name>{EMS_INQCF}</connection-factory-jndi-name>
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+  
+  <weblogic-enterprise-bean>
+        <ejb-name>BIPReportEJB</ejb-name>
+        <jndi-name>{REF_LOCATION}/ejb/BIPReportEJB</jndi-name>
+		<local-jndi-name>{REF_LOCATION}/ejb/local/BIPReportEJBHome</local-jndi-name>
+    </weblogic-enterprise-bean>
+	
+	<weblogic-enterprise-bean>
+        <ejb-name>FGLHandOffExtactEJB</ejb-name>
+        <jndi-name>{REF_LOCATION}/ejb/FGLHandOffExtactEJB</jndi-name>
+		<local-jndi-name>{REF_LOCATION}/ejb/local/FGLHandOffExtactEJBHome</local-jndi-name>
+    </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>SFMSInMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{SFMS_IN_QUEUE}</destination-jndi-name>
+      <!--
+	  <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://127.0.0.1:8003</provider-url>
+      -->
+      <connection-factory-jndi-name>{NotifyDestQCF}</connection-factory-jndi-name>
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+  
+  <weblogic-enterprise-bean>
+    <ejb-name>RTGSInMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{RTGS_IN_QUEUE}</destination-jndi-name>
+      <!--
+	  <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://127.0.0.1:8003</provider-url>
+      -->
+      <connection-factory-jndi-name>{NotifyDestQCF}</connection-factory-jndi-name>
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>BipReportMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{INTERNAL_BIPREPORT_QUEUE}</destination-jndi-name>
+	  <!--
+      <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://127.0.0.1:7101</provider-url>
+	  -->
+      <connection-factory-jndi-name>{BIPQCF}</connection-factory-jndi-name>
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>BipAdviceMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{INTERNAL_BIPADVREPORT_QUEUE}</destination-jndi-name>
+	  <!--
+      <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://127.0.0.1:7101</provider-url>
+	  -->
+      <connection-factory-jndi-name>{BIPQCF}</connection-factory-jndi-name>
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+    <ejb-name>GIUploadMDB</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+        <max-beans-in-free-pool>5</max-beans-in-free-pool>
+        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+      </pool>
+      <destination-jndi-name>{INTERNAL_GI_UPLOAD_QUEUE}</destination-jndi-name>
+	  <!--
+      <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+      <provider-url>t3://127.0.0.1:7101</provider-url>
+	  -->
+      <connection-factory-jndi-name>{GI_UPLOAD_QCF}</connection-factory-jndi-name>
+      <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+    </message-driven-descriptor>
+    <transaction-descriptor>
+      <trans-timeout-seconds>7200</trans-timeout-seconds>
+    </transaction-descriptor>
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+</FCJSCHEDULER>
+<FCJSMS>
+<!DOCTYPE weblogic-ejb-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN" "~http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd">
+<weblogic-ejb-jar>
+    <weblogic-enterprise-bean>
+        <ejb-name>FCJLogin</ejb-name>
+        <jndi-name>{REF_LOCATION}/ejb/FCJLoginHome</jndi-name>
+    </weblogic-enterprise-bean>
+    <weblogic-enterprise-bean>
+        <ejb-name>FCJSMS</ejb-name>
+        <jndi-name>{REF_LOCATION}/ejb/FCJSMSHome</jndi-name>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+</FCJSMS>

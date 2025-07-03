@@ -1,0 +1,340 @@
+<project name="FCUBSInstaller" >
+<import file="AntLibrary.xml" as="Ref"/>
+
+
+  <path id="wl_ws_classpath">	
+        <pathelement location="${JavaPath}/lib/tools.jar"/>
+		<!-- <fileset location="${WL_HOME}/server/lib">
+		<include name="*.jar"/>
+            </fileset> -->
+		
+  </path>
+  <path id="classpath">
+        <pathelement location="${destination}/classes/WEB-INF/classes"/>
+        <pathelement location="${jarslib}/was/com.ibm.jaxws.tools.jar"/>
+        <pathelement location="${jarslib}/was/com.ibm.ws.runtime.jar"/>
+        <fileset dir="${jarslib}/application/javaee/">
+                <include name="*.jar"/>
+            </fileset>			
+        <pathelement location="${JavaPath}/lib/tools.jar"/>
+        <pathelement location="${jarslib}/installer/com-sun-javadoc.jar"/>
+    </path>
+	
+    <target name="Compile" depends="Ref.AntLibrary,Ref.GwLib">
+        <!--<delete dir="${destination}\classes"/> -->
+          <!--<mkdir dir="${destination}\classes"/>-->
+
+		<javac executable="${JavaHome}" compiler="modern" fork="yes" memoryMaximumSize="12G" srcdir="${source}"  destdir="${destination}\classes"    debug="on" failonerror="true"> 
+			<compilerarg value="-Xlint:-unchecked" />
+                        <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+			<classpath>
+				<!--<path refid="lib"/>-->
+				<path refid="${folder}Lib"/>
+			</classpath>
+		</javac>	
+	</target>	
+	
+
+	
+	
+	<target name="WebAppCompile" depends="Ref.AntLibrary">
+        <echo>Starts Compiling FCJNeoWeb.....</echo>
+		<echo>folder is ${folder} </echo>
+		<mkdir dir="${destination}/war/WEB-INF/classes"/>
+        <javac executable="${JavaHome}" compiler="modern" fork="yes" memoryMaximumSize="12G" srcdir="${destination}/${srcfolder}" destdir="${destination}/war/WEB-INF/classes"   debug="on" failonerror="true">
+			<compilerarg value="-Xlint:-unchecked" />
+                        <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+			<classpath>
+				<path refid="lib"/>
+				<path refid="${folder}Lib"/>
+			</classpath>
+		</javac>
+	</target>
+ 	
+
+		
+		
+	<target name="generate_interface" >
+        <echo message="Generating Interface"/>
+		<taskdef name="wsdlc" classname="weblogic.wsee.tools.anttasks.WsdlcTask">
+			<classpath refid="wl_ws_classpath" />
+		</taskdef>
+		
+        <!-- <wsdlc fork="true" memoryinitialsize="512m" memorymaximumsize="712m" 
+				type= "JAXWS"
+				srcWsdl="${destination}.wsdl"
+				destJwsDir="${destPath}"
+				destImplDir="${destPath}/temp"
+				packageName="com.ofss.fcubs.gw.ws.types" >
+            <classpath refid="wl_ws_classpath" />
+        </wsdlc> -->
+		<wsdlc fork="true" memoryinitialsize="512m" memorymaximumsize="712m" 
+				type= "JAXWS"
+				srcWsdl="${destination}.wsdl"
+				destJwsDir="${destPath}/build/JAR"
+				destImplDir="${destPath}/build/JAR/temp"
+				packageName="com.ofss.fcubs.gw.ws.types.${service}" >
+            <classpath refid="wl_ws_classpath" />
+        </wsdlc>
+
+    </target>
+	
+	
+    <target name="compile_ws" depends="Ref.AntLibrary">
+        <echo message="Compiles WS"/>
+		<taskdef name="jwsc" classname="weblogic.wsee.tools.anttasks.JwscTask">
+        <classpath refid="wl_ws_classpath" />
+		</taskdef>
+        <jwsc compiler="modern" fork="true" srcdir="${destination}/src" destdir="${destination}/build/WAR" srcEncoding="ISO-8859-1" destEncoding="ISO-8859-1" memoryinitialsize="512m" memorymaximumsize="712m" 	>
+            <module contextPath="${folder}" name="${folder}" explode="true">				
+                <jws file="com/ofss/fcubs/gw/ws/${folder}Impl.java" compiledWsdl="${destination}/build/JAR/${folder}_wsdl.jar"  type="JAXWS"/>
+                <FileSet dir="${destination}/classes/WEB-INF/classes" >
+                    <exclude name="com/iflex/**/ws/*.class" />						
+                </FileSet>
+                <descriptor file="${destination}/src/WEB-INF/web.xml" />
+                <descriptor file="${destination}/src/WEB-INF/weblogic.xml" />
+            </module>
+            <!-- <classpath refid="wl_ws_classpath" /> -->
+			<classpath>
+				<path refid="wl_ws_classpath"/>
+				<path refid="GWWSLib"/>
+			</classpath>
+        </jwsc>
+    </target>
+	
+    <target name="compile_common_sources" depends="Ref.GwLib">
+        <javac executable="${JavaHome}" compiler="modern" fork="yes" memoryinitialsize="512m" memorymaximumsize="712m" srcdir="${destination}/src" excludes="com/**/ws/**" destdir="${destination}/classes/WEB-INF/classes" >
+            <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+            <classpath>
+                <path refid="${folder}Lib"/>
+            </classpath>
+        </javac>
+    </target>
+    <target name="generate-from-wsdl">
+	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+        <classpath refid="classpath" />
+    </taskdef>
+        <wsimport 
+            wsdl="${destination}/src/WEB-INF/wsdl/${folder}.wsdl"			
+            destdir="${destination}/classes/output"
+            keep="true"
+            package="com.ofss.fcubs.gw.ws.types" />
+        <copy todir="${destination}/classes/WEB-INF/classes">
+            <fileset dir="${destination}/classes/output"  includes="com/**/*.class"/>
+        </copy>
+		<!--Added to qualify in WAS server - Start-->
+		<copy todir="${destination}/classes/output/com/ofss/fcubs/gw/ws/types" >
+            <fileset dir="${destination}/src/com/ofss/fcubs/gw/ws" />
+        </copy>
+		
+		<javac executable="${JavaHome}" compiler="modern" fork="yes" memoryinitialsize="512m" memorymaximumsize="712m" srcdir="${destination}/classes/output/com/ofss/fcubs/gw/ws/types"  destdir="${destination}/classes/WEB-INF/classes" includes="**/*Impl*">
+            <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+            <classpath>
+                <path refid="ws_classpath"/>
+				<path refid="gw_classes"/>
+            </classpath>
+        </javac>
+		<!--Added to qualify in WAS server - End-->
+    </target>
+	<target name="XSDRecompilationWL" >
+        <echo message="Generating Interface"/>
+		<taskdef name="wsdlc" classname="weblogic.wsee.tools.anttasks.WsdlcTask">
+        <classpath refid="wl_ws_classpath" />
+		</taskdef>
+        <wsdlc memoryinitialsize="512m" memorymaximumsize="712m" 
+				type= "JAXWS"
+				srcWsdl="${destination}.wsdl" explode="true" 
+				destJwsDir="${destPath}"
+				destImplDir="${destPath}/temp"
+				packageName="com.ofss.fcubs.gw.ws.types" >
+            <classpath refid="wl_ws_classpath" />
+        </wsdlc>
+		<delete dir="${folder}/WEB-INF/wsdls"/>
+		<copy todir="${folder}/WEB-INF/classes/com" overwrite="true" failonerror="true"  >
+            <fileset dir="${destPath}/com" excludes="**/*.java"/>
+        </copy>	
+		<copy todir="${folder}/WEB-INF/wsdls" overwrite="true" failonerror="true"  >
+            <fileset dir="${destPath}/wsdls"/>
+        </copy>
+    </target>
+	<target name="XSDRecompilationWAS">
+		<mkdir dir="${folder}/output"/>
+		<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+        <classpath refid="classpath" />
+		</taskdef>
+		<wsimport
+            wsdl="${destination}.wsdl"			
+            destdir="${folder}/output"
+            keep="true"
+            package="com.ofss.fcubs.gw.ws.types" />
+		<copy todir="${destPath}/WEB-INF/classes" overwrite="true" failonerror="true">
+            <fileset dir="${folder}/output"  includes="com/**/*.class" />
+        </copy>
+		<delete dir="${folder}/output" failonerror="false"/>
+		
+	</target>
+	
+	<!-- ELCM POJO target my changes -->
+		<target name="POJO" depends="Ref.AntLibrary">
+	<javac  executable="${JavaHome}" compiler="modern" fork="yes" memoryinitialsize="512m" memorymaximumsize="712m" srcdir="${source}" destdir="${destination}" debug="on">
+            <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+            <classpath>
+                <!--path refid="lib"/-->
+                <path refid="${folder}Pojo"/>
+            </classpath>
+        </javac>
+        
+         <apply executable="${OracleClientHome}/BIN/sqlj" skipemptyfilesets="true" parallel="true" type="file" failonerror="false" taskname="sqlj">
+            <!-- Set the Environment Classpath -->
+           <env key="classpath" 
+            path="${jarslib}/plugin-elcm/runtime12.jar;${jarslib}/plugin-elcm/translator.jar;${jarslib}/plugin-elcm/ojdbc14.jar;${destPath}/INFRA/POJO/ELCMCommon/classes;${destPath}/INFRA/POJO/ELCMDto/classes;${destPath}/INFRA/POJO/ELCMUtility/classes;${OracleClientHome}/jdk/jre/lib/rt.jar;"/>
+			
+            <!-- SQLJ Arguments -->
+            <arg value="-d=${destPath}/INFRA/POJO/ELCMKernelSQLJ/classes"/> 
+            <arg value="-compile=no"/>
+            <!--arg value="-checkfilename=yes"/>
+            <arg value="-status=yes"/-->			
+          <arg value="-warn=all,noverbose,noprecision,noportable"/>
+            <!-- SQLJ Files -->
+            <fileset dir="${destPath}/INFRA/ELCMKernelSQLJ/src">
+                <patternset>
+                    <include name="**/*.sqlj"/>
+                </patternset>
+            </fileset>
+            <!-- Mapping to OutputFiles -->
+            <mapper type="glob" from="*.sqlj" to="*_SJProfile0.ser"/>            
+        </apply>
+		
+		<copy todir="${destPath}/INFRA/POJO/ELCMKernelSQLJ/src" overwrite="true" failonerror="false">
+            <fileset dir="${destPath}/INFRA/ELCMKernelSQLJ/src">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+		
+		<javac executable="${JavaHome}" compiler="modern" fork="yes" memoryinitialsize="512m" memorymaximumsize="712m"  srcdir="${destPath}/INFRA/POJO/ELCMKernelSQLJ/src" destdir="${destination}" debug="on">
+            <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+            <classpath>
+                <path refid="lib"/>
+                <path refid="ELCMKernelSQLJPojo"/>
+            </classpath>
+        </javac>
+	</target>
+	<!-- ODT create war  -->
+	<target name='CreateWar'>	
+		<manifest file="MANIFEST.MF">                    
+        </manifest>
+        <echo>Creating jars</echo>
+		<jar jarfile="${folder}/${archiveName}" level="0" basedir="${archivePath}" manifest="MANIFEST.MF"/>
+		<delete file="MANIFEST.MF"/>		
+	</target>
+	
+	
+	
+	<!-- ELCM Stand Alone Compile-->
+	
+	<target name="ELCMKernelSQLJCompile" depends="Ref.AntLibrary">
+	<delete dir="${destination}\classes"/>
+        <mkdir dir="${destination}\classes"/>
+	<javac  executable="${JavaHome}" compiler="modern" fork="yes" memoryinitialsize="512m" memorymaximumsize="712m" srcdir="${source}" destdir="${destination}\classes" debug="on">
+            <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+            <classpath>
+                <!--path refid="lib"/-->
+                <path refid="${folder}Lib"/>
+            </classpath>
+        </javac>
+        
+         <apply executable="sqlj" skipemptyfilesets="true" parallel="true" type="file" failonerror="false" taskname="sqlj">
+            <!-- Set the Environment Classpath -->
+           <env key="classpath" 
+            path="${jarslib}/plugin-elcm/runtime12.jar;${jarslib}/plugin-elcm/translator.jar;${jarslib}/plugin-elcm/ojdbc14.jar;${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes;${destPath}/APPLICATION/FCJELCM/ELCMDto/classes;${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes;${destPath}/APPLICATION/FCJELCM/ELCMEntities/classes;${destPath}/APPLICATION/FCJELCM/ELCMKernelJpa/classes;${OracleClientHome}/jdk/jre/lib/rt.jar;"/>
+			
+            <!-- SQLJ Arguments -->
+            <arg value="-d=${destination}\classes"/> 
+            <arg value="-compile=no"/>
+            <!--arg value="-checkfilename=yes"/>
+            <arg value="-status=yes"/-->			
+          <arg value="-warn=all,noverbose,noprecision,noportable"/>
+            <!-- SQLJ Files -->
+            <fileset dir="${destination}">
+                <patternset>
+                    <include name="**/*.sqlj"/>
+                </patternset>
+            </fileset>
+            <!-- Mapping to OutputFiles -->
+            <mapper type="glob" from="*.sqlj" to="*_SJProfile0.ser"/>            
+        </apply>
+		
+		<copy todir="${destination}" overwrite="true" failonerror="false">
+            <fileset dir="${destination}">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+		
+		<javac executable="${JavaHome}" compiler="modern" fork="yes" memoryinitialsize="512m" memorymaximumsize="712m"  srcdir="${destination}" destdir="${destination}/classes" debug="on">
+            <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+            <classpath>
+                <path refid="lib"/>
+                <path refid="${folder}Lib"/>
+            </classpath>
+        </javac>	
+	</target>
+	
+	<!-- compileFCUBSuSERaUTHENTICATOR -->
+	
+	<target name="Compile_FCUBSUserAuth" depends="clean">
+
+  
+  <property name="providerName"  	   value="FCUBSAuthenticationProvider.jar"/>
+  <property name="provider_src_dir"    value="${destination}"/>
+
+  <property name="namespace"           value="http://fcubs.ofss.com/security"/>
+
+   
+    <mkdir dir="${destination}/classes"/>
+
+    <path id="classpath">
+	<fileset dir= "${jarslib}">    
+            <include name="*.jar" />  
+	</fileset>
+    <pathelement location="${JavaPath}/lib/tools.jar"/>
+	</path>
+    <copy todir="${destination}/classes" flatten="true">
+      <fileset dir="${jarslib}">
+        <include name="commo.dtd"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${destination}/classes" flatten="true">
+      <fileset dir="${provider_src_dir}">
+        <include name="**/*.xml"/>
+        <include name="**/*.java"/>
+		<exclude name="**/*FCUBSUserAuthenticatorMBeanImpl.java"/> 
+		</fileset>
+    </copy>
+
+	<!-- Fix for bug 22978762 starts : arguments added -->
+    <java  fork="yes" classname="weblogic.management.commo.WebLogicMBeanMaker"   jvm="${JavaPath}/bin/java" failonerror="true">
+		<classpath refid="classpath"/>
+	<jvmarg line="-Dfile.encoding=ISO-8859-1 -Dfiles=${destination}/classes  -DMDFDIR=${destination}/classes -DMJF=${destination}/classes/${providerName} -DtargetNameSpace=${namespace} -DpreserveStubs=true -DcreateStubs=true -Dtarget=1.7 -Dsource=1.7"/>
+    </java>	
+
+    <javac  executable="${JavaHome}" compiler="modern" fork="yes" memoryMaximumSize="256m" srcdir="${provider_src_dir}/com" destdir="${destination}/classes" debug="on" failonerror="true" target="1.7" source="1.7">
+	  <compilerarg value="-Xlint:-unchecked" />
+          <compilerarg value="-J-Dfile.encoding=ISO-8859-1" />
+	  <classpath refid="classpath"/>
+	  <include name="**/*FCUBSUserAuthenticatorMBeanImpl.java"/>
+    </javac>
+	<!-- Fix for bug 22978762 ends -->
+	
+  <jar destfile="${destination}/classes/${providerName}" update="true">
+      <zipfileset dir="${destination}/classes" includes="**/*FCUBSUserAuthenticatorMBeanImpl*.class"/>
+  </jar>
+
+  </target>
+
+  <target name="clean">
+    <delete quiet="true" dir="${destination}/classes"/>
+  </target>
+	
+</project>
+

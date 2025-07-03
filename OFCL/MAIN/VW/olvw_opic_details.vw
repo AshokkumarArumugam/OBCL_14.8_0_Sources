@@ -1,0 +1,16 @@
+CREATE OR REPLACE FORCE VIEW olvw_opic_details
+AS
+/*----------------------------------------------------------------------------------------------------
+ This source is part of the Oracle Banking Corporate Lending  Software Product.   Copyright © 2019 , Oracle and/or its affiliates.  All rights reserved.   
+No part of this work may be reproduced, stored in a retrieval system, adopted or transmitted in any form or by any means, electronic, mechanical, photographic, graphic, optic recording or otherwise, translated in any language or computer language, without the prior written permission of Oracle and/or its affiliates. 
+**
+Oracle Financial Services Software Limited.
+Oracle Park, Off Western Express Highway,
+Goregaon (East), 
+Mumbai - 400 063, India.
+--------------------------------------------------------------------------------------------------
+*/
+select a.contract_ref_no FC_Placement_Ref_No, NVL(a.external_ref_no, a.custom_ref_no) Placement_Id, a.branch Corp_code, a.user_ref_no FC_Loan_Ref_No, b.opic_deal_no Opic_Deal_No, c.value_date Value_Date, c.maturity_date Maturity_Date, b.amount Amount, f.txn_mis_2 Proof, f.txn_mis_1 Expense_Code, e.customer_name1 Customer_Name, 'Y' Opic_Updated, g.maker_id UserId from oltbs_contract a, oltbs_opic_details b, oltbs_class_mapping f, oltbs_contract_master c, oltbs_contract d, oltbs_contract_event_log g, oltms_customer e where a.product_type = 'D' and a.contract_status = 'A' and a.auth_status = 'A' and b.placement_no = nvl(a.external_ref_no, a.custom_ref_no) and b.effective_date = (select max(effective_date) from oltbs_opic_details where placement_no = nvl(a.external_ref_no, a.custom_ref_no)) and b.value_date = (select max(value_date) from oltbs_opic_details where placement_no = nvl(a.external_ref_no, a.custom_ref_no) and effective_date = b.effective_date) and f.branch_code = a.branch and f.unit_type = 'R' and f.unit_ref_no = a.contract_ref_no and c.contract_ref_no = a.contract_ref_no and c.version_no = a.latest_version_no and d.contract_ref_no = a.user_ref_no and g.contract_ref_no = d.contract_ref_no and g.event_seq_no = 1 and e.customer_no = d.counterparty --702
+union
+select a.contract_ref_no FC_Placement_Ref_No, NVL(a.external_ref_no, a.custom_ref_no) Placement_Id, a.branch Corp_Code, a.user_ref_no FC_Loan_Ref_No, NULL Opic_Deal_No, c.value_date Value_Date, c.maturity_date Maturity_Date, e.principal_outstanding_bal Amount, b.txn_mis_2 Proof, b.txn_mis_1 Expense_Code, f.customer_name1 Customer_Name, 'N' Opic_Updated, g.maker_id UserId from oltbs_contract a, oltbs_class_mapping b, oltbs_contract_master c, oltbs_contract d, oltbs_contract_balance e, oltbs_contract_event_log g, oltms_customer f where a.product_type = 'D' and a.contract_status = 'A' and a.auth_status = 'A' and b.branch_code = a.branch and b.unit_type = 'R' and b.unit_ref_no = a.contract_ref_no and not exists (select 1 from oltbs_opic_details where placement_no = nvl(a.external_ref_no, a.custom_ref_no)) and c.contract_ref_no = a.contract_ref_no and c.version_no = a.latest_version_no and d.contract_ref_no = a.user_ref_no and e.contract_ref_no = a.contract_ref_no and g.contract_ref_no = d.contract_ref_no and g.event_seq_no = 1 and f.customer_no = d.counterparty 
+/

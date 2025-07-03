@@ -1,0 +1,30 @@
+CREATE OR REPLACE FUNCTION fn_pre_ol_auth_contract_cstm wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+37a 20b
+XgsdZXv3k6fKXgcBP/HIeTb1OHAwgzteLq5qfHRDaA/umZcbeRGEBuaVqM1xozsMGLebUhjo
+sy3yjOls45kGxLenf1Bn2qYiovTNep0f2szR5pBa+9mXeiECJrHJ+ZHqyczqYViW2JN6g/iH
+yeY+ITgUFPWn58gmyxlVenfJ1I1ge4NBTOLzm2makVelj5yLl9OHB1jM7B5xMlzHspxuFXXr
+CA+p94X3T4+wbqo2/1cIWJIXcCouZYLp03U/W7nacOaQt6lnl46+qaKtT8T2+0FJFUQbBF3B
+gIhYSOsLZQEdcFQxUT4K2hbVutZMlEvP5W9h2ArtTq+SvMHNwHoAHRt1mvG0wOuJjLu+p+A8
+y5CZcZV9iX0EoTe66f5nJPcL+OfdwIfibbow0c2eGOgm/VcBpZvh/GYysliBELu6Bbo/8ihM
+eatKYAtPENcx9VBDTXpp7CP9DvtfW7hl/MS0ioGG3MR+FGB6XDtgfzdadV9QhXelccZPqmzD
+I4ssNPtDsCXB
+
+/

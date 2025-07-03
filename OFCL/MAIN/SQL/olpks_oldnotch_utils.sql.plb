@@ -1,0 +1,28 @@
+create or replace package body olpks_oldnotch_utils wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+2dc 1a5
+v4E9WHX9pmWh1th3wVddPXu4U2wwg43M2vZqfC+5bg9SE3nniHERDuIdwhqF1BgaWp9rt0Cf
+ESYmmaHE5M6Xp1V656899XsQ0Pjcnu7Tf55YFJZQ35pP2gXfIA/N+YFV+Yok7KSOyTl8mBCm
+iad18aNeyoiZjVUEOXJahnYpV5urpuTYpBnG2QcBiVOwX8Lm0sjgskbJKrpN8TG8wgnd657g
+TcD8f4xQC56vPffr9ZTd7qZzBPrdiJEN6rId+ta+Hxh6Rp4GiphFCnFfXXp1jMD6Vj2jJ5y4
+TJlxlAm0FbPbD+U6cL9DFvaRO3+BxKE2F8ktFNIPNgIhgwRTaLVS+rRNJVQuxGHinkhvH/rk
+iXh+Sp9JDHVGLE5ZOfhWs87VsLef7WtiQh9awGaRAsdPxb74RFmGa38=
+
+/

@@ -1,0 +1,28 @@
+CREATE OR REPLACE FUNCTION fn_ofcl_product wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+21b 17d
+9swwN9WxBiDUxEoCNEg5v6/kkYUwg41pLgwdfy+BNJ3gSN7ZYcPQbygxVRr9R9wloQbGPlr2
+a2mj83O1ybENfQlELKhGWP6LQ/B0VCMBL2EHMGji/ghDgVNCD52v56Z+w8Jlg/FbAqbyg7q/
+xZVA1W46xl6o1g/3BYXaE1Ts8tKVn5EVpLDCi/WBxHEvsg0bzqrjYkkZUwMGf8ilNy+eC6CP
+55cBhI7gJny+Guu3AEQthduEPn4TViq59jdwz2KFNUUt+MNsGEtukxhVC9tfya23rphzTjmf
+B+6DMTBSKypYS2g79Z4l0l9P1b68+4vkIVjr9SKdkZqtD/q2W9Y8TzsiRl2DDT5L4fSzhQmA
+DOieYw9xz6a8FhDD
+
+/

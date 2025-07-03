@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xs:annotation>
+      <xs:documentation xml:lang="en">All Types of FCDPRMNT
+      </xs:documentation>
+   </xs:annotation>
+   <xs:include schemaLocation="SubSys-OLCACRHM-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-OLCACADD-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-FCCPPREF-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-OLCPRMNT-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-LFCLSFEE-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-LFCROPAR-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-LFCPRDIA-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-OLCPDFDM-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-LFCPRTAX-Types.xsd"/>
+   <xs:include schemaLocation="SubSys-LFCPRACF-Types.xsd"/>
+   
+
+   <xs:complexType name="FacilityProd-PK-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Full-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRDDESC" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="105"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRDGRP" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="6"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_SLOGAN" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_REMARKS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCTSTARTDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="PRODUCTENDDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="FORMATNAME" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="NRMLRTVARI" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="11"/>
+                  <xs:fractionDigits value="5"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAXRTVARI" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="11"/>
+                  <xs:fractionDigits value="5"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RTCODEPRFERD" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="B"/>
+                  <xs:enumeration value="M"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RATETYPPRFERED" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="8"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKER" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="320"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKERSTAMP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CHECKER" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="320"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CHECKERSTAMP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MODNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="TXNSTAT" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="AUTHSTAT" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Prdstat-Master" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="STAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="4"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="STATSEQ" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ADVSTAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:enumeration value="Y"/>
+                           <xs:enumeration value="N"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Role-To-Head-Mapping" type="OLCACRHM-Full-Type" minOccurs="0" />
+         <xs:element name="Product-Events" type="OLCACADD-Full-Type" minOccurs="0" />
+         <xs:element name="Lbtms-Facility-Product" type="FCCPPREF-Full-Type" minOccurs="0" />
+         <xs:element name="Product-Mis-Details" type="OLCPRMNT-Full-Type" minOccurs="0" />
+         <xs:element name="Product-Details" type="LFCLSFEE-Full-Type" minOccurs="0" />
+         <xs:element name="P-Header" type="LFCROPAR-Full-Type" minOccurs="0" />
+         <xs:element name="Product-Diary" type="LFCPRDIA-Full-Type" minOccurs="0" />
+         <xs:element name="Product-Fields" type="OLCPDFDM-Full-Type" minOccurs="0" />
+         <xs:element name="Product-Tax" type="LFCPRTAX-Full-Type" minOccurs="0" />
+         <xs:element name="Cstms-Product" type="LFCPRACF-Full-Type" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Query-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Create-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRDDESC" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="105"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRDGRP" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="6"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_SLOGAN" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_REMARKS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCTSTARTDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="PRODUCTENDDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="FORMATNAME" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="NRMLRTVARI" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="11"/>
+                  <xs:fractionDigits value="5"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAXRTVARI" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="11"/>
+                  <xs:fractionDigits value="5"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RTCODEPRFERD" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="B"/>
+                  <xs:enumeration value="M"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RATETYPPRFERED" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="8"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Prdstat-Master" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="STAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="4"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="STATSEQ" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ADVSTAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:enumeration value="Y"/>
+                           <xs:enumeration value="N"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Role-To-Head-Mapping" type="OLCACRHM-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Events" type="OLCACADD-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Lbtms-Facility-Product" type="FCCPPREF-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Mis-Details" type="OLCPRMNT-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Details" type="LFCLSFEE-Create-IO-Type" minOccurs="0" />
+         <xs:element name="P-Header" type="LFCROPAR-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Diary" type="LFCPRDIA-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Fields" type="OLCPDFDM-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Tax" type="LFCPRTAX-Create-IO-Type" minOccurs="0" />
+         <xs:element name="Cstms-Product" type="LFCPRACF-Create-IO-Type" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Modify-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRDDESC" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="105"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRDGRP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="6"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_SLOGAN" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_REMARKS" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCTSTARTDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="PRODUCTENDDATE" minOccurs="0"  type="xs:date">
+         </xs:element>
+         <xs:element name="FORMATNAME" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="PRODUCT_TYPE" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="2"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="NRMLRTVARI" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="11"/>
+                  <xs:fractionDigits value="5"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAXRTVARI" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="11"/>
+                  <xs:fractionDigits value="5"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RTCODEPRFERD" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="B"/>
+                  <xs:enumeration value="M"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="RATETYPPRFERED" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="8"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKER" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="320"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKERSTAMP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="Prdstat-Master" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="STAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:maxLength value="4"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="STATSEQ" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                           <xs:totalDigits value="22"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ADVSTAT" minOccurs="0">
+                     <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                           <xs:enumeration value="Y"/>
+                           <xs:enumeration value="N"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="Role-To-Head-Mapping" type="OLCACRHM-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Events" type="OLCACADD-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Lbtms-Facility-Product" type="FCCPPREF-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Mis-Details" type="OLCPRMNT-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Details" type="LFCLSFEE-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="P-Header" type="LFCROPAR-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Diary" type="LFCPRDIA-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Fields" type="OLCPDFDM-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Product-Tax" type="LFCPRTAX-Modify-IO-Type" minOccurs="0" />
+         <xs:element name="Cstms-Product" type="LFCPRACF-Modify-IO-Type" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Authorize-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CHECKER" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="320"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="CHECKERSTAMP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MODNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Delete-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Close-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKER" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="320"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKERSTAMP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MODNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   
+
+   <xs:complexType name="FacilityProd-Reopen-IO-Type">
+      <xs:sequence>
+         <xs:element name="PRDCD" minOccurs="1">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKER" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="320"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MAKERSTAMP" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="MODNO" minOccurs="0">
+            <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+                  <xs:totalDigits value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

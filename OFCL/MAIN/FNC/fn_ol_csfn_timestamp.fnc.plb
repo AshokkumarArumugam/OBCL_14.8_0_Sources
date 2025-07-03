@@ -1,0 +1,26 @@
+create or replace function fn_ol_csfn_timestamp wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+133 11b
+Z+X00S3BUmYmkq4z4dNNboezxh8wgzJKf5kVfC8CTLcPUrqU2zVoe5UbeR36Y9Ilrz7jFucr
+Ap+K0Hg98h8Q2b96uQCHGXCLDYRTaGqGb9xMkap5ckyqfk9p1Zp35wkwRKzOIM1ca3/xKXae
+hjMVfqJciJD0LVc0auymkFt+X/sPxV1fLlUZ7SSn95M+/ENPQDIJgJPVAcKsOKbLtwQTSiD7
+pH22FtnN/ydRkSoHF5ZDWYgJTshSBRFRNpCwz5FKr1jIzBqxK/cfYfIflhATDBQ=
+
+/

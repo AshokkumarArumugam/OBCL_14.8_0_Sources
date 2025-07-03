@@ -1,0 +1,26 @@
+create or replace package body cspks_instance wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+1f9 11f
+mPIQWk/wkO4hNRW9P4UsStW6e1swg5DQAJkVfC9ATAUPUtYD1vawIe2ga81jXYS4xQl2ohbm
+c7V1EW1mYRhYStlOvGjrfIfCdqhcMRxF7sAcg14kcSgQvzbeBgJJdlLVlDVKYY2RVi2rNYwy
+7HDGIZZ1GUBKjsehUhREuOuJi/9lBlP6T3/eqXFcN2JQjPevnr4C9H4sdJMNaaig5TjEQbzx
+V+aXZ54kX4DXybdXDmQc+lsA6q6fP1nMtQaLgpp31OJCrZoIZBMKmncVZn7xPbIQ59Yb
+
+/

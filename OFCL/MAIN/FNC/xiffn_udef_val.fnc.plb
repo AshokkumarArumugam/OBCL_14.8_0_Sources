@@ -1,0 +1,29 @@
+create or replace function xiffn_udef_val wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+18c 150
+YBT+XXwVfLvZKf3r02oKuWsrnP0wgzLIAPZqfC9AA/KdBqdn4WuE1AQo5fUnokMD913PWWZQ
+q55sugyqP/VSimugq9IIvL9kMP8zGrf2vT8iQO7snRkZB+QQOnEyYQT/3TVE7eo4mPfmpmT/
+I4Tlr52Q6npqitgB3Xdb7EQpUeQX9AkjaRz1WS5H7S2+NAa3Mn2yD5wpaDhsTwiV947QhKLS
+TbZHXI8WDXxglAVAYTqNVHeGHB2sEKkXF/y9K/c+13uC6QAIaAi0iKo4MyOr5mxEQSGfdiEb
+tqAmXYAW2gy2seI5/O3BOWU9pJxJgkWNkVJSHbsaDzk=
+
+/
+create or replace synonym xiffns_udef_val for xiffn_udef_val
+/

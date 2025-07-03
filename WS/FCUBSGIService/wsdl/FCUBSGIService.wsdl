@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <wsdl:definitions name="FCUBSGIService"
+ targetNamespace = "http://FCUBSGIService.types.ws.gw.fcubs.ofss.com"
+ xmlns:tns = "http://FCUBSGIService.types.ws.gw.fcubs.ofss.com"
+ xmlns:wsdlsoap = "http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:wsdl = "http://schemas.xmlsoap.org/wsdl/"
+ xmlns:xs = "http://www.w3.org/2001/XMLSchema"
+ xmlns="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:ns="http://fcubs.ofss.com/service/FCUBSGIService">
+<wsdl:types>
+   <xs:schema>
+     <xs:import namespace="http://fcubs.ofss.com/service/FCUBSGIService"
+       schemaLocation="../XSD/GI-CreateInterfaceProces-Req-Full-MSG.xsd"/>
+   </xs:schema>
+   <xs:schema>
+     <xs:import namespace="http://fcubs.ofss.com/service/FCUBSGIService"
+       schemaLocation="../XSD/GI-CreateInterfaceProces-Res-Full-MSG.xsd"/>
+   </xs:schema>
+   <xs:schema>
+     <xs:import namespace="http://fcubs.ofss.com/service/FCUBSGIService"
+       schemaLocation="../XSD/GI-CreateInterfaceProces-Req-IO-MSG.xsd"/>
+   </xs:schema>
+   <xs:schema>
+     <xs:import namespace="http://fcubs.ofss.com/service/FCUBSGIService"
+       schemaLocation="../XSD/GI-CreateInterfaceProces-Res-PK-MSG.xsd"/>
+   </xs:schema>
+   <xs:schema>
+     <xs:import namespace="http://fcubs.ofss.com/service/FCUBSGIService"
+       schemaLocation="../XSD/GI-QueryInterfaceProces-Res-Full-MSG.xsd"/>
+   </xs:schema>
+   <xs:schema>
+     <xs:import namespace="http://fcubs.ofss.com/service/FCUBSGIService"
+       schemaLocation="../XSD/GI-QueryInterfaceProces-Req-IO-MSG.xsd"/>
+   </xs:schema>
+</wsdl:types>
+<wsdl:message name="CreateInterfaceProcesFSReq">
+   <wsdl:part name="RequestMsg" element="ns:CREATEINTERFACEPROCES_FSFS_REQ"/>
+</wsdl:message> 
+<wsdl:message name="CreateInterfaceProcesFSRes">
+   <wsdl:part name="ResponseMsg" element="ns:CREATEINTERFACEPROCES_FSFS_RES"/>
+</wsdl:message> 
+<wsdl:message name="CreateInterfaceProcesIOReq">
+   <wsdl:part name="RequestMsg" element="ns:CREATEINTERFACEPROCES_IOPK_REQ"/>
+</wsdl:message> 
+<wsdl:message name="CreateInterfaceProcesPKRes">
+   <wsdl:part name="ResponseMsg" element="ns:CREATEINTERFACEPROCES_IOPK_RES"/>
+</wsdl:message> 
+<wsdl:message name="QueryInterfaceProcesFSRes">
+   <wsdl:part name="ResponseMsg" element="ns:QUERYINTERFACEPROCES_IOFS_RES"/>
+</wsdl:message> 
+<wsdl:message name="QueryInterfaceProcesIOReq">
+   <wsdl:part name="RequestMsg" element="ns:QUERYINTERFACEPROCES_IOFS_REQ"/>
+</wsdl:message> 
+<wsdl:portType name="FCUBSGIServiceSEI" >
+  <wsdl:operation name="CreateInterfaceProcesIO">
+     <wsdl:input message="tns:CreateInterfaceProcesIOReq"/>
+     <wsdl:output message="tns:CreateInterfaceProcesPKRes"/>
+  </wsdl:operation>
+  <wsdl:operation name="CreateInterfaceProcesFS">
+     <wsdl:input message="tns:CreateInterfaceProcesFSReq"/>
+     <wsdl:output message="tns:CreateInterfaceProcesFSRes"/>
+  </wsdl:operation>
+  <wsdl:operation name="QueryInterfaceProcesIO">
+     <wsdl:input message="tns:QueryInterfaceProcesIOReq"/>
+     <wsdl:output message="tns:QueryInterfaceProcesFSRes"/>
+  </wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="FCUBSGIService" type="tns:FCUBSGIServiceSEI">
+<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="CreateInterfaceProcesFS">
+       <wsdlsoap:operation soapAction=""/>
+       <wsdl:input>
+           <wsdlsoap:body use="literal"/>
+        </wsdl:input>
+       <wsdl:output>
+           <wsdlsoap:body use="literal"/>
+       </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="CreateInterfaceProcesIO">
+       <wsdlsoap:operation soapAction=""/>
+       <wsdl:input>
+           <wsdlsoap:body use="literal"/>
+        </wsdl:input>
+       <wsdl:output>
+           <wsdlsoap:body use="literal"/>
+       </wsdl:output>
+  </wsdl:operation>
+  <wsdl:operation name="QueryInterfaceProcesIO">
+       <wsdlsoap:operation soapAction=""/>
+       <wsdl:input>
+           <wsdlsoap:body use="literal"/>
+        </wsdl:input>
+       <wsdl:output>
+           <wsdlsoap:body use="literal"/>
+       </wsdl:output>
+  </wsdl:operation>
+</wsdl:binding>
+   <wsdl:service name="FCUBSGIService">
+       <wsdl:port name="FCUBSGIServiceSEI" binding="tns:FCUBSGIService">
+           <wsdlsoap:address location="http://localhost:9080/FCUBSGIService/services/FCUBSGIService"/>
+       </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

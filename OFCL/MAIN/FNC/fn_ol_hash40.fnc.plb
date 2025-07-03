@@ -1,0 +1,27 @@
+CREATE OR REPLACE function fn_ol_hash40 wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+17a 168
+Hh/T5LjCzqpnbUQ0Fgd/9w3tXfwwg3nIf65qfC8Ck80PUgt0oY2JWmfvyNOGIUm+wZef8mHj
+RDJnfKW1bP+FlHQwwrvt/lWQxlj1ooClMy0/vGTBsWTHuh+ZbiNksBkglDC2F65nTjh8h+DI
+tRw4A4y3BuBAVe935DydJWsPyAYsc32HX5ZhQ3mM5ei31jHvbAQMPFAi3JVRV3h7KOdaUH7f
+b9jHgD512eIiEdtmR4TjvFTyVv1j5TNBguGAUKU2KC9JalB2UGlVbD1Qgo91SImXNnhWTME3
+g0WglOj/+qeSMjTvHfQ3QvRZc6HBCUSJ7/RWlUO7e1gn7zv/4l4s6GG54rz7RK7MeQ==
+
+/

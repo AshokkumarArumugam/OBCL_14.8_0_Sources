@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd" version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+    <enterprise-beans>
+        <session>
+            <ejb-name>FCJEJB</ejb-name>
+			<ejb-local-ref>
+                <ejb-ref-name>FCUBS_FCSRVEJB_LOCAL</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <local>com.ofss.fcubs.service.ejb.FCSrvRouterEJBLocal</local>
+                <ejb-link>../../FCServiceEJB.jar#FCSrvRouterEJB</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>FCUBS_FCMAINPROCEJB_LOCAL</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <local>com.ofss.fcubs.service.ejb.FCMainProcEJBLocal</local>
+                <ejb-link>../../FCServiceEJB.jar#FCMainProcEJB</ejb-link>
+            </ejb-local-ref>	
+        </session>
+        <session>
+            <ejb-name>FCJEJBMain</ejb-name>
+            <env-entry>
+                <env-entry-name>RES_APP_NAME</env-entry-name>
+                <env-entry-type>java.lang.String</env-entry-type>
+                <env-entry-value>{REF_LOCATION}</env-entry-value>
+            </env-entry>
+        </session>
+        <session>
+            <ejb-name>FCJMISCEJB</ejb-name>
+        </session>
+    </enterprise-beans>
+</ejb-jar>

@@ -1,0 +1,493 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<!--*****************************************************************************
+    ** Unit Name: GW_Notify_MDB_Prop.xml
+    **
+    ** Date:      16-Jun-2006
+    ** 
+    ** Author:    i-flex
+    **
+    ** Copyright © ** Copyright 2005- 2009 by Oracle Financial Services Software Limited.
+    **                   10-11, SDF I, SEEPZ, Andheri (East),
+    **                   Mumbai - 400 096.
+    **                   India
+    ** 
+    ** This source is part of the Flexcube XML Gateway and is copyrighted by Oracle Financial Services Software Limited.
+    ** 
+    ** All rights reserved.  No part of this work may be reproduced, stored in a
+    ** retrieval system, adopted or transmitted in any form or by any means,
+    ** electronic, mechanical, photographic, graphic, optic recording or otherwise,
+    ** translated in any language or computer language, without the prior written
+    ** permission of Oracle Financial Services Software Limited.
+    ** 
+    ******************************************************************************* 
+    **==============================================================================
+    
+    **============================  JMS MQ RELATED PROPERTIES  =====================
+    
+    **============================================================================-
+    ** NOTIFY_MDB_JMS_QUEUE_ICF - This property specifies which JNDI service
+    **                             provider is in use.
+    **  Examples:
+    **  =========
+    **  a. NOTIFY_MDB_JMS_QUEUE_ICF=com.sun.jndi.ldap.LdapCtxFactory
+    **  b. NOTIFY_MDB_JMS_QUEUE_ICF=com.ibm.ejs.ns.jndi.CNInitialContextFactory
+    **  c. NOTIFY_MDB_JMS_QUEUE_ICF=com.sun.enterprise.naming.SerialInitContextFactory
+    **  d. NOTIFY_MDB_JMS_QUEUE_ICF=weblogic.jndi.WLInitialContextFactory
+    **
+    **     OC4J - specific
+    **  e. NOTIFY_MDB_JMS_QUEUE_ICF=com.evermind.server.rmi.RMIInitialContextFactory
+    **
+    **     WAS - specific
+    **  f. NOTIFY_MDB_JMS_QUEUE_ICF=com.sun.jndi.fscontext.RefFSContextFactory
+    **============================================================================-
+    ** NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL - This property specifies the URL of the
+    **                                      service provider's initial context.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=ldap://polaris/o=ibm,c=us
+    **  b. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=ldap://10.80.4.102:389
+    **
+    **     WAS -specific
+    **  c. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=file:/C:/JNDI-Directory
+    **  d. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=file:\Z:\
+    **  e. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=iiop://10.80.4.102/
+    **  f. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=t3://169.178.15.149:7001
+    **  g. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=t3://10.80.4.102:7001
+    **
+    **     OC4J - psecific
+    **  h. NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL=ormi://10.80.4.102/
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_QUEUE_SECURITY_PRINCIPAL - This property specifies the user
+    **                                            name used to connect to JMS
+    **                                            provider
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_QUEUE_SECURITY_CREDENTIALS - This property specifies the
+    **                                              password used to connect to JMS
+    **                                              provider.
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_QCF - This property specifies the Queue Connection Factory
+    **                       name. It must be specified as
+    **                       java:comp/env/<NOTIFY_MDB_JMS_QCF value> if the Queue
+    **                       Connection Factory is specified in the ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_QUEUE_NAME - This property specifies the Name of listener
+    **                              queue for MDB. It must be specified as
+    **                              java:comp/env/<NOTIFY_MDB_JMS_QUEUE_NAME value>
+    **                              if the Queue is specified in the ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DLQ_CF - This property specifies the JNDI Name of Dead letter
+    **                          Queue Connection Factory name. It must be specified as
+    **                          java:comp/env/<NOTIFY_MDB_JMS_DLQ_CF value> if the
+    **                          Queue Connection Factory is specified in the
+    **                          ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DLQ - This property specifies the Name of Dead letter queue.
+    **                       It must be specified as
+    **                       java:comp/env/<NOTIFY_MDB_JMS_DLQ value> if the Queue
+    **                       is specified in the ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_Q_ACKNOWLEDGE - This property specifies the type of
+    **                                 acknowledgement to be given to the MOM by
+    **                                 the application
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_Q_ACKNOWLEDGE=CLIENT_ACKNOWLEDGE
+    **  b. NOTIFY_MDB_JMS_Q_ACKNOWLEDGE=DUPS_OK_ACKNOWLEDGE
+    **  c. NOTIFY_MDB_JMS_Q_ACKNOWLEDGE=AUTO_ACKNOWLEDGE
+    **================================================================================
+    ** NOTIFY_MDB_JMS_Q_TRANSACTION - The messages sent/recieved to be transacted or not
+    **                                 The possible values: true/false
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_Q_TRANSACTION=true
+    **  b. NOTIFY_MDB_JMS_Q_TRANSACTION=false
+    **================================================================================
+    ** NOTIFY_MDB_JMS_Q_DELIVERY_OPT - The message delivery option represents whether
+    **                                  the message will be delivered with the
+    **                                  Delivery mode as PERSISTENT or NON-PERSISTENT.
+    **                                  Possible values are 1 or 2. 1 represents delivery
+    **                                  mode to be NON-PRESISTENT while 2 represents
+    **                                  the delivery mode to be PRESISTENT.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_Q_DELIVERY_OPT=1
+    **  b. NOTIFY_MDB_JMS_Q_DELIVERY_OPT=2
+    **================================================================================
+    ** NOTIFY_MDB_JMS_Q_TIME_TO_LIVE - This is the maximum time in milliseconds for
+    **                                  which the outgoing/reply message will remain
+    **                                  in the queue before expiring, if not already
+    **                                  picked up by the external system application.
+    **                                  Value of 0 ensures that message will NEVER
+    **                                  expire
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_Q_TIME_TO_LIVE=10000
+    **  b. NOTIFY_MDB_JMS_Q_TIME_TO_LIVE=0
+    **================================================================================
+    ** NOTIFY_MDB_JMS_Q_PRIORITY - This is the priority of the outgoing/reply message.
+    **                              Priority value can be ranging from 0 to 9, 9 being
+    **                              highest priority and 0 being lowest priority.
+    **                              Priorities 0-4 as gradations of normal priority and
+    **                              priorities 5-9 as gradations of expedited priority.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_Q_PRIORITY=0
+    **  b. NOTIFY_MDB_JMS_Q_PRIORITY=8
+    **================================================================================
+    **============================   DESTINATION PROPERTIES   ========================
+    
+    **================================================================================
+    ** NOTIFY_DESTINATION - This property specifies whether the destination is
+    **                       TOPIC or QUEUE, to which Notification message is put.
+    **================================================================================
+    ** NOTIFY_MDB_JMS_DEST_TOPIC_ICF - This property specifies which JNDI service
+    **                                  provider is in use.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_TOPIC_ICF=com.sun.jndi.ldap.LdapCtxFactory
+    **  b. NOTIFY_MDB_JMS_DEST_TOPIC_ICF=com.ibm.ejs.ns.jndi.CNInitialContextFactory
+    **  c. NOTIFY_MDB_JMS_DEST_TOPIC_ICF=com.sun.enterprise.naming.SerialInitContextFactory
+    **  d. NOTIFY_MDB_JMS_DEST_TOPIC_ICF=weblogic.jndi.WLInitialContextFactory
+    **
+    **     OC4J - specific
+    **  e. NOTIFY_MDB_JMS_DEST_TOPIC_ICF=com.evermind.server.rmi.RMIInitialContextFactory
+    **
+    **     WAS - specific
+    **  f. NOTIFY_MDB_JMS_DEST_TOPIC_ICF=com.sun.jndi.fscontext.RefFSContextFactory
+    **============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL - This property specifies the URL of
+    **                                           the service provider's initial context.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=ldap://polaris/o=ibm,c=us
+    **  b. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=ldap://10.80.4.102:389
+    **
+    **     WAS -specific
+    **  c. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=file:/C:/JNDI-Directory
+    **  d. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=file:\Z:\
+    **  e. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=iiop://10.80.4.102/
+    **  f. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=t3://169.178.15.149:7001
+    **  g. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=t3://10.80.4.102:7001
+    **
+    **     OC4J - psecific
+    **  h. NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL=ormi://10.80.4.102/
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_TOPIC_SECURITY_PRINCIPAL - This property specifies the
+    **                                                 user name used to connect to
+    **                                                 JMS provider.
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_TOPIC_SECURITY_CREDENTIALS - This property specifies the
+    **                                                   password used to connect to
+    **                                                   JMS provider.
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_TCF - This property specifies the Topic Connection
+    **                            Factory name. It must be specified as
+    **                            java:comp/env/<NOTIFY_MDB_JMS_DEST_TCF value> if
+    **                            the Topic Connection Factory is specified in the
+    **                            ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_TOPIC_NAME - This property specifies the Name of
+    **                                   destination topic for MDB. It must be
+    **                                   specified as
+    **                                   java:comp/env/<NOTIFY_MDB_JMS_DEST_TOPIC_NAME value>
+    **                                   if the Topic is specified in the ejb-jar.xml
+    **============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_Q_ICF - This property specifies which JNDI service
+    **                              provider is in use.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_ICF=com.sun.jndi.ldap.LdapCtxFactory
+    **  b. NOTIFY_MDB_JMS_DEST_Q_ICF=com.ibm.ejs.ns.jndi.CNInitialContextFactory
+    **  c. NOTIFY_MDB_JMS_DEST_Q_ICF=com.sun.enterprise.naming.SerialInitContextFactory
+    **  d. NOTIFY_MDB_JMS_DEST_Q_ICF=weblogic.jndi.WLInitialContextFactory
+    **
+    **     OC4J - specific
+    **  e. NOTIFY_MDB_JMS_DEST_Q_ICF=com.evermind.server.rmi.RMIInitialContextFactory
+    **
+    **     WAS - specific
+    **  f. NOTIFY_MDB_JMS_DEST_Q_ICF=com.sun.jndi.fscontext.RefFSContextFactory
+    **============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL - This property specifies the URL of the
+    **                                       service provider's initial context.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=ldap://polaris/o=ibm,c=us
+    **  b. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=ldap://10.80.4.102:389
+    **
+    **     WAS -specific
+    **  c. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=file:/C:/JNDI-Directory
+    **  d. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=file:\Z:\
+    **  e. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=iiop://10.80.4.102/
+    **  f. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=t3://169.178.15.149:7001
+    **  g. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=t3://10.80.4.102:7001
+    **
+    **     OC4J - psecific
+    **  h. NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL=ormi://10.80.4.102/
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_Q_SECURITY_PRINCIPAL - This property specifies the
+    **                                             user name used to connect to
+    **                                             JMS provider.
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_Q_SECURITY_CREDENTIALS - This property specifies the
+    **                                               password used to connect to
+    **                                               JMS provider.
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_Q_QCF - This property specifies the Queue Connection
+    **                              Factory name. It must be specified as
+    **                              java:comp/env/<NOTIFY_MDB_JMS_DEST_Q_QCF value> if
+    **                              the Queue Connection Factory is specified in the
+    **                              ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_QUEUE_NAME - This property specifies the Name of
+    **                                   destination queue for MDB. It must be
+    **                                   specified as
+    **                                   java:comp/env/<NOTIFY_MDB_JMS_DEST_QUEUE_NAME value>
+    **                                   if the Queue is specified in the ejb-jar.xml
+    **==============================================================================-
+    ** NOTIFY_MDB_JMS_DEST_Q_ACKNOWLEDGE - This property specifies the type of
+    **                                      acknowledgement to be given to the MOM by
+    **                                      the application
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_ACKNOWLEDGE=CLIENT_ACKNOWLEDGE
+    **  b. NOTIFY_MDB_JMS_DEST_Q_ACKNOWLEDGE=DUPS_OK_ACKNOWLEDGE
+    **  c. NOTIFY_MDB_JMS_DEST_Q_ACKNOWLEDGE=AUTO_ACKNOWLEDGE
+    **================================================================================
+    ** NOTIFY_MDB_JMS_DEST_Q_TRANSACTION - The messages sent/received to be transacted
+    **                                      or not. The possible values: true/false
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_TRANSACTION=true
+    **  b. NOTIFY_MDB_JMS_DEST_Q_TRANSACTION=false
+    **================================================================================
+    ** NOTIFY_MDB_JMS_DEST_Q_DELIVERY_OPT - The message delivery option represents
+    **                                       whether the message will be delivered with
+    **                                       the Delivery mode as PERSISTENT or
+    **                                       NON-PERSISTENT. Possible values are 1 or 2.
+    **                                       1 represents delivery mode to be
+    **                                       NON-PRESISTENT while 2 represents the
+    **                                       delivery mode to be PRESISTENT.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_DELIVERY_OPT=1
+    **  b. NOTIFY_MDB_JMS_DEST_Q_DELIVERY_OPT=2
+    **================================================================================
+    ** NOTIFY_MDB_JMS_DEST_Q_TIME_TO_LIVE - This is the maximum time in milliseconds
+    **                                       for which the outgoing/reply message will
+    **                                       remain in the queue before expiring, if
+    **                                       not already picked up by the external
+    **                                       system application. Value of 0 ensures
+    **                                       that message will NEVER expire
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_TIME_TO_LIVE=10000
+    **  b. NOTIFY_MDB_JMS_DEST_Q_TIME_TO_LIVE=0
+    **================================================================================
+    ** NOTIFY_MDB_JMS_DEST_Q_PRIORITY - This is the priority of the outgoing/reply
+    **                                   message. Priority value can be ranging from
+    **                                   0 to 9, 9 being highest priority and 0 being
+    **                                   lowest priority. Priorities 0-4 as gradations
+    **                                   of normal priority and priorities 5-9 as
+    **                                   gradations of expedited priority.
+    **  Examples:
+    **  ========-
+    **  a. NOTIFY_MDB_JMS_DEST_Q_PRIORITY=0
+    **  b. NOTIFY_MDB_JMS_DEST_Q_PRIORITY=8
+    **================================================================================
+	** KERNEL73 Deffered message changes starts
+	** DEFFERED_MDB_JMS_DEST_Q_ICF - This property specifies which JNDI service
+    **                              provider is in use.
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_ICF=com.sun.jndi.ldap.LdapCtxFactory
+    **  b. DEFFERED_MDB_JMS_DEST_Q_ICF=com.ibm.ejs.ns.jndi.CNInitialContextFactory
+    **  c. DEFFERED_MDB_JMS_DEST_Q_ICF=com.sun.enterprise.naming.SerialInitContextFactory
+    **  d. DEFFERED_MDB_JMS_DEST_Q_ICF=weblogic.jndi.WLInitialContextFactory
+    **
+    **     OC4J - specific
+    **  e. DEFFERED_MDB_JMS_DEST_Q_ICF=com.evermind.server.rmi.RMIInitialContextFactory
+    **
+    **     WAS - specific
+    **  f. DEFFERED_MDB_JMS_DEST_Q_ICF=com.sun.jndi.fscontext.RefFSContextFactory
+    **============================================================================-
+    ** DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL - This property specifies the URL of the
+    **                                       service provider's initial context.
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=ldap://polaris/o=ibm,c=us
+    **  b. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=ldap://10.80.4.102:389
+    **
+    **     WAS -specific
+    **  c. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=file:/C:/JNDI-Directory
+    **  d. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=file:\Z:\
+    **  e. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=iiop://10.80.4.102/
+    **  f. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=t3://169.178.15.149:7001
+    **  g. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=t3://10.80.4.102:7001
+    **
+    **     OC4J - psecific
+    **  h. DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL=ormi://10.80.4.102/
+    **==============================================================================-
+    ** DEFFERED_MDB_JMS_DEST_Q_SECURITY_PRINCIPAL - This property specifies the
+    **                                             user name used to connect to
+    **                                             JMS provider.
+    **==============================================================================-
+    ** DEFFERED_MDB_JMS_DEST_Q_SECURITY_CREDENTIALS - This property specifies the
+    **                                               password used to connect to
+    **                                               JMS provider.
+    **==============================================================================-
+    ** DEFFERED_MDB_JMS_DEST_Q_QCF - This property specifies the Queue Connection
+    **                              Factory name. It must be specified as
+    **                              java:comp/env/<DEFFERED_MDB_JMS_DEST_Q_QCF value> if
+    **                              the Queue Connection Factory is specified in the
+    **                              ejb-jar.xml
+    **==============================================================================-
+    ** DEFFERED_MDB_JMS_DEST_QUEUE_NAME - This property specifies the Name of
+    **                                   destination queue for MDB. It must be
+    **                                   specified as
+    **                                   java:comp/env/<DEFFERED_MDB_JMS_DEST_QUEUE_NAME value>
+    **                                   if the Queue is specified in the ejb-jar.xml
+    **==============================================================================-
+    ** DEFFERED_MDB_JMS_DEST_Q_ACKNOWLEDGE - This property specifies the type of
+    **                                      acknowledgement to be given to the MOM by
+    **                                      the application
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_ACKNOWLEDGE=CLIENT_ACKNOWLEDGE
+    **  b. DEFFERED_MDB_JMS_DEST_Q_ACKNOWLEDGE=DUPS_OK_ACKNOWLEDGE
+    **  c. DEFFERED_MDB_JMS_DEST_Q_ACKNOWLEDGE=AUTO_ACKNOWLEDGE
+    **================================================================================
+    ** DEFFERED_MDB_JMS_DEST_Q_TRANSACTION - The messages sent/received to be transacted
+    **                                      or not. The possible values: true/false
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_TRANSACTION=true
+    **  b. DEFFERED_MDB_JMS_DEST_Q_TRANSACTION=false
+    **================================================================================
+    ** DEFFERED_MDB_JMS_DEST_Q_DELIVERY_OPT - The message delivery option represents
+    **                                       whether the message will be delivered with
+    **                                       the Delivery mode as PERSISTENT or
+    **                                       NON-PERSISTENT. Possible values are 1 or 2.
+    **                                       1 represents delivery mode to be
+    **                                       NON-PRESISTENT while 2 represents the
+    **                                       delivery mode to be PRESISTENT.
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_DELIVERY_OPT=1
+    **  b. DEFFERED_MDB_JMS_DEST_Q_DELIVERY_OPT=2
+    **================================================================================
+    ** DEFFERED_MDB_JMS_DEST_Q_TIME_TO_LIVE - This is the maximum time in milliseconds
+    **                                       for which the outgoing/reply message will
+    **                                       remain in the queue before expiring, if
+    **                                       not already picked up by the external
+    **                                       system application. Value of 0 ensures
+    **                                       that message will NEVER expire
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_TIME_TO_LIVE=10000
+    **  b. DEFFERED_MDB_JMS_DEST_Q_TIME_TO_LIVE=0
+    **================================================================================
+    ** DEFFERED_MDB_JMS_DEST_Q_PRIORITY - This is the priority of the outgoing/reply
+    **                                   message. Priority value can be ranging from
+    **                                   0 to 9, 9 being highest priority and 0 being
+    **                                   lowest priority. Priorities 0-4 as gradations
+    **                                   of normal priority and priorities 5-9 as
+    **                                   gradations of expedited priority.
+    **  Examples:
+    **  ========-
+    **  a. DEFFERED_MDB_JMS_DEST_Q_PRIORITY=0
+    **  b. DEFFERED_MDB_JMS_DEST_Q_PRIORITY=8
+    **================================================================================
+	** KERNEL73 Deffered message changes Ends
+    **============================   DATABASE RELATED PROPERTIES   =================
+    
+    **==================================================================================
+    ** DB_TIMEOUT    - This is the timeout in SECONDS for which the FCUBS EJB Gateway
+    **                  will wait for PL/SQL to finish it's processing. If database did
+    **                  not return withih this timeout, the call to PL/SQL will be
+    **                  assumed to be failed.
+    **  Examples:
+    **  ========-
+    **  a. DB_TIMEOUT=200
+    **==============================================================================-
+    ** MSG_SCHEMA_CON_POOLNAME - This is the JNDI lookup name of the JDBC connection
+    **			     pool from which the GWInterface will look for the
+    **                            database connection. A JDBC connection pool with
+    **                            this JDNI name should be prepared in the application
+    **                            server.
+    ** Examples:
+    ** =========
+    ** a. MSG_SCHEMA_CON_POOLNAME=FLEXTEST.WORLD
+    ** b. MSG_SCHEMA_CON_POOLNAME=java:comp/env/FLEXTEST.WORLD
+    **==================================================================================
+    **=============================   MISCELLANEOUS PROPERTIES   =======================
+    
+    **==================================================================================
+    ** LOGGER_PATH - Absolute path to the gw_notify_mdb_logger.xml file along with file
+    **               name.
+    **==================================================================================
+-->
+<configuration>
+    <appSettings>
+        <!-- add key="NOTIFY_MDB_JMS_QUEUE_ICF" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_QUEUE_PROVIDER_URL" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_QUEUE_SECURITY_PRINCIPAL" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_QUEUE_SECURITY_CREDENTIALS" value=""/-->
+               
+        <add key="NOTIFY_MDB_JMS_QCF" value="NOTIFY_MDB_QCF"/>
+        <add key="NOTIFY_MDB_JMS_QUEUE_NAME" value="NOTIFY_QUEUE"/>
+        <add key="NOTIFY_MDB_JMS_DLQ_CF" value="NOTIFY_MDB_QCF"/>
+        <add key="NOTIFY_MDB_JMS_DLQ" value="NOTIFY_QUEUE_DLQ"/>
+           
+        <add key="NOTIFY_MDB_JMS_Q_ACKNOWLEDGE" value="AUTO_ACKNOWLEDGE"/>
+        <add key="NOTIFY_MDB_JMS_Q_TRANSACTION" value="false"/>
+        <add key="NOTIFY_MDB_JMS_Q_DELIVERY_OPT" value="2"/>
+        <add key="NOTIFY_MDB_JMS_Q_TIME_TO_LIVE" value="0"/>
+        <add key="NOTIFY_MDB_JMS_Q_PRIORITY" value="7"/>
+        
+        <add key="NOTIFY_DESTINATION" value="QUEUE"/>
+        <!-- add key="NOTIFY_DESTINATION" value="TOPIC"/-->
+              
+        <!-- add key="NOTIFY_MDB_JMS_DEST_TOPIC_ICF" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_DEST_TOPIC_PROVIDER_URL" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_DEST_TOPIC_SECURITY_PRINCIPAL" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_DEST_TOPIC_SECURITY_CREDENTIALS" value=""/-->
+       
+        <add key="NOTIFY_MDB_JMS_DEST_TCF" value="NotifyTCF"/>
+        <add key="NOTIFY_MDB_JMS_DEST_TOPIC_NAME" value="NOTIFY_DEST_TOPIC"/>
+           	
+        <!-- add key="NOTIFY_MDB_JMS_DEST_Q_ICF" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_DEST_Q_PROVIDER_URL" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_DEST_Q_SECURITY_PRINCIPAL" value=""/-->
+        <!-- add key="NOTIFY_MDB_JMS_DEST_Q_SECURITY_CREDENTIALS" value=""/-->
+        
+        <add key="NOTIFY_MDB_JMS_DEST_Q_QCF" value="NotifyDestQCF"/>
+        <add key="NOTIFY_MDB_JMS_DEST_QUEUE_NAME" value="NOTIFY_DEST_QUEUE"/>
+           
+        <add key="NOTIFY_MDB_JMS_DEST_Q_ACKNOWLEDGE" value="AUTO_ACKNOWLEDGE"/>
+        <add key="NOTIFY_MDB_JMS_DEST_Q_TRANSACTION" value="false"/>
+        <add key="NOTIFY_MDB_JMS_DEST_Q_DELIVERY_OPT" value="2"/>
+        <add key="NOTIFY_MDB_JMS_DEST_Q_TIME_TO_LIVE" value="0"/>
+        <add key="NOTIFY_MDB_JMS_DEST_Q_PRIORITY" value="7"/>
+		
+		<!-- KERNEL73 Deffered message changes starts -->
+		<!-- add key="DEFFERED_MDB_JMS_DEST_Q_ICF" value=""/-->
+        <!-- add key="DEFFERED_MDB_JMS_DEST_Q_PROVIDER_URL" value=""/-->
+        <!-- add key="DEFFERED_MDB_JMS_DEST_Q_SECURITY_PRINCIPAL" value=""/-->
+        <!-- add key="DEFFERED_MDB_JMS_DEST_Q_SECURITY_CREDENTIALS" value=""/-->
+        
+        <add key="DEFFERED_MDB_JMS_DEST_Q_QCF" value="DefferedDestQCF"/>
+        <add key="DEFFERED_MDB_JMS_DEST_QUEUE_NAME" value="DEFFERED_DEST_QUEUE"/>
+           
+        <add key="DEFFERED_MDB_JMS_DEST_Q_ACKNOWLEDGE" value="AUTO_ACKNOWLEDGE"/>
+        <add key="DEFFERED_MDB_JMS_DEST_Q_TRANSACTION" value="false"/>
+        <add key="DEFFERED_MDB_JMS_DEST_Q_DELIVERY_OPT" value="2"/>
+        <add key="DEFFERED_MDB_JMS_DEST_Q_TIME_TO_LIVE" value="0"/>
+        <add key="DEFFERED_MDB_JMS_DEST_Q_PRIORITY" value="7"/>
+		<!-- KERNEL73 Deffered message changes ends -->
+
+        <add key="DB_TIMEOUT" value="200"/>
+        <add key="MSG_SCHEMA_CON_POOLNAME" value="JNDI.KERNELDEV.WORLD"/>
+        <add key="LOGGER_PATH" value="D:/Kernel10.0/GW_NOTIFY_MDB/config/gw_notify_mdb_logger.xml"/>
+    </appSettings>
+</configuration>
+                

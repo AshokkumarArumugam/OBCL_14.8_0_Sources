@@ -1,0 +1,210 @@
+﻿<?xml version="1.0"?>
+<!--SFR NO : -->
+<FORM>
+  <SCREEN NAME="CVS_MAIN" MAIN_WIN="Y" TITLE="" POSITION="template" HEIGHT="550"
+          WIDTH="760" TMP_SCR_TYPE="small" VERSION_BTN_REQD="N">
+    <TAB>
+      <PAGE NAME="All" ID="All" HEIGHT="">
+        <LABEL>全部</LABEL>
+        <SECTION ID="SEC1" HEIGHT="">
+          <PARTITION ID="SEC1_PART1" NAME="SEC1_PART1" WIDTH="100"></PARTITION>
+        </SECTION>
+        <SECTION ID="SEC2" HEIGHT="">
+          <PARTITION ID="SEC2_PART1" NAME="SEC2_PART1" WIDTH="100"></PARTITION>
+        </SECTION>
+      </PAGE>
+    </TAB>
+    <CS_BUTTON_ROWS></CS_BUTTON_ROWS>
+    <CS_BUTTONS_PER_ROW></CS_BUTTONS_PER_ROW>
+    <TABPAGE_ALL HEIGHT="75">
+      <LABEL>全部</LABEL>
+    </TABPAGE_ALL>
+  </SCREEN>
+  <BLOCK SCREEN="CVS_MAIN" TABPAGE="All" TYPE="Single Entry"
+         VIEW="Single Entry">
+    <ID>BLK_SMVWS_USER_DEPARTMENTS</ID>
+    <LABEL></LABEL>
+    <ABS_POS></ABS_POS>
+    <WIDTH></WIDTH>
+    <HEIGHT></HEIGHT>
+    <DATAPAGESIZE></DATAPAGESIZE>
+    <DATASRC>SMVWS_USER_DEPARTMENTS</DATASRC>
+    <OKCANCEL>0</OKCANCEL>
+    <REQUIRED>0</REQUIRED>
+    <FIELD TABPAGE="All" SECTION="SEC1" PARTITION="SEC1_PART1">
+      <NAME>USER_ID</NAME>
+      <ID>SMCHGDEP9</ID>
+      <TYPE>HIDDEN</TYPE>
+      <TABINDEX></TABINDEX>
+      <DBT>SMVWS_USER_DEPARTMENTS</DBT>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>12</SIZE>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>-1</HIDDEN>
+      <DTYPE>VARCHAR2</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <DBC>USER_ID</DBC>
+      <LABEL>用户 ID</LABEL>
+      <LOV>
+        <NAME></NAME>
+        <TITLE></TITLE>
+        <COL_HEADING></COL_HEADING>
+        <REDUCTION_FLD_LABELS></REDUCTION_FLD_LABELS>
+      </LOV>
+    </FIELD>
+    <FIELD TABPAGE="All" TYPE="FIELDSET" SECTION="SEC1" PARTITION="SEC1_PART1"
+           INDEX="1">
+      <NAME>FLD_DEPT1</NAME>
+      <ID>SMCHGDEP16</ID>
+      <TYPE>FIELDSET</TYPE>
+      <LABEL></LABEL>
+      <HREQ>-1</HREQ>
+      <HIDDEN>0</HIDDEN>
+      <WIDTH></WIDTH>
+      <HEIGHT></HEIGHT>
+      <COLSPAN></COLSPAN>
+      <ABS_POS></ABS_POS>
+      <FIELD INDEX="1">
+        <NAME>DEPARTMENT_CODE</NAME>
+        <ID>SMCHGDEP20</ID>
+        <TYPE>TEXT</TYPE>
+        <TABINDEX></TABINDEX>
+        <DBT>SMVWS_USER_DEPARTMENTS</DBT>
+        <REQUIRED>0</REQUIRED>
+        <AUTHSCRN></AUTHSCRN>
+        <SIZE>3</SIZE>
+        <READ_ONLY>0</READ_ONLY>
+        <DISABLED>0</DISABLED>
+        <HIDDEN>0</HIDDEN>
+        <CASE>UPPER</CASE>
+        <DTYPE>VARCHAR2</DTYPE>
+        <CHECKED>0</CHECKED>
+        <SUMMARY/>
+        <SHOWIN></SHOWIN>
+        <MAXLENGTH>3</MAXLENGTH>
+        <ABS_POS></ABS_POS>
+        <LABEL>部门</LABEL>
+        <DBC>DEPARTMENT_CODE</DBC>
+        <LABEL_LINK></LABEL_LINK>
+        <TEXT-ALIGN></TEXT-ALIGN>
+        <LOV>
+          <NAME>LOV_DEPT</NAME>
+          <TITLE></TITLE>
+          <COL_HEADING>部门~描述</COL_HEADING>
+          <REDUCTION_FLD_LABELS>部门~描述</REDUCTION_FLD_LABELS>
+        </LOV>
+      </FIELD>
+      <LOV>
+        <NAME></NAME>
+        <TITLE></TITLE>
+        <COL_HEADING></COL_HEADING>
+        <REDUCTION_FLD_LABELS></REDUCTION_FLD_LABELS>
+      </LOV>
+    </FIELD>
+    <FIELD TABPAGE="All" TYPE="FIELDSET" SECTION="SEC2" PARTITION="SEC2_PART1"
+           INDEX="1">
+      <NAME>FLD_DEPT2</NAME>
+      <ID>SMCHGDEP17</ID>
+      <TYPE>FIELDSET</TYPE>
+      <LABEL></LABEL>
+      <HREQ>-1</HREQ>
+      <HIDDEN>0</HIDDEN>
+      <WIDTH></WIDTH>
+      <HEIGHT></HEIGHT>
+      <COLSPAN></COLSPAN>
+      <ABS_POS></ABS_POS>
+      <FIELD INDEX="1">
+        <NAME>BTN_HOME_DEPT</NAME>
+        <ID>SMCHGDEP14</ID>
+        <TYPE>BUTTON</TYPE>
+        <TABINDEX></TABINDEX>
+        <AUTHSCRN></AUTHSCRN>
+        <SIZE></SIZE>
+        <READ_ONLY>0</READ_ONLY>
+        <DISABLED>0</DISABLED>
+        <HIDDEN>0</HIDDEN>
+        <CHECKED>0</CHECKED>
+        <SUMMARY/>
+        <SHOWIN></SHOWIN>
+        <LABEL>家部门</LABEL>
+        <ABS_POS></ABS_POS>
+        <VALIGN>bottom</VALIGN>
+        <HALIGN>right</HALIGN>
+        <LOV>
+          <NAME></NAME>
+          <TITLE></TITLE>
+          <COL_HEADING></COL_HEADING>
+          <REDUCTION_FLD_LABELS></REDUCTION_FLD_LABELS>
+        </LOV>
+        <EVENT>
+          <NAME>onclick</NAME>
+          <FUNCTION>fnChngToHome()</FUNCTION>
+        </EVENT>
+      </FIELD>
+      <FIELD INDEX="2">
+        <NAME>BTN_CHG_DEPT</NAME>
+        <ID>SMCHGDEP15</ID>
+        <TYPE>BUTTON</TYPE>
+        <TABINDEX></TABINDEX>
+        <AUTHSCRN></AUTHSCRN>
+        <SIZE></SIZE>
+        <READ_ONLY>0</READ_ONLY>
+        <DISABLED>0</DISABLED>
+        <HIDDEN>0</HIDDEN>
+        <CHECKED>0</CHECKED>
+        <SUMMARY/>
+        <SHOWIN></SHOWIN>
+        <LABEL>更换部门</LABEL>
+        <ABS_POS></ABS_POS>
+        <VALIGN>bottom</VALIGN>
+        <HALIGN>right</HALIGN>
+        <LOV>
+          <NAME></NAME>
+          <TITLE></TITLE>
+          <COL_HEADING></COL_HEADING>
+          <REDUCTION_FLD_LABELS></REDUCTION_FLD_LABELS>
+        </LOV>
+        <EVENT>
+          <NAME>onclick</NAME>
+          <FUNCTION>fnChgDep()</FUNCTION>
+        </EVENT>
+      </FIELD>
+      <LOV>
+        <NAME></NAME>
+        <TITLE></TITLE>
+        <COL_HEADING></COL_HEADING>
+        <REDUCTION_FLD_LABELS></REDUCTION_FLD_LABELS>
+      </LOV>
+    </FIELD>
+  </BLOCK>
+  <BLOCK SCREEN="CVS_MAIN" TYPE="Single Entry">
+    <ID>BLK_STD_BUTTONS_IMG</ID>
+    <FIELD TABPAGE="All" SECTION="SEC1" PARTITION="SEC1_PART1">
+      <NAME>BTN_EXIT</NAME>
+      <ID>SMCHGDEP13</ID>
+      <TYPE>BUTTON</TYPE>
+      <TABINDEX></TABINDEX>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE></SIZE>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN/>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <LABEL/>
+      <ABS_POS></ABS_POS>
+      <SRC>Images/Exit2.gif</SRC>
+      <VALIGN>bottom</VALIGN>
+      <HALIGN>right</HALIGN>
+      <VALUE>Exit</VALUE>
+      <EVENT>
+        <NAME>onclick</NAME>
+        <FUNCTION>fnExit()</FUNCTION>
+      </EVENT>
+    </FIELD>
+  </BLOCK>
+</FORM>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">All Types of LBCFLRCL
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="LBCFLRCL-Full-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONCCY">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="USERREFNUM">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="PRODCODE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="4"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="PRODDESC">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="CUST">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="CUSTNAME">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="FACILITY_NAME">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="FACNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="SCHT">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Currency-Details">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="CCY">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="CCYNAME">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="16"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Effective-Date">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element minOccurs="1"
+                                    name="EFFDATE" type="xs:date"/>
+                                    <xs:element maxOccurs="unbounded"
+                                    minOccurs="0" name="Rate-Details">
+                                    <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element
+                                    minOccurs="0" name="AIRTFLR">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:minInclusive value="-100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="1" name="DDPRODUCT">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="4"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="1" name="ACPINTCOMP">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="AIRTCEIL">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:maxInclusive value="100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="FUNC_FLOOR">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:minInclusive value="-100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="QUOTREVCEIL">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:maxInclusive value="100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="MARADJCOMP">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    </xs:sequence>
+                                    </xs:complexType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded"
+                                    minOccurs="0" name="Marigin-Details">
+                                    <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element
+                                    minOccurs="1" name="MARGINCOMP">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="MARGINFLOOR">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:minInclusive value="-100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="MARGINCEILING">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:maxInclusive value="100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="BASAMTTAG">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="255"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    </xs:sequence>
+                                    </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Query-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Create-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Currency-Details">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="CCY">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Effective-Date">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element minOccurs="1"
+                                    name="EFFDATE" type="xs:date"/>
+                                    <xs:element maxOccurs="unbounded"
+                                    minOccurs="0" name="Rate-Details">
+                                    <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element
+                                    minOccurs="0" name="AIRTFLR">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:minInclusive value="-100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="1" name="DDPRODUCT">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="4"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="1" name="ACPINTCOMP">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="AIRTCEIL">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:maxInclusive value="100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="FUNC_FLOOR">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:minInclusive value="-100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="QUOTREVCEIL">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:maxInclusive value="100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="MARADJCOMP">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    </xs:sequence>
+                                    </xs:complexType>
+                                    </xs:element>
+                                    <xs:element maxOccurs="unbounded"
+                                    minOccurs="0" name="Marigin-Details">
+                                    <xs:complexType>
+                                    <xs:sequence>
+                                    <xs:element
+                                    minOccurs="1" name="MARGINCOMP">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+
+                                    <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="MARGINFLOOR">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:minInclusive value="-100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element
+                                    minOccurs="0" name="MARGINCEILING">
+                                    <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+
+                                    <xs:totalDigits value="15"/>
+
+                                    <xs:fractionDigits value="10"/>
+
+                                    <xs:maxInclusive value="100.0000000000"/>
+                                    </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                                    </xs:sequence>
+                                    </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Modify-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Authorize-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Delete-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Close-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Reopen-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Reverse-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Rollover-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Confirm-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Liquidate-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LBCFLRCL-Summaryquery-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CONTREFNO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

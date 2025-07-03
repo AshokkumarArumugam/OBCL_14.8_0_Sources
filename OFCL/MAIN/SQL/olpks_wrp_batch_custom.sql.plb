@@ -1,0 +1,31 @@
+create or replace package body olpks_wrp_batch_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+37b 254
+EEMcvXfVwK9vlK+kL/6MtGRcRBAwg/AJTPaGfC+Kxz+VvK03cb0Ag+Yuy5GTLS55ocTxg5hJ
+95LTni4e4LF2AvnOl8K3G8ZEwijURz9HERdsa8QUOC/0znjDE7Gw1Pk7D81qmzvPoAEFNFxy
+Z3fnpmCA4WdRDlbfhcpK8S2gAvKPSsouvYdZyk5VyCzdhrsfseqxt1BjZqeRz2Rdycuv86hO
+OtCmIiLdXka8Scn3of9so7WCy6IcWfg1P1eGUknF9WUfQF6QvcuZSLO4/fMuXrDf5hXeRV7f
+pL4IYH9ogEpGoPK/2U5S8r7Beu1uqKPFBkrKhspfIr4M0xQCksT24YWgNblob63v5Nn9gYKa
+TsnfEy4VqLcI2vEXLc1ZOTNtZTFiLXLyFKE1vGnqbikIOHKOvExMh//LO7k7x8bTTWFW6i4D
+SHgTvxacctUwVKeuS+KQVbWdrE6BbTsFnByZcC97elmMOBn+OxS0wlWwR2KEsHSUU5Ysb7Rt
+TXa75eIKqxycssMBMTwKJI8g13nUYqAEEZ+Gn1+Z8dVhAA1z6/xLzFsYcRnFEtDWc6erY+nz
+QRDhsOsxcw==
+
+/

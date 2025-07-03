@@ -1,0 +1,86 @@
+PROMPT PROCESSING FOR MSZM_EMS_CACHE_001
+
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('ErrorInfo.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('ExchangeFileRequest_SignatureList.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('ExchangeFileResponse_AckFile.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('HandleFileEventRequest_ExchangeFileRequest.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('HandleFileRequest_HandleFileResponse.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('NXBaExchangeFileRequest_ExchangeFileRequest.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('parameter.xsl',
+'XSL'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO MSZM_EMS_CACHE
+(FILE_NAME,FILE_TYPE)
+ VALUES 
+('removeNamespace.xsl',
+'XSL'
+)
+;
+END;
+/
+
+
+
+commit;

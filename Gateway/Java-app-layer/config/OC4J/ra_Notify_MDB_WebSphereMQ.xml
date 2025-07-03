@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connector xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+        http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd"
+        version="1.5">
+
+    <display-name>GenericJMS</display-name>
+    <vendor-name>Oracle Corporation</vendor-name>
+    <resourceadapter-version>1.5</resourceadapter-version>
+    <eis-type>OC4J JMS</eis-type>
+    <version>2.0</version>
+
+    <!-- resourceadapter -->
+    <resourceadapter>
+        <resourceadapter-class>oracle.j2ee.ra.jms.generic.JMSResourceAdapter</resourceadapter-class>
+        <config-property>
+            <config-property-name>lookupMethod</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+            <config-property-value>resourceProvider</config-property-value>
+        </config-property>
+        <config-property>
+            <config-property-name>resourceProviderName</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+            <config-property-value>WebSphereMQRP</config-property-value>
+        </config-property>
+
+        <!-- Queue admin object -->
+        <adminobject>
+            <adminobject-interface>javax.jms.Queue</adminobject-interface>
+            <adminobject-class>oracle.j2ee.ra.jms.generic.AdminObjectQueueImpl</adminobject-class>
+            <config-property>
+                <config-property-name>jndiName</config-property-name>
+                <config-property-type>java.lang.String</config-property-type>
+                <config-property-value>NOTIFY_DEST_QUEUE</config-property-value>
+            </config-property>
+            <config-property>
+                <config-property-name>resourceProviderName</config-property-name>
+                <config-property-type>java.lang.String</config-property-type>
+                <config-property-value>WebSphereMQRP</config-property-value>
+            </config-property>
+        </adminobject>
+        <adminobject>
+            <adminobject-interface>javax.jms.Queue</adminobject-interface>
+            <adminobject-class>oracle.j2ee.ra.jms.generic.AdminObjectQueueImpl</adminobject-class>
+            <config-property>
+                <config-property-name>jndiName</config-property-name>
+                <config-property-type>java.lang.String</config-property-type>
+                <config-property-value>NOTIFY_QUEUE_DLQ</config-property-value>
+            </config-property>
+            <config-property>
+                <config-property-name>resourceProviderName</config-property-name>
+                <config-property-type>java.lang.String</config-property-type>
+                <config-property-value>WebSphereMQRP</config-property-value>
+            </config-property>
+        </adminobject>
+
+        <!-- inbound configuration -->
+        <inbound-resourceadapter>
+            <messageadapter>
+                <messagelistener>
+                    <messagelistener-type>javax.jms.MessageListener</messagelistener-type>
+                    <activationspec>
+                        <activationspec-class>oracle.j2ee.ra.jms.generic.JMSActivationSpec</activationspec-class>
+                        <required-config-property>
+                            <config-property-name>ConnectionFactoryJndiName</config-property-name>
+                            <config-property-name>DestinationName</config-property-name>
+                            <config-property-name>DestinationType</config-property-name>
+                        </required-config-property>
+                    </activationspec>
+                </messagelistener>
+            </messageadapter>
+        </inbound-resourceadapter>
+
+        <!-- outbound configuration -->
+        <outbound-resourceadapter>
+            <connection-definition>
+                <managedconnectionfactory-class>oracle.j2ee.ra.jms.generic.ManagedXAQueueConnectionFactoryImpl</managedconnectionfactory-class>
+                <connectionfactory-interface>javax.jms.XAQueueConnectionFactory</connectionfactory-interface>
+                <connectionfactory-impl-class>oracle.j2ee.ra.jms.generic.XAQueueConnectionFactoryWrapper</connectionfactory-impl-class>
+                <connection-interface>javax.jms.XAConnection</connection-interface>
+                <connection-impl-class>oracle.j2ee.ra.jms.generic.ConnectionWrapper</connection-impl-class>
+                <config-property>
+                    <config-property-name>jndiLocation</config-property-name>
+                    <config-property-type>java.lang.String</config-property-type>
+                    <config-property-value>NotifyDestQCF</config-property-value>
+                </config-property>
+            </connection-definition>
+            <connection-definition>
+                <managedconnectionfactory-class>oracle.j2ee.ra.jms.generic.ManagedXAQueueConnectionFactoryImpl</managedconnectionfactory-class>
+                <connectionfactory-interface>javax.jms.XAQueueConnectionFactory</connectionfactory-interface>
+                <connectionfactory-impl-class>oracle.j2ee.ra.jms.generic.XAQueueConnectionFactoryWrapper</connectionfactory-impl-class>
+                <connection-interface>javax.jms.XAConnection</connection-interface>
+                <connection-impl-class>oracle.j2ee.ra.jms.generic.ConnectionWrapper</connection-impl-class>
+                <config-property>
+                    <config-property-name>jndiLocation</config-property-name>
+                    <config-property-type>java.lang.String</config-property-type>
+                    <config-property-value>NOTIFY_MDB_QCF</config-property-value>
+                </config-property>
+            </connection-definition>
+
+            <transaction-support>XATransaction</transaction-support>
+            <authentication-mechanism>
+                <authentication-mechanism-type>BasicPassword</authentication-mechanism-type>
+                <credential-interface>javax.resource.security.PasswordCredential</credential-interface>
+            </authentication-mechanism>
+            <reauthentication-support>false</reauthentication-support>
+        </outbound-resourceadapter>
+    </resourceadapter>
+</connector>

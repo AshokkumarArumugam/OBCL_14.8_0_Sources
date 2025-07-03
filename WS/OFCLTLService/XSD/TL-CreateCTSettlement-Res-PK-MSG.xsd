@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://fcubs.ofss.com/service/OBCLSLTService" targetNamespace="http://fcubs.ofss.com/service/OBCLSLTService" elementFormDefault="qualified">
+   <xs:include schemaLocation="UBS-Messaging.xsd"/>
+   <xs:include schemaLocation="TL-TLCTicketSettlement-Types.xsd"/>
+   <xs:element name="CREATECTSETTLEMENT_IOPK_RES">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="FCUBS_HEADER" type="FCUBS_HEADERType"/>
+            <xs:element name="FCUBS_BODY">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:choice>
+                        <xs:element name="Tltbs-Consol-Ticket-Master-PK" type="TLCTicketSettlement-PK-Type"/>
+                        <xs:element name="Tltbs-Consol-Ticket-Master-IO" type="TLCTicketSettlement-Create-IO-Type"/>
+                     </xs:choice>
+                     <xs:element name="FCUBS_ERROR_RESP" type="ERRORType" minOccurs="0" maxOccurs="unbounded"/>
+                     <xs:element name="FCUBS_WARNING_RESP" type="WARNINGType" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

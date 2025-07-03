@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<weblogic-ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-ejb-jar.xsd"
+                  xmlns="http://www.bea.com/ns/weblogic/weblogic-ejb-jar">
+ <weblogic-enterprise-bean>
+    <ejb-name>ELGWEJBBean</ejb-name>
+	<enable-call-by-reference>true</enable-call-by-reference>
+    <jndi-name>{REF_LOCATION}/ejb/ELGWEJBBean#com.ofss.elcm.ejb.IELGWEJBRemote</jndi-name>
+	<local-jndi-name>{REF_LOCATION}/ejb/local/ELGWEJBBean#com.ofss.elcm.ejb.IELGWEJBRemote</local-jndi-name>
+ </weblogic-enterprise-bean>
+  <!--<weblogic-enterprise-bean>
+    <ejb-name>ELSchedulerEJBBean</ejb-name>
+	<enable-call-by-reference>true</enable-call-by-reference>
+    <jndi-name>{REF_LOCATION}/ejb/ELSchedulerEJBBean#com.ofss.elcm.ejb.IELSchedulerEJBRemote</jndi-name>
+	<local-jndi-name>{REF_LOCATION}/ejb/local/ELSchedulerEJBBean#com.ofss.elcm.ejb.IELSchedulerEJBRemote</local-jndi-name>
+ </weblogic-enterprise-bean>-->
+ <!--Added starts-->
+ <weblogic-enterprise-bean>
+  <ejb-name>ELGWMDB</ejb-name>
+   <message-driven-descriptor>
+   <pool>
+    <max-beans-in-free-pool>200</max-beans-in-free-pool>
+    <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+   </pool>
+   <destination-jndi-name>ELMDB_REQ_Q</destination-jndi-name>
+   <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+   <provider-url>{PROVIDER_URL}</provider-url>
+   <connection-factory-jndi-name>ELMDBQCF</connection-factory-jndi-name>
+   <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+  </message-driven-descriptor>
+   <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+ <resource-description>
+   <res-ref-name>ELMDBQCF</res-ref-name>
+   <jndi-name>ELMDBQCF</jndi-name>
+  </resource-description>
+  <resource-env-description>
+   <resource-env-ref-name>ELMDB_REQ_Q</resource-env-ref-name>
+   <jndi-name>ELMDB_REQ_Q</jndi-name>
+  </resource-env-description>
+  <resource-env-description>
+   <resource-env-ref-name>ELMDB_RES_Q</resource-env-ref-name>
+   <jndi-name>ELMDB_RES_Q</jndi-name>
+  </resource-env-description>
+   </weblogic-enterprise-bean>
+   
+   <weblogic-enterprise-bean>
+   <ejb-name>ELNotifyMDB</ejb-name>
+   <message-driven-descriptor>
+   <pool>
+    <max-beans-in-free-pool>200</max-beans-in-free-pool>
+    <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+   </pool>
+   <destination-jndi-name>EL_NOTIFY_REQ_Q</destination-jndi-name>
+    <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+   <provider-url>{PROVIDER_URL}</provider-url>
+   <connection-factory-jndi-name>EL_NOTIFY_QCF</connection-factory-jndi-name>
+  </message-driven-descriptor>
+  <resource-description>
+   <res-ref-name>EL_NOTIFY_QCF</res-ref-name>
+   <jndi-name>EL_NOTIFY_QCF</jndi-name>
+  </resource-description>
+  <resource-env-description>
+   <resource-env-ref-name>EL_NOTIFY_REQ_Q</resource-env-ref-name>
+   <jndi-name>EL_NOTIFY_REQ_Q</jndi-name>
+  </resource-env-description>
+  <resource-env-description>
+   <resource-env-ref-name>EL_NOTIFY_RES_Q</resource-env-ref-name>
+   <jndi-name>EL_NOTIFY_RES_Q</jndi-name>
+  </resource-env-description>
+ </weblogic-enterprise-bean>
+ <!--Added Ends-->
+</weblogic-ejb-jar>
+

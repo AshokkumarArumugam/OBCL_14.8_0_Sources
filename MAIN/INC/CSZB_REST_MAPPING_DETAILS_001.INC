@@ -1,0 +1,205 @@
+PROMPT PROCESSING FOR CSZB_REST_MAPPING_DETAILS_001
+
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('CSDCOINS',
+'BLK_INSTR_DETAILS',
+'instrDetailsList',
+'custAccNo~instId~instdate~instexpdate~displayType~channel~language~displaycust~memoId~usrmsg',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('CSDCOINS',
+'BLK_INSTR_MASTER',
+'instrmaster',
+'custAccNo~description~custacno~brncd~contrefno~category~NA~memoId~module',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('STDCOBAL',
+'BLK_CUSTBAL_DTL',
+'custbaldtl',
+'currency~lcy~currbl~lclcurrbal~totalavlbamt~branchCode~custAccount~customerId~NA~lovId~pbkbal~sweepEligBal~acyavlbal~acccurrbalui',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('STDCOSBL',
+'BLK_CUST',
+'Cust',
+'custno~branch~accno',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('STDCOSBL',
+'BLK_CUSTBAL',
+'custbal',
+'custAcNo~acDesc~customerNo~ccy~currbal~avlbal~dormant~acstatncr~nodebit~acstatfrzn~status~custName~brhcode~prevDayBookBal~currDayBookBal1~totalTod~acyUncollected~pbkbal~minReqdBal~acyBlockedAmount1~cpLimit~swpIn~avlTod~customerCategory~acclassdesc~accountClass~oprtnmde~ownership~block~acstatdepst~stopPay~statchngautmatic~acyOpeningBal~acyTodayToverCr~acyTodayToverDr~nsfBlacklistStatus~acyCurrBalance~acyAccruedCrIc~acyAccruedDrIc~drIntDue~chargeDue~lastInterestDebit~lastInterestCredit~lastCrActivity~lastDrActivity~currentBalance~NA~blocked1~acyAvlBal~odreq~disTotAvlAmount~bookBalance~sweepEligBal~todLimit~acOpenDate~NA~netBal~onswpeligbal~drovd~crovd',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('STDCOSBL',
+'BLK_MEMO',
+'memoList',
+'customerNo~memoId~branchCode~instId~instDesc~instrDt~instExprDate~category~memoDetailId~displayType',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('STDCOSBL',
+'BLK_TRANSACTION',
+'transactionList',
+'valueDt~trnDesc~instrumentCode~origBrn~brnchCcy~debit~credit~exchRate~lcyAmount~trnRefNo~trnDt~acBranch~acNo~custNo~drcrInd~remarks',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('SVDCOIMG',
+'BLK_ACCOUNT_DETAILS',
+'restStvwsSigAccountList',
+'custAcc~branch~accmsg~accDesc~accCcy~NA~NA~NA~NA',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('SVDCOIMG',
+'BLK_SIGNATURE',
+'restStvwsSigDetList',
+'specimanNo~fileType~imgType~NA',
+'Y',
+'fileType',
+'sigtext',
+'FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('SVDCOIMG',
+'BLK_SIGNATURE_DETAILS',
+'restStvwsAccSigList',
+'custId~jointType~signId~sigName~signType~apprLimit~signMsg~soloSufficient',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('SVDCOSGN',
+'BLK_ACCOUNT_DETAILS',
+'restStvwsSigAccountList',
+'custAcc~branch~accmsg~accDesc~accCcy~NA~NA~NA~NA',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('SVDCOSGN',
+'BLK_SIGNATURE',
+'restStvwsSigDetList',
+'specimanNo~fileType~imgType~NA',
+'Y',
+'fileType',
+'sigtext',
+'FCUBS'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_REST_MAPPING_DETAILS
+(FUNCTION_ID,BLOCK_NAME,REST_NODE_NAME,REST_TAGS
+,IMAGE_BLOCK,IMAGE_NAME_COL,IMAGE_TEXT_COL,EXT_SYSTEM)
+ VALUES 
+('SVDCOSGN',
+'BLK_SIGNATURE_DETAILS',
+'restStvwsAccSigList',
+'custId~jointType~signId~sigName~signType~apprLimit~signMsg~soloSufficient',
+'N',
+'','','FCUBS'
+)
+;
+END;
+/
+
+
+
+commit;

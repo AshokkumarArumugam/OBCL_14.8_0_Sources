@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORM>
+	<SCREEN NAME="CVS_MAIN" MAIN_WIN="Y" TITLE="Account Balance" POSITION="template" TMP_SCR_TYPE="M">
+		<EXIT_BTN>1</EXIT_BTN>
+		<HEADER>
+			<TAB ID="TAB_HEADER">
+				<LBL/>
+				<SECTION ID="SEC_1" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART1" NAME="PART1" WIDTH="100">
+						<SPRTCNT>2</SPRTCNT>
+						<FLDSET ID="FST_HEADER" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>Basic Details</LBL>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N" SPRT="1">
+								<NAME>BRANCH</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Branch Code</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>6</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<LOV>
+									<NAME>LOV_BRANCH</NAME>
+									<TYPE>L</TYPE>
+								</LOV>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="1">
+								<NAME>ACCNO</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Account No</LBL>
+								<REQD>-1</REQD>
+								<MAXLENGTH>20</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<HOTKEYREQ>Y</HOTKEYREQ>
+								<HOTKEYREQJA>Y</HOTKEYREQJA>
+								<LOV>
+									<NAME>LOV_ACC_NO</NAME>
+									<TYPE>L</TYPE>
+								</LOV>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="1">
+								<NAME>CCY</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Currency</LBL>
+								<MAXLENGTH>3</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="1">
+								<NAME>AC_OPEN_DATE</NAME>
+								<TYPE>DATE</TYPE>
+								<LBL>Account Open Date</LBL>
+								<MAXLENGTH>11</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="1">
+								<NAME>OWNERSHIP</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Ownership</LBL>
+								<MAXLENGTH>6</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="2">
+								<NAME>AC_DESC</NAME>
+								<TYPE>TEXTAREA</TYPE>
+								<LBL>Account Description</LBL>
+								<MAXLENGTH>140</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<POPUPEDIT>
+									<TITLE>Account Description</TITLE>
+									<OK_IMG_SRC/>
+									<CANCEL_IMG_SRC/>
+								</POPUPEDIT>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="2">
+								<NAME>PRODUCT</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Account Class Description</LBL>
+								<MAXLENGTH>105</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="2">
+								<NAME>CUSTOMER_NO</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Customer No</LBL>
+								<MAXLENGTH>20</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="2">
+								<NAME>CUST_NAME</NAME>
+								<TYPE>TEXTAREA</TYPE>
+								<LBL>Name</LBL>
+								<MAXLENGTH>140</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<POPUPEDIT>
+									<TITLE>Name</TITLE>
+									<OK_IMG_SRC/>
+									<CANCEL_IMG_SRC/>
+								</POPUPEDIT>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N" SPRT="2">
+								<NAME>MODE_OF_OPERATION</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Mode of Operation</LBL>
+								<MAXLENGTH>4</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+			</TAB>
+		</HEADER>
+		<BODY>
+			<TAB ID="TAB_MAIN">
+				<LBL/>
+				<SECTION ID="SEC_MEMO" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART_1" NAME="PART_1" WIDTH="100">
+						<FLDSET ID="FST_MEMO" VIEW="ME" TYPE="ME" INDEX="1">
+							<LBL>Memo Details</LBL>
+							<BLOCK>BLK_MEMO</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<PGSIZE>15</PGSIZE>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>INST_ID</NAME>
+								<TYPE>TEXT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Instruction ID</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>INST_DESC</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Instruction Description</LBL>
+								<MAXLENGTH>4000</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>INST_DATE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Instruction Date</LBL>
+								<MAXLENGTH>7</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>INST_EXPR_DATE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Instruction Expiry Date</LBL>
+								<MAXLENGTH>7</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>DISPLAY_TYPE</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Display Type</LBL>
+								<MAXLENGTH>11</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+				<SECTION ID="SEC_BASIC" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART_1" NAME="PART_1" WIDTH="50">
+						<FLDSET ID="FST_BASIC" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>Balances</LBL>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CURRBAL</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Current Balance</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>UNCOLLECTED_AMUNT</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Uncollected</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>BLOCKED_AMOUNT</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Blocked</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AVAILABLE_BALANCE</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Available</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>TOTAL_BALANCE</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Total Available</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACY_BOOK_BALANCE</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Book Balance</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ONSWPELIGBAL</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Sweep Eligible Balance</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>SWEEP_ELIGIBLE_BALANCE</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>ILM Sweep Eligible Balance</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AVAILABLE_TOD</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Temporary Overdraft Limit</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>NET_BAL</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Net Balance</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>PREV_RUNBAL_PRINTED_IN_PBK</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Passbook Balance</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+						</FLDSET>
+					</PART>
+					<PART ID="PART_2" NAME="PART_2" WIDTH="50">
+						<FLDSET ID="FST_STATUS_1" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>Status</LBL>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AC_STAT_DE_POST</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Posting Allowed</LBL>
+								<MAXLENGTH>4</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACSTATDMT</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<ON>Y</ON>
+									<OFF>N</OFF>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Dormant</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACSTATFRZN</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Frozen</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACSTATNCR</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>No Credit</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACSTATNDR</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>No Debit</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACSTATDROVD</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<ON>Y</ON>
+									<OFF>N</OFF>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Debit Override</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACSTATCROVD</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<ON>Y</ON>
+									<OFF>N</OFF>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Credit Override</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AC_STAT_BLOCK</NAME>
+								<TYPE>HIDDEN</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Blocked</LBL>
+								<MAXLENGTH>4</MAXLENGTH>
+								<HIDDEN>-1</HIDDEN>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AC_STAT_STOP_PAY</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Stop Payment</LBL>
+								<MAXLENGTH>4</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>STATUS_CHANGE_AUTOMATIC</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Status Change Automatic</LBL>
+								<MAXLENGTH>4</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>OVERDRAFT</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Overdraft</LBL>
+								<MAXLENGTH>0</MAXLENGTH>
+								<DTYPE>CHAR</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+						<FLDSET ID="FST_STATUS_2" VIEW="SE" TYPE="SE" INDEX="2">
+							<LBL/>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>-1</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+						</FLDSET>
+						<FLDSET ID="FST_STATUS_3" VIEW="SE" TYPE="SE" INDEX="3">
+							<LBL/>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>-1</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+						</FLDSET>
+						<FLDSET ID="FST_STATUS_4" VIEW="SE" TYPE="SE" INDEX="4">
+							<LBL/>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>-1</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+						</FLDSET>
+						<FLDSET ID="FST_STATUS_5" VIEW="SE" TYPE="SE" INDEX="5">
+							<LBL/>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>-1</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+						</FLDSET>
+					</PART>
+				</SECTION>
+				<SECTION ID="SEC_SWP" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART1" NAME="PART1" WIDTH="50">
+						<FLDSET ID="FST_SWEEPS" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>Sweeps</LBL>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>SWEEP_IN_ENABLED</NAME>
+								<TYPE>CHECKBOX</TYPE>
+								<CUSTOM>
+									<OFF>N</OFF>
+									<ON>Y</ON>
+								</CUSTOM>
+								<CHECKED>N</CHECKED>
+								<LBL>Sweep in Enabled</LBL>
+								<MAXLENGTH>1</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+					<PART ID="PART2" NAME="PART2" WIDTH="50"/>
+				</SECTION>
+				<SECTION ID="SEC_TURN_OVER" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART_1" NAME="PART_1" WIDTH="50">
+						<FLDSET ID="FST_TURN_OVER" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>Turnover Details</LBL>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACY_OPENING_BAL</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Opening</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACY_TODAY_TOVER_CR</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Daily Turnover (Cr)</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACY_TODAY_TOVER_DR</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Daily Turnover (Dr)</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CURRENT_TOVER</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Current (ACY)</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+						</FLDSET>
+					</PART>
+					<PART ID="PART_2" NAME="PART_2" WIDTH="50">
+						<FLDSET ID="FST_ADDITIONAL" VIEW="SE" TYPE="SE" INDEX="1">
+							<LBL>Additional Details</LBL>
+							<BLOCK>BLK_CUSTBAL</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACCR_INTR_DR</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Accrued Interest (Dr)</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>ACCR_INTR_CR</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Accrued Interest (Cr)</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>INTREST_DUE</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Interest Due</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CHARGE_DUE</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Charges Due</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>LAST_INTEREST_DEBIT</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Last Interest Debit</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>LAST_INTEREST_CREDIT</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Last Interest Credit</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>LAST_DR_ACTIVITY</NAME>
+								<TYPE>DATE</TYPE>
+								<LBL>Last DR Activity</LBL>
+								<MAXLENGTH>11</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>LAST_CR_ACTIVITY</NAME>
+								<TYPE>DATE</TYPE>
+								<LBL>Last CR Activity</LBL>
+								<MAXLENGTH>11</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+				<SECTION ID="SEC_TRANSACTION" COLLAPSE="N">
+					<LBL/>
+					<PART ID="PART_1" NAME="PART_1" WIDTH="100">
+						<FLDSET ID="FST_3" VIEW="ME" TYPE="ME" INDEX="1">
+							<LBL>Transactions</LBL>
+							<BLOCK>BLK_TRANSACTION</BLOCK>
+							<HREQ>0</HREQ>
+							<HEIGHT/>
+							<WIDTH/>
+							<PGSIZE>15</PGSIZE>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>TRN_DT</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Transaction Date</LBL>
+								<MAXLENGTH>7</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>VALUE_DT</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Value Date</LBL>
+								<MAXLENGTH>7</MAXLENGTH>
+								<DTYPE>DATE</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>TRN_DESC</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Description</LBL>
+								<MAXLENGTH>255</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>AC_BRANCH</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Branch</LBL>
+								<MAXLENGTH>6</MAXLENGTH>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>BRANCH_LCY</NAME>
+								<TYPE>HIDDEN</TYPE>
+								<LBL>Branch Currency</LBL>
+								<MAXLENGTH>3</MAXLENGTH>
+								<HIDDEN>-1</HIDDEN>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>CR_AMOUNT</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Credit</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>BLK_CUSTBAL__CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>DR_AMOUNT</NAME>
+								<TYPE>AMOUNT</TYPE>
+								<MAX_DECIMALS/>
+								<LBL>Debit</LBL>
+								<MAXLENGTH>22</MAXLENGTH>
+								<DTYPE>NUMBER</DTYPE>
+								<MAX_VAL/>
+								<MIN_VAL/>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+								<RELATED_FIELD>BLK_CUSTBAL__CCY</RELATED_FIELD>
+							</FIELD>
+							<FIELD INDEX="" CONTROL="N">
+								<NAME>REMARKS</NAME>
+								<TYPE>TEXT</TYPE>
+								<LBL>Remarks</LBL>
+								<MAXLENGTH>225</MAXLENGTH>
+								<READ_ONLY>-1</READ_ONLY>
+								<DTYPE>VARCHAR2</DTYPE>
+								<SIZE/>
+								<ROWS/>
+								<COLS/>
+							</FIELD>
+						</FLDSET>
+					</PART>
+				</SECTION>
+			</TAB>
+		</BODY>
+		<FOOTER>
+			<TAB ID="TAB_FOOTER">
+				<LBL/>
+			</TAB>
+		</FOOTER>
+	</SCREEN>
+</FORM>

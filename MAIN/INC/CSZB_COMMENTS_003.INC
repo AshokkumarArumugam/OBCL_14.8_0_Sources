@@ -1,0 +1,11017 @@
+PROMPT PROCESSING FOR CSZB_COMMENTS_003
+
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKINPTALLWED',
+'Indicates Bulk Input Allowed' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKINPTCASCADESCHEDULE',
+'Indicates Cascade Scheduling' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKINPUTDETAIL_PROCESSSTAT',
+'Indicates Process Status' || chr(10) || '	S - Success' || chr(10) || '	U - Unprocessed' || chr(10) || '	F - Failure' || chr(10) || '	H - Hold',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKINPUT_FINANCE',
+'Indicates Financing' || chr(10) || '	E - Eligible' || chr(10) || '	F - Financed' || chr(10) || '	N - Not Eligible',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKINPUT_PROCESSSTAT',
+'Indicates Process Status' || chr(10) || '	P - Processed' || chr(10) || '	U - Unprocessed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKINPUT_TXNSTAT',
+'Indicates Contract Status' || chr(10) || '	O - Open' || chr(10) || '	C - Closed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKLIQDOVERSEASDTL_PROCESSSTATUS',
+'Indicates Process Status' || chr(10) || '	S - Success' || chr(10) || '	H - Hold' || chr(10) || '	F - Failure',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKOUTBILSUM_PROTEST',
+'Indicates Protest',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPDRDETAIL',
+'Bulk Dishonor / Protest / Return Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPDRDETAIL_PROCESSSTAT',
+'Indicates Process Status' || chr(10) || '	U - Unprocessed' || chr(10) || '	S - Success' || chr(10) || '	F - Failure',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPDRDETAIL_PROCESSSTATUS',
+'Indicates Process Status' || chr(10) || '	U - Unprocessed' || chr(10) || '	H - Hold' || chr(10) || '	S - Success' || chr(10) || '	F - Failed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPDRREFNO',
+'Indicates Bulk Dishonor / Protest / Return Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPDR_PDRACTION',
+'Indicates Action' || chr(10) || '	D - Dishonour' || chr(10) || '	P - Protest' || chr(10) || '	R - Return',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPDR_PROCESSSTAT',
+'Indicates Process Status' || chr(10) || '	U - Unprocessed' || chr(10) || '	P - Processed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKPMTREQD',
+'Indicates Bulk Payment Required' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKREALNUM',
+'Indicates Bulk Realization Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKREF',
+'Indicates Bulk Reference',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKREFNUM',
+'Indicates Bulk Reference Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKREQNO',
+'Indicates Bulk Request Stock Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADDISCOUNTRATEREQIOTYPE_RATETYPE',
+'Indicates the Discount Rate Type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADDVRATEIOPKREQ_FCUBSBODY',
+'This.xsd gives the format in which the external system has to send a bulk upload request for DV Floating Rate.This is the normal request which has Input fields only.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADDVRATEIOPKRES_FCUBSBODY',
+'This.xsd gives the format in which the response message will be built indicating a successful DV Rate Bulk Upload',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADLDMMRATEIOPKREQ_FCUBSBODY',
+'Includes FCUBS Body.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADLDMMRATEIOPKRES_FCUBSBODY',
+'Includes FCUBS Body Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADLDMMRATEIOPKRES_FCUBSHEADER',
+'Includes FCUBS Header Type Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADSPOTRATEFSFSREQ_FCUBSBODY',
+'This.xsd gives the message format for the request for the upload of a Spot Exchange Rates in FLEXCUBE UBS',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOADSPOTRATEFSFSRES_FCUBSBODY',
+'This.xsd gives the message format for the response for the upload of a Spot Exchange Rates in FLEXCUBE UBS',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULKUPLOAD_FORWARDRATE_REQ_TYPE',
+'Indicates Details of Forward Rate Bulk Upload',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BULK_STS_CHG',
+'Indicates Bulk Status Change' || chr(10) || '	I - Issued' || chr(10) || '	O - Rollover Issue' || chr(10) || '	D - Duplicate' || chr(10) || '	P - Re-denominated' || chr(10) || '	M - Modified' || chr(10) || '	L - Lost/Damaged',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BURCDE',
+'Indicates Bureau Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUREAUDETAILS_REQUESTSTATUS',
+'Indicates Request Status' || chr(10) || '	R - Required' || chr(10) || '	P - Pending' || chr(10) || '	C - Completed' || chr(10) || '	NA - N/A' || chr(10) || '	NR - Not Required',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUREAUDETAILS_STAT',
+'Indicates Status' || chr(10) || '	R - Required' || chr(10) || '	P - Pending' || chr(10) || '	C - Completed' || chr(10) || '	NA - N/A' || chr(10) || '	NR - Not Required',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUREAU_NAME',
+'Indicates Bureau Name',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUSDESC',
+'Indicates Business Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUSIDESC',
+'Indicates Description of Business',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUSINESS_ACT',
+'Indicates Business Activity',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUY',
+'Indicates Buy' || chr(10) || '	B - Buy' || chr(10) || '	S - Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYAMT',
+'Indicates Buy Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYCCY',
+'Indicates Buy Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYINST',
+'Indicates Bought Interest',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYLEG',
+'Indicates Buy Leg Reference Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYLOAD',
+'Indicates Fund Buy Load ( % of Net Asset Value)',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYORSEL',
+'Indicates Buy Sell Indicator',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYORSELL',
+'Indicates Deal Type' || chr(10) || '	B - Buy' || chr(10) || '	S - Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYRATE',
+'Indicates Buy Rate',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYRATE1',
+'It indicates the rate of exchange for a currency pair.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYSELL',
+'Indicates Buy Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYSELLIND',
+'Indicates Buy / Sell' || chr(10) || '	B - Buy' || chr(10) || '	S - Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYSPRD',
+'Indicates Buy Spread',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYSPRD1',
+'It indicates the buy spread for a currency pair.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUYVARIANCE',
+'Indicates Buy Variance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BUY_OR_SELL',
+'Indicates Buy or Sell' || chr(10) || '	B - Buy' || chr(10) || '	S - Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BVT_DATE',
+'Indicates Bvt Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BVT_DURATION',
+'Indicates BVT Duration',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BVT_INDICATOR',
+'Indicates BVT Applicable' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BVT_UNIT',
+'Indicates BVT Unit' || chr(10) || '	M - Months' || chr(10) || '	D - Days',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BWLCS',
+'Branch Wise Local currency Summary',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BWRAMT',
+'Indicates Borrower Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BYORSEL',
+'Refers to Buy or Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BY_ORDER_OF',
+'Indicates By Order Of',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BY_ORDER_OF1',
+'Indicates By Order Of Details 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BY_ORDER_OF2',
+'Indicates By Order Of Details 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BY_ORDER_OF3',
+'Indicates By Order Of Details 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BY_ORDER_OF4',
+'Indicates By Order Of Details 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_BY_ORDER_OF5',
+'Indicates By Order Of Details 5',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CACCOUNT',
+'Indicates Cover Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CACNO',
+'Indicates Subscription Account Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CADHMNTHEND',
+'Indicates Adhere To Month End' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAEVENT_TAX_XRATE',
+'Includes the CA Event Tax Exchange Rate details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAEVNTNOTFYDCN',
+'Indicates Caevent Notify DCN',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCACC',
+'Indicates Calculation Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCACCDESC',
+'Indicates Calculation Account Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCAGNT',
+'Indicates Calculation Agent',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCAMTRNDDEC',
+'Indicates basis amount Calculation rounding Decimals',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCAMTRNDMET',
+'Indicates Basic Calculation Amount Rounding Method' || chr(10) || 'Truncate           "T"' || chr(10) || 'Round Up         "U"' || chr(10) || 'Round Down     "D"' || chr(10) || 'Round Near      "N"',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCAMTRNDOPT',
+'Indicates Basic Amount Rounding Option' || chr(10) || 'Currency Default   "D"' || chr(10) || 'Specific                  "S"',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCAMTRNDUNITS',
+'Indicates Basis Amount Rounding Units',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCDAYS',
+'Indicates Defer Liquidation Days',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCDT',
+'Indicate calc date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCENDDT',
+'Indicates Calculation End Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCGP',
+'Indicates Calculate Gross Principal' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCGP1',
+'Indicates Calculate Gross Principal.' || chr(10) || 'Y for Yes;N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCGP2',
+'Indicate Calculate Gross Principal' || chr(10) || 'Y:yes' || chr(10) || 'N:no',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCGP3',
+'Indicates Calculate Gross Principal.' || chr(10) || 'Yes "Y"; No "N".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCGR',
+'Indicate  calculate  gross principal.' || chr(10) || '' || chr(10) || 'N no' || chr(10) || 'Y yes',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCHG',
+'Indicates the total calculated charges',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCHGTYPE',
+'Charge Calculation Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETH',
+'Indicates Calc Method' || chr(10) || '	1 - 30-Euro/360' || chr(10) || '	2 - 30-US/360' || chr(10) || '	3 - Actual/360' || chr(10) || '	4 - 30(Euro)/365' || chr(10) || '	5 - 30-US/365' || chr(10) || '	6 - Actual/365' || chr(10) || '	7 - 30(Euro)/Actual' || chr(10) || '	8 - 30(US)/Actual' || chr(10) || '	9 - Actual/Actual',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETH1',
+'Indicates the Interest Calculation Method.' || chr(10) || '30(Euro)/360 :1' || chr(10) || '30(US)/360   :2' || chr(10) || 'Actual/360   :3' || chr(10) || '30(Euro)/365 :4' || chr(10) || '30(US)/365   :5' || chr(10) || 'Actual/365   :6',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETH2',
+'Indicates Interest Calculation Method' || chr(10) || '	1 - 30-Euro/360' || chr(10) || '	2 - 30-US/360' || chr(10) || '	3 - Actual/360' || chr(10) || '	4 - 30(Euro)/365' || chr(10) || '	5 - 30-US/365' || chr(10) || '	6 - Actual/365' || chr(10) || '	7 - 30-Euro/Actual' || chr(10) || '	8 - 30(US)/Actual' || chr(10) || '	9 - Actual/Actual',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETH3',
+'Indicates Interest Method' || chr(10) || '' || chr(10) || '30(Euro)/360    : 1' || chr(10) || '30(US)/360      : 2' || chr(10) || 'Actual/360      : 3' || chr(10) || '30(Euro)/365    : 4' || chr(10) || '30(US)/365      : 5' || chr(10) || 'Actual/365      : 6' || chr(10) || '30(Euro)/Actual : 7' || chr(10) || '30(US)/Actual   : 8' || chr(10) || 'Actual/Actual   : 9',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETH4',
+'Calculation Method',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETH5',
+'Calc Method',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETHO',
+'Indicates interest calculation method' || chr(10) || '' || chr(10) || '1	30(Euro)/360' || chr(10) || '2	30(US)/360' || chr(10) || '3	Actual/360' || chr(10) || '4	30(Euro)/365' || chr(10) || '5	30(US)/365' || chr(10) || '6	Actual/365' || chr(10) || '7	30(Euro)/Actual' || chr(10) || '8	30(US)/Actual' || chr(10) || '9	Actual/Actual',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETHOD',
+'Indicates Calculation Method' || chr(10) || '	P - Book Dated' || chr(10) || '	A - Date Range',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMETHOD1',
+'Indicates Calculation Method' || chr(10) || '30(Euro)/360 : 1' || chr(10) || '30(US)/360 : 2' || chr(10) || '30(US)/Actual : 3' || chr(10) || '30(Euro)/365 : 4' || chr(10) || '30(US)/365 : 5' || chr(10) || 'Actual/365 : 6' || chr(10) || '30(Euro)/Actual : 7' || chr(10) || '30(US)/Actual : 8' || chr(10) || 'Actual/Actual : 9',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCMTH',
+'Indicates Interest Method' || chr(10) || '	1 - 30-Euro/360' || chr(10) || '	2 - 30-US/360' || chr(10) || '	3 - Actual/360' || chr(10) || '	4 - 30-Euro/365' || chr(10) || '	5 - 30-US/365' || chr(10) || '	6 - Actual/365' || chr(10) || '	7 - 30-Euro/Actual' || chr(10) || '	8 - 30(US)/Actual' || chr(10) || '	9 - Actual/Actual',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCPRF',
+'Indicates Profit Calculation' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCREQD',
+'Indicates Calculation Required',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCRP',
+'It indicates Calculate RP',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCSTDT',
+'Indicates Calculation Start Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALCULATION_BASIS',
+'Calculation Basis',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALC_METHOD',
+'Indicates Calculation Method' || chr(10) || '	1 - 30-Euro/360' || chr(10) || '	2 - 30-US/360' || chr(10) || '	3 - Actual/360' || chr(10) || '	4 - 30-Euro/363' || chr(10) || '	5 - 30-US/365' || chr(10) || '	6 - Actual/365',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALC_REQD',
+'Indicates Calculation Required' || chr(10) || 'Yes "Y"; No "N".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALENDER_BASIS',
+'Indicates Calendar Basis' || chr(10) || '	C - Calendar Days' || chr(10) || '	B - Branch Calendar',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALHOLEXCP',
+'Calender Holiday Exception',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLDT',
+'Indicates Call Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_BORROWERDDENTITIES',
+'Borrower Drawdown Entities',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_BORROWERDDENTITIES1',
+'Borrower Drawdown Entries',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_BORROWERDRAWDOWNPROD',
+'Borrower Drawdown Product',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_BORROWERDRAWDOWNPROD1',
+'Includes Borrower Drawdown Product details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTCCYRESTRMASTER',
+'Includes Participants Currency Restriction details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTCCYRESTRMASTER1',
+'party Currency Restriction Master',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTCCYRESTRMASTER2',
+'Includes the Participant Currency Restrictions Master details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTCCYRESTRMASTER3',
+'Includes Participants Currency Restriction Master details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTCCYRESTRMASTER4',
+'Currency master',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTCCYRESTRMASTER5',
+'Includes Party Currency Restrictions Master details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLFORMS_PARTICIPANTS',
+'Participant Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLINDICAT',
+'Indicates Call Indicator',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLINDICAT1',
+'Indicates Call Indicator' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLINGSTAGE',
+'Indicates Calling Stage' || chr(10) || '	PRE -' || chr(10) || '	POST -',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLOPT',
+'Indicates Call Option' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLOPT1',
+'Indicates Call Option' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLPUTIND',
+'Indicates whether Call/Put',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALLSEQNO',
+'Indicates Calling Sequence Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALL_FORMS',
+'Includes Call Forms details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALNDR_DAYS_BASIS',
+'Indicates Calendar Basis' || chr(10) || '	B - Branch Calendar' || chr(10) || '	N - Network Calendar',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CALQTDDYS',
+'Indicates Calculated Days' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAL_BASIS_SHORT_TIME',
+'Indicates Calendar Basis' || chr(10) || '	CAL - Calendar Days' || chr(10) || '	LCL - Branch Calendar' || chr(10) || '	CCY - Currency Calendar',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAL_CCY_BASIS',
+'Indicates Calculation CCY Basis' || chr(10) || '	S - Specific' || chr(10) || '	D - Deal',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAM_REF_NO',
+'Indicates Credit Appraisal Reference No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCELALWD',
+'Indicates Cancel Allowed' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCELATION_ID',
+'Indicates Cancellation Id',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCELSEDEALFSFSREQ_FCUBSBODY',
+'This XSD gives the message format for Full request for SE Deal  Contract Reverse  operation',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCELSEDEALFSFSRES_FCUBSBODY',
+'This XSD gives the message format for Full Screen Response for SE Deal  Contract Reverse  operation',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCELSEDEALIOPKREQ_FCUBSBODY',
+'This XSD gives the message format for  Input Only  request for SE Deal contract Reverse  operation',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCELSEDEALIOPKRES_FCUBSBODY',
+'This XSD gives the message format for Primary Key Response for SE Deal Contract Reverse operation',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CANCEL_STATUS_ID',
+'Indicates Cancellation Status Identification',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAN_SETTLE_BEFORE_EXPIRY',
+'Indicates Prior Settlement Possible' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPACITY',
+'Indicates Capacity',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPAMT',
+'Indicates Cap Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPAMT1',
+'Indicates Cap Amount of Market Value Based Collateral Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITAL',
+'Indicates Capital',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITALIZATIONDT',
+'Indicates Capitalization Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITALIZED',
+'Indicates Capitalized' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITALIZED1',
+'Indicates the Capitalized.' || chr(10) || 'Y for Yes;N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITALIZED2',
+'Indicates capitalised' || chr(10) || 'Y:yes' || chr(10) || 'N:no',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITALIZED3',
+'Indicates the Capitalized of Components' || chr(10) || 'Y for Yes;N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPITDT',
+'Indicates Capitalization date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPONNML',
+'Indicates Cap Based On Nominal' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPRISK',
+'Indicates Capital at Risk',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPSTRIKERT',
+'Indicates Cap Strike Rate',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPT',
+'Indicates Capitalization' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPT1',
+'Indicates Capitalization' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAPTILIZE',
+'Indicates Capitalize' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAP_REVR_INC',
+'Indicates Capitalize and Reverse Income' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDACCOUNT_FULL',
+'it indicates the detail about card account.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDACCOUNT_IO',
+'it indicates the card account information.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDACCOUNT_PK',
+'it indicates the primary key in card account.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDBIN1',
+'Card Bin 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDNO',
+'Indicates Card Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDNO1',
+'Indicates Card No.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDNO2',
+'Indicates the Card Number of Credit Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARDNO3',
+'Indicates the Card Number of Debit Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_ACCOUNT_MAPPING_FULL',
+'Includes Switch ATM/Debit Card FCC Account Mapping Creation Full type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_ACCOUNT_MAPPING_IO',
+'Includes Switch ATM/Debit Card FCC Account Mapping Creation Input Only type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_ACCOUNT_MAPPING_PK',
+'Includes Switch ATM/Debit Card FCC Account Mapping Creation Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_APPL_DATE',
+'Indicates Card Application Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_BIN',
+'Indicates Card BIN',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_EXPIRY_DT',
+'Indicates Card Expiry Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_ISSUED_DT',
+'Indicates Card Issued Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_PRODS',
+'Indicates Card Products',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_PRODUCT',
+'Indicates Card products',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_RENEWAL_DT',
+'Indicates Card Renewal Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_SEQ_NO',
+'Indicates Card Sequence Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_STATUS',
+'Indicates Card Status',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_TYPE',
+'Indicates Card Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_UPLOAD_FULL',
+'Includes the Card Upload Full Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_UPLOAD_IO',
+'Includes the Card Upload IO details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARD_UPLOAD_PK',
+'Includes the Card Upload Primary Key Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CARNAM',
+'Indicates Goods Carrier',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASAAMTBLKTRNCODE',
+'Indicates Transaction Code for Amount Block Release',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASACC',
+'Indicates CAS Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASADETAILS',
+'Indicates Customer Accounts Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASATYPE',
+'Indicates CASA' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASA_ACC_MAND',
+'Indicates Customer Account Mandatory' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASCADESCHD',
+'Indicates Holiday Treatment For Schedules --' || chr(10) || 'Cascade schedules (yes/no)',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASCADETILL',
+'Indicates Cascade Till' || chr(10) || '	I - Immediate' || chr(10) || '	R - Root',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASCADE_CHILD',
+'Indicates Cascade Child' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASCADE_MONTH',
+'Indicates Casacade Month-End Maturity Date' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASCDEPRTCPTN',
+'Indicates Cascade Participation' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASC_PART',
+'Cascade Participation',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASHFLWPRD',
+'Indicates Cash Flow Period',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASHGLPOST',
+'Indicate cash clearance posting allowed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASHLTRCONREFNO',
+'Indicates Cash Letter Contract Reference Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASHOUTFLWINDI',
+'Indicates Cash Outflow' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASHPRDCODE',
+'Indicates Cash Letter Product Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASHREFNO',
+'Indicates Cash Letter Reference Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASH_DEPOSIT_FULL',
+'Includes the Cah Deposit Full Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASH_DEPOSIT_IO',
+'Includes the Cash Deposit IO details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASH_DEPOSIT_PK',
+'Includes the Cash Deposit Primary key Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASH_DIVIDEND_FULL',
+'Includes Securities Cash Dividend Query Full type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASH_DIVIDEND_IO',
+'Includes Securities Cash Dividend Query Input Only type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASH_GL_NO',
+'Indicates Cash General Ledger Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CASSCHD',
+'Indicates Cascade Schedules',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATDESC',
+'Indicates Category Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATEGORIES_LIST',
+'Indicates catagories list',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATEGORY',
+'Category',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATEGORY_PURPOSE',
+'It indicates the category purpose of the Credit Transfer.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATG',
+'Indicates Conversation Category' || chr(10) || '	Call Report - Call Report' || chr(10) || '	Courtesy Meeting - Courtesy Meeting' || chr(10) || '	Cust Interaction - Cust Interaction' || chr(10) || '	Service Request - Service Request' || chr(10) || '	Compliants - Compliants' || chr(10) || '	Lead - Lead' || chr(10) || '	N A - N/A' || chr(10) || '	IVR - IVR',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATGDISALLW',
+'Indicates Category Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATGLIS',
+'Indicates Categories List' || chr(10) || '	D - Disallowed' || chr(10) || '	A - Allowed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATGPURPTYP',
+'Indicates Category Purpose Type' || chr(10) || '	C - Code' || chr(10) || '	P - Proprietary',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATGRESTRCITIONS',
+'Category Restrictions',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATGRY',
+'Indicates GL Category' || chr(10) || '' || chr(10) || 'Asset		     : 1' || chr(10) || 'Liability	     : 2' || chr(10) || 'Income		     : 3' || chr(10) || 'Expense              : 4' || chr(10) || 'Contingent Asset     : 5' || chr(10) || 'Contingent Liability : 6' || chr(10) || 'Memo                 : 7' || chr(10) || 'Position	     : 8' || chr(10) || 'Position Equivalent  : 9',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATMSSTOPPAYMENTS_ADVICEREQUIREDIND',
+'Indicates Advice Required' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CATPURPOSE',
+'Indicates Category Purpose',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CAVWSCHECKDETAILS_STATUS',
+'Indicates Status' || chr(10) || '	N - Not Used' || chr(10) || '	U - Used' || chr(10) || '	S - Stopped' || chr(10) || '	R - Rejected' || chr(10) || '	C - Cancelled',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS1',
+'Indicates Composite MIS 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS10',
+'Indicates Composite MIS 10',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS2',
+'Indicates Composite MIS 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS3',
+'Indicates Composite MIS 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS4',
+'Indicates Composite MIS 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS5',
+'Indicates Composite MIS 5',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS6',
+'Indicates Composite MIS 6',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS7',
+'Indicates Composite MIS 7',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS8',
+'Indicates Composite MIS 8',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COMP_MIS9',
+'Indicates Composite MIS 9',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COST_MIS1',
+'Indicates Cost MIS 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COST_MIS2',
+'Indicates Cost MIS 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COST_MIS3',
+'Indicates Cost MIS 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COST_MIS4',
+'Indicates Cost MIS 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_COST_MIS5',
+'Indicates Cost MIS 5',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS1',
+'Indicates Transaction MIS 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS2',
+'Indicates Transaction MIS 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS3',
+'Indicates Transaction MIS 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS4',
+'Indicates Transaction MIS 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS5',
+'Indicates Transaction MIS 5',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS6',
+'Indicates Transaction MIS 6',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS7',
+'Indicates Transaction MIS 7',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS8',
+'Indicates Transaction MIS 8',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CA_TXN_MIS9',
+'Indicates Transaction MIS 9',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CB',
+'Currency Balances',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBANKCODEQ',
+'Indicates Receiver Bank Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBANKNAMEQ',
+'Indicates Receiver Bank Name',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBNKLNCDESC',
+'Indicates Credit Line Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBNKLNCR',
+'Indicates Central Bank Credit Line',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBNKLNDDESC',
+'Indicates Debit Line Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBNKLNDR',
+'Indicates Debit Line',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBNKLNDR1',
+'Indicates Central Bank Debit Line',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CBRANCH',
+'Indicates Cover Account Branch',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CB_LCY_MOV_BAL',
+'Indicates Net Movement LCY',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CB_MOV_BAL',
+'Indicates Net Movement',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCCY',
+'Indicates Cover Account Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCCY1',
+'Indicates Clearing Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCR',
+'Customer Category Restriction',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY',
+'Indicates Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY1',
+'Indicates Currency 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY11',
+'Specifies the Currency to indicate the Currency rates.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY2',
+'Indicates Currency 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY3',
+'Indicates Currency of Split Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY4',
+'The currency in which the deal is being booked',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY5',
+'Indicates the Currency for LDMM Rate Bulk Upload',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY6',
+'Indictaes currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY7',
+'It indictes Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYAMTDUE',
+'Indicates Currency Code for the due Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYCODE',
+'Indicates the currency code of transaction.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYCODE1',
+'Indicates Currency Code of Currency Country Mapping.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYCODEDESC',
+'Indicates Currency Code Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDECIMALS',
+'Indicates Currency Decimals',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDEFN_FULL_TYPE',
+'Indicates Currency Definition-Full type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDEFN_IO_TYPE',
+'Indicates Currency Definition-IO type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDEFN_MODIFY_IO_TYPE',
+'Indicates Currency Definition-Modify-IO type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDEFN_PK_ACR_TYPE',
+'Indicates Currency Definition-Pk-ACR type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDEFN_PK_TYPE',
+'Indicates Currency Definition-Pk type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDESC',
+'Indicates Currency Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDESC1',
+'Indicated Currency Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYDETAILS',
+'LDMM Rate Currency Type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYEURTYPE',
+'Indicates the Euro Type' || chr(10) || 'E: EURO Currency' || chr(10) || 'I: IN Currency' || chr(10) || 'O: OUT Currency' || chr(10) || 'C: EURO Closed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYFORMATMASK',
+'Indicates the Amount Format Mask' || chr(10) || 'I : 99,999,999,999' || chr(10) || 'N : 9999,99,99,999',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYINTMETHOD',
+'Indicates the Interest Method' || chr(10) || '1 : 30(Euro)/360' || chr(10) || '2 : 30(US)/360</OPTION>' || chr(10) || '3 : Actual/360</OPTION>' || chr(10) || '4 : 30(Euro)/365</OPTION>' || chr(10) || '5 : 30(US)/365</OPTION>' || chr(10) || '6 : Actual/365</OPTION>' || chr(10) || '7 : 30(Euro)/Actual</OPTION>' || chr(10) || '8 : 30(US)/Actual</OPTION>' || chr(10) || '9 : Actual/Actual',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYLST',
+'Indicates Currency Restrictions' || chr(10) || '	A - Allowed' || chr(10) || '	D - Disallowed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYMISMATACC',
+'Indicates Currency Mismatch Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYMISMCONTACC',
+'Indicates Currency Mismatch Contra Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYNAME',
+'Indicates Currency Name',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYOPTREFNO',
+'Indicates Currency Option Reference',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYORFINCEN',
+'Indicates Currencies Or Financial Centers',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYORFININST',
+'Indicates Currencies Or Financial Centres',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYORFINNST',
+'Indicates Currency or Financial Institution',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYPOSGL',
+'Indicates Display On Report With' || chr(10) || '	A - Asset' || chr(10) || '	L - Liability' || chr(10) || '	S - Separate',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYPOSGL1',
+'Indicates Display On Report With :' || chr(10) || '' || chr(10) || 'Asset      : A' || chr(10) || 'Liability    : L' || chr(10) || 'Separate : S',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYRATEDETAILS_MIDRATE',
+'Indicates Mid Rate',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYRATTYPDESC',
+'Indicates Exchange Rate Type Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYRES',
+'Indicates Currency Restrictions' || chr(10) || '	S - Single Currency' || chr(10) || '	F - Foreign Currency' || chr(10) || '	A - All',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYRES1',
+'Indicates Currency Restrictions' || chr(10) || '' || chr(10) || 'Single Currency          : S' || chr(10) || 'All Foreign Currencies : F' || chr(10) || 'All Currencies              : A',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYREST',
+'Indicates Currency Restriction' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYRNDRULE',
+'Indicates Rounding Rule' || chr(10) || 'Truncate  "T";' || chr(10) || 'Up "U";' || chr(10) || 'Down "D";' || chr(10) || 'Round Near "R".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYRNDUNIT',
+'Indicates the Rounding Unit',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYTYPE',
+'Indicates the Currency variable.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYTYPEDVADVICE',
+'Indicates Currency type for derivative Advice.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYTYPEDVINT',
+'Indicates the Derivative Interest currency.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCYY',
+'Indicates CCY',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_BUY_SELL',
+'Indicates Rate Code' || chr(10) || '	B - Buy' || chr(10) || '	M - Mid' || chr(10) || '	S - Sell',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_CAL',
+'Indicates Currency Calendar' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_COUNTRY_MAPPING',
+'Currency Country Mapping details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_DEFN_FULL',
+'Indicates the Currency Definition-Full details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_DEFN_IO',
+'Indicates the Currency Definition-IO details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_EUR_TYPE',
+'Indicates Currency Eur Type' || chr(10) || '	E - EURO Currency' || chr(10) || '	I - In Currency' || chr(10) || '	O - Out Currency' || chr(10) || '	C - EURO Closed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_FORMAT_MASK',
+'Indicates Currency Format Mask' || chr(10) || '	I - XXX,XXX,XXX,XXX' || chr(10) || '	N - XX,XX,XX,XX,XXX',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_HOLIDAY_DETAILS',
+'Query Of Clearing Currency Holiday Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_HOLIDAY_DETAILS_FULL',
+'Query Of Clearing Currency Holiday Details Full Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_HOLIDAY_DETAILS_IO',
+'Query Of Clearing Currency Holiday Details IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_HOLIDAY_LIST',
+'Currency Holiday List',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_OPTION',
+'Indicates Currency Option Product',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_RATE_TYPE',
+'Indicates Rate Code Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_RESTR',
+'Currency Restrictions',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_RESTRICTION',
+'Indicates Currency Restriction.' || chr(10) || 'Yes "Y"; No "N".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_SPOT_DAYS',
+'Indicates Spot days',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_TOL_LIMIT',
+'Indicates Tolerance Limit',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CCY_TYPE',
+'Indicates Currency Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CC_HOLDER_NAME',
+'Indicates Credit Card Holder Name',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CC_HOLDER_NAME1',
+'Indicates the Credit Card Holder Name for the transaction',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDCCY',
+'Indicates Currency Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDDENOM',
+'Indicates Denomination Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDDENOM1',
+'Cedit Denomination',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDDESC',
+'Indicates MIS Code Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDFDOC',
+'Indicates the Code of Documents',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDRTACCT_IBAN',
+'Indicates Counterparty IBAN Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDRTACCT_IBAN1',
+'Indicates Creditor Account IBAN',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CDUSAGE',
+'Indicates Code Usage' || chr(10) || '	A - Automatic' || chr(10) || '	P - Periodic',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CENTER_BRANCH',
+'Indicates Center Branch',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CENTER_CIF_ID',
+'Indicates Center CIF ID',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CENTER_CODE',
+'Indicates Center Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CENTER_FORMED_BY',
+'Indicates Center Formed By',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CENTER_NAME',
+'Indicates Center Name',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CENTRALISATIONROLE',
+'Indicates Centralisation Role' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CEN_MAP',
+'Centralized Role Mapping',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTDETAILS_STAT',
+'Indicates Status' || chr(10) || '	AA - Active' || chr(10) || '	AR - Replaced' || chr(10) || '	AO - Rolled Over' || chr(10) || '	AL - Liquidated',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTIFICATETYPE',
+'Includes Certificate type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTIFICATE_AMOUNT',
+'Indicates Certificate Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTIFICATE_NO',
+'Indicates Certificate Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTIFICATE_STATUS',
+'Indicates Certificate Status' || chr(10) || '	I - Issued' || chr(10) || '	D - Duplicate' || chr(10) || '	P - Re-denominated' || chr(10) || '	R - Redeemed' || chr(10) || '	B - Amount Blocked' || chr(10) || '	O - Rollover Issue',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTIF_ALLCT_PENDINGAMT',
+'Indicates Certificate Allocation Pending Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTNUMLIST',
+'Certificate List',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTNUMMASK',
+'Indicates Certificate Number Mask',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTQT',
+'Indicates Certificate Quantity',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTRES',
+'Indicates Certificate Restriction' || chr(10) || '	A - Allowed' || chr(10) || '	D - Disallowed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERTVAL',
+'Indicates Certificate Value',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CERT_DETAIL',
+'Includes Certificate details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFDEFCHG',
+'Indicates Charges Modified',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFENDNO',
+'Indicates Certificate End No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINTFULLTYPE_RECSTAT',
+'It indicates the status of the record,whether open or Closed.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINTIOTYPE_MAKERDTSTAMP',
+'Indicates the date and  time when the user has saved the record.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINT_FULL_TYPE',
+'Indicates Full Screen Details of Rate Code Maintenance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINT_IO_TYPE',
+'Indicates Input Only Details of Rate Code Maintenance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINT_MODIFY_IO_TYPE',
+'Indicates Input Only Details of Rate Code Modification Action',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINT_PK_ACR_TYPE',
+'Indicates Primary Key Details of Rate Code Amendment, Close and Reopen Actions',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATECODEMAINT_PK_TYPE',
+'Indicates Primary Key Details of Rate Code Maintenance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATETYPEDEFNFULLTYPE_MAKERDTSTAMP',
+'Indicates Date and Stamp when the user hascreated\last modified the Rate Type Definition details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATETYPEDEFN_FULL_TYPE',
+'Indicates Full Screen Details of Rate Type Maintenance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATETYPEDEFN_IO_TYPE',
+'Indicates Input Only Details of Rate Type Maintenance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATETYPEDEFN_MODIFY_IO_TYPE',
+'Indicates Input Only Details of Rate Type Modification Action',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATETYPEDEFN_PK_ACR_TYPE',
+'Indicates Primary Key Details of Rate Type Amendment, Close and Reopen Actions',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFRATETYPEDEFN_PK_TYPE',
+'Indicates Primary Key Details of Rate Type Maintenance',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFSTRTNO',
+'Indicates Certificate Start no',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTBSCONTRACTCHARGES_CHANGEDURINGAMENDMENT',
+'Indicates Allow Amendment',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTMS_FLOAT_RATE_DETAIL_DESCRIPTION',
+'Specifies The Tenor and Interest Rate Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTMS_FLOAT_RATE_MASTER_DETAILS',
+'Includes Rate details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTMS_RATE_CCY_DETAILS',
+'Includes Rate-Currency details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTMS_RATE_CODE_DETAILS_FULL',
+'Includes the Authorisation of Floating Rate Definition Full details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTMS_RATE_CODE_DETAILS_IO',
+'Includes the Input of Floating rate Maintenance IO details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTMS_RATE_CODE_DETAILS_PK',
+'Includes the Authorisation of Floating Rate Definition Primary Key Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_RATE_CODE_DEFN_FULL',
+'Includes the Authorisation of Rate Code Maintenance Full Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_RATE_CODE_DEFN_IO',
+'Includes the Authorisation of Rate Code Maintenance primary key details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_RATE_CODE_DEFN_PK',
+'Includes the Input of Rate Code Maintenance' || chr(10) || 'primary key Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_RATE_TYPE_DEFN_FULL',
+'Includes the Authorisation of Rate Type Maintenance Full Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_RATE_TYPE_DEFN_IO',
+'Includes the Authorisation of Rate Type Maintenance IO Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_RATE_TYPE_DEFN_PK',
+'Includes the Authorisation of Rate Type Maintenance Primary Key details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFTM_TENOR_CODE_DEFN',
+'Includes Tenor code details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CFVAL',
+'Indicates Contract Fair Value',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CG_REF_NO',
+'Indicates CG Ref No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGEDURAMND',
+'Indicates Change During Amendment',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGEDVALUESDETAILTYPE',
+'Include Changed Values Detail Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGEDVALUESDETAILTYPE1',
+'Indicates Audit Trail of Change Values',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGELOGTYPE',
+'Indicates Change Log details type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGELOG_TYPE',
+'Include chnagelog type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_AC',
+'Indicates Change Account.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_DATE',
+'Indicates Change Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_DETAIL_TYPE',
+'Includes the Change Detail Type Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_DETAIL_TYPE2',
+'Includes Change type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_LOG',
+'Indicates Change Log Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_RATE',
+'Indicates Change Rate.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_SEQ_NO',
+'Indicates Change Sequence Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANGE_TYPE',
+'Indicates Change Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANNELREFNO',
+'Indicates Channel Reference No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHANNEL_UID',
+'Indicates Channel User ID',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHAR',
+'Indicates Characteristics',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE',
+'Charge',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEAMT1',
+'Indicates Charge Amount 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEAMT2',
+'Indicates Charge Amount 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEAMT3',
+'Indicates Charge Amount 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEAMT4',
+'Indicates Charge Amount 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEBACKPERIOD',
+'Indicates Charge Back Period',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEBACKUNIT',
+'Indicates Charge Back Unit' || chr(10) || '	D - Daily' || chr(10) || '	W - Weekly' || chr(10) || '	M - Monthly' || chr(10) || '	Y - Yearly',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEBRANCH',
+'Indicates Charge Account Branch',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGECCY2',
+'Indicates Charge Currency 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGECCY3',
+'Indicates Charge Currency 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGECCY4',
+'Indicates Charge Currency 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGECOLLECTION',
+'Indicates Charge Collection' || chr(10) || '	D - Advance' || chr(10) || '	R - Arrears',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGECONSOL_CHGCCY',
+'Indicates Currency' || chr(10) || '	A - Account Currency' || chr(10) || '	L - Local Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGECONSOL_PERIODICITY',
+'Indicates Periodicity' || chr(10) || '	H - Ad hoc' || chr(10) || '	M - Monthly' || chr(10) || '	Q - Quarterly' || chr(10) || '	S - Semi Annual' || chr(10) || '	A - Annual' || chr(10) || '	D - Daily',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDESC1',
+'Indicates Charge Description 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDESC2',
+'Indicates Charge Description 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDESC3',
+'Indicates Charge Description 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDESC4',
+'Indicates Charge Description 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET',
+'Mortgagges Charge Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILSMODIFYTYPE',
+'Charge Details Modify Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILSREQTYPE',
+'Charge Details request Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILSTYPE',
+'Charge Details  Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILS_ACQRCCY',
+'Indicates Accrual Currency' || chr(10) || '	L - Local' || chr(10) || '	T - Contract',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILS_CHGTYP',
+'Indicates Charge Type' || chr(10) || '	C - Counter Party' || chr(10) || '	T - Third Party' || chr(10) || '	R - Their Charges',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILS_EVNTAPPLIDESC',
+'Indicates Event For Application Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILS_EVNTASSCTDESC',
+'Indicates Event For Association Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDETAILS_EVNTLIQDDESC',
+'Indicates Event For Liquidation Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CHARGESCHEDULE',
+'Indicates Charges Schedule details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CHARGESCHEDULE1',
+'Includes the Charge Schedule.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CHARGESCHEDULE2',
+'Mortgages Charge Schedule Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CHARGESCHEDULE3',
+'Consumer Lending Charge Schedule Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CLGBRNDR',
+'Indicates Clearing Branch Code to be debited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CLGPRODCR',
+'Indicates Clearing Product Code to be credited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CLGPRODDR',
+'Indicates Clearing Product Code to be debited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CLGPRODDR1',
+'Indicates Clearing Product Code of Debit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_COMPTYPE',
+'Indicates component type' || chr(10) || '' || chr(10) || 'I	Formula With Schedule' || chr(10) || 'H	Formula Without Schedule' || chr(10) || 'P	Penal Interest' || chr(10) || 'M	PrePayment Penality' || chr(10) || 'D	Discount' || chr(10) || 'L	Schedule Without Formula' || chr(10) || 'O	No Schedule No Formula' || chr(10) || 'F	Penalty Charge',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_COMPTYPE1',
+'Indicates the Component/Calculation Type of  Charges details' || chr(10) || 'Formula With Schedule    : I' || chr(10) || 'Formula Without Schedule : H' || chr(10) || 'Penal Interest           : P' || chr(10) || 'PrePayment Penality      : M' || chr(10) || 'Discount                 : D' || chr(10) || 'Schedule Without Formula : L' || chr(10) || 'No Schedule No Formula   : O' || chr(10) || 'Penalty Charge           : F',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CRPAYMTMODE',
+'Indicates Cr Payment Mode.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_CRPRDACC',
+'Indicates Credit Product Account Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_DRPAYMTMODE',
+'Indicates Debit Payment Mode' || chr(10) || '' || chr(10) || 'CASA                 : ACC' || chr(10) || 'Credit Card          : CCD' || chr(10) || 'Clearing             : CLG' || chr(10) || 'Debit Card           : DCD' || chr(10) || 'External Account     : EAC' || chr(10) || 'Electronic Pay Order : EPO' || chr(10) || 'GIRO                 : GIR' || chr(10) || 'Internal Cheque      : ICK' || chr(10) || 'Instrument           : INS' || chr(10) || 'Cash/Teller          : TLR',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_DRPAYMTMODE1',
+'Indicates Dr Payment Mode.' || chr(10) || 'CASA			ACC',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_DRPAYMTMODE2',
+'Indicates Dr Payment Mode.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_ENDPTCR',
+'Indicates End Point Credit',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_ENDPTCR1',
+'Indicates End Point of Credit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_ENDPTDR',
+'Indicates End Point Debited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_ENDPTDR1',
+'Indicates End Point of Debit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_EXTACNMCR',
+'Indicates External Account Name of Credit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_EXTACNMDR',
+'Indicates External Account Name of Debit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_EXTACNOCR',
+'Indicates External Account Number of Credit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_EXTACNODR',
+'Indicates External Account Number of Debit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_GIROMDDR',
+'Indicates Giro Mode of Debit Settlement Mode' || chr(10) || '' || chr(10) || 'Auto Giro   : A' || chr(10) || 'Manual GIRO : M',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_GIROSERCR',
+'Indicates GIRO Service of Credit Settlement Mode' || chr(10) || 'Bank GIRO : B' || chr(10) || 'Plus GIRO  : P',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_GIROSERCR1',
+'Indicates GIRO Credit Service',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_GIROSERDR',
+'Indicates GIRO Service' || chr(10) || '' || chr(10) || 'Bank GIRO : B' || chr(10) || 'Plus GIRO  : P',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_GIROSERDR1',
+'Indicates the GIRO SERVICE DR of Debit Settlement Mode' || chr(10) || 'Bank GIRO :B' || chr(10) || 'Plus GIRO :P',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_PAYERBRNDR',
+'Indicates Payer Branch of Debit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_PCCATCR',
+'Indicates Product Category of Credit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_PCCATDR',
+'Indicates Product Category to be debited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_PCCATDR1',
+'Indicates Product Category of Debit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_ROUTINGCR',
+'Indicates Routing Number to be credited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_ROUTINGDR',
+'Indicates Routing Number Debited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_SECTORCR',
+'Indicates Sector Code to be credited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_SECTORDR',
+'Indicates Sector Code to be debited',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_STTLMTCCY',
+'Indicates the Settlement Currency of  Charges details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_UPSOURCERCR',
+'Indicates Upload Source Credit Settlement Mode',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEDET_WAIVERFLAG',
+'Indicates waiver flag' || chr(10) || 'Y:yes' || chr(10) || 'N:no',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGEPROD_GENUCA',
+'Indicates Generate UDE Change Advice',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGERATETYPE',
+'Asset Management Charge Rate Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES',
+'Consumer Lending Disbursement Charge Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE',
+'Includes Charge Schedule details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_ACCRAMT',
+'Indicates Accured Amount.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_ADJSETTLED',
+'Indicates Adjustment Settled Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_ADJSETTLED1',
+'Indicates the Adjacent Settled.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_ADJSETTLED2',
+'Indicates Adjust Settled',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_DLYAVGAMT',
+'Indicates the Daily Avg Amount.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_IRRAPPLICABLE',
+'Indicates IRR applicable.' || chr(10) || 'Yes "Y"; No "N".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_ISWAIVE',
+'Indicates the Waive',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_ISWAIVE1',
+'Indicates Wavier Flag.' || chr(10) || 'Yes "Y"; No "N".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_LASTREADJXRATE',
+'Indicates the last read Exchange Rate.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_LISTAVGAMT',
+'Indicates Averege Amount.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_MORAINT',
+'Indicates MORA_INT',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_READJSETTLED',
+'Indicates the read settled.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_READJSETTLED1',
+'Indicates Readjust Settled.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SCHEDULEFLAG',
+'Indicates Scheduled Flag',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SCHEDULELINKAGE',
+'Indicates Schedule Linkage Date.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SUSPAMTLCY',
+'Indicates Suspense Amount Local Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SUSPAMTLCY1',
+'Indicates the Suspended Amount Local Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SUSPAMTSETTLED',
+'Indicates the Suspended Amount Settled',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SUSPREADAMT',
+'Indicates the Suspended read amount.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCHEDULE_SUSPREADSETTLED',
+'Indicates the Suspended read settled.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESCLAIMED',
+'Indicates Charges Claimed',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESDETAILS',
+'Indicates Charges Details' || chr(10) || '' || chr(10) || 'Ourselves : O' || chr(10) || 'Benificiary : B' || chr(10) || 'Shared   : S',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGESPAID',
+'Indicates Charges Paid',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_CLGPRODCODE',
+'Indicates Clearing clearing Product Code.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_DEDUCTED',
+'Indicates Charges Deducted',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_DETAILS',
+'Indicates Charges Details' || chr(10) || '	O - Ourselves' || chr(10) || '	B - Beneficiary' || chr(10) || '	S - Shared',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_DETAILS1',
+'Indicates Charge Details' || chr(10) || 'Rem-AllChgs : O' || chr(10) || 'Ben-AllChgs : B' || chr(10) || 'Rem-OurChgs : U',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_DETAILS2',
+'Indicates Charge Details' || chr(10) || 'Rem-AllChgs             "O"' || chr(10) || 'Ben-AllChgs               "B"' || chr(10) || 'Rem-OurChgs           "U"',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_DETAILS3',
+'Indicates charges details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGES_DETAILS4',
+'Indicates Charges Details' || chr(10) || '' || chr(10) || 'Remitter - All Charges    : O' || chr(10) || 'Beneficiary - All Charges : B' || chr(10) || 'Remitter - Our Charge     : U',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_ACC',
+'Indicates Charge Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_ACCOUNT',
+'Indicates Charge Credit Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_AC_DESC',
+'Indicates Charge Account Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_APPLICATION',
+'Charge Application',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_APPLICATION1',
+'Includes Charge Application details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_APPLICATION2',
+'Include Charge Application type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_APPLICATION3',
+'Include Charge Application deatils',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_APPLICATION4',
+'Include charges Application  Type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_ASSOCIATION',
+'Charge Association',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_ASSOCIATION1',
+'Includes Charge Association details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_ASSOCIATION2',
+'Include Charge Association type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_BEARER',
+'Indicates Charge Bearer',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_BOOK_CCY',
+'Indicates Charge Book Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_BRANCH',
+'Indicates Charge Branch',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_CATEGORY',
+'Indicates Charge Category',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_CLAIM_ADVICE_DATE',
+'Indicates Charge Claim Advice Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_COMPONENT',
+'Charge Component',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_COMP_NAME',
+'Indicates Charge Comp Name.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DEFINITION_FULLREQTYPE',
+'Charge Definition Full Request Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DEFINITION_FULLRESTYPE',
+'charge Definition Full Response Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DEFINITION_INPUT_IOTYPE',
+'Charge Definition Input IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DEFINITION_IOTYPE',
+'Charge Definition IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DEFINITION_MODIFY_IOTYPE',
+'Charge Definition Modify IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DEFINITION_PKTYPE',
+'Charge Definition PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DETAILS',
+'Charge Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DETAILS1',
+'It indicates the Charge-Details of the account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_DETAILS2',
+'Chrage Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_EVENT',
+'Indicates Charge Event',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_LIQD_MASTER',
+'Charge Liquidation',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_LIQUIDATION',
+'Includes Charge Liquidation details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_LIQUIDATION_IO',
+'Includes the input-only request information relating the Charge Receivable Component that is being requested for deletion.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_LIQUIDATION_PK',
+'Includes the primary key response information relating the Charge Receivable Component that has been successfully deleted.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_PARTY',
+'Indicates Charge Party',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_RULE',
+'Indicates Charge Rule',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_SUSPENSE_ACC',
+'Indicates Charge Suspense Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_TRACKED_LIQ_PREF',
+'Indicates Liquidation Preference for Tracked Charges' || chr(10) || '	P - Partial' || chr(10) || '	F - Full',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_TRACKING_PREF',
+'Indicates Charge Tracking Preferences' || chr(10) || '	D - Part Debit/Part Waive' || chr(10) || '	P - Part Debit/Part Track' || chr(10) || '	W - Full Waive' || chr(10) || '	T - Full Track' || chr(10) || '	F - Force Debit' || chr(10) || '	N - Not Required',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGE_WAIVER',
+'Indicates Waiver Charge' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARGSTAT',
+'Indicates Charge Status',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHARTACCDETAILS_CATEGORY',
+'Indicates Category' || chr(10) || '	1 - Asset' || chr(10) || '	2 - Liability' || chr(10) || '	3 - Income' || chr(10) || '	4 - Expense' || chr(10) || '	5 - Contingent Asset' || chr(10) || '	6 - Contingent Liability' || chr(10) || '	8 - Position' || chr(10) || '	9 - Position Equivalent',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHAR_FIELD2',
+'Indicates Reject Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHASSISNO',
+'Indicates Chassis Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHBOOKFLG',
+'Indicates Cheque Book' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHDAMDMNT',
+'Indicates whether the Interest can be Changed during Amendment or not.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHDETAILS',
+'Mortgages Charge Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECHKERID',
+'Indicates Authorized By',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECK',
+'Indicates Check' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED',
+'Indicates Checked' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED1',
+'Indicates Verified of Check List' || chr(10) || 'Y for Yes;N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED2',
+'Indicates Checked' || chr(10) || 'Yes : Y' || chr(10) || 'No  : N',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED3',
+'Indicates Verified' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED4',
+'Indicates whether verified or not.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED5',
+'Indicates Checked' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKED6',
+'Checked',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKER',
+'Indicates Checker',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDT',
+'Indicates date and timestamp when the user authorized the record',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP',
+'Indicates Checker Stamp',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP1',
+'Indicate checker date time stamp.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP10',
+'Indicates date and stamp when the user has authorized the booked Commodity Price Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP11',
+'Indicates date and stamp when the user has authorized the Commodity Price Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP12',
+'Indicates date and stamp when the user has authorized the booked  ETD Broker Account Scheme',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP13',
+'Indicates date and stamp when the user has authorized the creation or latest modification of the  ETD Broker Account Scheme.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP14',
+'Displays the Authorised date and time of the record',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP15',
+'Indicates date and stamp when the user has authorized the ETD Commodity.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP16',
+'Indicates date and stamp when the user has authorized the booked ETD Commodity.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP2',
+'Indicates Checker Date Time:',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP3',
+'Indicates the Date and Time, when the User has Authorized the creation\modification of the  record.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP4',
+'Indicates the Authorised Date time of the record',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP5',
+'Indicates Date and Stamp when the user has Authorized the creation\ modification of Rate Type Definition details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP6',
+'Indicates Date and Stamp when the user has Authorized the creation\modification of Rate Type Defintion details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP7',
+'Indicates date and time when the user has authorized the contract',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP8',
+'Indicates date and stamp when the user has authorized the creation or last modification of the ETD Instruction Price.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTAMP9',
+'Indicates date and stamp when the user has authorized the Instruction price.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERDTSTMP',
+'Indicates Checker Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID',
+'Indicates Checker Id',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID1',
+'The User Id who has Authorized the creation\modificaiton of the record',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID10',
+'The User id who has authorized the contract',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID11',
+'Displays the User Identification who authorised the record',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID12',
+'The User id who has authorized the creation or last modification of the ETD Instruction Price.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID13',
+'The User id who has authorized the Instruction price.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID14',
+'The User id who has authorized the Commodity Price Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID15',
+'The User id who has authorized the booked Commodity Price Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID16',
+'The User id who has authorized the booked deal',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID17',
+'The User id who has authorized the  ETD Broker Account Scheme.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID18',
+'The User id who has authorized the booked  ETD Broker Account Scheme',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID19',
+'The User id who has authorized the booked ETD Commodity.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID2',
+'Indicates the User id who authorized the record',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID20',
+'The User id who has authorized the ETD Commodity.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID3',
+'Indicates the User Id who has Authorized the creation\modification of the record.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID4',
+'Indicates Checked ID.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID5',
+'indicate checkid',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID6',
+'The User Id who has Authorized the creation\modification of Rate Type Definiton details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID7',
+'The User Id who has Authorized the creation\modification of Rate Type Definition details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID8',
+'Specifies The Checker Identification.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERID9',
+'Indicates the authorizer of the transaction',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKERSTAMP',
+'Indicates Date and Stamp when the User has Authorized the creation\modification of the record.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKER_DT_STAMP',
+'Indicates Checker Date Stamp',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKER_DT_STAMP1',
+'Indicates Date and Stamp, when the User has Authorized the creation\modification of Customer Account details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKER_ID',
+'Indicates User Id who has Authorized the creation\modification of Customer Account.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKID',
+'Indicates Checker ID',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKINSERIES',
+'Indicates Check in Series' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKLIST',
+'Indicates Check List',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKLIST1',
+'Indicates the details of Check List',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKLIST_ITEM',
+'Indicates Checklist Item',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKLIST_ITEMS',
+'Indicates Checklist Items',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKLIST_MANDATORY',
+'Indicates Mandatory' || chr(10) || '	N - Off' || chr(10) || '	Y - on',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKNAME1',
+'Indicates Check Book Name 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECKNAME2',
+'Indicates Check Book Name 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECK_BOOK_NO',
+'Indicates Cheque Book Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECK_CPTY_AC_NO',
+'Indicates Counter Party Account Number' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECK_LEAVES',
+'Indicates Check Leaves',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECK_LIST',
+'Check List',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHECK_NUMBER',
+'Indicates Check Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQBOOK',
+'Indicates Cheque Book Facility.' || chr(10) || 'Yes "Y"; No "N".',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQMAIN',
+'Indicates Main Cheque' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQOFFSET',
+'Indicates Offset Cheque' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQUEBOOKFAC',
+'Indicates Cheque Book Facility' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQUESTALEDAYS',
+'Indicates Cheque Stale Days',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQUE_DETAILS',
+'Includes Cheque details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQUE_ISS_DATE',
+'Indicates the date on which Cheque was issued',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQUE_MANDATORY',
+'Indicates Cheque Mandatory' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHEQ_ALERT',
+'Indicates Cheque Alert Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1',
+'Indicates Charge on Success' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1ACBRN',
+'Indicates Account Branch of Charge Details 1.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1ACCCY',
+'Indicates Account Currency of Charge Details 1.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1ACNO',
+'Indicates Account Number of Charge Details 1.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1AMT',
+'Indicates Charge Amount of Charge Details 1.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1CCY',
+'Indicates Charge Currency of Charge Details 1.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG1WVR',
+'Indicates Waive of Charge Details 1.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2',
+'Indicates Charge on Partial' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2ACBRN',
+'Indicates Account Branch of Charge Details 2.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2ACCCY',
+'Indicates Account Currency of Charge Details 2.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2ACNO',
+'Indicates Account Number of Charge Details 2.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2AMT',
+'Indicates Charge Amount of Charge Details 2.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2CCY',
+'Indicates Charge Currency of Charge Details 2.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG2WVR',
+'Indicates Waive of Charge Details 2.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3',
+'Indicates Charge on Reject' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3ACBRN',
+'Indicates Account Branch of Charge Details 3.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3ACCCY',
+'Indicates Account Currency of Charge Details 3.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3ACNO',
+'Indicates Account Number of Charge Details 3.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3AMT',
+'Indicates Charge Amount of Charge Details 3.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3CCY',
+'Indicates Charge Currency of Charge Details 3.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG3WVR',
+'Indicates Waive of Charge Details 3.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG4ACBRN',
+'Indicates Account Branch of Charge Details 4.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG4ACCCY',
+'Indicates Account Currency of Charge Details 4.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG4ACNO',
+'Indicates Account Number of Charge Details 4.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG4AMT',
+'Indicates Charge Amount of Charge Details 4.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG4CCY',
+'Indicates Charge Currency of Charge Details 4.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG4WVR',
+'Indicates Waive of Charge Details 4.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG5ACBRN',
+'Indicates Account Branch of Charge Details 5.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG5ACCCY',
+'Indicates Account Currency of Charge Details 5.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG5ACNO',
+'Indicates Account Number of Charge Details 5.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG5AMT',
+'Indicates Charge Amount of Charge Details 5.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG5CCY',
+'Indicates Charge Currency of Charge Details 5.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG5WVR',
+'Indicates Waive of Charge Details 5.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACY',
+'Indicates Charge in Account Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACY1',
+'Indicates Charge in Account Currency 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACY2',
+'Indicates Charge in Account Currency 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACY3',
+'Indicates Charge in Account Currency 3',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACY4',
+'Indicates Charge in Account Currency 4',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYRATE',
+'Indicates Charge amount exchange rate for account currency.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYRATE1',
+'Indicates Charge Currency account currency exchange rate.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYXRATE',
+'Exchange rate between first charge currency and account currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYXRATE1',
+'Exchange rate between second charge currency and account currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYXRATE2',
+'Exchange rate between third charge currency and account currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYXRATE3',
+'Exchange rate between fourth charge currency and account currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGACYXRATE4',
+'Exchange rate between fifth charge currency and account currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGADDR',
+'Indicates Change Address' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGADDRIN',
+'Indicates Change Address In' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGAMT',
+'Indicates Charge Amount of Transaction Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGAMTD',
+'Indicates Charge Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGAPPLIED',
+'Indicate charge applied.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGBASIS',
+'Indicates Charge Basis',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGBOOKACC',
+'Indicates Charge Booking Account',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGBOOKACCBRN',
+'Indicates Charge Booking Branch',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGBOOKACCDESC',
+'Indicates Charge Booking Account Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGBRNIN',
+'Indicates Change Branch In' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY',
+'Indicates Currency' || chr(10) || '	ACY - Account Currency' || chr(10) || '	LCY - Local Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY1',
+'It indicates charging currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY2',
+'Indicates Charge Currency Code.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY3',
+'It indicates Charge Component Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY4',
+'Indicates Charge Amount Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY5',
+'Indicates the charge currency type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCY6',
+'Indicates the currency of the charged amount.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCCYLCYXRT1',
+'Indicates charge currency to local currency exchange rate',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCLAIM',
+'Indicates Claim Advice in Swift' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCMP',
+'Indicates Charge Component',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP',
+'Indicates Charge Components',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP1',
+'The Charge Component Code required to calculate interest.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP2',
+'Indicated the Charge Component Description.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP3',
+'Indicates  Charge Component Code',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP_COMPTYP',
+'Indicates Calculation Type' || chr(10) || '	I - Formula With Schedule' || chr(10) || '	H - Formula Without Schedule' || chr(10) || '	P - Penal Interest' || chr(10) || '	M - Prepayment Penalty' || chr(10) || '	D - Discount' || chr(10) || '	L - Schedule Without Formula' || chr(10) || '	O - No Schedule Number Formula' || chr(10) || '	F - Penalty Charge',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP_DRPAYMODE',
+'Indicates Debit Payment Mode' || chr(10) || '	ACC - Account' || chr(10) || '	CCD - Credit Card' || chr(10) || '	CLG - Clearing' || chr(10) || '	DCD - Debit Card' || chr(10) || '	EAC - External Account' || chr(10) || '	EPO - Electronic Pay Order' || chr(10) || '	GIR - GIRO' || chr(10) || '	ICK - Internal Cheque' || chr(10) || '	INS - Instrument' || chr(10) || '	TLR - Cash/Teller',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP_MAINCOMP',
+'Indicates Main Component',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCOMP_SPLINT',
+'Indicates Special Component',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCONS',
+'This Node indicates the consolidates Charge details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCONS_PRODMAPSTAT',
+'Indicates Open' || chr(10) || '	O - on' || chr(10) || '	C - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGCONS_WAIVEPROD',
+'Indicates Waive Charges' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGDESC',
+'The Charge Component Code description.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGDET',
+'Indicates Details Of Charge' || chr(10) || '	S - SHA' || chr(10) || '	B - BEN' || chr(10) || '	O - Our',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGDETAILS',
+'This node indicates the details of the Charges',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGDETAILS_PRDDESC',
+'Indicates Product Code Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGEMIAMT',
+'Indicates Amount Change in EMI',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGEMIAMT1',
+'Indicates Change in EMI Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGEMIPCNT',
+'Indicates Percentage Change in EMI',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGEMIPCNT1',
+'Indicates Change in EMI Percentage',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGFORCCOVMATCH',
+'Indicates Change Force Cover Match' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGFORCRELFUND',
+'Indicates Change Force Release Fund' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGGL',
+'Charge General Ledger',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGGRP',
+'Indicates Charge Group',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGGRP1',
+'Indicates Customer Charge Group',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGINCURDT',
+'Indicates Charge Incurred Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLCY4',
+'Indicates Charge amount in Local Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLCYXRATE',
+'Exchange rate between first charge currency and local currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLCYXRATE1',
+'Exchange rate between second charge currency and local currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLCYXRATE2',
+'Exchange rate between third charge currency and local currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLCYXRATE3',
+'Exchange rate between fourth charge currency and local currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLCYXRATE4',
+'Exchange rate between fifth charge currency and local currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGLIQTYPE_CHGAMT',
+'Indicates the amount charged.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGMEDIA',
+'Indicates Change Media' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGMSG',
+'Indicates Change Message' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGMSGAUTH',
+'Indicates Auth Change Message' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGNODE',
+'Indicates Change Node' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGNODEAUTH',
+'Indicates Auth Change Node' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPAYACNO',
+'Indicates Charge Payable Account Number.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPAYBRN',
+'Indicates Charge Payable Branch',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPAYBRNDESC',
+'Indicates Charge Payable Branch Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPAYCCY',
+'Indicates Charge Payable Currency',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPERD',
+'Indicates Charge Percentage',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPRDCD',
+'Indicates Charge Product',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGPRIOR',
+'Indicates Change Priority' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGREFNO',
+'Indicates Charge Ref Num',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGREQ',
+'Indicates Charge Required' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGREQ1',
+'Indicates Change Request',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGREQ2',
+'Indicates the charge required.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGREQD',
+'Indicates Charges' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGRT',
+'Indicates Charge Rate',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGSCH_CAPITALIZED',
+'Indicates Capitalized',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGSCH_WAIVER',
+'Indicates Waiver',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGSRESTYPE_DISACR',
+'Indicates  Discount accrual applicable flag',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGSTARTDT',
+'Indicates Charge Start Date',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGSTRTADV',
+'Indicates Charge Start Advice' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGTILL',
+'Indicates Charge Till' || chr(10) || '	S -' || chr(10) || '	D -',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGTYPE',
+'Indicates Charge Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGWAIVER',
+'Indicates Charge Waiver.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGWHM',
+'Charge Whom',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHGWHOM',
+'Indicates Whom to Charge' || chr(10) || '	O - Remitter - All Charges' || chr(10) || '	B - Beneficiary - All Charges' || chr(10) || '	U - Remitter - Our Charges',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_ACC_NUMBER',
+'Indicates Charge Account Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_AMOUNT',
+'Indicates Cheque Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_DEFN_MASTER',
+'Includes the Full request information regarding the Input of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_DEFN_MASTER_IO',
+'Includes the IO Request information regarding the Input of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_DEFN_MASTER_PK',
+'Includes the primary key information regarding the Input of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_DESC',
+'Indicates Charge Description',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_DUE',
+'Indicates Charge Due',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_OUTSTAND',
+'Indicates Charges Outstanding',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_OUTSTAND_SINCE',
+'Indicates Charges Outstanding Since',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_REFUSED',
+'Indicates Your Charges Refused' || chr(10) || '	N - Off' || chr(10) || '	Y - on',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_REF_NO',
+'Indicates Charge Reference Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_TR',
+'Indicates Charges Amount',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHG_WAIVER_1',
+'Indicates Waive' || chr(10) || '	N - No' || chr(10) || '	Y - Yes',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_CLONMAT',
+'Indicates Close on Maturity' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_FUNDONOVD',
+'Indicates Move funds on Overdraft' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_MOVETOUNCLM',
+'Indicates Move to Unclaimed' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_MOVINTUNCLM',
+'Indicates Move Interest to Unclaimed' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_MOVPRIUNCLM',
+'Indicates Move Principal to Unclaimed' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_ROLLTYPE',
+'Indicates Rollover Type' || chr(10) || '	I - Principal + Profit' || chr(10) || '	P - Principal' || chr(10) || '	S - Special Amount' || chr(10) || '	T - Profit',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDINTTDDETAILS_ROLLTYPE1',
+'Indicates Rollover Type' || chr(10) || '	P - Principal' || chr(10) || '	I - Principal + Interest' || chr(10) || '	S - Special Amount' || chr(10) || '	T - Interest',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDTDPAYOUTDETAILS_PAYOUTTYPE',
+'Indicates Payout Type' || chr(10) || '	P - Payments' || chr(10) || '	B - Bankers Cheque' || chr(10) || '	S - Account Number' || chr(10) || '	G - General Ledger',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDTDPAYOUTDETAILS_PAYOUTTYPE1',
+'Indicates Payout Type' || chr(10) || '	P - Payments' || chr(10) || '	S - Account Number' || chr(10) || '	B - Bankers Cheque' || chr(10) || '	G - General Ledger',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHILDTDPAYOUTDETAILS_PAYOUTTYPE2',
+'Indicates Payout Type' || chr(10) || '	B - Bankers Cheque' || chr(10) || '	P - Payments' || chr(10) || '	S - Account' || chr(10) || '	G - General Ledger',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKBKNO',
+'Indicates Check Book Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKDIGITVALREQD',
+'Indicates Check Digit Validation Required' || chr(10) || '	N - Off' || chr(10) || '	Y - on',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKLISTDT',
+'Check List Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKLOST',
+'Indicates Cheque has been stolen/lost' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKLSTDESC',
+'Indicates Checklists',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKLSTID',
+'Indicates Check List Id',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKLV',
+'Indicates No of Cheque Leaves',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKMINBALSWEEP',
+'Indicates Consider Primary account  minimum balance for sweep' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKNAME1',
+'Indicates Cheque Book Name 1',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKNAME11',
+'Indicates the First Name on Cheque Book',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKNAME2',
+'Indicates Cheque Book Name 2',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKNAME21',
+'Indicates the Second Name on Cheque Book',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKNOTDEBITED',
+'Indicates Cheque/draft not debited as of closing balance of statement' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKNUM',
+'Indicates Cheque Number',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKRATECDCCY',
+'Indicates Rate Code Currency' || chr(10) || '' || chr(10) || 'Y for Yes; N for No',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHKSUMALGO',
+'Indicates Checksum Algorithm' || chr(10) || '	mod11 - Modulo 11' || chr(10) || '	mod97 - Modulo 97' || chr(10) || '	mod11WW - Modulo 11 with Weights' || chr(10) || '	mod10 - Modulo 10' || chr(10) || '	U - User Defined',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHLDGL',
+'Child General Ledgers',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHNFLAG',
+'Indicates Channel Flag' || chr(10) || '	P - Preferred' || chr(10) || '	N - Not Preferred',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHNGDRGAMNDMNT',
+'Indicates Allow Amendment' || chr(10) || '	Y - on' || chr(10) || '	N - Off',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHNGLOG',
+'Change Log',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHNL',
+'Indicates Channel',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ACCOUNTMASTERDETAILSPKRES',
+'It indicates Save Account Simulation PK Response details of Mortgages module',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ACCOUNTMASTERDETAILSPKRES1',
+'It indicates Save Account Simulation PK Response details of Consumer Lending module',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ACCOUNTMASTERDETAILSPKRES2',
+'It indicates Account Reassign Authorize PK Response details of Consumer Lending module',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ACCOUNTMASTERDETAILSRES',
+'Indicates Account-Master Details-Response type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ACTMIBSETUPIO',
+'This gives the Inter Branch Parameter PK response',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ADHOCAUTHIO',
+'Includes information about ahoc authorization.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ADHOCDETAILS',
+'Includes Loan Syndication Adhoc Charge Schedules Input Querying details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ADHOCDETAILSIO',
+'Includes Loan Syndication Adhoc Charge Schedules Input Querying Input Only details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ADHOCDETAILSPK',
+'Includes Loan Syndication Adhoc Charge Schedules Input Creation Primary Key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_ALIQDSUSPRES',
+'Indicates CL Save ALiqdSusp Response type.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHADHOCCHGRESPK',
+'It indicates Authorize Adhoc PK Response details of Consumer Lending module',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILS',
+'Include the details about participants authorization',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSIO',
+'Includes the IO response information regarding the Authorization of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSIO1',
+'Includes the IO information regarding the Authorisation of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSIO2',
+'Inlcudes the IO Information regarding the Authorization of Securities Repo Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSIO3',
+'Includes Expense Processing-Contract Authorization-IO details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSPK',
+'Includes the primary key response information regarding the Authorization of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSPK1',
+'Includes the Primary key information regarding the Authorisation of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSPK2',
+'Includes the primary key information regarding the Authorisation of Corporate Action.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSPK3',
+'Includes the primary key information regarding the Authorization of Securities Repo Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSPK4',
+'Include Loans and deposits contract authorization PK type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHDETAILSPK5',
+'Includes Expense Processing-Contract Authorization-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHINSTSTATCHGRESPK',
+'It indicates Authorize Installment Status Change PK Response details of Consumer Lending module',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_AUTHORIZATIONDETAILSIO',
+'Includes the input-only response information relating the Charge Receivable Component that has been successfully authorized.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BLOCKDEALMASTER',
+'Includes Securities Deal Block Request Query Master type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRLIQ',
+'Includes the Full Response information regarding the Input of Brokerage Liquidation.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRLIQ1',
+'Includes the IO Response information regarding the Authorization of Brokerage Liquidation.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRLIQIO',
+'Includes the IO Response information regarding the Input of Brokerage Liquidation.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRLIQPK',
+'Includes the primary key information regarding the Reversal of Brokerage Liquidation.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRLIQPK1',
+'Includes the Primary key information regarding the Authorization of Brokerage Liquidation.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERFULL',
+'Includes the Full Response information regarding the Authorisation of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERFULL1',
+'Includes the Full response information regarding the Deletion of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERFULL2',
+'Includes the Full Response information regarding the Modification of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERFULL3',
+'Includes the Full information regarding the Input of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERFULL4',
+'Includes the Full Response information regarding the Input of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO',
+'Includes the IO information regarding the Authorisation of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO1',
+'Includes the IO Response information regarding the Authorisation of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO2',
+'Includes the IO information regarding the Deletion of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO3',
+'Includes the IO Response information regarding the Deletion of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO4',
+'Includes the IO information regarding the Modification of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO5',
+'Includes the IO information regarding the Input of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERIO6',
+'Includes the IO Response information regarding the Input of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERPK',
+'Includes the primary key information regarding the Deletion of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERPK1',
+'Includes the primary key information regarding the Modification of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BRMASTERPK2',
+'Includes the primary key information regarding the Input of Broker Master Maintenance.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BROKERACCOUNTSCHEMEFULL',
+'Includes Exchange Traded Derivatives- Broker Account Scheme Deletion details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BROKERACCOUNTSCHEMEFULL1',
+'Includes Exchange Traded Derivatives- Broker Account Scheme Query details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BROKERACCOUNTSCHEMEPK',
+'Includes Exchange Traded Derivatives- Broker Account Scheme Authorization-Primary Key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BROKERACCOUNTSCHEMEPK1',
+'Includes Exchange Traded Derivatives- Broker Account Scheme Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_BROKERACCOUNTSCHEMEPK2',
+'Includes Exchange Traded Derivatives- Broker Account Scheme Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTFULL',
+'it indicates the total card details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTFULL1',
+'it indicates the detail card account information',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTFULL2',
+'it indicates the detail abount the card information',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTIO',
+'it indicates the card input ouput details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTMAPPINGFULL',
+'Includes Switch -Card Account mapping Query-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTMAPPINGPK',
+'Includes Switch ATM/Debit Card FCC Account Mapping Deletion Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTMAPPINGPK1',
+'Includes Switch ATM/Debit Card FCC Account Mapping Modification Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTMAPPINGPK2',
+'Includes the Card Account Mapping Primary Key details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDACCOUNTPK',
+'it indicates the primary key of card account.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDUPLOADFULL',
+'Includes Switch -Card Upload Query-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDUPLOADPK',
+'Includes Switch Debit Card FCC Account Upload Creation Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDUPLOADPK1',
+'Includes Switch Debit Card FCC Account Upload Deletion Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CARDUPLOADPK2',
+'Includes Switch Debit Card FCC Account Upload Modification Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CASHDEPOSITFULL',
+'Includes the Cash Deposit Full Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CASHDEPOSITFULL1',
+'Includes Switch -Cash Deposit Query-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CASHDEPOSITPK',
+'Includes Switch ATM Cash Deposit Details Creation Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CASHDEPOSITPK1',
+'Includes Switch ATM Cash Deposit Details Deletion Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CASHDEPOSITPK2',
+'Includes Switch ATM Cash Deposit Details Modification Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATECODEDEFNFULL',
+'Includes CF Rate Code Maintenance Query details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATECODEDEFNIO',
+'Includes the Authorisation of Rate Code Maintenance IO details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATECODEDEFNPK',
+'Includes CF-Rate Code Maintenance Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATECODEDEFNPK1',
+'Includes CF-Rate Code Maintenance Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATETYPEDEFNFULL',
+'Includes CF Rate Type Maintenance Query details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATETYPEDEFNPK',
+'Includes the Input of Rate Type Maintenance primary key Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATETYPEDEFNPK1',
+'Includes CF-Rate Type Maintenance Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMRATETYPEDEFNPK2',
+'Includes CF-Rate Type Maintenance Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMSRATECODEDETAILSFULL',
+'Includes the Input of Floating rate Maintenance Full details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMSRATECODEDETAILSFULL1',
+'Includes CF-Floating rate Maintenance Query details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMSRATECODEDETAILSPK',
+'Includes the Input of Floating rate Maintenance primary key details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMSRATECODEDETAILSPK1',
+'Includes CF-Floating rate Maintenance Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CFTMSRATECODEDETAILSPK2',
+'Includes CF-Floating rate modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHARGELIQUIDATIONIO',
+'Includes the input-only response information relating the Charge Receivable Component that has been successfully deleted.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHARGELIQUIDATIONIO1',
+'Includes the input-only response information relating the Charge Receivable Component that has been successfully liquidated.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHARGELIQUIDATIONIO2',
+'Includes the IO information relating the Charge Receivable Component that has been successfully liquidated.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHARGELIQUIDATIONIO3',
+'the input-only response information relating the Charge Receivable Component that has been successfully reversed.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHARGELIQUIDATIONPK',
+'Includes the Primary key response information relating the Charge Receivable Component that has been successfully liquidated.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHARGELIQUIDATIONPK1',
+'Includes the primary key response information relating the Charge Receivable Component that has been successfully reversed.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTER',
+'Includes the Full response information regarding the Query of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTERIO',
+'Includes the IO information regarding the Input of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTERIO1',
+'Includes the IO information regarding the Deletion of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTERIO2',
+'Includes the IO information regarding Modification of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTERIO3',
+'Includes the IO response information regarding the Query of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTERPK',
+'Includes the primary key information regarding the Deletion of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CHGDEFNMASTERPK1',
+'Includes the primary key information regarding Modification of Asset Management Charge Definition.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLDELETEINSTSTATCHGREQ',
+'Consumer Lending Delete Inst Stat Change details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLDELETESTATUSCHANGEREQIO',
+'Consumer Lending Status Change Request PK Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLEARINGREJECTDETAILSIO',
+'Creation Of Clearing Reject IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLEARINGREJECTDETAILSPK',
+'Creation Of Clearing Reject PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLREVINSTSTATCHGREQ',
+'Reversal of Consumer Lending Installment Status Change Requset Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLROLLOVERREQIO',
+'Indicates CL-Rollover-Request IO type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVEADHOCCHGREQ',
+'Consumer Lending Save Adhoc Change Reqeust.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVEADHOCCHGREQFULL',
+'Consumer Lending Adhoc Change Full Request.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVEINSTSTATCHGREQ',
+'Consumer Lending Installment Status Change Request IO Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVEINSTSTATCHGREQFULL',
+'Consumer Lending Installment Status Change Request Full Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVEREASSIGNACCOUNTREQ',
+'Indicates CL Save Reassign Request type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVEREASSIGNREQIO',
+'Indicates CL Save Reassign Request-IO type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVESTATUSCHANGEREQFULL',
+'Consumer Loan Status Change Request Full',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSAVESTATUSCHANGEREQIO',
+'Consumer Loan Status Change Request IO',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSIMPMNTREQ',
+'Consumer Lending Payment Simulation Request Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSIMPMNTREQIO',
+'Consumer Lending Payment Simulation Request IO Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLSTCHRESPK',
+'Consumer Loan Status Change Save PK Response',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CLTBSNOTARYCONFIRMIO',
+'Consumer Loan Notary Confirm IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYDEFINITIONFULL',
+'Contains full details of commodity',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYDEFINITIONFULL1',
+'Includes Exchange Traded Derivatives- Commodity Query details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYDEFINITIONIO',
+'Indicates the commodity code and modification no.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYDEFINITIONPK',
+'Includes Exchange Traded Derivatives- Commodity Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYDEFINITIONPK1',
+'Includes Exchange Traded Derivatives- Commodity Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYPRICEMASTERFULL',
+'Includes Exchange Traded Derivatives- Commodity Price Query details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYPRICEMASTERPK',
+'Includes Exchange Traded Derivatives- Commodity Price Input-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYPRICEMASTERPK1',
+'Includes Exchange Traded Derivatives- Commodity Price Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_COMMODITYPRICEMASTERPK2',
+'Includes Exchange Traded Derivatives- Commodity Price Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTAUTHORIZATION',
+'Contract Authorization Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTCONFIRM',
+'Confirmation of Securities Deal Input  contract Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSIO',
+'Includes Expense Processing-Contract Refund-IO details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSIO1',
+'Includes Expense Processing-Contract Writeoff-IO details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK',
+'Indicates the PC Contract details-PC Contract Authorize PK type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK1',
+'Indicates the PC Contract details-PC Contract Reject Recall PK type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK2',
+'It indicates PK type details of the PC Contract Reverse operation.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK3',
+'Includes Bills and Collections-Payment Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK4',
+'Includes Bills and Collections Contract Payment Request Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK5',
+'Includes Bills and Collections Contract Payment Primary Key type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK6',
+'Includes Expense Processing-Contract Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK7',
+'Includes Expense Processing-Contract Creation-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK8',
+'Includes Expense Processing-Contract Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTDETAILSPK9',
+'Includes Expense Processing-Contract Refund-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER',
+'OT Contract Master Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER1',
+'Query of Options Contract Master Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER2',
+'Includes the full response information regarding the Deletion of Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER3',
+'Includes the Full Response information regarding the Creation of Securities Repo Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER4',
+'Include Loans and deposits contract master PK response type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER5',
+'Include Loans and deposits contract master PK type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER6',
+'Includes Loans and deposit Contract Master Activate Simulate Request Full Screen Type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER7',
+'Includes Loans and deposit Contract Master Activate Simulate Response PK Type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTER8',
+'Includes Loans and deposit Contract Master Response PK type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERAMNDPK',
+'Includes Bills and Collections-Amount Amendment Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERIO',
+'Includes the IO information regarding the Query for Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERIO1',
+'Includes the IO information regarding the Reversal of Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERIO2',
+'Includes Loans and Deposits Value Date Amendment Contract Delete Input Only Master details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERIO3',
+'Includes Loans and deposit Contract Master Activate Simulate Response IO Type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERIO4',
+'Includes Loans and deposit Contract Master Response IO Type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK',
+'Includes Loan Syndication Facility Contract Master Reverse Primary Key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK1',
+'Includes Loan Syndication Facility Contract Master Creation Primary Key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK10',
+'Includes the primary key information regarding the Modification of Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK11',
+'Includes the primary key information regarding the Reversal of Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK12',
+'Includes the primary information regarding the Creation of Securities Repo Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK13',
+'Includes Loans and Deposits Value Date Amendment Contract Delete Primary Key Master details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK14',
+'Includes Loans and Deposits Contract Value Date Amendment Primary Key Master details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK15',
+'Includes Loans and deposit Contract Master PK Type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK16',
+'Includes the primary key information regarding the Deletion of Securities Repo Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK2',
+'Includes Loan Syndication Facility Contract Master Modification Primary Key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK3',
+'Include MM ValueDated PK Type Details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK4',
+'Contract Master PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK5',
+'Modification of Options Contract PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK6',
+'Reversal of Options Contract PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK7',
+'Includes the primary key information regarding the Creation of Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK8',
+'Includes the primary key information regarding the Deletion of Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTMASTERPK9',
+'Includes the primary key information regarding the Query for Structured Deposit Contract.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTPK',
+'Indicates Loans and Deposit Contract Fee Accrual Creation-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTPK1',
+'Indicates Loans and Deposit Contract Fee Accrual Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTPK2',
+'Indicates Loans and Deposit Contract Fee Accrual Modification-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CONTRACTPK3',
+'Indicates Loans and Deposit Contract Fee Accrual Reversal-Primary Key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_CUSTOMERBREAKUPIO',
+'Includes Customer GL Breakup Query-IO details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALBLOCKRELEASEPK',
+'Creation of Securities Deal Input - Block Securities PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALBLOCKRELEASEPK1',
+'Deletion of Securities Deal Input - Block Securities PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALBLOCKRELEASEPK2',
+'Modification of Securities Deal Input - Block Securities PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALBLOCKRELEASEPK3',
+'Authorization of Securities Deal Input - Block Securities PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTER',
+'Creation of Securities Deal Input',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTER1',
+'Deletion of Securities Deal Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTER2',
+'Includes Securities Deal Query Master type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTER3',
+'Indicates FCUBS Deal Response details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTERS',
+'Creation of Securities Deal Input - Block Securities Deal Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTERS1',
+'Includes Securities Deal Block Release Query Master type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALMASTERSIO',
+'Contains FCUBS  Primary keys Response for Deal.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEALPK',
+'Closure of Securities Deal Input PK Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DEDBATOTMASTERIO',
+'Includes Warning Response details Master Input Only details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DELETEADHOCCHGRESPK',
+'Consumer Lending delete Adhoc PK response  Details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DELETEDRAWDOWNVAMIRESPK',
+'Includes LS-DrawdownVami Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DELETEINSTSTATCHGRESPK',
+'Consumer Lending Delete Inst Stat Change response details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DISRATEMASTERPK',
+'Indicates Foreign Exchange-Discount Rates Modify-PK details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DRAWDOWNSCHEDULEPK',
+'Includes Drawdown Schedule-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DRAWDOWNVAMISCHEDULEPK',
+'Includes LS-DrawdownVami Schedule-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_DVFAIRVALBULKREQ',
+'Includes Derivative Fair Value Bulk Request type details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_EXISTENCECHECKIO',
+'Consumer Loan Existence Check IO Type',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FAIRVALUPLFULL',
+'Includes Derivative Fair Value Upload Create Full type details.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDCORPORATEACTION',
+'Includes the Full response Information regarding Query of Corporate Action.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDCORPORATEACTIONIO',
+'Includes the IO information regarding the Input  Corporate Action.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDCORPORATEACTIONIO1',
+'Includes the IO response information regarding the Deletion of Corporate Action.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDCORPORATEACTIONIO2',
+'Includes the Full response IO Information regarding Query of Corporate Action.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDCORPORATEACTIONPK',
+'Includes the primary key response information regarding the Deletion of Corporate Action.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINE',
+'Includes the Full Response information regarding the Query of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINEIO',
+'Includes the IO response information regarding the Input of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINEIO1',
+'Includes the IO Response information regarding the Deletion of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINEIO2',
+'Includes the IO response information regarding the Modification of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINEIO3',
+'Includes the Full IO Response information regarding the Query of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINEPK',
+'Includes the primary key Response information regarding the Deletion of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_FUNDONLINEPK1',
+'Includes the primary key response information regarding the Modification of Asset Management Fund.',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRFULL',
+'Includes Settlement Instructions Authorization-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRFULL1',
+'Includes Settlement Instructions Creation-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRFULL2',
+'Includes Settlement Instructions Deletion-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRFULL3',
+'Includes Settlement Instructions Modification-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRFULL4',
+'Includes Settlement Instructions Query-Full details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRPK',
+'Includes Settlement Instructions Creation-Primary key details',
+'ENG'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO CSZB_COMMENTS
+(COMMENT_ID,COMMENT_TEXT,LANGUAGE_CODE)
+ VALUES 
+('CMT_CHOICE_INSTRPK1',
+'Includes Settlement Instructions Deletion-Primary key details',
+'ENG'
+)
+;
+END;
+/
+
+
+
+commit;

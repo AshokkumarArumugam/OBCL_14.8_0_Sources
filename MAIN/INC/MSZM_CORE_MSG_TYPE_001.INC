@@ -1,0 +1,17 @@
+PROMPT PROCESSING FOR MSZM_CORE_MSG_TYPE_001
+
+BEGIN
+INSERT INTO MSZM_CORE_MSG_TYPE
+(MODULE,SWIFT_MSG_TYPE,DESCRIPTION)
+ VALUES 
+('LC',
+'749',
+'Response to Advice of Discrepancy Index'
+)
+;
+END;
+/
+
+
+
+commit;

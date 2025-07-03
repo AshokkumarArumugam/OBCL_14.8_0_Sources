@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<!DOCTYPE orion-ejb-jar PUBLIC "-//ORACLE//DTD OC4J Enterprise JavaBeans runtime 9.04//EN" "http://xmlns.oracle.com/ias/dtds/orion-ejb-jar-9_04.dtd">
+<orion-ejb-jar>
+    <enterprise-beans>
+        <session-deployment name="SchedulerEJB" location="ejb/SchedulerEJBHome" local-location="ejb/local/SchedulerEJBHome"/>
+        <message-driven-deployment name="GWNotifyMDBBean" connection-factory-location="NotifyDestQCF" destination-location="NOTIFY_QUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+        <message-driven-deployment name="EMSOutMDB" connection-factory-location="NotifyDestQCF" destination-location="EMS_OUTQUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+      
+        <message-driven-deployment name="EMSInMDB" connection-factory-location="NotifyDestQCF" destination-location="EMS_INQUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+        <message-driven-deployment name="SFMSInMDB" connection-factory-location="NotifyDestQCF" destination-location="SFMS_INQUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+        <message-driven-deployment name="RTGSInMDB" connection-factory-location="NotifyDestQCF" destination-location="RTGS_INQUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+        <message-driven-deployment name="BipReportMDB" connection-factory-location="BIPQCF" destination-location="BIPREPORT_QUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+        <message-driven-deployment name="BipAdviceMDB" connection-factory-location="BIPQCF" destination-location="BIPADVREPORT_QUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+		<message-driven-deployment name="GIUploadMDB" connection-factory-location="GI_UPLOAD_QCF" destination-location="INTERNAL_GI_UPLOAD_QUEUE" listener-threads="50" subscription-name="MDBSUB" transaction-timeout="172800"/>
+        <session-deployment name="FGLHandOffExtactEJB" location="ejb/FGLHandOffExtactEJBHome"
+                            local-location="ejb/local/FGLHandOffExtactEJBHome"/>
+        <session-deployment name="BIPReportEJB" location="ejb/BIPReportEJBHome"
+                            local-location="ejb/local/BIPReportEJBHome"/>
+        
+    </enterprise-beans>
+    <assembly-descriptor>
+        <default-method-access>
+            <security-role-mapping impliesAll="true" name="default-ejb-caller-role"/>
+        </default-method-access>
+    </assembly-descriptor>
+</orion-ejb-jar>

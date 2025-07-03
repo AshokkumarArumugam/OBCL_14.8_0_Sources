@@ -1,0 +1,14 @@
+#!/bin/ksh
+# JAVA HOME 
+export JAVA_HOME=$APP_SERVER_HOME/jdk/bin
+
+# J2EE HOME 
+export J2EE_HOME=$APP_SERVER_HOME/j2ee/home
+
+# ORACLE HOME 
+export ORACLE_HOME=$APP_SERVER_HOME
+
+# ANT HOME
+export ANT_HOME=$APP_SERVER_HOME/ant
+
+export PATH=$JAVA_HOME:$ANT_HOME/bin:$PATH

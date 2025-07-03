@@ -1,0 +1,26 @@
+CREATE OR REPLACE FUNCTION olfn_round_down wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+d9 e7
+smzYRTYLpLbGVNGa7XU/rqoujfswgxBKf5nWfC8C2sHqaBEYAuW61tbf9LJ3H+NASpMaXvRp
+FnP4LmexGdIQNL9o3tAeflYREAALMGRPU0YBc9ThlK/Q7cBs/PBXrSoSBy4mE7RPqCESCCXT
+J68jKgR8ZXuAYpDevCZdMQmM01+OkRi2fgcbgsoQFdDpsa6IfaKMjZiNEVcfViAxmGC4PIQ5
+3iwvBywnhHwl
+
+/

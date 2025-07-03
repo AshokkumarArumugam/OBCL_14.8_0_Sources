@@ -1,0 +1,28 @@
+CREATE or REPLACE PACKAGE BODY olpks_core_translation wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+220 191
+PIF4vluelwmhBNHQH6+fYbhAGf0wg5Bp2dxqfC9dRfiUElkw568qBo+0EzxmLe8FPvz65S9b
+oj1RYbWWbo6ExUjOSzyKR0rt65k6Vm9ZDVz2gyAkJEoIMqowbbBqyb9oSNy7+KS90LUA13CR
+UDxpC1G5I6iEjkwO4fsO0ADaeVyJK3/YRrcM7hwpM0cqg6K+p2LrLCdsgzeM0zc4Vr6QX+t5
+QOLJgAsKdm2GfFeEmnnNLfAi5x9R8vxSNPKk3ydA9ocR1o++AYjxXpZOhdKrbHqyX+c1E3Dz
+P0y3yv1mIf+f52GykE8gHvOHp4pXQnJmMFHZWi9GzPrvSX+9P2kCQsSsGKzocyYa9lFmna6/
+Ia5tSH03l/G5lo4DT086nrbq7sNkvKaynxJl
+
+/

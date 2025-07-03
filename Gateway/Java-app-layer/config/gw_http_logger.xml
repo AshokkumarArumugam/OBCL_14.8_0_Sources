@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--*****************************************************************************
+    ** Unit Name: gw_http_logger.xml
+    **
+    ** Date:      16-Jun-2006
+    ** 
+    ** Author:    i-flex
+    **
+    ** Copyright © ** Copyright 2005- 2009 by Oracle Financial Services Software Limited.
+    **                   10-11, SDF I, SEEPZ, Andheri (East),
+    **                   Mumbai - 400 096.
+    **                   India
+    ** 
+    ** This source is part of the Flexcube XML Gateway and is copyrighted by Oracle Financial Services Software Limited.
+    ** 
+    ** All rights reserved.  No part of this work may be reproduced, stored in a
+    ** retrieval system, adopted or transmitted in any form or by any means,
+    ** electronic, mechanical, photographic, graphic, optic recording or otherwise,
+    ** translated in any language or computer language, without the prior written
+    ** permission of Oracle Financial Services Software Limited.
+    ** 
+    ******************************************************************************* 
+    **==============================================================================
+    **              		SIMPLE DATE FORMATS
+    **==============================================================================
+    ** Datetime Format Syntax:
+    ** To specify the Datetime format use a time pattern string. In this pattern, all 
+    ** ASCII letters are reserved as pattern letters, which are defined as the 
+    ** following: 
+    
+    **  Symbol   Meaning                 Presentation        Example
+    **  ======   =======                 ============        =======
+    **  G        era designator          (Text)              AD
+    **  y        year                    (Number)            1996
+    **  M        month in year           (Text & Number)     July & 07
+    **  d        day in month            (Number)            10
+    **  h        hour in am/pm (1~12)    (Number)            12
+    **  H        hour in day (0~23)      (Number)            0
+    **  m        minute in hour          (Number)            30
+    **  s        second in minute        (Number)            55
+    **  S        millisecond             (Number)            978
+    **  E        day in week             (Text)              Tuesday
+    **  D        day in year             (Number)            189
+    **  F        day of week in month    (Number)            2 (2nd Wed in July)
+    **  w        week in year            (Number)            27
+    **  W        week in month           (Number)            2
+    **  a        am/pm marker            (Text)              PM
+    **  k        hour in day (1~24)      (Number)            24
+    **  K        hour in am/pm (0~11)    (Number)            0
+    **  z        time zone               (Text)              Pacific Standard Time
+    **  '        escape for text         (Delimiter)
+    **  ''       single quote            (Literal)           '
+    
+    
+    **==============================================================================
+    **            		Logger Properties
+    **==============================================================================
+    ** GW.LOGGER.ENABLED=Y
+    ** 1. Logger will log into the mentioned text file if Y
+    ** 2. Logger will neither log into the mentioned text file nor print on the 
+    **    console if I
+    ** 3. Logger will not log into the mentioned text file, but print on the console 
+    **    if N [anything other than Y and I]
+    **==============================================================================
+    ** This property is used for appending Datetime string to the log messages
+    ** Pl. Note. :- Assign ' ' to avoid having Datetime string from being appended
+    ** GW.LOGGER.DATE_DISPLAY_FORMAT=' '
+    ** GW.LOGGER.DATE_DISPLAY_FORMAT=EEE dd_MM_yy HH:mm:ss
+    ** ==============================================================================
+    ** This property is used for specifying the size of the Buffer in kilobytes.
+    ** The log messages are stored in this Buffer if GW.LOGGER.ENABLED=Y, once the 
+    ** size of the buffer equals or exceeds the size represented by this property 
+    ** it is written to the file.
+    ** Pl. Note :- Keep the size of the buffer according to number/size of logging
+    **             messages, meaning if only few messages are logged then its better
+    **             to have the size nearer to 0 KB 
+    ** 2 * 1024 = 2048 ie. 2KB
+    ** 8 * 1024 = 8192 ie. 8KB
+    ** GW.LOGGER.BUFFER_SIZE=8192
+    **==============================================================================
+    ** This property is used for appending date string to the file name
+    ** GW.LOGGER.FILE_DATE_DISPLAY_FORMAT='_'EEE dd_MM_yyyy KK_mm_ss a
+    **==============================================================================
+    ** This property is used for specifying the size of the log file in kilobytes.
+    ** GW.LOGGER.FILE_SIZE=1048576
+    ** 1024 * 1024 = 1048576 KB ie. 1MB
+    ** 2 * 1048576 = 2097152 KB ie. 2MB
+    ** 10 * 1048576 = 10485760 KB ie. 10MB
+    **==============================================================================
+-->
+<configuration>
+    <appSettings>
+        <add key="GW.LOGGER.FPATH" value="D:/Kernel7.3/GW_HTTP/log/"/>
+        <add key="GW.LOGGER.FNAME" value="gwlog"/>
+        <add key="GW.LOGGER.EXTENSION" value=".log"/>
+        <add key="GW.LOGGER.ENABLED" value="Y"/>
+        <add key="GW.MODULE.VERSION" value="Kernel7.3"/>
+        <add key="GW.LOGGER.DELIMITER" value="->"/>
+        <add key="GW.LOGGER.EXCEPTION_STRING" value="EXCEPTION"/>
+        <add key="GW.LOGGER.DATE_DISPLAY_FORMAT" value="dd_MMM HH:mm:ss:SSS"/>
+        <add key="GW.LOGGER.FILE_DATE_DISPLAY_FORMAT" value="'_'EEE dd_MM_yyyy KK_mm_ss a"/>
+        <add key="GW.LOGGER.BUFFER_SIZE" value="8192"/>
+        <add key="GW.LOGGER.FILE_SIZE" value="1048576"/>
+    </appSettings>
+</configuration>

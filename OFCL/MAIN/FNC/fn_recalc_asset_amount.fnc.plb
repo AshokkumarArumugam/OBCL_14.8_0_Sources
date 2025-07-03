@@ -1,0 +1,34 @@
+CREATE OR REPLACE FUNCTION Fn_recalc_asset_amount wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+66c 363
+BsKjovOz1KNBdGDZhlS3R0+VjEkwg5DDTCCDfI5Vxz+VECapGGUzo9saFHXRo7hlxpPZt5Tm
+VLOs1llpXL2BxLuL1mcideg6qGb/vrEHx/+BaLAbxHaexz7DjjlSFqxqqPLpSwxKZT0hTSua
+lOiEresu0QRYmfzDT1YYKMaLQOo1YLKKpA9FkTA9y3Gv9Xp71ej5Fcp+Dn8VEJ8/RNnre2+0
+5v56FQK8uM+Xr99TUqiL/F+66EP8idDiODoIt9hX1mZJgsESPnF9HEmKSq1yRAkd1nqTIe96
+70C1IcBYharSEmGz/TNhm0tMgHiR1hkpdwke9fwQXfg6mhxZwjw9iKYcLfT6NSxV9o3laL5m
+zxlBghezL5iRKCP0QvlgBDfoul4RUuXkUCl0P9OLOI7AfQ3MUJa+YtKc+UQhTTj58tg35Bcj
+AlpdlRRIbwnNcS6v7rRqHc8lx07cE0uWkrdNKn5sFFJF0zhmXpRGJrREByEJyDkKV6wuUaYz
+nNDFg+dYZyjcsCPJ2ojJHuB3homSYUxpsAP61+eUkzrn0PLpZc9y5sfeZcXAukDoDQ9BBXUC
+xj6gyLiaJK6DF85lHB+NPHZNaq9xRZoAICGwtPttLyQeDzJ8ENTnKpxq6D1VCv+LnRg5KgyY
+Mu/ya7ogZLrSsoCWGZcPS/dXIxH9xUVAaC7SzEBk83p6z3kxtFJ8ZqZjuTlhNohuVemoIP10
+UnMracwjw2WjamBsmP3qW+xViZHxmhVDVVS1QBfq67OtBDupX22P9ZsNFDRsyH7K3OG9+GdE
+2leiUo7oL2QznSjgT82RQtI/tEYt6Vjcz4KQiPqi+hSvIWsrRXk8Jj+SHWOnA/A=
+
+/

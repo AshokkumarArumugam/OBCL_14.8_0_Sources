@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="FCUBS_7-2_GW" default="all" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property environment="env"/>  
+	<property name="source" value="."/>
+
+	<property name="GW_EJB" value="${env.KERNEL_INSTALL_DIR}/GW_EJB"/>
+	<property name="GW_MDB" value="${env.KERNEL_INSTALL_DIR}/GW_MDB"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="GW_NOTIFY_TIMER" value="${env.KERNEL_INSTALL_DIR}/GW_NOTIFY_TIMER"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="GW_NOTIFY_MDB" value="${env.KERNEL_INSTALL_DIR}/GW_NOTIFY_MDB"/>
+	<property name="GW_WS" value="${env.KERNEL_INSTALL_DIR}/GW_WS"/>
+	<property name="GW_HTTP" value="${env.KERNEL_INSTALL_DIR}/GW_HTTP"/>
+	<property name="setup" value="${env.KERNEL_INSTALL_DIR}/setup"/>
+
+	<!--
+	<property name="xsd" value="${env.KERNEL_INSTALL_DIR}/XSD"/>
+	-->
+
+
+	<property name="src" value="../../../Java-app-layer/src"/>
+	<property name="config" value="../../../Java-app-layer/config"/>
+	<property name="config_as" value="../../../Java-app-layer/config/${env.APP_SERVER_NAME}"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_client" value="${GW_NOTIFY_TIMER}/client"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="ejb_config" value="${GW_EJB}/config"/>
+	<property name="ejb_config_as" value="${GW_EJB}/config/${env.APP_SERVER_NAME}"/>
+	<property name="mdb_config" value="${GW_MDB}/config"/>
+	<property name="mdb_config_as" value="${GW_MDB}/config/${env.APP_SERVER_NAME}"/>
+	<property name="http_config" value="${GW_HTTP}/config"/>
+	<property name="http_config_as" value="${GW_HTTP}/config/${env.APP_SERVER_NAME}"/>
+	<property name="9/15/2008" value="${GW_HTTP}/config/${env.APP_SERVER_NAME}"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_config" value="${GW_NOTIFY_TIMER}/config"/>
+	<property name="notify_timer_config_as" value="${GW_NOTIFY_TIMER}/config/${env.APP_SERVER_NAME}"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="notify_mdb_config" value="${GW_NOTIFY_MDB}/config"/>
+
+    <!-- KERNEL10.3 StartupClassesConfiguration changes starts /-->
+    <property name="notify_mdb_StartupClassesCnfgrtn" value="${GW_NOTIFY_MDB}/StartupClassesConfiguration"/>
+    <property name="notify_mdb_StartupClassesCnfgrtn_lib" value="${notify_mdb_StartupClassesCnfgrtn}/lib"/>
+	<!-- KERNEL10.3 StartupClassesConfiguration changes ends /-->
+
+	<property name="notify_mdb_config_as" value="${GW_NOTIFY_MDB}/config/${env.APP_SERVER_NAME}"/>
+	<property name="ws_config" value="${GW_WS}/config"/>
+	<property name="ws_config_as" value="${GW_WS}/config/${env.APP_SERVER_NAME}"/>
+	<property name="ws_config_wsdl" value="${GW_WS}/config/wsdl"/>
+	<property name="ws_config_as" value="${GW_WS}/config/${env.APP_SERVER_NAME}"/>
+
+	<property name="ejb_lib" value="${GW_EJB}/lib"/>
+	<property name="mdb_lib" value="${GW_MDB}/lib"/>
+	<property name="http_lib" value="${GW_HTTP}/lib"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_lib" value="${GW_NOTIFY_TIMER}/lib"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="notify_mdb_lib" value="${GW_NOTIFY_MDB}/lib"/>
+	<property name="ws_lib" value="${GW_WS}/lib"/>
+
+	<property name="ejb_log" value="${GW_EJB}/log"/>
+	<property name="mdb_log" value="${GW_MDB}/log"/>
+	<property name="http_log" value="${GW_HTTP}/log"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_log" value="${GW_NOTIFY_TIMER}/log"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="notify_mdb_log" value="${GW_NOTIFY_MDB}/log"/>
+	<property name="ws_log" value="${GW_WS}/log"/>
+
+	<property name="ejb_setup" value="${GW_EJB}/setup"/>
+	<property name="ejb_setup_as" value="${GW_EJB}/setup/${env.APP_SERVER_NAME}"/>
+	<property name="mdb_setup" value="${GW_MDB}/setup"/>
+	<property name="mdb_setup_as" value="${GW_MDB}/setup/${env.APP_SERVER_NAME}"/>
+	<property name="http_setup" value="${GW_HTTP}/setup"/>
+	<property name="http_setup_as" value="${GW_HTTP}/setup/${env.APP_SERVER_NAME}"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_setup" value="${GW_NOTIFY_TIMER}/setup"/>
+	<property name="notify_timer_setup_as" value="${GW_NOTIFY_TIMER}/setup/${env.APP_SERVER_NAME}"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="notify_mdb_setup" value="${GW_NOTIFY_MDB}/setup"/>
+	<property name="notify_mdb_setup_as" value="${GW_NOTIFY_MDB}/setup/${env.APP_SERVER_NAME}"/>
+
+	<property name="ws_setup" value="${GW_WS}/setup"/>
+	<property name="ws_setup_as" value="${GW_WS}/setup/${env.APP_SERVER_NAME}"/>
+
+	<property name="ejb_src" value="${GW_EJB}/src"/>
+	<property name="mdb_src" value="${GW_MDB}/src"/>
+	<property name="http_src" value="${GW_HTTP}/src"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_src" value="${GW_NOTIFY_TIMER}/src"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="notify_mdb_src" value="${GW_NOTIFY_MDB}/src"/>
+	<property name="ws_src" value="${GW_WS}/src"/>
+
+	<property name="ejb_src_common" value="${GW_EJB}/src/common"/>
+	<property name="mdb_src_common" value="${GW_MDB}/src/common"/>
+	<property name="http_src_common" value="${GW_HTTP}/src/common"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="notify_timer_src_common" value="${GW_NOTIFY_TIMER}/src/common"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="notify_mdb_src_common" value="${GW_NOTIFY_MDB}/src/common"/>
+	<property name="ws_src_common" value="${GW_WS}/src/common"/>
+
+	<property name="src_gw_ejb" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gw/ejb"/>
+	<property name="src_gw_mdb" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gw/mdb"/>
+	<property name="src_gw_http" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gw/http/servlets"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="src_gw_notify_timer" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gw/notify/timer"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="src_gw_notify_mdb" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gw/notify/mdb"/>
+	<property name="src_gw_ws" value="${env.KERNEL_INSTALL_DIR}/src/com/ofss/fcubs/gw/ws"/>
+	<property name="src_gw_ws_types" value="${env.KERNEL_INSTALL_DIR}/src/com/ofss/fcubs/gw/ws/types"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Controller functionality moved to Bean starts
+	<property name="src_contr_ejb" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwcontrollers/ejb"/>
+	<property name="src_contr_mdb" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwcontrollers/mdb"/>
+	Controller functionality moved to Bean ends -->
+	<!-- KERNEL73 ends /-->
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="src_contr_notify_timer" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwcontrollers/notify/timer"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+
+	<!-- KERNEL73 Starts /-->
+	<!-- Controller functionality moved to Bean starts
+	<property name="src_contr_notify_mdb" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwcontrollers/notify/mdb"/>
+	Controller functionality moved to Bean ends -->
+	<!-- KERNEL73 ends /-->
+
+	<property name="src_srvc_db" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/db"/>
+	<property name="src_srvc_db_inbound" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/db/inbound"/>
+	<property name="src_srvc_db_notify" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/db/notify"/>
+
+	<property name="src_srvc_ejb_client" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/ejb"/>
+	<!-- KERNEL73 Starts /-->
+	<!-- Notification timer Changes starts
+	<property name="src_srvc_timer_client" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/timer"/>
+	Notification timer Changes ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="src_srvc_jms" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/jms"/>
+	<property name="src_srvc_xml" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwservices/xml"/>
+
+	<property name="src_util" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_db" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwutil/db"/>
+	<property name="src_util_log" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_jms" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwutil/jms"/>
+	<property name="src_util_xml" value="${env.KERNEL_INSTALL_DIR}/src/com/iflex/fcubs/gwutil/xml"/>
+
+	<target name="all" depends="make_folder, copy_files, copy_to_gw, clean"/>
+	<!-- Create the directory structure used by fcubs kernel 7.2 Lot1 -->
+	
+	
+	<target name="make_folder">
+		<!-- Create the time stamp -->
+		<tstamp/>
+
+		<mkdir dir="${setup}"/>
+		<mkdir dir="${setup}/${env.APP_SERVER_NAME}"/>
+		<!--
+		<mkdir dir="${xsd}"/>
+		-->
+
+		<mkdir dir="${ejb_lib}"/>
+		<mkdir dir="${ejb_log}"/>
+		<mkdir dir="${ejb_setup_as}"/>
+		<mkdir dir="${ejb_src}"/>
+		<mkdir dir="${ejb_src_common}"/>
+		<mkdir dir="${ejb_config_as}"/>
+
+		<mkdir dir="${mdb_lib}"/>
+		<mkdir dir="${mdb_log}"/>
+		<mkdir dir="${mdb_setup_as}"/>
+		<mkdir dir="${mdb_src}"/>
+		<mkdir dir="${mdb_src_common}"/>
+		<mkdir dir="${mdb_config_as}"/>
+
+		<mkdir dir="${http_lib}"/>
+		<mkdir dir="${http_log}"/>
+		<mkdir dir="${http_setup_as}"/>
+		<mkdir dir="${http_src}"/>
+		<mkdir dir="${http_src_common}"/>
+		<mkdir dir="${http_config}"/>
+		<mkdir dir="${http_config_as}"/>
+		
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<mkdir dir="${notify_timer_client}"/>
+		<mkdir dir="${notify_timer_lib}"/>
+		<mkdir dir="${notify_timer_log}"/>
+		<mkdir dir="${notify_timer_setup_as}"/>
+		<mkdir dir="${notify_timer_src}"/>
+		<mkdir dir="${notify_timer_src_common}"/>
+		<mkdir dir="${notify_timer_config_as}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		
+
+		<!--
+		Kernel10.2 Starts
+		-->
+
+        <!-- Kernel10.3 StartupClassesConfiguration Starts --> 
+		<mkdir dir="${notify_mdb_StartupClassesCnfgrtn}"/>
+		<mkdir dir="${notify_mdb_StartupClassesCnfgrtn_lib}"/>
+		<!-- Kernel10.3 StartupClassesConfiguration ends --> 
+		
+		<mkdir dir="${notify_mdb_lib}"/>
+		<mkdir dir="${notify_mdb_log}"/>
+		<mkdir dir="${notify_mdb_setup_as}"/>
+		<mkdir dir="${notify_mdb_src}"/>
+		<mkdir dir="${notify_mdb_src_common}"/>
+		<mkdir dir="${notify_mdb_config_as}"/>
+		
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<mkdir dir="${ws_config_wsdl}"/>
+		<mkdir dir="${ws_lib}"/>
+		<mkdir dir="${ws_log}"/>
+		<mkdir dir="${ws_setup_as}"/>
+		<mkdir dir="${ws_src}"/>
+		<mkdir dir="${ws_src_common}"/>
+		<mkdir dir="${ws_config}"/>
+		<mkdir dir="${ws_config_as}"/>
+
+		<mkdir dir="${src_gw_ejb}"/>
+		<mkdir dir="${src_gw_http}"/>
+		<mkdir dir="${src_gw_mdb}"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<mkdir dir="${src_gw_notify_timer}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		<!--
+		Kernel10.2 Starts
+		-->
+		
+		<mkdir dir="${src_gw_notify_mdb}"/>
+		
+		<!--
+		Kernel10.2 Ends
+		-->
+		<mkdir dir="${src_gw_ws}"/>
+		<mkdir dir="${src_gw_ws_types}"/>
+
+		<!-- KERNEL73 Starts /-->
+		<!-- Controller functionality moved to Bean starts
+		<mkdir dir="${src_contr_ejb}"/>
+		<mkdir dir="${src_contr_mdb}"/>
+		Controller functionality moved to Bean ends -->
+		<!-- KERNEL73 ends /-->
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<mkdir dir="${src_contr_notify_timer}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+    	<!-- KERNEL73 Starts /-->
+		<!-- Controller functionality moved to Bean starts
+		<mkdir dir="${src_contr_notify_mdb}"/>
+		Controller functionality moved to Bean ends -->
+		<!-- KERNEL73 ends /-->
+
+		<mkdir dir="${src_srvc_db}"/>
+		<mkdir dir="${src_srvc_ejb_client}"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<mkdir dir="${src_srvc_timer_client}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		<mkdir dir="${src_srvc_jms}"/>
+		<mkdir dir="${src_srvc_xml}"/>
+		<mkdir dir="${src_srvc_db_inbound}"/>
+		<!--
+		Kernel10.2 Starts
+		-->
+		<!--
+		<mkdir dir="${src_srvc_db_notify}"/>
+		-->
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<mkdir dir="${src_util_db}"/>
+		<mkdir dir="${src_util_log}"/>
+		<mkdir dir="${src_util_jms}"/>
+		<mkdir dir="${src_util_xml}"/>
+
+	</target>
+	
+	
+
+	<!--Copy files into their respective folders and rename wherever required-->
+	
+	<target name="copy_files"  depends="make_folder">
+
+		<copy file="../set_env.bat" todir="${setup}"/>
+		<copy file="../set_env.sh" todir="${setup}"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy file="../ChangePassword.bat" todir="${notify_timer_setup}"/>
+		<copy file="../ChangePassword.sh" todir="${notify_timer_setup}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		<!--
+		Kernel10.2 Starts
+		-->
+
+		<!-- Kernel10.3 Starts	-->
+		<copy file="../ChangePassword.bat" todir="${notify_mdb_setup}"/>
+		<copy file="../ChangePassword.sh" todir="${notify_mdb_setup}"/>
+		<!-- Kernel10.3 ends	-->
+
+		<!--
+		Kernel10.2 Ends
+		-->		
+		<copy file="../ChangePassword.bat" todir="${mdb_setup}"/>
+		<copy file="../ChangePassword.sh" todir="${mdb_setup}"/>
+
+		<copy file="../ChangePassword.bat" todir="${http_setup}"/>
+		<copy file="../ChangePassword.sh" todir="${http_setup}"/>
+
+             
+		<copy file="set_Path.bat" todir="${setup}/${env.APP_SERVER_NAME}"/>
+		<copy file="set_Path.sh" todir="${setup}/${env.APP_SERVER_NAME}"/>
+		
+		<!--
+		Kernel10.2 Starts
+		-->
+
+		<!--
+		<copy todir="${xsd}">
+			<fileset dir="../../../Services-Operations/XSD">
+				<include name="*.*"/>
+				</fileset>
+		</copy>
+		-->
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<copy file="${config}/gw_ejb_logger.xml" todir="${ejb_config}"/>
+		<copy file="${config}/GW_EJB_Prop.xml" todir="${ejb_config}"/>
+
+		<copy file="${config}/gw_mdb_logger.xml" todir="${mdb_config}"/>
+		<copy file="${config}/GW_MDB_Prop.xml" todir="${mdb_config}"/>
+
+
+		<copy file="${config}/gw_http_logger.xml" todir="${http_config}"/>
+		<copy file="${config}/GW_HTTP_Prop.xml" todir="${http_config}"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy file="${config}/gw_notify_timer_logger.xml" todir="${notify_timer_config}"/>
+		<copy file="${config}/GW_Notify_Timer_Prop.xml" todir="${notify_timer_config}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->		
+		<!--
+		Kernel10.2 Starts
+		-->
+
+
+		<!-- Kernel10.3 Starts -->
+		<copy file="${config}/gw_notify_mdb_logger.xml" todir="${notify_mdb_config}"/>
+		<copy file="${config}/GW_Notify_MDB_Prop.xml" todir="${notify_mdb_config}"/>
+		<!-- Kernel10.3 Ends -->
+
+
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<copy file="${config}/gw_ws_logger.xml" todir="${ws_config}"/>
+		<copy file="${config}/GW_WS_Prop.xml" todir="${ws_config}"/>
+
+		<copy file="${src}/GWEJBBean.java" todir="${src_gw_ejb}"/>
+		<copy file="${src}/GWEJBLocal.java" todir="${src_gw_ejb}"/>
+		<copy file="${src}/GWEJBLocalBusiness.java" todir="${src_gw_ejb}"/>
+		<copy file="${src}/GWEJBLocalHome.java" todir="${src_gw_ejb}"/>
+		<copy file="${src}/GWEJBRemote.java" todir="${src_gw_ejb}"/>
+		<copy file="${src}/GWEJBRemoteBusiness.java" todir="${src_gw_ejb}"/>
+		<copy file="${src}/GWEJBRemoteHome.java" todir="${src_gw_ejb}"/>
+
+		<copy file="${src}/GWMDBBean.java" todir="${src_gw_mdb}"/>
+
+		<copy file="${src}/GWHttpServlet.java" todir="${src_gw_http}"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy file="${src}/GWNotifyTimerBean.java" todir="${src_gw_notify_timer}"/>
+		<copy file="${src}/GWNotifyTimerLocal.java" todir="${src_gw_notify_timer}"/>
+		<copy file="${src}/GWNotifyTimerLocalBusiness.java" todir="${src_gw_notify_timer}"/>
+		<copy file="${src}/GWNotifyTimerLocalHome.java" todir="${src_gw_notify_timer}"/>
+		<copy file="${src}/GWNotifyTimerRemote.java" todir="${src_gw_notify_timer}"/>
+		<copy file="${src}/GWNotifyTimerRemoteBusiness.java" todir="${src_gw_notify_timer}"/>
+		<copy file="${src}/GWNotifyTimerRemoteHome.java" todir="${src_gw_notify_timer}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		
+		<!--
+		Kernel10.2 Starts
+		-->
+		
+		<copy file="${src}/GWNotifyMDBBean.java" todir="${src_gw_notify_mdb}"/>
+		
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<copy todir="${src_gw_ws}">
+			<fileset dir="${src}/${env.APP_SERVER_NAME}">
+				<include name="*Impl.java"/>
+			</fileset>
+		</copy>
+		<!-- KERNEL73 Starts /-->
+		<!-- Controller functionality moved to Bean starts
+		<copy file="${src}/GWEJBController.java" todir="${src_contr_ejb}"/>
+		<copy file="${src}/GWMDBController.java" todir="${src_contr_mdb}"/>
+		Controller functionality moved to Bean ends -->
+		<!-- KERNEL73 ends /-->
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy file="${src}/GWNotifyTimerController.java" todir="${src_contr_notify_timer}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+
+		<!-- KERNEL73 Starts /-->
+		<!-- Controller functionality moved to Bean starts
+		<copy file="${src}/GWNotifyMDBController.java" todir="${src_contr_notify_mdb}"/>
+		Controller functionality moved to Bean ends -->
+		<!-- KERNEL73 ends /-->
+
+		<copy file="${src}/GWMsgProcessor.java" todir="${src_srvc_db}"/>
+		<copy file="${src}/GWMsgSchemaNotify.java" todir="${src_srvc_db_notify}"/>
+		<copy file="${src}/GWBizSchemaProc.java" todir="${src_srvc_db_inbound}"/>
+		<copy file="${src}/GWMsgSchemaProc.java" todir="${src_srvc_db_inbound}"/>
+		<copy file="${src}/GWEJBClient.java" todir="${src_srvc_ejb_client}"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy file="${src}/GWTimerClient.java" todir="${src_srvc_timer_client}"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		<copy file="${src}/GWAQJMSService.java" todir="${src_srvc_jms}"/>
+		<copy file="${src}/GWJMSQueueService.java" todir="${src_srvc_jms}"/>
+		<copy file="${src}/GWJMSTopicService.java" todir="${src_srvc_jms}"/>
+		<copy file="${src}/GWXSDValidator.java" todir="${src_srvc_xml}"/>
+		<copy file="${src}/GWEntityReslover.java" todir="${src_srvc_xml}"/>
+
+		<copy file="${src}/GWGenUtils.java" todir="${src_util}"/>
+		<copy file="${src}/GWProperties.java" todir="${src_util}"/>
+		<copy file="${src}/GWPropertiesConstants.java" todir="${src_util}"/>
+		<copy file="${src}/GWPropertiesUtil.java" todir="${src_util}"/>
+		<copy file="${src}/GWPwdEnc.java" todir="${src_util}"/>
+
+		<copy file="${src}/GWDBUtil.java" todir="${src_util_db}"/>
+		<copy file="${src}/GWLogger.java" todir="${src_util_log}"/>
+		<copy file="${src}/GWLoggerProperties.java" todir="${src_util_log}"/>
+		<copy file="${src}/GWJMSUtil.java" todir="${src_util_jms}"/>
+		<copy file="${src}/GWXMLUtils.java" todir="${src_util_xml}"/>
+
+		<copy file="${config}/application_EJB.xml" tofile="${ejb_config}/application.xml"/>
+		<copy file="${config}/ejb-jar_EJB.xml" tofile="${ejb_config}/ejb-jar.xml"/>
+        <copy file="${config_as}/weblogic-ejb-jar_EJB.xml" tofile="${ejb_config_as}/weblogic-ejb-jar.xml"/>
+		<copy file="build_EJB.xml" tofile="${ejb_setup_as}/build.xml"/>
+
+        <copy file="build_MDB.xml" tofile="${mdb_setup_as}/build.xml"/>
+
+        <copy file="${config}/application_HTTP.xml" tofile="${http_config}/application.xml"/>
+		<copy file="${config_as}/web_HTTP.xml" tofile="${http_config}/web.xml"/>
+		<copy file="${config_as}/weblogic_HTTP.xml" tofile="${http_config_as}/weblogic.xml"/>
+        <copy file="build_HTTP.xml" tofile="${http_setup_as}/build.xml"/>
+
+        <!-- KERNEL10.3 St StartupClassesConfiguration starts /-->
+		<copy file="${config_as}/StartupClassesConfiguration/aqjms.properties" tofile="${notify_mdb_StartupClassesCnfgrtn}/aqjms.properties"/>
+        <copy file="${config_as}/StartupClassesConfiguration/aqjms_user.properties" 			            tofile="${notify_mdb_StartupClassesCnfgrtn}/aqjms_user.properties"/>
+		<copy file="${config_as}/StartupClassesConfiguration/setEnv100.txt" tofile="${notify_mdb_StartupClassesCnfgrtn}/setEnv.cmd"/>           
+        <!-- KERNEL10.3 St StartupClassesConfiguration ends /-->
+
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy file="runNotifyTimer.bat" todir="${notify_timer_client}/${env.APP_SERVER_NAME}"/>
+		<copy file="runNotifyTimer.sh" todir="${notify_timer_client}/${env.APP_SERVER_NAME}"/>
+
+		<copy file="${config}/application_Notify_Timer.xml" tofile="${notify_timer_config}/application.xml"/>
+		<copy file="${config}/ejb-jar_Notify_Timer.xml" tofile="${notify_timer_config}/ejb-jar.xml"/>
+        <copy file="${config_as}/weblogic-ejb-jar_Notify_Timer.xml" tofile="${notify_timer_config_as}/weblogic-ejb-jar.xml"/>
+		<copy file="build_Notify_Timer.xml" tofile="${notify_timer_setup_as}/build.xml"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+
+		<!--
+		Kernel10.2 Starts
+		-->
+		
+		<!-- Kernel10.3 Starts	-->
+		<copy file="build_Notify_MDB.xml" tofile="${notify_mdb_setup_as}/build.xml"/>
+		<!-- Kernel10.3 Ends	-->
+
+		<!--
+		Kernel10.2 Ends
+		-->
+		<!--
+		<copy todir="${ws_config}">
+			<fileset dir="${config_as}">
+				<include name="application_WS_*.xml"/>				
+				<include name="ejb-jar_WS_*.xml"/>
+				<include name="webservices_*.xml"/>
+				<include name="web_WS_*.xml"/>
+			</fileset>
+		</copy>
+		-->
+		<copy file="${config_as}/web.xml" tofile="${ws_config}/web.xml"/>
+		<copy file="${config_as}/weblogic.xml" tofile="${ws_config_as}/weblogic.xml"/>
+		<!--
+		Kernel10.2 Starts
+		-->
+		<!--
+		<copy todir="${ws_config_wsdl}">
+			<fileset dir="../../../Services-Operations/WSDL">
+				<include name="*.wsdl"/>
+			</fileset>
+		</copy>
+		-->
+		<!--
+		Kernel10.2 Ends
+		-->
+		<copy file="../set_Service.bat" todir="${ws_setup}"/>
+    	<copy file="../set_Service.sh" todir="${ws_setup}"/>
+		<copy file="../call_setDomainEnv.bat" todir="${ws_setup}"/>
+    	<copy file="../call_setDomainEnv.sh" todir="${ws_setup}"/>
+		<copy file="build_WS.xml" tofile="${ws_setup_as}/build.xml"/>
+
+	</target>
+
+	<!-- Kernel10.3 Starts -->
+
+    <target name="cond-else">
+		<copy file="${config}/application_MDB.xml" tofile="${mdb_config}/application.xml"/>
+		<copy file="${config}/ejb-jar_MDB.xml" tofile="${mdb_config}/ejb-jar.xml"/>
+		<copy file="${config_as}/weblogic-ejb-jar_MDB.xml" tofile="${mdb_config_as}/weblogic-ejb-jar.xml"/>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+        <copy file="${config}/application_Notify_Timer.xml" tofile="${notify_timer_config}/application.xml"/>
+		<copy file="${config_as}/weblogic-ejb-jar_Notify_Timer.xml" tofile="${notify_timer_config_as}/weblogic-ejb-jar.xml"/>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->
+		<!--
+		Kernel10.2 Starts
+		-->
+		
+        <copy file="${config}/application_Notify_MDB.xml" tofile="${notify_mdb_config}/application.xml"/>
+		<copy file="${config}/ejb-jar_Notify_MDB.xml" tofile="${notify_mdb_config}/ejb-jar.xml"/>
+		<copy file="${config_as}/weblogic-ejb-jar_Notify_MDB.xml" tofile="${notify_mdb_config_as}/weblogic-ejb-jar.xml"/>
+		
+		<!--
+		Kernel10.2 Ends
+		-->
+    </target>
+	<!-- Kernel10.3 ends -->
+	
+	
+    <target name="copy_to_gw" depends="copy_files,cond-else">
+
+		<copy todir="${ejb_src_common}">
+			<!-- KERNEL73 starts /-->
+			<!-- Controller functionality moved to Bean starts
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwcontrollers/ejb/**"/>  
+			Controller functionality moved to Bean ends -->
+			<!-- KERNEL73 ends /-->
+
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" 
+					includes="com/**/gwutil/*.java"
+					excludes="**/GWPwdEnc.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/db/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/log*/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/xml/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/db/*.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/db/inbound/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/xml/**"/>
+		</copy>
+		<copy todir="${ejb_src}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src"  includes="com/**/gw/ejb/**"/>
+		</copy>
+
+		<copy todir="${mdb_src_common}">
+			<!-- KERNEL73 starts /-->
+			<!-- Controller functionality moved to Bean starts
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwcontrollers/mdb/**"/>  
+			Controller functionality moved to Bean ends --> 
+			<!-- KERNEL73 ends -->
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/*.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/db/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/log*/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/xml/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/jms/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/db/*.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/db/inbound/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/xml/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" 
+					includes="com/**/gwservices/jms/**"
+					excludes="**/GWAQJMSService.java"/>
+		</copy>
+		<copy todir="${mdb_src}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src"  includes="com/**/gw/mdb/**"/>
+		</copy>
+
+		<copy todir="${http_src_common}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gw/ejb/**" excludes="**/GWEJBBean.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/ejb/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/*.java"/>
+
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/log*/**"/>
+		</copy>
+		<copy todir="${http_src}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src"  includes="com/**/gw/http/servlets/**"/>
+		</copy>
+		<!-- KERNEL73 Starts /-->
+		<!-- Notification timer Changes starts
+		<copy todir="${notify_timer_src_common}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" 
+						includes="com/**/gw/notify/timer/**" 
+						excludes="**/GWNotifyTimerBean.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwcontrollers/notify/timer/**"/> 
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" 
+			             includes="com/**/gwservices/jms/**"
+						 excludes="**/GWJMSTopicService.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/timer/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/*.java"/>
+      		<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/db/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/jms/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/log*/**"/>
+		</copy>
+
+		<copy todir="${notify_timer_src}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src"  includes="com/**/gw/notify/timer/**"/>
+		</copy>
+		Notification timer Changes ends -->
+		<!-- KERNEL73 ends /-->  
+		<!--
+		Kernel10.2 Starts
+		-->
+		
+		<!-- Kernel10.3 Starts -->
+		<copy todir="${notify_mdb_src_common}">
+		
+			<!-- KERNEL73 Starts /-->
+			<!-- Controller functionality moved to Bean starts 
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwcontrollers/notify/mdb/**"/> 		
+		    Controller functionality moved to Bean ends --> 
+			<!-- KERNEL73 ends -->
+
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<!--
+		Kernel10.2 Starts
+		-->
+		
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" 
+			              includes="com/**/gwservices/jms/**" excludes="**/GWAQJMSService.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/db/*.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/db/notify/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/*.java"/>
+
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/db/*.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/jms/**"/>
+
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/log*/**"/>
+		</copy>
+		
+		
+		<copy todir="${notify_mdb_src}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src"  includes="com/**/gw/notify/mdb/**"/>
+		</copy>
+        
+		<!--
+		Kernel10.2 Ends
+		-->
+
+		<!-- Kernel10.3 ends -->
+		
+		<copy todir="${ws_src_common}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gw/ejb/**" excludes="**/GWEJBBean.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwservices/ejb/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/*.java"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/log*/**"/>
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/gwutil/xml/GWXMLUtils.java"/>
+		</copy>
+		
+		<copy file="${src}/JAXBContextFactory.java" todir="${ws_src_common}/com/iflex/fcubs/gwutil"/>
+		
+		<copy todir="${ws_src}">
+			<fileset dir="${env.KERNEL_INSTALL_DIR}/src" includes="com/**/ws/*.java"/>
+		</copy>
+
+		
+	</target>
+    	
+    
+
+	<target name="clean">
+		<delete dir="${env.KERNEL_INSTALL_DIR}/src"/>
+	</target>
+
+	
+
+	<target name="clean_kernel">
+		<delete dir="${env.KERNEL_INSTALL_DIR}"/>
+	</target>
+
+</project>

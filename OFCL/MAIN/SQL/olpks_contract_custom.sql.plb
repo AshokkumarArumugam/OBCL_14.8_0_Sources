@@ -1,0 +1,32 @@
+CREATE OR REPLACE PACKAGE BODY olpks_contract_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+6ab 2c5
+KtQX7Y/Njth2VoC0Yqselfu1PXcwg83xLiDrZy9AvoOd4NGF8I6BLxTF8wn6h9Ck1RNVzYp7
+qLBcjnQYFsvAcVIp0Bdzsw6nIXn7UuDcCpBY/pCIAMWRA3zp45E0rFWBxJYSmDGNMg0Zd5/H
+A2S/D6h3+YzuPvF0hm4vBhYAXp/iXlRG2+io8DnI3pqG/vn/GV/RGYd01LwfOOy9mtnT43+X
+68cqDHn4wgnd+AwEN1hR1aZ9jhkuylcij5HAiN3NYqC5huiM6hrcpVbIegSfZfCCGATCGqpT
+LcZI0BQfR5H/rfMr86NgBKug4ZyfNxpM1GLGC7be2Rp8jmULwWvfWqfINRumFCTxEC7A3iue
+ByJ6lJeLxUhZWN+z1m7rnZgOutG9x0jKVERyCWzDegvwS8lev/ei5LI9i2VTZzjY1NXVXe2T
+6SLQyEC8sQcKDyVH8r9n8ay1whNdJ+go3r9FWW4TPXKSmO5ufMEdqZ9n5re3uF3ySmsRkx5Y
+J2l0wtPxJeXlS9jFPDI46QhV0RgnnVWNNdY1uunpEF6NBZuCz+V28rDaI4CErd/Sz3BNq8nP
+IClaRCkwbBAOYY2uPAUeBu9+T+xj1bHqdvSLVYAgp0ZxC3L8jH5F5B1GY9+dr6WqRrWUFZbK
+MMRkDxil9KckAc5G0k6oItwXhFJes5CbZ6jZDfdOCAos7tXlLA==
+
+/

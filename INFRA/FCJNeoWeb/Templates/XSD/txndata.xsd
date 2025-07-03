@@ -1,0 +1,107 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	
+	<xs:element name="FJBTXN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FCUBS_HEADER" type="FCUBS_HEADER"/>
+				<xs:element name="FCUBS_BODY" type="FCUBS_BODY"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="FCUBS_HEADER">
+			<xs:sequence>
+				<xs:element name="SOURCE" type="xs:string" minOccurs="0"/>
+				<xs:element name="UBSCOMP" type="xs:string"/>
+				<xs:element name="MSGID" type="xs:string" nillable="true" minOccurs="0"/>
+				<xs:element name="CORRELID" type="xs:string" nillable="true" minOccurs="0"/>
+				<xs:element name="USERID" type="xs:string"/>
+				<xs:element name="BRANCH" type="xs:string"/>
+				<xs:element name="MODULEID" type="xs:string" nillable="true" minOccurs="0"/>
+				<xs:element name="SERVICE" type="xs:string" nillable="true"/>
+				<xs:element name="OPERATION" type="xs:string" nillable="true"/>
+				<xs:element name="SOURCE_OPERATION" type="xs:string" nillable="true" minOccurs="0"/>
+				<xs:element name="SOURCE_USERID" type="xs:string" nillable="true" minOccurs="0"/>
+				<xs:element name="DESTINATION" type="xs:string" minOccurs="0"/>
+				<xs:element name="MULTITRIPID" type="xs:string" minOccurs="0"/>
+				<xs:element name="FUNCTIONID" type="xs:string" minOccurs="0"/>
+				<xs:element name="ACTION" type="xs:string" minOccurs="0"/>
+				<xs:element name="MSGSTAT" type="xs:string" minOccurs="0"/>
+				<xs:element name="ADDL" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PARAM" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NAME" type="xs:string"/>
+										<xs:element name="VALUE" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FCUBS_BODY">
+			<xs:sequence>
+				<xs:element name="FLD" type="FLD" minOccurs="0"/>
+				<xs:element name="REC" type="REC" minOccurs="0"/>
+				<xs:element name="FCUBS_ERROR_RESP" type="FCUBS_ERROR_RESP" minOccurs="0"/>
+				<xs:element name="FCUBS_WARNING_RESP" type="FCUBS_WARNING_RESP" minOccurs="0"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FLD">
+			<xs:sequence>
+				<xs:element name="FN" type="FN" maxOccurs="unbounded"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="REC">
+			<xs:sequence>
+				<xs:element name="FV" type="xs:string"/>
+				<xs:element name="REC" type="REC" minOccurs="0" maxOccurs="unbounded"/>				
+			</xs:sequence>
+			<xs:attribute name="TYPE" type="xs:string" use="required" />
+	</xs:complexType>
+
+
+	<xs:complexType name="FN" mixed="true">
+		 <xs:simpleContent>
+    	    <xs:extension base="xs:string">	
+				<xs:attribute name="ISQUERY" type="xs:string" use="required" />
+				<xs:attribute name="PARENT" type="xs:string" use="required"/>
+				<xs:attribute name="RELATION" type="xs:string" use="required"/>
+				<xs:attribute name="TYPE" type="xs:string" use="required"/>				
+	       </xs:extension>
+	    </xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="FCUBS_ERROR_RESP">
+			<xs:sequence>
+				<xs:element name="ERROR" type="ERROR" maxOccurs="unbounded" />					
+			</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ERROR">
+			<xs:sequence>		
+				<xs:element name="ECODE" type="xs:string" />
+				<xs:element name="EDESC" type="xs:string" />
+			</xs:sequence>
+        </xs:complexType>
+
+
+      <xs:complexType name="FCUBS_WARNING_RESP">
+			<xs:sequence>
+				<xs:element name="WARNING" type="WARNING" maxOccurs="unbounded" />					
+			</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="WARNING">
+			<xs:sequence>		
+				<xs:element name="WCODE" type="xs:string" />
+				<xs:element name="WDESC" type="xs:string" />
+			</xs:sequence>
+        </xs:complexType>
+</xs:schema>

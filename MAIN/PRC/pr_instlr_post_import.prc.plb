@@ -1,0 +1,30 @@
+CREATE OR REPLACE PROCEDURE PR_INSTLR_POST_IMPORT wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+35c 227
+1Cu+9oFnuzauNawTQtIQMoiJctEwg40JTAxqfI6BPXMY+DzLi7QbxVfPhSUeb4WceCb/sHxr
+TWkbdwCShi663tpAKJkhvi5I/wCt/lRldgNuL1ZEa5CcjthSIucBskJaeWdR3S5Aphv+pUfj
+IARiYLi5daBpp/NegGkLcEj1e9Fy4lC48a8A+sva7YdoVRnwnIyLX8FddD0MpRQ89hRbFTKu
+Uhb3EoVGTubGyoF+bH8R6Lh0EGhDJPHMUvqkMzAtJZ6x5sREEyl/pxRdytLMQ6c7f2Fq9iaa
+JGcVl4TMN5rtjUQUpU5emk8zdPyQNriabruX08s9wfgSzBBJ2cvYAX+JW8SFx9DKiRVZSwQq
+RPjVU0MR7XzGsYffTa/OLmIrboGhwTLRB8p79qrgUHogrchReIiqQwmlEVYBAts310DfJvif
+WfwPZYRPPJ6eEOnmTNfJTjcbhFvUFJxkbrAhJy/EPTaLtlRoaF/45H5jceMrDb5P1JZaa38u
+hyIYAHVqgHf9S+W8xVMgE9Jbjvsn89E/+6lk3RA=
+
+/

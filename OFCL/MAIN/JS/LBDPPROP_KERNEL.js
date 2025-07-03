@@ -1,0 +1,209 @@
+/***************************************************************************************************************************
+**  This source is part of the FLEXCUBE Software Product. 
+**  Copyright (c) 2008 ,2017, Oracle and/or its affiliates.
+**  All rights reserved.
+**  
+**  No part of this work may be reproduced, stored in a retrieval system, 
+**  adopted or transmitted in any form or by any means, electronic, mechanical, photographic, 
+**  graphic, optic recording or otherwise, translated in any language or computer language, 
+**  without the prior written permission of Oracle and/or its affiliates.
+**  
+**  Oracle Financial Services Software Limited.
+**  Oracle Park, Off Western Express Highway,
+**  Goregaon (East),
+**  Mumbai - 400 063,
+**  India.
+**  
+**  Written by         : 
+**  Date of creation   : 
+**  File Name          : LBDPPROP_KERNEL.js
+**  Purpose            : 
+**  Called From        : 
+**  
+****************************************************************************************************************************/
+var len = 0;
+var msob_tchk = 0 ;
+var selected_row = 0 ; 
+var curpage ;
+var over_flag = false;
+var l_Multitripid = '';
+var bulkPkValues = "";
+function fnCheck()
+{
+    len = getTableObjForBlock("TBL_QryRslts").tBodies[0].rows.length;
+	msob_tchk = 0;
+    for(i = 0;i < len; i++) 
+	{
+        if(getTableObjForBlock("TBL_QryRslts").tBodies[0].rows[i].cells[0].getElementsByTagName("INPUT")[0]) 
+		{
+          if(getTableObjForBlock("TBL_QryRslts").tBodies[0].rows[i].cells[0].getElementsByTagName("INPUT")[0].checked) 
+		  {
+            msob_tchk = msob_tchk +1; 
+            selected_row = i ; 
+           	} 
+         }
+        else
+          break;
+       }
+	if (msob_tchk == 0 ) 
+	{
+		showErrorAlerts('IN-HEAR-206');
+        return false ;  
+	}
+  return true;	
+}
+function fnMultiCheck(){
+    len = getTableObjForBlock("TBL_QryRslts").tBodies[0].rows.length;
+	msob_tchk = 0;
+	for(i = 0;i < len; i++) {
+        if(getTableObjForBlock("TBL_QryRslts").tBodies[0].rows[i].cells[0].getElementsByTagName("INPUT")[0]) {
+           getTableObjForBlock("TBL_QryRslts").tBodies[0].rows[i].cells[0].getElementsByTagName("INPUT")[0].checked = true;
+         }
+        else
+          break;
+     }
+	return true;	
+}
+function fn_GetId(){
+    var summaryFN =   msgxml_sum.substring(msgxml_sum.indexOf("<FN"),msgxml_sum.indexOf("</FN>"));
+    summaryDaraScrType = summaryFN.substring(summaryFN.indexOf("TYPE")+6,summaryFN.indexOf(">")-1);
+    var sumfldTag  = summaryFN.substring(summaryFN.indexOf(">")+1 , summaryFN.length);
+    var tableObject = getTableObjForBlock("TBL_QryRslts");
+    var allRows = tableObject.tBodies[0].rows;
+    var recNodes = selectNodes(fcjResponseDOM,"//MSG/REC");
+    var recPkCols = new Array();;
+    try 
+	{                                                                              
+		for (var recCnt=0; recCnt<allRows.length; recCnt++) 
+		{                                            
+				if (allRows[recCnt].cells[0].getElementsByTagName("INPUT")[0].checked)
+				{
+				var recNode = selectSingleNode(fcjResponseDOM,"//MSG/REC[position()=" + (recCnt + 1) + "]");
+				var recId = recNode.getAttribute("RECID");
+				recId = replaceAllChar(recId,'~','!');
+				bulkPkValues += recId +'!';
+				}
+		}	
+	}catch(e) {}     
+       return true;	  
+}
+function fnCreateBody_LBSPPROP() {
+    var msgxml_lbspprop = "<FCUBS_BODY>";
+    msgxml_lbspprop += '    <FLD>'; 
+	msgxml_lbspprop += '      <FN PARENT="" RELATION_TYPE="1" TYPE="BLK_PARATPROP">CONTRACT_REF_NO~TRANCHE_REF_NO~ESN~EVENT_CODE~JOB_SEQ_NO~PROCESS_STATUS~PROCESSING_DATE~SUM_REC_ID</FN>'; 
+	msgxml_lbspprop += '    </FLD>'; 
+    msgxml_lbspprop += '<REC RECID="1" TYPE="BLK_PARATPROP"><FV/></REC></FCUBS_BODY>';
+    reqDom=loadXMLDoc(msgxml_lbspprop);
+    var blkCdtSecNd = "";
+    var blkCdtSecNd = reqDom.createCDATASection('~~~~~~~'+bulkPkValues);
+    selectSingleNode(selectSingleNode(reqDom,"//REC[@RECID='1'][@TYPE='BLK_PARATPROP']"),"FV").appendChild(blkCdtSecNd);
+    return selectSingleNode(reqDom,"//FCUBS_BODY");
+}
+function fn_Process(){
+	    var headerNode = '<FCUBS_REQ_ENV><FCUBS_HEADER><SOURCE/><UBSCOMP/><USERID/><ENTITY/><BRANCH/><SERVICE/><OPERATION/><MULTITRIPID/>';
+		headerNode += '<FUNCTIONID/><ACTION/><MSGSTAT/><MODULEID/><MSGID/></FCUBS_HEADER><FCUBS_BODY/></FCUBS_REQ_ENV>';
+		exlRequestDOM =loadXMLDoc(headerNode);
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/SOURCE"), "FLEXCUBE");
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/UBSCOMP"), "FCUBS");
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/USERID"),mainWin.UserId);
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/ENTITY"),mainWin.entity);
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/BRANCH"), mainWin.CurrentBranch);
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/FUNCTIONID"), "LBSPPROP");
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/ACTION"),gAction);
+		setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/MODULEID"),"LB");
+		if (over_flag ){
+			setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/MULTITRIPID"),l_Multitripid);
+			over_flag = false;
+		}
+		var bodyReq = fnCreateBody_LBSPPROP();
+		var node = selectSingleNode(exlRequestDOM,"//FCUBS_BODY");
+		node.parentNode.replaceChild(bodyReq.cloneNode(true), node);
+		if(!fnResponse()){
+			return false;
+		}
+		return true;
+}
+function fnResponse(){
+	fcjResponseDOM = fnPost(exlRequestDOM, servletURL, functionId);
+	var msgStatus = getNodeText(selectSingleNode(fcjResponseDOM, "FCUBS_RES_ENV/FCUBS_HEADER/MSGSTAT"));
+	if (msgStatus == 'WARNING') {
+		customAlertAction = "ACCEPTOVERRIDE";
+		l_Multitripid =getNodeText(selectSingleNode(fcjResponseDOM, "FCUBS_RES_ENV/FCUBS_HEADER/MULTITRIPID"));
+		var messageNode = selectSingleNode(fcjResponseDOM, "FCUBS_RES_ENV/FCUBS_BODY/FCUBS_WARNING_RESP").xml;
+		var returnVal = displayResponse(messageNode,msgStatus,'O');
+	}
+	if (msgStatus == 'SUCCESS'){
+		var messageNode = selectSingleNode(fcjResponseDOM, "FCUBS_RES_ENV/FCUBS_BODY/FCUBS_WARNING_RESP").xml;
+		var returnVal = displayResponse(messageNode,msgStatus,'I');	
+			gAction = g_prev_gAction;
+			if (gAction == 'PROCESS'/*|| gAction == 'Authorize'*/){
+				setNodeText(selectSingleNode(exlRequestDOM,"FCUBS_REQ_ENV/FCUBS_HEADER/ACTION"),gAction);
+				dbDataDOM = fnGetDataXMLFromFCJXML(exlRequestDOM,1);
+				fnPostAsync(exlRequestDOM,servletURL,functionId);
+				fnRefreshSummary();
+				return true;
+			}
+		fnRefreshSummary();
+	}
+	if (msgStatus == 'FAILURE'){
+		var messageNode = selectSingleNode(fcjResponseDOM, "FCUBS_RES_ENV/FCUBS_BODY/FCUBS_ERROR_RESP").xml;
+		var returnVal = displayResponse(messageNode,msgStatus,'E');
+		//fnRefreshSummary();
+	}
+	return true;
+}
+function fnPostAsync(fcjMsgDOM, servletURL, functionID)
+{  
+  if (fcjMsgDOM != null )  {
+    var strFormData = getXMLString(fcjMsgDOM);   
+	objHTTP = createHTTPActiveXObject();
+    objHTTP.open("POST", servletURL, true); 
+    objHTTP.setRequestHeader("FUNCTIONID", functionID); 
+    objHTTP.setRequestHeader("OPERATION", gAction);
+	objHTTP.setRequestHeader("X-CSRFTOKEN", mainWin.CSRFtoken);
+    if(strFormData.indexOf("<ATTACHMENTS>")>-1){
+        objHTTP.setRequestHeader("HASATTACHMENTS", "TRUE");
+    }
+    else{
+        objHTTP.setRequestHeader("HASATTACHMENTS", "FALSE");
+     }
+     objHTTP.send(strFormData);    
+  } 
+}
+function fn_job_pramj()
+{
+	g_prev_gAction = gAction;
+    if(fnCheck()){
+	bulkPkValues = "" ;
+		if(fn_GetId()){
+			gAction = "JOBPROPJ";
+			if(!fn_Process()){
+				gAction = g_prev_gAction;
+			}
+		}
+	}
+	return true;
+}
+function fn_ol_pramj()
+{
+	g_prev_gAction = gAction;
+    if(fnCheck()){
+	bulkPkValues = "" ;
+		if(fn_GetId()){
+			gAction = "OLPROPJ";
+			if(!fn_Process()){
+				gAction = g_prev_gAction;
+			}
+		}
+	}
+	return true;
+}
+function fnPreLaunchForm_SUMMARY_KERNEL(screenArgs){
+	i = selected_row;
+	screenArgs["FCCREF"]= getInnerText(getTableObjForBlock("TBL_QryRslts").tBodies[0].rows[i].cells[5]); 
+	return true;
+}
+function fnPreShowDetail_Sum_KERNEL(arg)
+{
+	return false;
+}

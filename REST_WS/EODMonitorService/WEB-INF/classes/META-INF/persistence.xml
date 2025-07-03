@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="{REST_ENTITY}" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+      <jta-data-source>[ENTITY_DS]</jta-data-source>
+    <class>com.ofss.fcc.eodmonitor.entity.AevwEocMaster</class> 
+    <class>com.ofss.fcc.eodmonitor.entity.AetbEocBranches</class> 
+    <class>com.ofss.fcc.eodmonitor.entity.AetbsEocRunchart</class> 
+    <class>com.ofss.fcc.eodmonitor.entity.AetbEocPrograms</class> 
+ 	<exclude-unlisted-classes>false</exclude-unlisted-classes>   
+   <shared-cache-mode>NONE</shared-cache-mode>
+     <properties>
+<property name="eclipselink.target-server" value="{TARGET}"/>
+      <property name="eclipselink.logging.level" value="OFF"/>  
+      <property name="javax.persistence.jtaDataSource" value="{ENTITY_DS}"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="SMS" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+      <jta-data-source>{SMS_DS}</jta-data-source>   
+     <properties>
+      <property name="eclipselink.target-server" value="{TARGET}"/>
+      <property name="eclipselink.logging.level" value="OFF"/>  
+      <property name="javax.persistence.jtaDataSource" value="{SMS_DS}"/>
+    </properties>
+  </persistence-unit>
+</persistence>

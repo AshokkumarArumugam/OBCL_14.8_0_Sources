@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>HTTP Servlet Gateway</display-name>
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>
+		  org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>com.ofss.fcc.utility</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+    <servlet id="Servlet_1">
+        <servlet-name>GWHttpServlet</servlet-name>
+        <servlet-class>com.ofss.fcubs.gw.http.servlets.GWHttpServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping id="ServletMapping_1">
+        <servlet-name>GWHttpServlet</servlet-name>
+        <url-pattern>/GWHttpServlet</url-pattern>
+    </servlet-mapping>
+	<!-- KERNEL10.0 Property file Path Change STARTS -->
+	<env-entry>
+			 <description>Property File Path</description>
+			 <env-entry-name>propertyPath</env-entry-name>
+			 <env-entry-type>java.lang.String</env-entry-type>
+			 <env-entry-value>{GatewayPropFilePath}</env-entry-value>
+    </env-entry>
+	<!-- KERNEL10.0 Property file Path Change ENDS -->
+	 <!--12.3 - Security Review Changes- Starts -->
+	 <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+	 <!-- 12.3 - Security Review Changes- End -->  
+</web-app>

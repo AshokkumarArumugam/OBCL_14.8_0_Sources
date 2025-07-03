@@ -1,0 +1,35 @@
+CREATE OR REPLACE PACKAGE BODY ifpks_ccy_replication wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+748 38c
+fdI8swA7ZjGLtnvFuQnrk/OBISQwgztczCATfC8Z9k7VuQFmJqN3ySXFsg3xqBs1bHUxyUxB
+VvL6rKdnNsOjY/nOMduMofKDWRNPXxDPv/4Qv8EvrcQRX68bjIiRToFy8hT6txbrgWUMBnvV
+wGfYWyeBGaNJUAQCiVcwjsx07xJoKJWJ8O79Uf82s+6mevA2+f/pteul/E493SfReXozrKQD
+lrFw9YCfEBAL3U6CIT9Wc+vnBbO0dCYR3xBqx/ADsvEzqdb3GP/8kCFPSI5XaO/7UzfKM469
+5FVYadstDlfSAIC5kWb/X67px3vpXwueh6bNiOsHLD6+hgMvTylpGbpr3YmeB1+4EhQ4odu6
+J/nLPqKOLpN4JWfvzEfvq1rt9NDMpWb04Phc5i4Y2ILGsSc1jL7uQ3xy6VKdGOmS1ZOJUpBh
+UWPo3nTYPLxVXxDg75qRdZlsB2nLkkDteQWUkNhfsZdUmO5W6ZvDZEaejNMKU+XrJTSWhnqT
+4xowWnIgDj5ryzDr6Ba4G/Ai1u9pATKHvETBVwPZ71JAu490/lJuML5HmyxpPeWujjqhzOhm
+1x7YP9Me4HNTw4r2ON+/o27yuu3Izb4vL8tfB8TY3r0HaVa43QAitqi97w9AC/yfMWgppziD
+5Zrz/i1jz37Z5K40LoZ0qa6lhypyhn5YImentZkNwvxjdZZrICawBbPpImqq3D2pm2gAAt6j
+JKe+JXUAG6GjXI+nlfxNK+siV/CgmT4fyz1H9ry5kSVnkfyJebZLJICurvAdiQqnnboarY6B
+ZmLVFotVlvRCV1S0HHRMQTcQgWwQ6zwRF5/lSawIx1g2AJ1TUyGf8NJUiWA1Xfgruy9OGP5q
+0Kk9HnlGzEyoEkvt93qjLD8dYK0ZMg==
+
+/

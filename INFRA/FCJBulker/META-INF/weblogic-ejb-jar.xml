@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<weblogic-ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.1/weblogic-ejb-jar.xsd"
+                  xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar">
+   <weblogic-enterprise-bean>
+        <ejb-name>BulkerMDB</ejb-name>
+        <message-driven-descriptor>
+            <pool>
+                <max-beans-in-free-pool>5</max-beans-in-free-pool>
+                <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+            </pool>
+            <destination-jndi-name>EMS_BULKERQUE</destination-jndi-name>
+            <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+            <provider-url>{EMS_PROVIDER_URL}</provider-url>
+            <connection-factory-jndi-name>{EMS_INQCF}</connection-factory-jndi-name>
+            <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+        </message-driven-descriptor>
+        <transaction-descriptor>
+            <trans-timeout-seconds>3600</trans-timeout-seconds>
+        </transaction-descriptor>
+    </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+
+

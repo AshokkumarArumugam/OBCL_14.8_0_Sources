@@ -1,0 +1,34 @@
+Create Or Replace Function Fn_Check_Lock wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+7d2 32b
+vw3Av6EFjxYaoncFMSjkOCVPqEEwg+1cmiCDfC8ZgqqV7WxZY+EbO/wvt9MLyuyGkUqE/m/p
+IUzMunBsWhB9LJ0DC93uxvIsewwvik4Qv/5Vvzh1wGbW42q4Qff44JLILZXSr7IwVgBPzLkC
+jrhEdhtByguu9f24i0WpA2RmP24bwzbWzflqhvAAInB3ouQoCPFw2+/iGNJ1pLukFi4vw+is
+Ha6ET56l8dSzY7llYBpSCkiYVclyVOaW98MOVVR71Oafbn7Cx531ZLyHa1WwjKm776oehPim
+oHt3sNpJDdOXFoOhicD0f/3awJHD1rSjQGaeXIf00oIgfPpUoj9+8HgLxWlu/FZqififXgoa
+fZbmC2NIBQeEFLOC++SLKrkyOHUQCgtovq+9QJ8Qmms7rvb5HSRZwhaNUsWWCLctqV6xN1Ii
+nRBWcJ+ZHj1++f3JTkNFRgH5biSUAQg04VuHD2KB6hPsw+WMLjjoXgddozbV2NjhBYBlkSr8
+g3fSIBMPgvkDHcEy7jBJGYpAVfdhAttiVH5H3ANz/qVTAlcmrNxkn880r0/QVrCT2W+3iu2o
+t6H5U9FwUlvr05vad0R6Q9WB3e1v4/+9T9wKY/6RrssTfNoNQSUpgGWfEBDLAXj+Qr0DjSqr
+gfH1kKnUhNPf7zCscJfTVnI9KQ7Jpvv+i2FCWoWHmHl6TsJceCPwRayuxb9nc/X1iG1Ztbik
+8Vcfj1Cc3i1WF22tvKbKP/+iCBdM2PJzD/bZQ02/m7fMqOYe7KF0sOZj2l2IiF52JCrW7a6q
++34YS5s=
+
+/

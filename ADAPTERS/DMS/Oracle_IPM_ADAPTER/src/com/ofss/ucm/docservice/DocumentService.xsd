@@ -1,0 +1,697 @@
+<xs:schema xmlns:tns="http://imaging.oracle/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+     targetNamespace="http://imaging.oracle/">
+    <xs:element name="ImagingException" nillable="true" type="tns:ImagingFaultInfo"/>
+    <xs:element name="ValidationError" type="tns:validationError"/>
+    <xs:element name="ValidationException" nillable="true" type="tns:ValidationFaultInfo"/>
+    <xs:element name="application" type="tns:Application"/>
+    <xs:element name="bpelConfig" type="tns:BpelConfig"/>
+    <xs:element name="copyDocument" type="tns:copyDocument"/>
+    <xs:element name="copyDocumentResponse" type="tns:copyDocumentResponse"/>
+    <xs:element name="createDocument" type="tns:createDocument"/>
+    <xs:element name="createDocumentResponse" type="tns:createDocumentResponse"/>
+    <xs:element name="deleteDocument" type="tns:deleteDocument"/>
+    <xs:element name="deleteDocumentResponse" type="tns:deleteDocumentResponse"/>
+    <xs:element name="deleteDocuments" type="tns:deleteDocuments"/>
+    <xs:element name="deleteDocumentsResponse" type="tns:deleteDocumentsResponse"/>
+    <xs:element name="document" type="tns:Document"/>
+    <xs:element name="documentSecurity" type="tns:DocumentSecurity"/>
+    <xs:element name="fieldDefinition" type="tns:fieldDefinition"/>
+    <xs:element name="getAnnotations" type="tns:getAnnotations"/>
+    <xs:element name="getAnnotationsResponse" type="tns:getAnnotationsResponse"/>
+    <xs:element name="getDocument" type="tns:getDocument"/>
+    <xs:element name="getDocumentResponse" type="tns:getDocumentResponse"/>
+    <xs:element name="getDocumentVersion" type="tns:getDocumentVersion"/>
+    <xs:element name="getDocumentVersionResponse" type="tns:getDocumentVersionResponse"/>
+    <xs:element name="getDocuments" type="tns:getDocuments"/>
+    <xs:element name="getDocumentsResponse" type="tns:getDocumentsResponse"/>
+    <xs:element name="getSupportingContent" type="tns:getSupportingContent"/>
+    <xs:element name="getSupportingContentResponse" type="tns:getSupportingContentResponse"/>
+    <xs:element name="getTargetApplication" type="tns:getTargetApplication"/>
+    <xs:element name="getTargetApplicationResponse" type="tns:getTargetApplicationResponse"/>
+    <xs:element name="hasStatusChanged" type="tns:hasStatusChanged"/>
+    <xs:element name="hasStatusChangedResponse" type="tns:hasStatusChangedResponse"/>
+    <xs:element name="lifecyclePolicy" type="tns:LifecyclePolicy"/>
+    <xs:element name="listTargetApplications" type="tns:listTargetApplications"/>
+    <xs:element name="listTargetApplicationsResponse" type="tns:listTargetApplicationsResponse"/>
+    <xs:element name="lockDocument" type="tns:lockDocument"/>
+    <xs:element name="lockDocumentResponse" type="tns:lockDocumentResponse"/>
+    <xs:element name="modifyPageOrder" type="tns:modifyPageOrder"/>
+    <xs:element name="modifyPageOrderResponse" type="tns:modifyPageOrderResponse"/>
+    <xs:element name="moveDocument" type="tns:moveDocument"/>
+    <xs:element name="moveDocumentResponse" type="tns:moveDocumentResponse"/>
+    <xs:element name="nameId" type="tns:NameId"/>
+    <xs:element name="sectionSet" type="tns:DocumentSectionSet"/>
+    <xs:element name="security" type="tns:DefinitionSecurity"/>
+    <xs:element name="setAnnotations" nillable="true" type="tns:setAnnotations"/>
+    <xs:element name="setAnnotationsResponse" type="tns:setAnnotationsResponse"/>
+    <xs:element name="setSupportingContent" nillable="true" type="tns:setSupportingContent"/>
+    <xs:element name="setSupportingContentResponse" type="tns:setSupportingContentResponse"/>
+    <xs:element name="storagePolicyItem" type="tns:StorageStage"/>
+    <xs:element name="submitToWorkflow" type="tns:submitToWorkflow"/>
+    <xs:element name="submitToWorkflowResponse" type="tns:submitToWorkflowResponse"/>
+    <xs:element name="unlockDocument" type="tns:unlockDocument"/>
+    <xs:element name="unlockDocumentResponse" type="tns:unlockDocumentResponse"/>
+    <xs:element name="updateDocument" type="tns:updateDocument"/>
+    <xs:element name="updateDocumentResponse" type="tns:updateDocumentResponse"/>
+    <xs:complexType name="copyDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="applicationId" type="tns:NameId" minOccurs="0"/>
+            <xs:element name="fieldValues" type="tns:FieldValue" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="copyAnnotations" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="NameId">
+        <xs:complexContent>
+            <xs:extension base="tns:baseId">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="baseId" abstract="true">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="FieldValue">
+        <xs:complexContent>
+            <xs:extension base="tns:baseId">
+                <xs:sequence>
+                    <xs:element name="value" type="tns:TypedValue" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="name" type="xs:string"/>
+                <xs:attribute name="id" type="xs:long" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TypedValue">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="type" type="tns:FieldType"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="copyDocumentResponse">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImagingFaultInfo">
+        <xs:sequence>
+            <xs:element name="exceptionCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="exceptionLabel" type="xs:string" minOccurs="0"/>
+            <xs:element name="faultType" type="tns:imagingFaultType" minOccurs="0"/>
+            <xs:element name="stackTraceId" type="xs:string" minOccurs="0"/>
+            <xs:element name="faultDetails" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="faultDetail" type="tns:ImagingFaultDetail" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImagingFaultDetail">
+        <xs:sequence>
+            <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ValidationFaultInfo">
+        <xs:complexContent>
+            <xs:extension base="tns:ImagingFaultInfo">
+                <xs:sequence>
+                    <xs:element name="validationErrors" type="tns:validationError" nillable="true" minOccurs="0"
+                         maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="validationError">
+        <xs:sequence>
+            <xs:element name="validationCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="validationLabel" type="xs:string" minOccurs="0"/>
+            <xs:element name="validationMessage" type="xs:string" minOccurs="0"/>
+            <xs:element name="subCode" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSupportingContent">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="key" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSupportingContentResponse">
+        <xs:sequence>
+            <xs:element name="supportingContentData" type="xs:base64Binary" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getTargetApplication">
+        <xs:sequence>
+            <xs:element name="appNameId" type="tns:NameId" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getTargetApplicationResponse">
+        <xs:sequence>
+            <xs:element name="application" type="tns:Application" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Application">
+        <xs:complexContent>
+            <xs:extension base="tns:Definition">
+                <xs:sequence>
+                    <xs:element name="fieldDefinitions" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="fieldDefinition" type="tns:fieldDefinition" nillable="true"
+                                     minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="applicationPermissions" type="tns:DefinitionPermissions" nillable="true"
+                         minOccurs="0"/>
+                    <xs:element name="documentPermissions" type="tns:DocumentPermissions" nillable="true"
+                         minOccurs="0"/>
+                    <xs:element name="security" nillable="true" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="securityItem" type="tns:DefinitionSecurity" nillable="true"
+                                     minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="documentSecurity" nillable="true" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="documentSecurityItem" type="tns:DocumentSecurity" nillable="true"
+                                     minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="lifecyclePolicy" type="tns:LifecyclePolicy" nillable="true" minOccurs="0"/>
+                    <xs:element name="bpelConfig" type="tns:BpelConfig" nillable="true" minOccurs="0"/>
+                    <xs:element name="history" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="historyItem" type="tns:AuditEvent" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Definition" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="tns:baseId">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="fieldDefinition">
+        <xs:complexContent>
+            <xs:extension base="tns:baseId">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="type" type="tns:FieldType" minOccurs="0"/>
+                    <xs:element name="length" type="xs:int"/>
+                    <xs:element name="scale" type="xs:int"/>
+                    <xs:element name="defaultValue" type="tns:TypedValue" minOccurs="0"/>
+                    <xs:element name="required" type="xs:boolean"/>
+                    <xs:element name="indexed" type="xs:boolean"/>
+                    <xs:element name="pickList" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="pickListItem" type="tns:TypedValue" nillable="true" minOccurs="0"
+                                     maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="DefinitionPermissions">
+        <xs:complexContent>
+            <xs:extension base="tns:BasePermissions">
+                <xs:sequence>
+                    <xs:element name="view" type="xs:short"/>
+                    <xs:element name="modify" type="xs:short"/>
+                    <xs:element name="delete" type="xs:short"/>
+                    <xs:element name="grantaccess" type="xs:short"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="BasePermissions" abstract="true">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="DocumentPermissions">
+        <xs:complexContent>
+            <xs:extension base="tns:BasePermissions">
+                <xs:sequence>
+                    <xs:element name="view" type="xs:short"/>
+                    <xs:element name="write" type="xs:short"/>
+                    <xs:element name="delete" type="xs:short"/>
+                    <xs:element name="grantaccess" type="xs:short"/>
+                    <xs:element name="lockAdministrator" type="xs:short"/>
+                    <xs:element name="standard" type="xs:short"/>
+                    <xs:element name="restricted" type="xs:short"/>
+                    <xs:element name="hidden" type="xs:short"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="DefinitionSecurity">
+        <xs:complexContent>
+            <xs:extension base="tns:BaseSecurity">
+                <xs:sequence>
+                    <xs:element name="permissions" type="tns:DefinitionPermissions" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="BaseSecurity" abstract="true">
+        <xs:sequence>
+            <xs:element name="guid" type="xs:string" minOccurs="0"/>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="type" type="tns:SecurityMemberType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DocumentSecurity">
+        <xs:complexContent>
+            <xs:extension base="tns:BaseSecurity">
+                <xs:sequence>
+                    <xs:element name="permissions" type="tns:DocumentPermissions" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="LifecyclePolicy">
+        <xs:sequence>
+            <xs:element name="retentionPolicy" type="xs:string" minOccurs="0"/>
+            <xs:element name="storagePolicy" nillable="true" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="storagePolicyItem" type="tns:StorageStage" nillable="true" minOccurs="0"
+                             maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="supportingContentVolume" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StorageStage">
+        <xs:sequence>
+            <xs:element name="volumeName" type="xs:string" minOccurs="0"/>
+            <xs:element name="duration" type="xs:int"/>
+            <xs:element name="durationUnit" type="tns:durationUnit" minOccurs="0"/>
+            <xs:element name="indefinite" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BpelConfig">
+        <xs:sequence>
+            <xs:element name="enabled" type="xs:boolean"/>
+            <xs:element name="connection" type="tns:NameId" minOccurs="0"/>
+            <xs:element name="composite" type="xs:string" minOccurs="0"/>
+            <xs:element name="service" type="xs:string" minOccurs="0"/>
+            <xs:element name="operation" type="xs:string" minOccurs="0"/>
+            <xs:element name="payloadMapping" nillable="true" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="payloadItem" type="tns:PayloadItem" nillable="true" minOccurs="0"
+                             maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PayloadItem">
+        <xs:sequence>
+            <xs:element name="key" type="xs:string" minOccurs="0"/>
+            <xs:element name="mappingFunction" type="tns:workflowFunction" minOccurs="0"/>
+            <xs:element name="value" type="xs:string" nillable="true" minOccurs="0"/>
+            <xs:element name="xmlType" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AuditEvent">
+        <xs:sequence>
+            <xs:element name="subjectId" type="xs:long"/>
+            <xs:element name="type" type="tns:AuditEventType" minOccurs="0"/>
+            <xs:element name="date" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="userName" type="xs:string" minOccurs="0"/>
+            <xs:element name="param1" type="xs:string" minOccurs="0"/>
+            <xs:element name="param2" type="xs:string" minOccurs="0"/>
+            <xs:element name="properties" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="key" type="tns:propertyKey" minOccurs="0"/>
+                        <xs:element name="value" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="createDocument">
+        <xs:sequence>
+            <xs:element name="uploadToken" type="xs:string" minOccurs="0"/>
+            <xs:element name="applicationId" type="tns:NameId" minOccurs="0"/>
+            <xs:element name="fieldValues" type="tns:FieldValue" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="submitToWorkflow" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="createDocumentResponse">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitToWorkflow">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="submitToWorkflowResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="getDocuments">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="sectionSet" type="tns:DocumentSectionSet" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DocumentSectionSet">
+        <xs:sequence>
+            <xs:element name="flags" type="tns:DocumentSectionFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getDocumentsResponse">
+        <xs:sequence>
+            <xs:element name="documents" type="tns:Document" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Document">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="id" type="xs:string" minOccurs="0"/>
+            <xs:element name="properties" type="tns:DocumentProperties" nillable="true" minOccurs="0"/>
+            <xs:element name="fieldValues" nillable="true" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="fieldValue" type="tns:FieldValue" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="documentPermissions" type="tns:DocumentPermissions" nillable="true" minOccurs="0"/>
+            <xs:element name="history" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="auditEvent" type="tns:AuditEvent" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DocumentProperties">
+        <xs:sequence>
+            <xs:element name="version" type="xs:long"/>
+            <xs:element name="isLatestVersion" type="xs:boolean"/>
+            <xs:element name="lastModifiedBy" type="xs:string" minOccurs="0"/>
+            <xs:element name="lastModifiedDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="creator" type="xs:string" minOccurs="0"/>
+            <xs:element name="createDate" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="lockedBy" type="xs:string" minOccurs="0"/>
+            <xs:element name="docUrl" type="xs:string" minOccurs="0"/>
+            <xs:element name="mimeType" type="xs:string" minOccurs="0"/>
+            <xs:element name="size" type="xs:long"/>
+            <xs:element name="applicationId" type="xs:long"/>
+            <xs:element name="applicationName" type="xs:string" minOccurs="0"/>
+            <xs:element name="batchId" type="xs:long"/>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+            <xs:element name="volumeDate" type="xs:dateTime" nillable="true" minOccurs="0"/>
+            <xs:element name="volume" type="xs:string" nillable="true" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="updateDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="uploadToken" type="xs:string" minOccurs="0"/>
+            <xs:element name="fieldValues" type="tns:FieldValue" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="reserved" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="updateDocumentResponse">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteDocuments">
+        <xs:sequence>
+            <xs:element name="documentIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteDocumentsResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="lockDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="sectionSet" type="tns:DocumentSectionSet" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lockDocumentResponse">
+        <xs:sequence>
+            <xs:element name="document" type="tns:Document" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hasStatusChanged">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="hasStatusChangedResponse">
+        <xs:sequence>
+            <xs:element name="statusChanged" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="moveDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="applicationId" type="tns:NameId" minOccurs="0"/>
+            <xs:element name="fieldValues" type="tns:FieldValue" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="moveDocumentResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getDocumentVersion">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="version" type="xs:long"/>
+            <xs:element name="sectionSet" type="tns:DocumentSectionSet" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getDocumentVersionResponse">
+        <xs:sequence>
+            <xs:element name="document" type="tns:Document" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="listTargetApplications">
+        <xs:sequence>
+            <xs:element name="ability" type="tns:DocumentAbility" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="listTargetApplicationsResponse">
+        <xs:sequence>
+            <xs:element name="appNameIds" type="tns:NameId" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteDocumentResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="getDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="sectionSet" type="tns:DocumentSectionSet" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getDocumentResponse">
+        <xs:sequence>
+            <xs:element name="document" type="tns:Document" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setSupportingContent">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="key" type="xs:string"/>
+            <xs:element name="fileName" type="xs:string"/>
+            <xs:element name="data" type="xs:base64Binary"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setSupportingContentResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="getAnnotations">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getAnnotationsResponse">
+        <xs:sequence>
+            <xs:element name="annotationData" type="xs:base64Binary" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="modifyPageOrder">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="pageChanges" type="tns:pageChange" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pageChange">
+        <xs:sequence>
+            <xs:element name="changeType" type="tns:changeType" minOccurs="0"/>
+            <xs:element name="currentPageNumber" type="xs:int"/>
+            <xs:element name="newPageNumber" type="xs:int"/>
+            <xs:element name="uploadToken" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="modifyPageOrderResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="setAnnotations">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+            <xs:element name="annotData" type="xs:base64Binary"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setAnnotationsResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="unlockDocument">
+        <xs:sequence>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="unlockDocumentResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:simpleType name="FieldType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="TEXT"/>
+            <xs:enumeration value="NUMBER"/>
+            <xs:enumeration value="DECIMAL"/>
+            <xs:enumeration value="DATE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="imagingFaultType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SYSTEM"/>
+            <xs:enumeration value="USAGE"/>
+            <xs:enumeration value="SECURITY"/>
+            <xs:enumeration value="DATABASE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SecurityMemberType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="USER"/>
+            <xs:enumeration value="GROUP"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="durationUnit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DAYS"/>
+            <xs:enumeration value="WEEKS"/>
+            <xs:enumeration value="MONTHS"/>
+            <xs:enumeration value="YEARS"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="workflowFunction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DocId"/>
+            <xs:enumeration value="DocName"/>
+            <xs:enumeration value="Version"/>
+            <xs:enumeration value="CreateBy"/>
+            <xs:enumeration value="CreateDate"/>
+            <xs:enumeration value="ModifyBy"/>
+            <xs:enumeration value="ModifyDate"/>
+            <xs:enumeration value="MimeType"/>
+            <xs:enumeration value="DocUrl"/>
+            <xs:enumeration value="DocUrlRoot"/>
+            <xs:enumeration value="DocSize"/>
+            <xs:enumeration value="VolumeDate"/>
+            <xs:enumeration value="Volume"/>
+            <xs:enumeration value="AppId"/>
+            <xs:enumeration value="AppName"/>
+            <xs:enumeration value="BatchId"/>
+            <xs:enumeration value="FieldValue"/>
+            <xs:enumeration value="SupportingContent"/>
+            <xs:enumeration value="True"/>
+            <xs:enumeration value="False"/>
+            <xs:enumeration value="FormatValue"/>
+            <xs:enumeration value="PolicyOverride"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AuditEventType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DOCUMENT_COPY"/>
+            <xs:enumeration value="DOCUMENT_CREATE"/>
+            <xs:enumeration value="DOCUMENT_DELETE"/>
+            <xs:enumeration value="DOCUMENT_MIGRATE"/>
+            <xs:enumeration value="DOCUMENT_MODIFY_METADATA"/>
+            <xs:enumeration value="DOCUMENT_MOVE"/>
+            <xs:enumeration value="DOCUMENT_RETRIEVE"/>
+            <xs:enumeration value="DOCUMENT_VERSION"/>
+            <xs:enumeration value="SUPPORTING_CONTENT_CREATE"/>
+            <xs:enumeration value="DEFINITION_CREATE"/>
+            <xs:enumeration value="DEFINITION_DELETE"/>
+            <xs:enumeration value="DEFINITION_MODIFY"/>
+            <xs:enumeration value="SEARCH_EXECUTE"/>
+            <xs:enumeration value="SYSTEM_SECURITY_MODIFY"/>
+            <xs:enumeration value="ANNOTATION_MODIFIED"/>
+            <xs:enumeration value="MBEAN_MODIFIED"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="propertyKey">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ID"/>
+            <xs:enumeration value="NAME"/>
+            <xs:enumeration value="SECTION"/>
+            <xs:enumeration value="PARAMETER"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DocumentSectionFlag">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PROPERTIES"/>
+            <xs:enumeration value="FIELDVALUES"/>
+            <xs:enumeration value="PERMISSIONS"/>
+            <xs:enumeration value="HISTORY"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DocumentAbility">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="VIEWDOCUMENT"/>
+            <xs:enumeration value="CREATEDOCUMENT"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="changeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AppendPage"/>
+            <xs:enumeration value="InsertPage"/>
+            <xs:enumeration value="DeletePage"/>
+            <xs:enumeration value="MovePage"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

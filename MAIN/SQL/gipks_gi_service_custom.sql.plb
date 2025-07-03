@@ -1,0 +1,35 @@
+CREATE OR REPLACE PACKAGE BODY gipks_gi_service_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+ae2 3a8
+E6TMoNX7CSiKzEFnpwYF23e75Gowgw2nLiATZy9AEovqR2PCYmMiGgnvPcBjRDk0soolAaEG
+6+Uu4+kFtPfNP3abhpjY9H+00Y/odlbb/zSCijQoHuNXnNuAS77aApMzznljyVijY9lPMXnl
+SKrYPG1byi0B+1QHlu1pugV6++M2v1AuNqz2+HNaAi0o6qJXtmb/W2cLpOEvwxz+mkEPNJgE
+X9Lx8CIB2qi7xlDaPI8w5Gtbrq5wJ19Z8W2fBijva0cuncHrGTFg+k3vx07iYELEhxV2oa0d
+0D4sY5sRqV9GTbr/IFw/KHIfAd22vnnOR6yG6hpxxVD3cVkeOiKNa1FZUaXj1kWh0GXseH8h
+bO9mSWRDIRU5cwmv7tFvksYNCu55no/w/3AUaQghpwTflE0CxCZwmRVu+mG16J7a7nl3gVqk
+0zYYRdodcKERjBGFiWHA8VSbab6i8VWzRGgbr2nc9qgu2j42H40XVdgaTg1iNr3QQyhnDlk2
+61ZOpr0FLyvgiYS02YsKitEAYJKlP+LJKaNVF5rrOsEHoBdUPpFjWlClrHjLYDp8X4qBNjIs
+wKxmOXPZGMR8PaX+eZJT/2/HhYtp60B4cHXwJESSPRWvTVpW5UIU4whYd6t1EneHmcWzVv4o
+fLE/T4x5vVdsrbVZPUl+wqR5WJ0Xp7mayWHFk2XxalCosx969NwmU4DDvcNsJfwVPCkRpKYK
+2YUzTZIkaXOjyR53VLVj98WN2uFcZYLl/9d2GSsClj5Nu4xphUyB9wVzc2Sf2v5+M3qnOiRK
+4v/VZ6hHXBwfqPdDk/NM1JewxWBS6aRHzQOVZkhpIYsxvQcG9flb+hCig6StW90R3eBwjYY7
+zrafeoMlax4B3xNjDI3RuXexlZycYd4uvIzq9vkK/d/Q5dDYtLCzCiQqitau
+
+/

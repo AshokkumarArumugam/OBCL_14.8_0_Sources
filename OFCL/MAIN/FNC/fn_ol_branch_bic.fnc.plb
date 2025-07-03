@@ -1,0 +1,28 @@
+create or replace function fn_ol_branch_bic wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+1f4 191
+l5OW5iBb7VCpvULYvs1WP5JxsYMwgwL3rgzbfC+V7eyufx8xbxi0gcKrI1olKd/I6Gyq2BKe
+uawWhZ5B/moT1/JVl6y+RjRCThNCGgijVzH2MFUHctBLcyMxuxkVMxCcsjf9sq5H46dYAcs5
+kCS246CRP8OPCaky4plReASKFv0fVEz9oDOfM0VSE/s+zA4QxrNpFVJiKi1NaVd1kzUnsYTg
+t9TSTKtwllmmZWERL1M4o6Czae/DuPKv9bIq30fVvzZcbdes1AIs1QIjzYNW7seeot8O5Vu4
+YifKsST3O8E8WLcmFm1c3L3FE9hDmySWdsuq25gG+Zy4IiRgAn5ciQFBDraCXF5b3Owz8uk+
+i/EuNE9Eyyn9xobfEH54n8tYq309eE0OqQ0=
+
+/

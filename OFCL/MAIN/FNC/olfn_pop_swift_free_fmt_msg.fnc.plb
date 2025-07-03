@@ -1,0 +1,32 @@
+CREATE OR REPLACE FUNCTION olfn_pop_swift_free_fmt_msg wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+30f 1ff
+ZyinCSBXmUjegeWogt0H614494IwgzsJACAVfC/NI/mUh+WpRi/gNjK48QzjXbQmzaABwgTT
+w/SmZlpMzggNXhY2DfwlTgbQv7v/u4cJGIWRCVBV6BmDc0ggBdD+khEehFwxRa2D6Ey2pX+p
+FcVZaWvjUJ69WKbIaEbfiwwTHneXJV8g89DJk4/qm4VsjAnf8X+s2RrLmZZZ6Zno6OpaqJkT
+jDxW6aXj2oXIxSFj0yGJ8e+2FOtd0KYZ73MbdllJt/q4uZrHiJx2cjs6KN7EH2AthV8gGUWa
+UzbEI0Ra494b59sEpylTaWEFdOH61vOywmJzNbFVa5MyJTniROGrrWA5SBjzsPf3ULtKZ1GR
+P5rvN7ECt3aPwO6wXXewrqAkfA8p4jq1KM4u4y5J5l4NzSdM1xFnrkmDEy6wonLh9TN3B1eB
+cjl85fVJz21LpbnNIS/DWv2Can5mDPO2fLn/iMH8eq5NT77ai0r8FY184gBY48EoT5H7O2g=
+
+
+/
+create or replace synonym olfns_pop_swift_free_fmt_msg for olfn_pop_swift_free_fmt_msg
+/

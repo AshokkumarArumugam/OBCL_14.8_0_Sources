@@ -1,0 +1,28 @@
+CREATE OR REPLACE FUNCTION fn_ol_get_part_amt wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+1ff 189
+KkmQf3DkOqgCk4sfJBrtIU41/skwgzL3rq5qfHSVvtRPFcZcg8WPo1JaCdCUDdxDFJBX6dqm
+H/m9zfhtwwEenmbGT08PisF5kf2rxs7kQSKH69nrfxAcvEoppZ9xgfp7y1F5WuYF28tbYp+w
+Q58Ap0UZf1JXauFG5o5gSpCoN9Rqmw0msdPxuXFHebfl4YT+stabd/GyfQvEBmtMLlHDgKMP
+H1OvmYs+Rqf8R3jvzYELHHLLJLxJ2B4HfR09gtFnKnZ2ZtE5+w2UsQH8g3DP7CRg7TljYEIk
+b/+T9Xv4nqtp+KS9qPzAy4bLllH7Y77/ORHyhqJoQV2uGl5qrJAFYIaaJ175sBxaz7xdFJgm
+pncpHK1KlZetX57jHvz8/YkzQKY=
+
+/

@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION fn_ofcl_transaction wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+26e 1be
+Rukh/U7glQogzEpc2EzO5NSDnjYwg/DMzPYVfC8ZA50GGSXmlKSKlcIHoC4h2C7CDPxhsMrc
+WMpvRRWHkZ0QJjtlxt965tPRmv5VVR+Hl3eebDgDvz3JDccu7WidlurXYYOEpqaDvUEmeoEv
+L9PD3nP6gdatwUw1AnYxnMfgpqqiGqQAK8cml1TVxA51/z4Z+YA4457a1CbWHt7sZmLiwQKp
+R6cWqMzFF8OsfNYs90tYEYDSCsajVpN6cHI+6824+e7e/8812hcR3buQ74gMlzFajNqH4WZX
+9IUgYSCnBVWSlCJh1/3YHkXlOPKPuKZOdfhrGHwil0yrgu1b4IpQsdvuMHr0+mxNA6/WWVgE
+bTWWlC5RmFK0J7dytuli5MHsYa7lKrdYLpuPEjsM9vjJI0lX1y72AkepDLAw7Nptw+y5sYYT
+lmO/dSw=
+
+/

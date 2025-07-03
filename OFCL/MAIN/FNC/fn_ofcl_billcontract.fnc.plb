@@ -1,0 +1,31 @@
+CREATE OR REPLACE FUNCTION fn_ofcl_billcontract wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+430 250
+vwLCHi8CfF6LUbdMZnNiDpb99Bwwg2Ner9zWZy+BaGR1bZMqPcPQ3xxvBKPxzdG50SuuGulp
+8Tl0JRMsu45pBYknd729kYgZE3i77oAlDTfxyJRSWGwKMFhkK6GTdz1mJq7KX5Bn47RcJeFc
+yjW9HqAHHKMc58fYPWgiRlepDzx8X0JqLqUc348TRYaDkMAQgR96d0Ud9gdElDGqHUBxTlgp
++3pE8N8l03ZjNsC9N4h2FltJNxr7evVR+ulNhovuRj6vQHRtezubBr2bUdFrP9youh+hkJzp
+ZNWK9Vla9UQiiuKlOXXbrR3a6THlzUO66JOTY9sz7CsyDEXBJwzhVWayJwx4CjP9JJi5U+NQ
+fknJ1qkVj3KM2A8cHzKS+ogCHMQw49kORJd2JlUGJw/XsE3zduqMlj1Iaum/g3RsAKMZzsgs
+2RryA1FG9nClMzxbm+5nwZ0980pbMLvgU38LUHTmnZ46Dtec/e2R+WYPY9BdFXiHu6ojn9RA
+iytpehdMxkjOZD6e1EHrNpLPIUWRBQAsQugciL2zvPyJzm7kZj6gyg/Ul7/p7z+MTF4l1IC7
+C4o2oQ==
+
+/

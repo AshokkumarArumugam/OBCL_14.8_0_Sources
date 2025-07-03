@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-ejb-jar PUBLIC "-//Evermind//DTD Enterprise JavaBeans 1.1 runtime//EN" "http://xmlns.oracle.com/ias/dtds/orion-ejb-jar.dtd">
+<orion-ejb-jar>
+    <enterprise-beans>
+        <message-driven-deployment name="GW_NOTIFY_MDB_Bean" 
+                resource-adapter="WebSphereMQC" 
+                listener-threads="100" 
+                subscription-name="GW_NOTIFY_MDB_Bean_Sub" 
+                transaction-timeout="172800">
+
+            <!-- Resource Ref mappings -->
+            <resource-ref-mapping name="KERNELDEV.WORLD" location="KERNELDEV.WORLD" />
+            <resource-ref-mapping name="NotifyDestQCF" location="NotifyDestQCF" />
+            <resource-ref-mapping name="NOTIFY_MDB_QCF" location="NOTIFY_MDB_QCF" />
+            <resource-ref-mapping name="DefferedDestQCF" location="DefferedDestQCF" />
+
+            <!-- Resource Ref Environment mappings -->
+            <resource-env-ref-mapping name="NOTIFY_DEST_QUEUE" location="NOTIFY_DEST_QUEUE" />
+            <resource-env-ref-mapping name="DEFFERED_DEST_QUEUE" location="DEFFERED_DEST_QUEUE" />
+            <resource-env-ref-mapping name="NOTIFY_QUEUE_DLQ" location="NOTIFY_QUEUE_DLQ" />
+         
+
+        </message-driven-deployment>
+    </enterprise-beans>
+    <assembly-descriptor>
+        <default-method-access>
+            <security-role-mapping impliesAll="true" name="default-ejb-caller-role"/>
+        </default-method-access>
+    </assembly-descriptor>
+</orion-ejb-jar>

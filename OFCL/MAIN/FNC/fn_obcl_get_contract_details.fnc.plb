@@ -1,0 +1,34 @@
+CREATE OR REPLACE FUNCTION fn_obcl_get_contract_details wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+74d 327
+txFVB3OousZp+I1AGVOKxaqHMzQwgzuNLiCDZy9AEjNkdRNrZuOi/GwWB4HCOdXZ4piYG83e
+6fShVmNhXVfNbPwgu7R1dSgT0tbtqaXYwVi/GYjkWmm2Wvsed8maK64zqNGKxQxtz77FihBx
+VrewwRxXa2MJBOlNN3O251Qv6ReiTLJ2zsa2o0498vmnasXJw0twyu8d8QfEg/F8S/ewecp0
+E8UJZSgI8QilGQb/wKFGkHyE4eK1T9ZH/Ub85KRbjU6ldnxZPs+xRqQMh5tuhDNlhFqOWB5e
+iJJ1+0Pjiaau8v/jqWeGIP+v+w73JQn7DW2GYX65phHUiIN9787y/2t06/hSv4LoBIowr8Tm
+FbIhHHa7XSecc3yTO7O6l4b9E+Mkl80t3sp8PxU0EXt0jTu80nH6VftTVmIGeqEsyqFtdBjG
+BDyWKeVawqCrwrDJNJtThbcsLQVk/Peots2X8AgmcnSQMuce6eRvWEKT5QMpT/eQhFy88MAm
+k+rCYgyY3LJZB5uw3p9gCvspl0b7N5qThciXWgR+/+dHX73BERHiIKYSwDfvEn+rTEULwYXS
+AdthpEsxnzJUzb9PuEw3ZX81p4QakCf/LgPkQe0auk3B/ib8gGDpzkYQa1ZWv7dek6sS9Fny
+eJF5PHkF70iYATjwaQgA5FkYgONOetnugwKx6lBPrW8hu9CaJrUnaGzdJiRRxQL4CuQRTCOr
+eAPM7avgppwdziHlk13hscTRDBuoRRLgehn2zjkSynPfDQw7EDhjgL6QZeu0UvaxKJ37tSl3
+IA==
+
+/

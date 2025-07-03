@@ -1,0 +1,32 @@
+CREATE OR REPLACE FUNCTION fn_obcl_get_component_list wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+573 2d5
+Hut3XfSFimGx36yQmmaA8o1VbEIwg2PDciDrfI6Lbp0GVSXyTD0uBsIRB9tC3oytYRfa+9xv
+ifVtw9PDrFNZ5M16sGPW4mJ8z6GOncG7xvgG2I5Hiwnd5TJVB0ODVbHtup9PIr95VTNIVc8p
+gJc+Yuvxk1dxvqnFPH7zHgqhppajlzG/3MDGkWsaZziQYApOnjWnbxTqxNSVxb8B4HHRVv8y
+ijrcJgwt0pzfQf34wNNNKpCNBvMCQca1CtKmxTxSOP/hX72pdBYNqaLySi2paFDEj3D7Swn9
+Jje+lwhHb2pfOdpx8/1tIwVbcMjv8MvVZd7hEp2f5mVimbT+619M/1RhVc8DZ/ClxzN4S3I1
+jja9/8c1AT4bQ8/loP2HYGtd7vPQ5n74I+ug/lCgEFtzhLIKZM3CIEUzWaUVUl0C8gIGoEfj
+xWWgflLU9BpdxBpuEu+sOykrQdwZoHvjjcZwcat6gNYnm4osy5Blk54gHnSK4emlVgexeGef
+h2nOlskD2XyeQUT66opi1q/CeT3RNZNHspKWFglmeLhoeZNMJcu8AU3ku4506+gW05R5Qedz
+VTDe3bCw5wr+10X555rs+fv81+gF3TLn0NDGSn+/bl2Uhn0oSHHpsIpXtxsVRqX4pXz1E1QA
+g68uj8DhZBfaw5OzjQs0i1TMmwkTpbO2t/ogyIYLnxIDgu6RFVMTjABHJQosordxEA==
+
+/

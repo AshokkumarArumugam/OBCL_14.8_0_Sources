@@ -1,0 +1,36 @@
+create or replace package body gwpks_service_wrapper_cluster wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+81b 3b9
+hPm07+RAgsdbxoCaEYQQVkz6In0wgztcLq6GfC9V9k7Vi6crrOczU/PVrfT9Zps4fgdhSZkt
+++ViYvJwvtLGu7RSJAnyxI08H+MXek4ZTnqc96VA246sZuzd68Yeu2AqXHMXkmkm0JL5gQ3l
+PWqK7UIKJ1pGhqZXD2Kmn7YK4zkBdL9GB7FGqrsPy4/GlFO2sbFSh0Yhxa0CFuP4hjI8Z5w5
+qanUobnSpvHuK2LHcbuX9hizQTGBBCBqEHiOuYhTLTfRVtLMH5I9rh+nDAQoz3pkDLN6FRs/
+rozfLOda7+Q0uMdUi2tZGHZAvmWORmlY4/hZUiO6Cahch8qLdptlmRaauuhMF1lMXtPMGT8G
+91GJL9C08Gmsm5gUGhiGb0NBbrR3akNajmMK7LVrbsiip1HWSDKhTW6HG7IC56Hs5RSjsJO5
+uqFlaTijnoriZmb6q4ejNhQ9qZ/Ty++MbgpL430ikbV6hedJMfvyHY/Dp3qAH44+bL5BgP3H
+Iyb7GFdt2Gwl4tHQLlOkjFWEGMlZ3Mt2Fd8F5eLqCh75MUYQmCM0sWAlIscoRYP9/5QKHyhc
+603YQptxUBt/b3QCHBRuUgE4xs43m+flXUbMIYuwdMmhayM8O6X0H7xbBbZdxKHaqwslP70y
+I3JQnrsXAynkKQqAmTFih5+0voXXcVbC2W1MCl9XOHQHLc0ppMD4LRwkGTSAksALS3lMxL+Y
+UTvhxhMeWnh5NIZ1JDNFzVV6Ga4XPZZ1/67tpEyvI1JaCTVzYUUQZAgLcw/aBTQjEmTBI3SR
+c4evC+0wN10a4gr0xExsljJee8s+69AiYGBasp4UhQJjJpV8zS09xscqB5UFx1x4SzB6LUId
+QcHRnAbf6TiCap3H/ZLExxZyLa0knVNT9Xi9zbfJBkzzMpdKrKMDuSH4Shn44OQFeDG1Mx8L
+L/lp
+
+/

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">All Types of AEDSTART
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="BrnEODStart-PK-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="EOC_REF_NO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BrnEODStart-Full-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="EOC_REF_NO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="TARGETSTAGE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="MARKTIMELVL9"/>
+                        <xs:enumeration value="MARKEOTI"/>
+                        <xs:enumeration value="POSTEOTI_1"/>
+                        <xs:enumeration value="POSTEOTI_2"/>
+                        <xs:enumeration value="POSTEOTI_3"/>
+                        <xs:enumeration value="MARKEOFI"/>
+                        <xs:enumeration value="POSTEOFI_1"/>
+                        <xs:enumeration value="POSTEOFI_2"/>
+                        <xs:enumeration value="POSTEOFI_3"/>
+                        <xs:enumeration value="MARKEOD"/>
+                        <xs:enumeration value="POSTEOD_1"/>
+                        <xs:enumeration value="POSTEOD_2"/>
+                        <xs:enumeration value="POSTEOD_3"/>
+                        <xs:enumeration value="MARKBOD"/>
+                        <xs:enumeration value="POSTBOD_1"/>
+                        <xs:enumeration value="POSTBOD_2"/>
+                        <xs:enumeration value="POSTBOD_3"/>
+                        <xs:enumeration value="MARKTI"/>
+                        <xs:enumeration value="MARKEOPD"/>
+                        <xs:enumeration value="POSTEOPD_1"/>
+                        <xs:enumeration value="POSTEOPD_2"/>
+                        <xs:enumeration value="POSTEOPD_3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="RUN_MODE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="S"/>
+                        <xs:enumeration value="P"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="INITBRN">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="6"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="INITBY">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="320"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="INITDATE" type="xs:date"/>
+            <xs:element minOccurs="0" name="SESSION">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EOCSTAT">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="MAXTHREADS">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="22"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EOCTYPE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="SCH"/>
+                        <xs:enumeration value="ASN"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Eoc-Groups">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="GROUPCD">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="GROUP_DESC">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Eoc-Branches">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="BRANCH_CODE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="6"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="BRNDESC">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="BRANCH_SEQ">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="BRNDATE" type="xs:date"/>
+                        <xs:element minOccurs="0" name="CURRSTAGE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="TI"/>
+                                    <xs:enumeration value="MARKTIMELVL9"/>
+                                    <xs:enumeration value="MARKEOTI"/>
+                                    <xs:enumeration value="POSTEOTI_1"/>
+                                    <xs:enumeration value="POSTEOTI_2"/>
+                                    <xs:enumeration value="POSTEOTI_3"/>
+                                    <xs:enumeration value="MARKEOFI"/>
+                                    <xs:enumeration value="POSTEOFI_1"/>
+                                    <xs:enumeration value="POSTEOFI_2"/>
+                                    <xs:enumeration value="POSTEOFI_3"/>
+                                    <xs:enumeration value="MARKEOD"/>
+                                    <xs:enumeration value="POSTEOD_1"/>
+                                    <xs:enumeration value="POSTEOD_2"/>
+                                    <xs:enumeration value="POSTEOD_3"/>
+                                    <xs:enumeration value="MARKBOD"/>
+                                    <xs:enumeration value="POSTBOD_1"/>
+                                    <xs:enumeration value="POSTBOD_2"/>
+                                    <xs:enumeration value="POSTBOD_3"/>
+                                    <xs:enumeration value="MARKEOPD"/>
+                                    <xs:enumeration value="POSTEOPD_1"/>
+                                    <xs:enumeration value="POSTEOPD_2"/>
+                                    <xs:enumeration value="POSTEOPD_3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="TARGETSTAGE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="MARKTIMELVL9"/>
+                                    <xs:enumeration value="MARKEOTI"/>
+                                    <xs:enumeration value="POSTEOTI_1"/>
+                                    <xs:enumeration value="POSTEOTI_2"/>
+                                    <xs:enumeration value="POSTEOTI_3"/>
+                                    <xs:enumeration value="MARKEOFI"/>
+                                    <xs:enumeration value="POSTEOFI_1"/>
+                                    <xs:enumeration value="POSTEOFI_2"/>
+                                    <xs:enumeration value="POSTEOFI_3"/>
+                                    <xs:enumeration value="MARKEOD"/>
+                                    <xs:enumeration value="POSTEOD_1"/>
+                                    <xs:enumeration value="POSTEOD_2"/>
+                                    <xs:enumeration value="POSTEOD_3"/>
+                                    <xs:enumeration value="MARKBOD"/>
+                                    <xs:enumeration value="POSTBOD_1"/>
+                                    <xs:enumeration value="POSTBOD_2"/>
+                                    <xs:enumeration value="POSTBOD_3"/>
+                                    <xs:enumeration value="MARKTI"/>
+                                    <xs:enumeration value="MARKEOPD"/>
+                                    <xs:enumeration value="POSTEOPD_1"/>
+                                    <xs:enumeration value="POSTEOPD_2"/>
+                                    <xs:enumeration value="POSTEOPD_3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BrnEODStart-Create-IO-Type">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="EOC_REF_NO">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="TARGETSTAGE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="MARKTIMELVL9"/>
+                        <xs:enumeration value="MARKEOTI"/>
+                        <xs:enumeration value="POSTEOTI_1"/>
+                        <xs:enumeration value="POSTEOTI_2"/>
+                        <xs:enumeration value="POSTEOTI_3"/>
+                        <xs:enumeration value="MARKEOFI"/>
+                        <xs:enumeration value="POSTEOFI_1"/>
+                        <xs:enumeration value="POSTEOFI_2"/>
+                        <xs:enumeration value="POSTEOFI_3"/>
+                        <xs:enumeration value="MARKEOD"/>
+                        <xs:enumeration value="POSTEOD_1"/>
+                        <xs:enumeration value="POSTEOD_2"/>
+                        <xs:enumeration value="POSTEOD_3"/>
+                        <xs:enumeration value="MARKBOD"/>
+                        <xs:enumeration value="POSTBOD_1"/>
+                        <xs:enumeration value="POSTBOD_2"/>
+                        <xs:enumeration value="POSTBOD_3"/>
+                        <xs:enumeration value="MARKTI"/>
+                        <xs:enumeration value="MARKEOPD"/>
+                        <xs:enumeration value="POSTEOPD_1"/>
+                        <xs:enumeration value="POSTEOPD_2"/>
+                        <xs:enumeration value="POSTEOPD_3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="RUN_MODE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="S"/>
+                        <xs:enumeration value="P"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="INITBRN">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="6"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="INITBY">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="320"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="INITDATE" type="xs:date"/>
+            <xs:element minOccurs="0" name="SESSION">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EOCSTAT">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="MAXTHREADS">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="22"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EOCTYPE">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="SCH"/>
+                        <xs:enumeration value="ASN"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Eoc-Groups">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="GROUPCD">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="GROUP_DESC">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="Eoc-Branches">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="BRANCH_CODE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="6"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="BRNDESC">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="255"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="BRANCH_SEQ">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="22"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="BRNDATE" type="xs:date"/>
+                        <xs:element minOccurs="0" name="CURRSTAGE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="TI"/>
+                                    <xs:enumeration value="MARKTIMELVL9"/>
+                                    <xs:enumeration value="MARKEOTI"/>
+                                    <xs:enumeration value="POSTEOTI_1"/>
+                                    <xs:enumeration value="POSTEOTI_2"/>
+                                    <xs:enumeration value="POSTEOTI_3"/>
+                                    <xs:enumeration value="MARKEOFI"/>
+                                    <xs:enumeration value="POSTEOFI_1"/>
+                                    <xs:enumeration value="POSTEOFI_2"/>
+                                    <xs:enumeration value="POSTEOFI_3"/>
+                                    <xs:enumeration value="MARKEOD"/>
+                                    <xs:enumeration value="POSTEOD_1"/>
+                                    <xs:enumeration value="POSTEOD_2"/>
+                                    <xs:enumeration value="POSTEOD_3"/>
+                                    <xs:enumeration value="MARKBOD"/>
+                                    <xs:enumeration value="POSTBOD_1"/>
+                                    <xs:enumeration value="POSTBOD_2"/>
+                                    <xs:enumeration value="POSTBOD_3"/>
+                                    <xs:enumeration value="MARKEOPD"/>
+                                    <xs:enumeration value="POSTEOPD_1"/>
+                                    <xs:enumeration value="POSTEOPD_2"/>
+                                    <xs:enumeration value="POSTEOPD_3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="TARGETSTAGE">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="MARKTIMELVL9"/>
+                                    <xs:enumeration value="MARKEOTI"/>
+                                    <xs:enumeration value="POSTEOTI_1"/>
+                                    <xs:enumeration value="POSTEOTI_2"/>
+                                    <xs:enumeration value="POSTEOTI_3"/>
+                                    <xs:enumeration value="MARKEOFI"/>
+                                    <xs:enumeration value="POSTEOFI_1"/>
+                                    <xs:enumeration value="POSTEOFI_2"/>
+                                    <xs:enumeration value="POSTEOFI_3"/>
+                                    <xs:enumeration value="MARKEOD"/>
+                                    <xs:enumeration value="POSTEOD_1"/>
+                                    <xs:enumeration value="POSTEOD_2"/>
+                                    <xs:enumeration value="POSTEOD_3"/>
+                                    <xs:enumeration value="MARKBOD"/>
+                                    <xs:enumeration value="POSTBOD_1"/>
+                                    <xs:enumeration value="POSTBOD_2"/>
+                                    <xs:enumeration value="POSTBOD_3"/>
+                                    <xs:enumeration value="MARKTI"/>
+                                    <xs:enumeration value="MARKEOPD"/>
+                                    <xs:enumeration value="POSTEOPD_1"/>
+                                    <xs:enumeration value="POSTEOPD_2"/>
+                                    <xs:enumeration value="POSTEOPD_3"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,33 @@
+CREATE OR REPLACE Package Body Lfpks_Fee_Prop_Bulk_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+87a 2e6
+792tL8lKit4FKyOcPG5v8cwbQdQwg82nLiCrfy9AEgIPf5wR1o5SfZQN8bHamNilg+LNeYXe
+ww1paxSpzlNDxr80Z+E2CYMZ5VTjVZCInU43LC0rhTcWLwm3VTercrucidBgkR8DrWMeBxKS
+vIfiydDKz/3KP9yWph5f29if55OjcSjuCrjClmjGy4lS9hjpJjqeyDijH0weTb6+3F/ySMqt
+T5LryRDcjym9QJAcbQ7/4KeHt1dkDXRjs8j2wssm3WetZvTFcbrxYFtJkcoHrd4dYzmM5vxP
+pFWM4wq4FwjoJtLSwpECmWNWO1A3GuvMXjEQLuVGKH355qPsl6vwVopHYrpR9T/K1ztMLbv+
+CYczPrb7v6fB/+kBJ9zIPVolv4ZsQHOTUqxJGY6cYJVzNyHiucx9RAZjpy14PolojQrYpDCu
+DVxgkUxBKq4GcC+OjJqJKhJV329eB7cLMEJFDiv1/1fiFGqcs8K5uYUPwliAG8VdhMA0vut+
+nwQnIpMmf54CSucN3zYNZkyhrQIIiYtt85SMXITwMHFsR9TUzWAKgeB7WPlGCKwxALZF1/Nx
+8ORGhPTfwHdIVTP39p4Q9RzOE2JQZ5BdmhsojCx8rRMQtsGdFkjCgwRhk8Brz7dAsxCyxdqD
+B8r9LBmhP0k6svHEaOR4fHKnCm3eIpT4ZFdPJTRuwe+HOmStI8P/nRILhrEdDN47ORT2LFk9
++KWZlzYfwQ==
+
+/

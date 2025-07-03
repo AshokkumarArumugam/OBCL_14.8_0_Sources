@@ -1,0 +1,20 @@
+PROMPT PROCESSING FOR STZM_JOBS_SCHEDULE_001
+
+BEGIN
+INSERT INTO STZM_JOBS_SCHEDULE
+(JOB_ID,JOB_NAME,JOB_GROUP,JNDI_NAME
+,SCHEDULER)
+ VALUES 
+('MBeanToplink',
+'MBeanToplink',
+'MBeanToplink',
+'MBeanToplink',
+'SchedulerFactory'
+)
+;
+END;
+/
+
+
+
+commit;

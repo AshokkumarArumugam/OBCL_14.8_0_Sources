@@ -1,0 +1,36 @@
+CREATE OR REPLACE FUNCTION fn_get_ol_360custview wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+90d 3b9
+N4tW5QMlyn1DKl6LHZ+vQghinDgwg2NcmiDrfC+LvqqV7Vmha22jL3rYdPqhbjzs9lsFocRJ
+ma9AyFAbNTec9J2QxwYh3qdvo1EiITNVv5oQ/u+TqNNqGqmYEvg6nwssvIPqIOgsqs+a5OTA
++NVHeQkR7+rDrzP3aNuDGwkE6dO2bMIvQOVuFsfHyUjAe4ivLa68AgM+KkZSst02hRVwoOTy
+uvGCunDDQGtvGFfU974tG2HxnPbZbPPwwfTu6r6Ow6AI0Mu7yvltHVyeNQmDQULLbMz68U2c
+SYzgeYXyuzWk7+VR6Gnh4D6tbOF11IL+/SOmlzcnPfBSkSaLHNhkc1JwTO6kUZhJLSTfccQQ
+EsXgk5rucHfqe5NF9gR6AF7AzdTdrfwAASasXkNZUwEpgai3ddF1Z2qJ1JVml407+UY3Xa82
+4e06pXkdKL9qTpmvMLnFPHDK75fe4I+t20SdrKLA/nuDQIkdlYHEWPHVMAkVksDtGhjmv7bd
+bKCYakOhZLbs2g2AGTWpyN9sQLR0cwl8MF2EsujlmseKQz1T4bbejR/ZOc48/b0Zr6CVdlR8
+H5wdvBx2N9XkWcVwSHDJL+n4hFI+TiPgRQksb5jvv2RzxDkAlZhMMbQhFRKjGMkrWgSXVpGG
+TRd4IBHfo9Ljooheg3crmEP4uvu1a0a844cNgfFSGKIZy7Yx9zEAgXfKecybSySl80mDWXB7
+QB989vGK/QKU2zCu/Gscu02MuhaxHEr0wRkQlZ/PFQGugjPqHNR9mDMjUjD5KXOwauudTLlg
+lFO3YFXmK+mJhQwpp1W9UtHhMM+KXL/BEkAxRINuCxYyIpD/izWx1KqQbpdTdfCeAFA2ybYw
+8Fyiio+/hu8MaAaDCO9CSpt1dQd52PrL6LAGRIXnsU2ptyG2nzWySDKcQAUJbIweOgMkMjCt
+0w==
+
+/

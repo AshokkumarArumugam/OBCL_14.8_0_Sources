@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION fn_ol_get_transfer_avl wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+239 1c2
+c9AoGYqitp0tRortcxZApbY9SocwgxD3r0gVfHRAvy5BFXhn5uughnvL3vzmGncmJaDWt5X7
+nzVZ4BFyJBfgo4iDwLgUwcRz+AxVty7RL4rQ5J+PsVVYcrDNCBCd2ggzhg6NCV6FLQH9FukL
+toDYWKyrWaDVtixOHnajHF+799W3aSZ2xz/o7+gi02maiQQNHtJPgEIpbrQha7D1Phb19AyA
+oz2orB2ABgHlXAccOxE5JA0i9UqncasghQbkODkG8UWr7xOvVyDyliv8BKumD+jxTgNMqCiN
+d7gLRRTUd9me7xVkpPtvuANTK0DFqdln3BNvqJk4ZauKSR8xKJTzAJbiV96U4ALzl9dUKzgX
+DcheIkYryoc4QqOpmJ1MSy+k4kzx/QEn4lYhTSDOFd5o6cqUq7FvBeSBD5i2RhQ2e8gWiM7E
+8eUGubZAdl8+
+
+/

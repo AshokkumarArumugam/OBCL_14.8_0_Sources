@@ -1,0 +1,99 @@
+#PH
+
+
+
+
+
+
+
+
+
+#EH
+#B
+
+#SC
+         _CUSTNAME_
+         _ADD1_
+         _ADD2_
+         _ADD3_
+         _ADD4_
+
+#EC
+
+                                                    DATE : _TDATE_
+
+
+
+     CUSTOMER ID      : _CUSTOMER_
+
+     OUR REFERENCE NO : _REF_
+
+#IF _SIM_
+
+	SIMULATION ADVICE FOR A LOAN AMENDMENT
+
+#ENDIF
+
+#IF _ORGVAMB_
+     THIS CONTRACT HAS BEEN AMENDED AND THE NEW DETAILS ARE AS FOLLOWS:
+     CONTRACT DETAILS
+#ENDIF
+
+#IF _DIFFAMT_
+     OLD CONTRACT AMOUNT       :  _OLDAMT_              _CCY_
+     NEW CONTRACT AMOUNT       :  _NEWAMT_              _CCY_
+#ENDIF
+#IF _MATDT_
+     OLD MATURITY DATE         :  _OLDMATDT_
+     NEW MATURITY DATE         :  _NEWMATDT_
+#ENDIF
+
+#IF _FIXED_
+     ========================================================================
+     COMPONENT       OLD RATE                 NEW RATE
+     ========================================================================
+#LOOP
+     _XCOMP_         _OLDRATE_                _NEWRATE_
+#ENDLOOP
+    ========================================================================
+#ENDIF
+#IF _FLOATING_
+     ========================================================================
+     COMPONENT       OLD RATE CODE   NEW RATE CODE    OLD SPREAD   NEW SPREAD
+     ========================================================================
+#LOOP
+     _FCOMP_         _OLDRTCODE_     _NEWRTCODE_      _OLDSPRD_    _NEWSPRD_
+#ENDLOOP
+     ========================================================================
+#ENDIF
+#IF _SPECIAL_
+     ========================================================================
+     COMPONENT       OLD AMOUNT                  NEW AMOUNT
+     ========================================================================
+#LOOP
+     _SCOMP_         _OLDAMT_                _E__NEWAMT_                 _E_
+#ENDLOOP
+     ========================================================================
+#ENDIF
+
+#IF _SIM_
+COMPONENT_NAME     DUE_DATE     AMOUNT_DUE
+========================================================================
+#LOOP
+_SCOMP_    _SDUEDT_    _OUTST_
+#ENDLOOP
+========================================================================
+#ENDIF
+
+     VALUE DATE OF AMENDMENT   :  _AVDATE_
+
+#EB
+#PF
+                                     _PG_
+#EF
+#RF
+            THIS IS A SYSTEM GENERATED ADVICE AND DOES NOT REQUIRE
+                           AN AUTHORISED SIGNATURE
+
+
+#EF

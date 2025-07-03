@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:ejb="http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+         version="3.0">
+    <display-name>SMEJB</display-name>
+    <enterprise-beans>
+        <session>
+            <ejb-name>SMEJBBean</ejb-name>
+            <mapped-name>ejb/{REF_LOCATION}/SMEJB.jar/SMEJBBean</mapped-name>
+            <ejb-class>com.ofss.sms.sm.ejb.SMEJBBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <env-entry>
+	        <env-entry-name>RES_APP_NAME</env-entry-name>
+	        <env-entry-type>java.lang.String</env-entry-type>
+	        <env-entry-value>{REF_LOCATION}</env-entry-value>
+            </env-entry>            
+			<persistence-context-ref>
+				<persistence-context-ref-name>{REF_LOCATION}/SMEntities</persistence-context-ref-name>
+				<persistence-unit-name>{REF_LOCATION}/SMEntities</persistence-unit-name>
+			</persistence-context-ref>
+			<persistence-context-ref>
+				<persistence-context-ref-name>{REF_LOCATION}/SMRepEntities</persistence-context-ref-name>
+				<persistence-unit-name>{REF_LOCATION}/SMRepEntities</persistence-unit-name>
+			</persistence-context-ref>
+        </session>
+		<session>
+            <ejb-name>SMSchedulerEJBBean</ejb-name>
+            <mapped-name>ejb/{REF_LOCATION}/SMEJB.jar/SMSchedulerEJBBean</mapped-name>
+            <ejb-class>com.ofss.sms.sm.ejb.SMSchedulerEJBBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <env-entry>
+	        <env-entry-name>RES_APP_NAME</env-entry-name>
+	        <env-entry-type>java.lang.String</env-entry-type>
+	        <env-entry-value>{REF_LOCATION}</env-entry-value>
+            </env-entry>            
+			<persistence-context-ref>
+				<persistence-context-ref-name>{REF_LOCATION}/SMEntities</persistence-context-ref-name>
+				<persistence-unit-name>{REF_LOCATION}/SMEntities</persistence-unit-name>
+			</persistence-context-ref>
+			<persistence-context-ref>
+				<persistence-context-ref-name>{REF_LOCATION}/SMRepEntities</persistence-context-ref-name>
+				<persistence-unit-name>{REF_LOCATION}/SMRepEntities</persistence-unit-name>
+			</persistence-context-ref>
+        </session>
+
+	</enterprise-beans>	
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>SMEJBBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+    <ejb-client-jar>SMEJB.jar</ejb-client-jar>
+</ejb-jar>

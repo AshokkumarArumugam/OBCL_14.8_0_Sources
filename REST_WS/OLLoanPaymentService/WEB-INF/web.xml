@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <servlet>
+    <servlet-name>RestServlet</servlet-name>
+     <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>com.ofss.fcc.olloanpayment.util.OLLoanPaymentApplication</param-value>
+    </init-param>
+	 <init-param>
+         <param-name>jersey.config.wls.server.monitoring.enabled</param-name>
+         <param-value>false</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+	<servlet>
+        <servlet-name>SwaggerConfig</servlet-name>
+        <servlet-class>com.ofss.fcc.olloanpayment.swagger.OLLoanPaymentSwaggerConfig</servlet-class>
+        <load-on-startup>2</load-on-startup>
+   </servlet>
+  <servlet-mapping>
+    <servlet-name>RestServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping> 
+<env-entry>
+    <description>Property File Path</description>
+    <env-entry-name>propertyPath</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>{GatewayPropFilePath}</env-entry-value>
+  </env-entry>
+<context-param>
+	<param-name>contextClass</param-name>
+	<param-value>
+		org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+	</param-value>
+</context-param>
+<context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>com.ofss.fcc.utility</param-value>
+</context-param>
+<listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+  <filter>
+    <filter-name>GWRestFilter</filter-name>
+    <filter-class>com.ofss.fcc.filter.GWRestFilter</filter-class>
+  </filter>
+    <filter-mapping>
+    <filter-name>GWRestFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+<persistence-context-ref>
+    <persistence-context-ref-name>{REST_ENTITY}</persistence-context-ref-name>
+    <persistence-unit-name>{REST_ENTITY}</persistence-unit-name>
+</persistence-context-ref>
+<persistence-context-ref>
+    <persistence-context-ref-name>SMS</persistence-context-ref-name>
+    <persistence-unit-name>SMS</persistence-unit-name>
+</persistence-context-ref>
+</web-app>

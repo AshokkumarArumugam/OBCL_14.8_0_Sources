@@ -1,0 +1,33 @@
+create or replace package body bkpks_adv wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+43b 2e6
+JEU5AgsoE40GLvt093lwTMS/dPswgwJe10gGfC8ZCk6OxzX73pxbVNuoJLchZrQmzaBDkczj
+g+enwmfqmNMonYKoa2ONTWNaMzC8T4iuGMrsNj7mTQaIeuJhCu0TlrVncDQK1T4BkYJsqHc1
+z8Flk4lvkmlTV0++JqFMwyeFFBaeCjR1BIboEVnIyWWk3Fxxi32eO2b/AwPhW0FQEQwuRvJD
+BFqFX8Z2RmFrrevTD64KEkBfeub1Kdc3flTTDXVRSOG/NfmnZ37iPVfBXcsNn/cYzA7JpCV8
+atE89pFGH2YxM6K6gF84WMuZzXSXUzuea7uxSwqLbcEnvWjdIwMQAM4d5m08hXJ/VEzxeaPm
+UJzVXFDRNf1Vz/xuXGcT81WGhMnu+TlDAdyuxRNNCdRuTgIND/hJV+QFK6UQvrTdKKXQgOHz
++sj6U/JXHBDLx1ZKXZi31DYql+eQw9bMC0zjVvtTqdCvKDJBVSV8zqanaAk8XLoQqn8PZB7X
+tnq5hys9ywTK20X5c6OWwQeSAYZPXVRfJwK4JciQokD09fAOjIRP2HT/UVXKgbfKeFePM+ca
+VZWknaISbAuF8bOxn5iSyr3CdgudN78Ru3eOQYV/IRUXJEn6//AwHQh0pafBqVM00It9M6gV
+UTrX7P7qoiYugM9VYrmfIdapqh89pxO9/KVxzTPN63jZaIshKV7iHaYin9cL9rv5udEVZN0u
+LBD4KPXJ0zU=
+
+/

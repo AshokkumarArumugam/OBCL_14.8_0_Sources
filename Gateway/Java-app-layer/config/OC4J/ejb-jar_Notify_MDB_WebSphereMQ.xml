@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<ejb-jar id="MDBSample_ejb-jar_ID" version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+	<enterprise-beans>
+		<message-driven>
+            <display-name>MDB Gateway</display-name>
+			<ejb-name>GW_NOTIFY_MDB_Bean</ejb-name>
+			<ejb-class>com.iflex.fcubs.gw.notify.mdb.GWNotifyMDBBean</ejb-class>
+			<messaging-type>javax.jms.MessageListener</messaging-type>
+			<transaction-type>Container</transaction-type>
+
+		    <activation-config>
+			   <activation-config-property>
+			      <activation-config-property-name>DestinationType</activation-config-property-name>
+			      <activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+			   </activation-config-property>
+			   <activation-config-property>
+			      <activation-config-property-name>DestinationName</activation-config-property-name>
+			      <activation-config-property-value>NOTIFY_QUEUE</activation-config-property-value>
+			   </activation-config-property>
+			   <activation-config-property>
+			      <activation-config-property-name>ConnectionFactoryJndiName</activation-config-property-name>
+			      <activation-config-property-value>NOTIFY_MDB_QCF</activation-config-property-value>
+			   </activation-config-property>
+		    </activation-config>
+
+            <resource-ref> 
+				<res-ref-name>FLEXTEST.WORLD</res-ref-name> 
+				<res-type>javax.sql.XADataSource</res-type> 
+				<res-auth>Container</res-auth>
+			</resource-ref>
+			<!--resource-ref>
+				<description>Topic connection factory for publishing notifications.</description>
+				<res-ref-name>NotifyTCF</res-ref-name>
+				<res-type>javax.jms.XATopicConnectionFactory</res-type>
+				<res-auth>Container</res-auth>
+			</resource-ref-->
+			<resource-ref>
+				<description>Queue connection factory for publishing notifications.</description>
+				<res-ref-name>NotifyDestQCF</res-ref-name>
+				<res-type>javax.jms.XAQueueConnectionFactory</res-type>
+				<res-auth>Container</res-auth>
+			</resource-ref>
+			<resource-ref>
+				<description>Queue connection factory for DLQ.</description>
+				<res-ref-name>NOTIFY_MDB_QCF</res-ref-name>
+				<res-type>javax.jms.XAQueueConnectionFactory</res-type>
+				<res-auth>Container</res-auth>
+			</resource-ref>
+            <!-- KERNEL73 Deffered changes starts -->
+			<resource-ref>
+                <description>Queue connection factory for DLQ.</description>
+                <res-ref-name>DefferedDestQCF</res-ref-name>
+                <res-type>javax.jms.XAQueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+			<!-- KERNEL73 Deffered Changes ends   -->
+			
+            <!--resource-env-ref>
+				<description>Topic for publishing notifications to.</description>
+				<resource-env-ref-name>NOTIFY_TOPIC</resource-env-ref-name>
+				<resource-env-ref-type>javax.jms.Topic</resource-env-ref-type>
+			</resource-env-ref-->
+			<resource-env-ref>
+				<description>Queue for publishing notifications to.</description>
+				<resource-env-ref-name>NOTIFY_DEST_QUEUE</resource-env-ref-name>
+				<resource-env-ref-type>javax.jms.Queue</resource-env-ref-type>
+			</resource-env-ref>
+			<resource-env-ref>
+				<description>Notify Dead Letter Queue</description>
+				<resource-env-ref-name>NOTIFY_QUEUE_DLQ</resource-env-ref-name>
+				<resource-env-ref-type>javax.jms.Queue</resource-env-ref-type>
+			</resource-env-ref>
+            <!-- KERNEL73 Deffered changes starts -->
+			<resource-env-ref>
+                <description>Notify Dead Letter Queue</description>
+                <resource-env-ref-name>DEFFERED_DEST_QUEUE</resource-env-ref-name>
+                <resource-env-ref-type>javax.jms.Queue</resource-env-ref-type>
+            </resource-env-ref>
+			<!-- KERNEL73 Deffered changes ends -->
+		</message-driven>
+	</enterprise-beans>
+	<assembly-descriptor>
+		<container-transaction>
+			<method>
+				<ejb-name>GW_NOTIFY_MDB_Bean</ejb-name>
+				<method-name>*</method-name>
+			</method>
+			<trans-attribute>Required</trans-attribute>
+		</container-transaction>
+	</assembly-descriptor>
+</ejb-jar>

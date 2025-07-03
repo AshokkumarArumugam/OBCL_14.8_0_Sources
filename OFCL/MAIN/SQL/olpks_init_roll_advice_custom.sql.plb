@@ -1,0 +1,34 @@
+CREATE OR REPLACE PACKAGE BODY olpks_init_roll_advice_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+c0b 343
+tHgbVastgSUI4wFFzesU8mX8BwQwg0ONDyCDfI6V/uzPGPgJRBrlKFmjY3/FiMah71+Qrcuk
+rm9RymuzNvtVXiTkfgdhS+T7w4dhCJHP0NBku66A9PMcDshnT/gLhZwKT/0NhW+6Df+cDCpC
+5A11/3fSQgPXT6Zs0akF0h3jRMbbrkT7nSxh4CpZ5gSoN7v3faCoZcum0nCYgb7H+ENhVT1j
+Ir3vyWzMpiIpsO4ueueNTD7/jwWk9WcZt+ZOJ9INW4fHwe0ZkFuWlnD4KbnLu+TpOJqbV4Hi
+mcafqKhHsRB1DZMp/nVj/Rp02Vp4tnyUmVFmb6FsV2OeOozntrHevtzYMMWNrsaDLr2svqWQ
+463LsMJPdRDH8LNxvfnKxn++3xfjL57HT1dKb9bie6IE7TwbeGSV1e+/kGG56S9YnuizUvIv
+1ej4IuYd3W1ldRcnDUGNyYbNh94BOk5vmzp/KbkiPgngsJsdt7RfFW8sIW+Pq0paM/OT+HDC
+VP8cOFKgWOZPz7CSDWrE7VXt+1H0vLTdTVgA9SgIpaL5pM+b1zORZy6DmfMnRQZ2olxOtbf3
+1OOtt+E4jLIwYiwdTVhy57OJFiz6AOaLT2LL97l88YZFI73RISUy/56aIXJhHvp3WTJBeBRk
+Cb++tFyDT1i+HVSrya1StVfctkq3MDyelnUlKLZi+9WoDUcHfxdGpDUjiU28AmyFo7pIcLQ0
+ggVb4u38VCxuPsciHQMSVg2uCnoTAUnbYfIw+mgrOk+kaBDjXE+XtfPH81FeV7HVluzB0PHR
+1ndNr6et8FuhKdbYuOxaIoo/krJcFiLl
+
+/

@@ -1,0 +1,30 @@
+<scheduler_web>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<servlet-name>FCScheduleServlet</servlet-name>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>FCScheduleServlet</servlet-name>
+		<servlet-class>com.ofss.fcc.web.FCScheduleServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FCScheduleServlet</servlet-name>
+		<url-pattern>/FCScheduleServlet</url-pattern>
+	</servlet-mapping>
+	<!--OIC Changes Start-->
+	<servlet>
+		<servlet-name>SchedulerRest</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.ofss.fcc.web.SchedulerRestApplication</param-value>
+		</init-param>
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SchedulerRest</servlet-name>
+		<url-pattern>/SchedulerRest/*</url-pattern>
+	</servlet-mapping>
+	<!--OIC Changes End-->
+</scheduler_web>

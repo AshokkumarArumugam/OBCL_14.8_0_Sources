@@ -1,0 +1,56 @@
+<html>
+<head>
+<style>
+.header {
+	background-color: yellow;
+	color: red;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	String.prototype.folderOf=function(no_slash){
+		return this.slice(0,this.lastIndexOf('\\',this.length-(/\\$/.test(this)?2:0))+(no_slash?0:1))
+	};
+	String.prototype.toLocalPath=function(){
+		return unescape(this.slice(this.search(/[A-Z]:\/[^\/]/i)).replace(/\//g,'\\'))
+	};
+	function fnLoad() {
+		//setTimeout("printDimensions()", 5000);
+		printDimensions();
+	}
+	function printDimensions() {
+		var tblObj = document.getElementsByTagName("table")[0];
+		var noRows = tblObj.rows.length;
+		for(i = 1; i < noRows; ++i) {
+			var imgObj = tblObj.rows[i].cells[2].children[0];
+			tblObj.rows[i].cells[3].innerHTML = imgObj.clientWidth + "X" + imgObj.clientHeight + "px";
+		}
+	}
+</script>
+</head>
+<body onload="fnLoad()">
+	<script>
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var f = fso.GetFolder(location.href.toLocalPath().folderOf());
+		
+		var fc = new Enumerator(f.files);
+		var i = 0;
+		document.write("<table class=\"tbl\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\">");
+		document.write("<tr class=\"header\"><td>Sl. No.</td><td>File Name</td><td>Image</td><td>Dimensions</td></tr>");
+		for (; !fc.atEnd(); fc.moveNext()) {
+			var fileName = fso.getFileName(fc.item());
+			var extn = fso.getExtensionName(fileName).toUpperCase();
+			if(extn == "GIF" || extn == "PNG" || extn == "JPG") {
+				document.write("<tr>");
+				document.write("<td>" +  (++i) +"</td>");
+				document.write("<td>" + fileName + "</td>");
+				document.write("<td><img id = \"img" + i + "\"src=\"" + fileName + "\"/></td>");
+				var imgObj = document.getElementById("img" + i);
+				document.write("<td id = \"dim" + i + "\"></td>");
+				document.write("</tr>");
+			}
+		}
+		document.write("</table>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+CREATE OR REPLACE FUNCTION fn_process_secure_data wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+7eb 3d9
+skUf25ENQPyVWxdkEYZavun9+Zswg41cLiAFfHRVXJKUNGyIJRyfcTz7GGLE4X76t12grb01
+BkhEe9rjkLqq5BSqFGH9sJA3olGi989dtpQUaOtZuDD/R/nIIOtRfOlFABwJAwWJ/V/oBJUb
+9BBRJlKq539KaJG5302J5quuzj1746KMlPcZHfeae/h/9xQjsKmzdAzltvo4PqJavVtHjhz4
+p9IZI9SFsNld+d+n6OxZSWZuR0nlaHbyhU+AcFnJmV/hqDfTu69a/DfwlWaEWrPII6tQ6kk2
+CaKpok3vAY6B05M1G28/FuO7IRwsTRqpezqpLL9QDMhe72iAgaiMIbO4W7YiUv3mksMVwLKH
+UVR+U3XVxYi9zUd5cnyeAuPN0mbypzV1wRLOyynJ+MZ2Jc3NM1Q0ii6n2h8gIGI0BTw0avDl
+RzHz7NBSHsMFNZlQhEvRdCECJ1dEk6H761xj9vq2zNv1or7f8y3pkSN5q6O00Dk3LtW6s/+j
+ohrwasPPoeCvwaQsIlxBfndGpbGXWlGIneqB7Bi6vtMXuarpFUY8m6AzrTYku5b+hiT2D1sl
+5Uzm9YM0dHkvaVuGOo9ES7DXqCfq2X/gjilrWb+l8Y2tiWRDmv7SgNL6jC2YHlMGf1sk9PDX
+UfNofLnrSVCfgRgopeqsPWHI+D0anVmoDILpKqCtxNJ2JmpUkphJ+Qf2VcdPODjqtYRAM6xF
+3GhBVQqJuSczDMsymN465BnaH4ZuWjNh0qfTC36PvP2lJl/qg4deRzWAuphKM/Qv9h1hbObE
+eZ+O+NcDswCBlYcjg5VE+aaBUrXsIJ9piRObVLT2+zp8sugrJsI4t/viCNF8SOe+BEIREWH9
+qsmPOZGjHCgxDDP9oFkRATRChm5+zU8gODJbvk3HpONG+FO8qYTGRb4/0OFISD9FImQ/AjMB
+8Hs8HdPF9hn7vVP0Y6VN/FzHCEMsXgQdTA==
+
+/

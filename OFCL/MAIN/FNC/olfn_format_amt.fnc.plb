@@ -1,0 +1,33 @@
+CREATE OR REPLACE  FUNCTION olfn_format_amt wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+5a9 278
+9RpZjeXsRgIwMKd0/0EV+z9FRQYwgzuJ2UgVfC/pmDK84N9cTY5cieIl4wJSdic9KJHaoNhW
+39iSyOX5nXtS08p5GEaerI+0scFKwcUmJ9c0fKsih7+7OP4IOmFzngXElnUURtgEBabzq6lL
+8OrRjxAWQmMgE/uCbJ0zE5RyDrMJQ4ynfaNiU9fsvg4wPhb/0+9zFQIJSKzA2XAnqv2cBj9n
+FDtjB8PMqOtdGy1osStq7KMzWs10RgzcEBRvlUZRJYG5RP9c1MX81lG5vR6A/1256OPA/U1l
+DTNbKpezxy5syBn1wCR5XZm8jpIwcmp20qPc7E7Jxp4GU11HhAWMYW7Yvq3ihBEgj2lIOWpl
+tgmTjHC0fjA/XaeEmsB1hLeZq04f1Op/esMRfBwyy6XltmVd4NcmWm3JI5o+bhOUvbFs8aJE
+TCtargqNFY4j3LEfibsSqQUahjCRaHghGCItNqZxIEQS2a1ZmJuFpoou4zqKssIhck5DziDl
+ohh5STb2zvSd2h21W+1HrqUXC+SCCLDO/hcIxghbvNE1w1cYOHOWbW+1+BKfBEnLguadcATv
+y5zL77XwLL2M/fW1zoW/lpgZGkxlwiVztwIg7Ab8/SD+ces=
+
+/
+CREATE or replace SYNONYM olfns_format_amt FOR olfn_format_amt
+/

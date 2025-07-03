@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--*****************************************************************************
+    ** Unit Name: GW_HTTP_Prop.xml
+    **
+    ** Date:      16-Jun-2006
+    ** 
+    ** Author:    i-flex
+    **
+    ** Copyright © ** Copyright 2005- 2009 by Oracle Financial Services Software Limited.
+    **                   10-11, SDF I, SEEPZ, Andheri (East),
+    **                   Mumbai - 400 096.
+    **                   India
+    ** 
+    ** This source is part of the Flexcube XML Gateway and is copyrighted by Oracle Financial Services Software Limited.
+    ** 
+    ** All rights reserved.  No part of this work may be reproduced, stored in a
+    ** retrieval system, adopted or transmitted in any form or by any means,
+    ** electronic, mechanical, photographic, graphic, optic recording or otherwise,
+    ** translated in any language or computer language, without the prior written
+    ** permission of Oracle Financial Services Software Limited.
+    ** 
+    *************************************************************************************   
+    **
+    **========================  GATEWAY EJB RELATED PROPERTIES   ======================
+    **
+    **=================================================================================
+    ** EJB_JNDI_NAME   -  Used only in case of clients calling HTTP Servlet.
+    **                    This must be set to the JNDI name of the remote or local EJB
+    **                    link ie given in ejb-jar.xml
+    **==================================================================================
+    ** EJB_CALL_TYPE   -  If the GW_EJB_Bean i.e the EJB which the HTTP Servlet is going
+    **                    to call, is in the same machine as the HTTP Servlet then it 
+    **                    must be LOCAL otherwise it must be REMOTE
+    **==================================================================================
+    ** EJB_CTX_FACTORY - This property specifies which JNDI service
+    **                    provider is in use.
+    **  Examples:
+    **  ========-
+    **  a. EJB_CTX_FACTORY=com.sun.jndi.ldap.LdapCtxFactory
+    **  b. EJB_CTX_FACTORY=com.ibm.ejs.ns.jndi.CNInitialContextFactory
+    **  c. EJB_CTX_FACTORY=com.sun.enterprise.naming.SerialInitContextFactory
+    **  d. EJB_CTX_FACTORY=weblogic.jndi.WLInitialContextFactory
+    **
+    **     OC4J -specific
+    **  e. EJB_CTX_FACTORY=com.evermind.server.rmi.RMIInitialContextFactory
+    **
+    **     WAS - specific
+    **  f. EJB_CTX_FACTORY=com.ibm.websphere.naming.WsnInitialContextFactory
+    **==================================================================================
+    ** EJB_SERVER_URL -  This property specifies the URL of the server where the
+    **                   Enterprise Java Bean is deployed
+    **  Examples:
+    **  ========-
+    **  a. EJB_SERVER_URL=ldap://polaris/o=ibm,c=us
+    **  b. EJB_SERVER_URL=ldap://10.80.4.102:389
+    **  c. EJB_SERVER_URL=file:\Z:\
+    **  d. EJB_SERVER_URL=iiop://10.80.4.102/
+    **  e. EJB_SERVER_URL=t3://169.178.15.149:7001
+    **  f. EJB_SERVER_URL=t3://10.80.4.102:7001
+    **
+    **     OC4J -specific
+    **  g. EJB_SERVER_URL=ormi://10.80.4.102:23791/GW_NOTIFY_TIMER_Bean
+    **
+    **     WAS -specific
+    **  h. EJB_SERVER_URL=iiop://10.80.4.102:2809
+    **==================================================================================
+    ** EJB_SECURITY_PRINCIPAL   -  This property specifies the login name
+    **        	                   for the Application server where the EJB is
+    **        	                   deployed.
+    **==================================================================================
+    ** EJB_SECURITY_CREDENTIALS - This property specifies the encrypted password
+    **        	                  for the Application server where the EJB is
+    **        	                  deployed. Use ChangePassword.bat/ChangePassword.sh
+    **                            to change the encrypted password for the
+    **                            Application server.
+    **==================================================================================
+    **=============================   HTTP related PROPERTIES   ========================
+    **
+    **==================================================================================
+    ** HTTP_CONTENT_TYPE - Set this to the content of message type.
+    **==================================================================================
+    **==================================================================================
+    ** HTTP_VERSION - Set the Http version that is used
+    **==================================================================================
+    **==================================================================================
+    ** LOGGER_PATH  - Absolute path to the gw_http_logger.xml file along with file name.
+    **==================================================================================
+-->
+<configuration>
+    <appSettings>
+        <add key="EJB_JNDI_NAME" value="GW_EJB_Bean"/>
+        <add key="EJB_CALL_TYPE" value="LOCAL"/>
+        <add key="EJB_CTX_FACTORY" value="com.ibm.websphere.naming.WsnInitialContextFactory"/>
+        <add key="EJB_SERVER_URL" value="iiop://localhost:2809"/>
+        <add key="EJB_SECURITY_PRINCIPAL" value=""/>
+        <add key="EJB_SECURITY_CREDENTIALS" value=""/>
+        <add key="HTTP_CONTENT_TYPE" value="text/xml"/>
+        <add key="HTTP_VERSION" value="HTTP/1.1"/>
+        <add key="HTTP_ENCODING_TYPE" value="UTF-8"/>
+        <add key="LOGGER_PATH" value="D:/Kernel10.0/GW_HTTP/config/gw_http_logger.xml"/>
+    </appSettings>
+</configuration>
+        

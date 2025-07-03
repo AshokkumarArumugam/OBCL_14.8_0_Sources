@@ -1,0 +1,50 @@
+create or replace view oltb_msgs_rights as
+Select
+    co.USER_ROLE_ID,
+    co.USER_ROLE_FLAG,
+    co.GENERATE,
+    co.HOLD,
+    co.CANCEL,
+    co.TEST_INPUT,
+    co.CHANGE_NODE,
+    co.CHANGE_ADDR,
+    co.RELEASE,
+    co.REINSTATE,
+    co.CHANGE_MEDIA,
+    co.CHANGE_PRIOR,
+    co.BRANCH_MOVE,
+    co.PRINT,
+    co.TEST_CHECK,
+    co.HOLD_AUTH,
+    co.CANCEL_AUTH,
+    co.TEST_INPUT_AUTH,
+    co.CHANGE_NODE_AUTH,
+    co.CHANGE_ADDR_AUTH,
+    co.RELEASE_AUTH,
+    co.REINSTATE_AUTH,
+    co.CHANGE_MEDIA_AUTH,
+    co.BRANCH_MOVE_AUTH,
+    co.CHANGE_PRIOR_AUTH,
+    co.FT_UPLOAD,
+    co.LINK_CONTRACT,
+    co.MOVE_QUEUE,
+    co.CHANGE_BRANCH_IN,
+    co.CHANGE_ADDRESS_IN,
+    sy.AUTH_APPROVE_OFAC,
+    sy.APPROVE_OFAC,
+    sy.CHANGE_GI_STATUS_AUTH,
+    sy.CHANGE_GI_STATUS,
+    sy.COPY,
+    sy.CHANGE_ENTITY_AUTH,
+    sy.CHANGE_ENTITY,
+    sy.ENTITY,
+    sy.CHANGE_TRN_TYPE,
+    sy.AUTH_REPAIR_INCOMING,
+    sy.REPAIR_INCOMING
+ From smtb_msgs_rights co,
+      SYTB_SMTB_MSGS_RIGHTS sy
+ Where co.USER_ROLE_ID = sy.USER_ROLE_ID (+)
+   and co.USER_ROLE_FLAG = sy.USER_ROLE_FLAG (+)
+/
+create or replace synonym oltbs_msgs_rights for oltb_msgs_rights
+/

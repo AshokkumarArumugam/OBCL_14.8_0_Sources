@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.0">
+  <display-name>FCUBSCoreentitiesServiceWebApp</display-name>
+  <context-param>
+    <param-name>contextClass</param-name>
+    <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>com.ofss.fcc.utility</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>FCUBSCoreentitiesServiceServlethttp</servlet-name>
+    <servlet-class>com.ofss.fcubs.gw.ws.types.FCUBSCoreentitiesService.FCUBSCoreentitiesServiceImpl</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FCUBSCoreentitiesServiceServlethttp</servlet-name>
+    <url-pattern>/FCUBSCoreentitiesService</url-pattern>
+  </servlet-mapping>
+  <env-entry>
+    <description>Property File Path</description>
+    <env-entry-name>propertyPath</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>{GatewayPropFilePath}</env-entry-value>
+  </env-entry>
+</web-app>

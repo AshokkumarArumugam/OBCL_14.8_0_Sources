@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION ol_ap_ffi_ba_ccy_rate wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+2dc 154
+x0UQFDl3BqWeQbjuM+EY/6uNUPQwg42zr9wdqC85cGSljsd32wwSoAimin4MkTikDi2w+oOg
+oba28AgGBZhMMv0q31aAzvlY+/yKLsKvak62v5Y0mizOLYbNM5APmMRVY4726Wij32vgC9+m
+BqDPSCElgRFaY4w4pBWk5AkGi2/Pn7lkSH5cQBBahXsgV2EhYP8rD1Wum4TW4/+y9BU5Y7z8
+EMLXfwdfMnMQhj8sqisQTffUvpnoBOQaLfjqeKOOtWl+s1RDMN+zcnKS3VrbLnFBOb2tNarJ
+KxiLpurxfAGbpVicxZeqp9RjgQnjliS6WtI9BgYdYKkmwA==
+
+/
+Create or replace synonym ols_ap_ffi_ba_ccy_rate for ol_ap_ffi_ba_ccy_rate
+/

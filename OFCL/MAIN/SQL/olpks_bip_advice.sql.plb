@@ -1,0 +1,34 @@
+CREATE OR REPLACE PACKAGE BODY olpks_Bip_Advice wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+7ee 337
+9sD7NRrXyZ4A0BuBUNR30gH+wNUwgzuJzCATfI4C/m4PUppaY8WXe96QQHWRS6hNqQAFkdm3
+jWJYjju6jN8eXqrPeX6C6xrN0/BbNs4c+LT+z3yJTGusZ/II4UjixCS7w0UxxaBFms8PhD5g
+76mzr5mpUuzzaMDhV2LUWT1Rqa0GMXQIbYKMRBBc1nKGvx+cu5Zy4ACJ8VF+rPHQvaI83Xh5
+cN6yFPqw5xwcDhN6ueV/oQXgFVP8HNTMYlHH2ul4Yt5LLbYosvybpzgU9OZTbrZsFPE7UEFe
+Sux+yYsCwil5Qb/V7cB/AgPUnXaWYW/cjsGJsVpBFhtuCl/gUQ8R1a7MgtvMYjn8Du6v/0HS
+VSExu3qfPTcTHT4IlEiVHZQ1iUWSUVE+5Vlnl+iJEG1yqNOZqKGkQpSp8DZQ8uie6pm3qGP+
+XXI1L73e+vWRiz+uoZ0AutIBYFnkMsvTE1tk6XtA4qGhmpbEfDrs8xsMJ22BjrJpJknTDrs/
+OdaJznEp7bG5yjkHARFC+Dh7kGBqNb/cyVcPSOKx1bTkOZ8Kg80nvrr24nj+9myf2VVPmPoa
+seyV+WO8SYp8rvhQlKLlNNjj2qmouIDp6rX7FkjVwBglIVDk4ErqORnwmxZxOQ6QZjLtz8sD
+UAWZXTAdZGqBTynTGmZYRt2LhXiuJe4xRTdu64MlEXtheEg4x/tlwzHGL62c9xrQDFd9C8jk
+8NtOot/DKc/veQ49JaZHOBZ0EQU9KIAl81a77+rYv8Wxu8WdvnMNaEJoh4frr85GAzCRvOsY
+TL1D+XABYAZ40FxeRzs=
+
+/

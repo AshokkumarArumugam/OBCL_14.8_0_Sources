@@ -1,0 +1,31 @@
+create or replace FUNCTION fn_olchar_type wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+225 1c6
+eITBh8yZ5OSzTKRULQnArf7IW4kwg3nMAK5qfC8BDaqVeaHpoz1WWvRlGjvro8B52VIJdWZG
+Z3TnL+A4CCDB//Le1T3CQ/gwP/65aDPJpIkqpZJ/P7wknQAQ0CSdD5ZuLXYoA7yIaoy3ppem
+2L/wxn1f1pxr/jnWNUhjWz0IHm0mqlmVWJi4Nm6YhOBylcBA3PYSA63J2SP0a9EwiXwhQXC/
+4++P8kiNWMABkOmXle8bJ/Zhs3gHU7v1A/F7IxJpE3Vj4RbsI9NtlQBb6DsytIhIiVw8l8oB
+QRFtVskCFnc7yjhGaWJNo6ajOEmyVUeNDQ7Yd5BdZ23u6KWU6Ntq6O8mcm/v3XsmQ3tnsWTc
+rsAHMplJi0jRySEvmR2gGbk463iSFH3OroGmFBiF63RJTFkiTWmQnO/W7GDHktlGZFdso4Kj
+LoJZbj3XLAbgMN4=
+
+/
+Create or replace synonym CHAR_STYPE for fn_olchar_type
+/

@@ -1,0 +1,28 @@
+CREATE OR REPLACE FUNCTION fn_ol_get_primary_entity wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+1fb 16d
+ZwQUqgsv38vD68CVmbwCuI7Gb/0wgzJpLiDWfHRVKjqUvA2N6KSf6dpGcCsMyHxJoIaOgVDc
+jWFI5VPSmpZ0ot6zz8IZB3OKNN+Dtyq4VwK7cqUtIGpyOs4N2g8V+XccBdnCnoOrcvL43XVb
+CziMVGSUJCRg5Z8Zp4W/fKuuvIj3jZHSKhPzyF1dtY0G1Yg+wNlnZzmny5l3HMXoCVKCWZx8
+p6aFMactAwKuVSql8AmiMZ/wX6b+H+3dipf0oVjY9rDE5iC+ZsdCndpp30aKdAN6p4KRWv3d
+Ll2sasRII0DcrqLVPp72CiSidE8asAUgFABtu12YK3B0s1jxCC7WUrNW04gxXe4fqkO/eg==
+
+
+/

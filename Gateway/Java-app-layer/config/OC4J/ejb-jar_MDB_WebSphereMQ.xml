@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<ejb-jar id="GW_MDB_Bean" version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+
+    <enterprise-beans>
+        <message-driven>
+            <display-name>MDB Gateway</display-name>
+            <ejb-name>GW_MDB_Bean</ejb-name>
+            <ejb-class>com.iflex.fcubs.gw.mdb.GWMDBBean</ejb-class>
+            <messaging-type>javax.jms.MessageListener</messaging-type>
+            <transaction-type>Container</transaction-type>
+
+			<env-entry>       
+				<env-entry-name>propertyPath</env-entry-name>       
+				<env-entry-type>java.lang.String</env-entry-type>
+				<env-entry-value>C:/Documents and Settings/Gateway/</env-entry-value>
+			</env-entry>
+        
+            <activation-config>
+                <activation-config-property>
+                    <activation-config-property-name>DestinationType</activation-config-property-name>
+                    <activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>DestinationName</activation-config-property-name>
+                    <activation-config-property-value>MDB_QUEUE</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>ConnectionFactoryJndiName</activation-config-property-name>
+                    <activation-config-property-value>MDBQCF</activation-config-property-value>
+                </activation-config-property>
+            </activation-config>
+
+            <resource-ref>
+                <description>Datasource</description>
+                <res-ref-name>FLEXTEST.WORLD</res-ref-name>
+                <res-type>javax.sql.XADataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+            <resource-ref>
+                <description>Connection Factory for Response / DLQ</description>
+                <res-ref-name>MDBQCF</res-ref-name>
+                <res-type>javax.jms.XAQueueConnectionFactory</res-type>
+                <res-auth>Container</res-auth>
+                <res-sharing-scope>Shareable</res-sharing-scope>
+            </resource-ref>
+
+            <resource-env-ref>
+                <description>Queue to send reply to</description>
+                <resource-env-ref-name>MDB_QUEUE_RESPONSE</resource-env-ref-name>
+                <resource-env-ref-type>javax.jms.Queue</resource-env-ref-type>
+            </resource-env-ref>
+            <resource-env-ref>
+                <description>MDB Dead Letter Queue</description>
+                <resource-env-ref-name>MDB_QUEUE_DLQ</resource-env-ref-name>
+                <resource-env-ref-type>javax.jms.Queue</resource-env-ref-type>
+            </resource-env-ref>
+        </message-driven>
+    </enterprise-beans>
+
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>GW_MDB_Bean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+</ejb-jar>

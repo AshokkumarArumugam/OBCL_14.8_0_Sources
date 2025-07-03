@@ -1,0 +1,201 @@
+PROMPT PROCESSING FOR OLZB_RP_EDE_EXPR_001
+
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_ACTIVE_CONTRACT_COUNT',
+'N',
+'SELECT COUNT(*) from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || ' AND event_seq_no = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')' || chr(10) || ' AND counterparty = (SELECT counterparty from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '                     AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''))' || chr(10) || ' AND contract_status = ''A'''
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_AMOUNT_FINANCED',
+'N',
+'SELECT AMOUNT_FINANCED from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_BOOKING_DATE',
+'D',
+'SELECT booking_date from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_BRN_CCY',
+'S',
+'SELECT branch_lcy FROM STTM_CORE_BRANCH ' || chr(10) || 'WHERE branch_code = (SELECT branch from oltbs_contract_master ' || chr(10) || '                     WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '                     AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master ' || chr(10) || '                                         WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')' || chr(10) || '                     )'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_CONTRACT_CCY',
+'S',
+'SELECT CURRENCY from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_COUNTERPARTY',
+'S',
+'SELECT COUNTERPARTY from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_CUSTOMER_GROUP',
+'S',
+'SELECT NVL(cust_group,''NA'') FROM SYTM_STTM_CUSTOMER ' || chr(10) || 'WHERE customer_no = (SELECT counterparty FROM oltb_contract_master  ' || chr(10) || '                     WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '                     AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master ' || chr(10) || '                                         WHERE CONTRACT_REF_NO = ''__CONTREFNO__''))'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_LCY_AMOUNT',
+'N',
+'SELECT LCY_AMOUNT from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_MATURITY_DATE',
+'D',
+'SELECT maturity_date from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_PROD_CODE',
+'S',
+'SELECT product from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_PROD_TYPE',
+'S',
+'SELECT PRODUCT_TYPE from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_SOURCE_CODE',
+'S',
+'SELECT NVL(source_code,''NA'') from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_TENOR',
+'N',
+'SELECT (maturity_date-value_date) from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_USER_DEFINED_STATUS',
+'S',
+'SELECT USER_DEFINED_STATUS from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_RP_EDE_EXPR
+(MODULE_CODE,EDE_CODE,EDE_DATA_TYPE,EDE_SQL_EXPR
+)
+ VALUES 
+('OL',
+'RP_EDE_VALUE_DATE',
+'D',
+'SELECT value_date from oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__''' || chr(10) || '   AND EVENT_SEQ_NO = (SELECT MAX(EVENT_SEQ_NO) FROM oltbs_contract_master WHERE CONTRACT_REF_NO = ''__CONTREFNO__'')'
+)
+;
+END;
+/
+
+
+
+commit;

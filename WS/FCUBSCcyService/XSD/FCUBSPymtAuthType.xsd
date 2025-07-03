@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="FCUBSPymtAuthType">
+		<xs:sequence>
+			<xs:element name="Paymentauth-Details" type="ContractDescriptionType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContractDescriptionType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="XREF" type="xs:string" />
+			<xs:element name="FCCREF" type="xs:string" />
+			<xs:element minOccurs="0" name="OSAMT" type="xs:decimal" />
+			<xs:element minOccurs="0" name="AMT" type="xs:decimal" />
+			<xs:element minOccurs="0" name="CPTY" type="xs:string" />
+			<xs:element minOccurs="0" name="CCY" type="xs:string" />
+			<xs:element minOccurs="0" name="USRDEFSTAT" type="xs:string" />
+			<xs:element minOccurs="0" name="PAYSTAT" type="xs:string" />
+			<xs:element minOccurs="0" name="VALDT" type="xs:date" />
+			<xs:element minOccurs="0" name="TOTPAID" type="xs:decimal" />
+			<xs:element minOccurs="0" name="PREPAYPENRATE" type="xs:decimal" />
+			<xs:element minOccurs="0" name="PREPAYPENAMT" type="xs:decimal" />
+			<xs:element minOccurs="0" name="PAYREM" type="xs:string" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Payment-BreakUp" type="PaymentBreakUpType" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Overrides" type="OVERRIDEType2" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentBreakUpType">
+		<xs:sequence>
+			<xs:element name="FCCREF" type="xs:string" />
+			<xs:element minOccurs="0" name="AMTDUE" type="xs:decimal" />
+			<xs:element minOccurs="0" name="OVERDUE" type="xs:decimal" />
+			<xs:element minOccurs="0" name="AMTPAID" type="xs:decimal" />
+			<xs:element minOccurs="0" name="TAXPAID" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OVERRIDEType2">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="OVDSN" type="xs:string" />
+			<xs:element minOccurs="0" name="MODULE" type="xs:string" />
+			<xs:element minOccurs="0" name="ERRCODE" type="xs:string" />
+			<xs:element minOccurs="0" name="PARAM" type="xs:string" />
+			<xs:element minOccurs="0" name="ONLAUTHID" type="xs:string" />
+			<xs:element minOccurs="0" name="REMARKS" type="xs:string" />
+			<xs:element minOccurs="0" name="AUTHBY" type="xs:string" />
+			<xs:element minOccurs="0" name="AUTHDTSTAMP" type="xs:string" />
+			<xs:element minOccurs="0" name="TXTSTATUS" type="xs:string" />
+			<xs:element minOccurs="0" name="OVDSTATUS" type="xs:string" />
+			<xs:element minOccurs="0" name="CONFIRMED" type="xs:string" />
+			<xs:element minOccurs="0" name="OVDREMARKS" type="xs:string" />
+			<xs:element minOccurs="0" name="OVDTXT" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

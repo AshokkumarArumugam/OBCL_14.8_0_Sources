@@ -1,0 +1,33 @@
+CREATE OR REPLACE 
+FUNCTION fn_ol_check_swift_chars wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+438 2ad
+2bAoVL1VSRw9r2C1XzTPk0SO0LYwg+1eLsfrfC9DxXMY7TFBRajcPjfJBNRSkbo7yF8USWIf
+Lr2yYmJiIQLhtyxyxU9XYoJutG0qGVXEu82Ah9lHwGw4wM1I4mjO5H7PKej+H7faz08Z3ITy
+xcYBXLoLKpxEqEYM5kAm/5fDv+C735TZMMXA90iYPvQWs0c8o+YPPq8Job5r0IjI2JEx8ys3
+Yro3AlVzTYD0cDxleWipH2irVkHJ2Ig89I+PlDbeJP1LNBY67vcw71yBK/26KIDGSbusMV/x
+8ESwu8Ys/xsscpYiTIcQvLw6m4GfI/7N+HPQT51h7wWhF7sx+U65bZx/oKxwv9lPjXtZg7N+
+OU6xGYzPlWHYubWPEqUhGTGyrDwefKydLfnWoE6GrFthdlHB9jLXfPHTKvVt85ZQPEXxNvcR
+T5R2B0GEC/Cp/ciXrNgCprplob1yEwo2tPG3qdO7TI2wkQNsWu449vcvtkBzC1dISq7IHY86
+cfLiIbiP09MRDXyHb2F0/dvvNpTyXOfw7ObRCL/nCsV/dUW7Ciq34BxJzEasg49OsfHkL6eQ
+YCNCGEf31EDIqs7gAJqQQp2ns21KO9H291rf8qcPwrztQ9i0UtTFqs112pt2juHeA6z2BtfM
+wCmJuMdC/18wSJBPOykAOrKkDpJ5
+
+/

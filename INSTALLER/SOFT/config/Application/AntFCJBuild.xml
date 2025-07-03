@@ -1,0 +1,175 @@
+
+<project name="FCUBSInstaller" >
+	<target name="BuildEAR">
+		<echo>Creating Ear File</echo>
+         <manifest file="MANIFEST.MF">
+            <!--attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/-->
+         	<attribute name="Class-Path" value=""/>
+        </manifest>
+        <jar jarfile="${earDestination}/${archiveName}.ear" basedir="${earDestination}/${destfolder}"  manifest="MANIFEST.MF"/>
+		<echo>Ear File Created</echo>
+		</target>
+	<target name="CreateWAR">
+		<echo>Creating war file</echo>
+        <manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/${destfolder}/${folder}.war" level="0" basedir="${destination}/${destPath}/${folder}/war" zip64Mode="as-needed" manifest="MANIFEST.MF"/>
+	</target>
+	<target name="UpdateWAR">
+	<record name="${logFile}" action="start" append="true" loglevel="debug" />
+		<echo>Creating war file</echo>
+        <manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+			<attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${archivePath}/${archiveName}.war" level="0" basedir="${archivePath}/warupdate" excludes="${exclusionlist}" zip64Mode="as-needed" update="true" manifest="MANIFEST.MF" flattenAttributes="true" mergeClassPathAttributes="true"/>
+		<!-- flattenAttributes="true" 	mergeClassPathAttributes="true" -->
+	<record name="${logFile}" action="stop"/>
+	</target>	
+		<target name="CreateWARwithExclude">
+		<echo>Creating war file</echo>
+        <manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/${archiveName}.war" level="0" basedir="${destination}/${destPath}/${folder}/war" excludes="${exclusionlist}" zip64Mode="as-needed" manifest="MANIFEST.MF"/>
+	</target>
+	
+	<target name="CreateJarwithExclude" >
+	<echo>Creating jars</echo>	
+		<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/${destfolder}/${folder}.jar" level="0" basedir="${destination}/${destPath}/${folder}/classes" excludes="${exclusionlist}" manifest="MANIFEST.MF"/>
+	</target>
+	
+	<target name="CreateJar" >
+	<echo>Creating jars</echo>	
+		<copy todir="${destination}/${destPath}/${folder}/classes" overwrite="true" failonerror="false"  >
+            <fileset dir="${destination}/${destPath}/${folder}/src" excludes="**/*.java"/>
+        </copy>
+		<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/${destfolder}/${folder}.jar" level="0" basedir="${destination}/${destPath}/${folder}/classes" manifest="MANIFEST.MF"/>
+	</target>
+	
+		<target name="CreateODTSilentUtilityJar" >
+	<echo>Creating ODT SielntUtility jars</echo>	
+		<copy todir="${destination}/${destPath}/${folder}/classes" overwrite="true" failonerror="false"  >
+            <fileset dir="${destination}/${destPath}/${folder}/src" excludes="**/*.java"/>
+        </copy>
+		<manifest file="MANIFEST.MF">
+            <attribute name="Main-Class" value="com.ofss.tools.odt.silent.SilentOdt"/>
+        </manifest>
+        <jar jarfile="${destination}/${destPath}/${folder}/lib/${folder}.jar" level="0" basedir="${destination}/${destPath}/${folder}/classes" manifest="MANIFEST.MF"/>
+	</target>
+	<target name="CreateAdapterJar" >
+	<echo>Creating jars</echo>	
+		<copy todir="${destination}/${destPath}/FcisInsulationAdapter/classes" overwrite="true" failonerror="false"  >
+            <fileset dir="${destination}/${destPath}/FcisInsulationAdapter/src" excludes="**/*.java"/>
+        </copy>
+		<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${destination}/lib_ear/APP-INF/lib/${folder}.jar" level="0" basedir="${destination}/${destPath}/FcisInsulationAdapter/classes" manifest="MANIFEST.MF"/>
+	</target>
+	<target name="CreateDummyAdptrJar">
+	<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value=""/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${destination}/lib_ear/${folder}.jar" level="0" basedir="${destination}/lib_ear/META-INF" manifest="MANIFEST.MF"/>
+	</target>
+	<target name="BuildAdapterEAR">
+		<echo>Creating Ear File</echo>
+         <manifest file="MANIFEST.MF">
+            <attribute name="Manifest-Version" value="1.0"/>
+			<attribute name="Specification-Title" value="FcisInsulationAdapter"/>
+			<attribute name="Specification-Version" value="1.0"/>
+			<attribute name="Implementation-Title" value="FcisInsulationAdapter Implementation"/>
+			<attribute name="Implementation-Version" value="1.0"/>
+			<attribute name="Implementation-Vendor" value="Oracle"/>
+			<attribute name="Extension-Name" value="FcisInsulationAdapter"/>
+        </manifest>
+        <jar jarfile="${destination}/lib_ear/${archiveName}" basedir="${destination}/lib_ear"  manifest="MANIFEST.MF"/>
+		<copy file="${destination}/lib_ear/${archiveName}" tofile="${archivePath}/${archiveName}" failonerror="false"/>
+		<echo>Ear File Created</echo>
+		</target>
+		<target name="CreateExtAdapterJar" >
+	<echo>Creating jars</echo>	
+		<copy todir="${earDestination}/${destPath}/${archiveName}/classes" overwrite="true" failonerror="false"  >
+            <fileset dir="${earDestination}/${destPath}/${archiveName}/src" excludes="**/*.java"/>
+        </copy>
+		<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/lib_ear${archiveName}/APP-INF/lib/${folder}.jar" level="0" basedir="${earDestination}/${destPath}/${archiveName}/classes" manifest="MANIFEST.MF"/>
+	</target>
+	<target name="CreateExtAdapterJarWebsphere" >
+	<echo>Creating jars</echo>	
+		<copy todir="${earDestination}/${destPath}/${archiveName}/classes" overwrite="true" failonerror="false"  >
+            <fileset dir="${earDestination}/${destPath}/${archiveName}/src" excludes="**/*.java"/>
+        </copy>
+		<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/${folder}.jar" level="0" basedir="${earDestination}/${destPath}/${archiveName}/classes" manifest="MANIFEST.MF"/>
+	</target>
+	<target name="CreateExt_AppAdapterJar">
+	<manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value=""/>
+            <attribute name="Weblogic-Application-Version" value="${FCUBSVERSION}"/>
+        </manifest>
+        <jar jarfile="${earDestination}/lib_ear${archiveName}/${folder}.jar" level="0" basedir="${earDestination}/lib_ear${archiveName}/META-INF" manifest="MANIFEST.MF"/>
+	</target>		
+	<target name="BuildExtAdapterEAR">
+		<echo>Creating Ear File</echo>
+         <manifest file="MANIFEST.MF">
+            <attribute name="Manifest-Version" value="1.0"/>
+			<attribute name="Specification-Title" value="${archiveName}"/>
+			<attribute name="Specification-Version" value="1.0"/>
+			<attribute name="Implementation-Title" value="${archiveName} Implementation"/>
+			<attribute name="Implementation-Version" value="1.0"/>
+			<attribute name="Implementation-Vendor" value="Oracle"/>
+			<attribute name="Extension-Name" value="${archiveName}"/>
+			<attribute name="Class-Path" value="jackson-annotations-2.18.0.jar jackson-core-2.18.0.jar jackson-databind-2.18.0.jar"/> <!-->34036024_14.5_INV Akshay Changes<-->
+        </manifest>
+        <jar jarfile="${earDestination}/lib_ear${archiveName}/${archiveName}.ear" basedir="${earDestination}/lib_ear${archiveName}"  manifest="MANIFEST.MF"/>
+		<copy file="${earDestination}/lib_ear${archiveName}/${archiveName}.ear" tofile="${earDestination}/${archiveName}.ear" failonerror="false"/>
+		<echo>Ear File Created</echo>
+		</target>	
+		<target name="do_jar_exec" >	  	     
+	     <manifest file="${destination}/build/META-INF/MANIFEST.MF">
+			<attribute name="Main-Class" value="${jars}"/>			
+        </manifest>	
+		
+		<jar destfile="${destination}/build/${folder}.jar" 
+			basedir="${destination}/classes" manifest="${destination}/build/META-INF/MANIFEST.MF">
+		</jar> 		
+		</target>
+	<!-- OBCL Ext Adapter changes start> -->	
+	
+		<!-- pojo build-->
+		<target name="buildPOJO">
+        <manifest file="MANIFEST.MF">
+            <attribute name="Class-Path" value="${jars}"/>
+        </manifest>		
+
+        <echo>Creating META-INF directory</echo>
+        <mkdir dir="${destination}/INFRA/POJO/${folder}/classes/META-INF"/>        
+        
+        <echo>Creating Elcm Dto jar...</echo>
+        <jar jarfile="${destination}/INFRA/POJO/${folder}.jar" basedir="${destination}/INFRA/POJO/${folder}/classes" manifest="MANIFEST.MF"/>
+         <copy file="${destination}/INFRA/POJO/${folder}.jar" tofile="${archivePath}/${folder}.jar" failonerror="false"/>       
+    </target>
+	
+	
+</project>	

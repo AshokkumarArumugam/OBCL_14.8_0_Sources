@@ -1,0 +1,31 @@
+create or replace
+PROCEDURE olpr_refresh_snapshot_pseudo wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+384 20f
+IyDtVVmUrX7Es14CK0EMu93NPn4wg5Dx7dxqfI4Ck4awU7q6RuUVWomvoUirDEqkMdzZb6jM
+d/uz5TdiKHIqoaGjnuYwLfWqnceKJX0265fKioczB5JLQiJ+7HlVNCK5E825Oxl4E/6wVaDY
+OwZj1w3WlHih/9dVEBrFPiCpCRXuQlexMzT11EYBJKRwWT+af+1MVm8DyAk/h3zLXiEmXz05
+fVH/4vffVIl1V1NAR33hoPUIsWij/GzYxxQNQa38UITU4HGelVTKZQQMlG+OTBwcU/LuXncW
+Vws32cwtygS0u+8PPWG3Ohp5B5OolGNSOB7gbLgAeHWIoDr1fe8AVmfetRi4wryxbsDGC0jz
+RsCre+upJZ3aUnQ+h8qifKO599waMu+179HKUkaWwqXC14AQcyBFEcBg0PB6+vjcJ8OGxv7Y
+o5z1r2zsUsHkfcOWQxS/4Of362tYQRnQKIDmBCIUVHtr9EpHww70d1R9QgAQhc8Np2MmEsju
+svJtXOVqCijeTCn9
+
+/

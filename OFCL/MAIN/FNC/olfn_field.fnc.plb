@@ -1,0 +1,31 @@
+Create or replace FUNCTION olfn_field wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+29b 1c6
+FX3b7JcIB2xeiRCACLdyMURRSPkwg/DMLvZqfHRVPfmURSo43vQjWYVrLNz2pX4L2piLwpQ5
+AfgdAZ0QCU6zSsx1yzUl6xKu9wX/ufGfb7z/sHL50gg/P7ZYjo6WCKYOYjRIFblTvR4Gg3kN
+ZfgZRdUaeQlblDkU6C5a7b/395pQh5VMprFjk3QcNtDBZU13AhMDd8wi5xnTwa9+TKcBhwzu
+SbXlPiZ3xNOIlSboZui4Sakdmmiyfj01uvoiXISakqdmcdFLzod38bFITKbf4XE7PHBuTglp
+muvYYV3xf4wOCOFtKRityDd8qhunVMo4rERUusR8zKtG9cOnmLXIbz9TpgJlzPCQBxpsSiEB
+/g668q3uqiZszY9SKYCqj5hc1xWf1FD7VHZACysuimEDP4tPf5Z1VxFyFdIwhoKC9NyF44I7
+zWTZZ3PSHfNaSow=
+
+/
+Create or replace synonym olfns_field for olfn_field
+/

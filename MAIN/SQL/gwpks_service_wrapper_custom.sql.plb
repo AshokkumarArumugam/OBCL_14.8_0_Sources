@@ -1,0 +1,32 @@
+create or replace package body gwpks_service_wrapper_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+5a0 2d5
+Zuqn7oflknJfnkHJSZn9LRnV5jQwgzvDLiAGfC9V1eQYvkQa3yf+U03VrQgUol0KC7Dd+uVp
+8gon+2xLcc4I9kk+ZidaXN7BizowTnpBwYm+govvV70PFZJTEpZcWB+qmiu+e29ymEyHTT1r
+aCC1Z8pAhKnuKh1aF7wGfZEien/AsF8/SrnGpR772GMqf1LycV2IqLjGLGL/kwsdsqbLkjV6
+dqY2GUQrXEg0wBh7e000n/IyMJG+FUX72WR1bUA6NDi5yeYbs2ogmdxJVF9JRWjKOEcy0Prd
+yOLL7NCozjGg69ng6jmhdIfY5f3na2bu0AnpznVryMXcIUMEBlbAyHs4J5ihPY6IgOXQRRT6
+FM5O9RuJZyOeccMaTFphcd8mc7hfTqUdTiTdvfqRG6OKIhlarv9Ujehb7sJ8w/udR37iqvdJ
+kIv7jhfxkL1A9GrmhCaku7BAopcuV5/M+MJ8AdtRQdrwN2nJjvbzFKjCUzHG/zLOigrM/9kF
+AcmaO3DrCpYFBU2gtOKbwsPMvmFifPiDbVo6+Wl+Gd/2yJWoB5zmCtL9YvzLVc7XZxQBMCpb
+H9HoYKux04ujLcgRVfERdwUkQYb2vDfN+SqW8rS8z8HFcAU8KRQchHNozGNO/2A7AGUst0kg
+KiRF7ZiYxLxN5ZxNxSeuCCdMgoTQAhV0s88hzSSRZSG8YeDB2yWOJszUXcYkqAgunw==
+
+/

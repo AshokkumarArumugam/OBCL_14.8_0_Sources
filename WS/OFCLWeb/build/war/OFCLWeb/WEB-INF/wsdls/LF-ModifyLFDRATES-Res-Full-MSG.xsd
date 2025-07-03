@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://fcubs.ofss.com/service/OBCLLSService"
+    xmlns="http://fcubs.ofss.com/service/OBCLLSService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="UBS-Messaging.xsd"/>
+    <xs:include schemaLocation="LF-CFDRATES-Types.xsd"/>
+    <xs:element name="MODIFYLFDRATES_FSFS_RES">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="FCUBS_HEADER" type="FCUBS_HEADERType"/>
+                <xs:element name="FCUBS_BODY">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Rates-Master-Full" type="CFDRATES-Full-Type"/>
+                            <xs:element maxOccurs="unbounded"
+                                minOccurs="0" name="FCUBS_ERROR_RESP" type="ERRORType"/>
+                            <xs:element maxOccurs="unbounded"
+                                minOccurs="0" name="FCUBS_WARNING_RESP" type="WARNINGType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

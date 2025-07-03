@@ -1,0 +1,51 @@
+#RH
+                                          <DEBIT ADVICE>
+                                           -------------------
+
+DATE : _BRANCHDATE_                                        PAGE : _PG_
+
+#SC
+_CUSTOMER-NAME_
+_ADDRESS1_
+_ADDRESS2_
+_ADDRESS3_
+_ADDRESS4_
+
+#EC
+#EH
+#PH
+                                                           PAGE : _PG_
+#EH
+#B
+
+CUSTOMER ID     : _CUSTOMER_
+OUR REFERENCE NO  : _CONTRACTREFNO_
+USER REFERENCE NO  : _USERREFNO_
+
+#IF _SIM_
+
+                     SIMULATION ADVICE FOR A LOAN PAYMENT
+
+TOTAL AMOUNT PAID:_PAMT_
+
+-------------------------------------------
+COMPONENT_NAME    DUE_DATE    AMOUNT_DUE
+-------------------------------------------
+#LOOP
+_SCOMP_             _SDUEDT_       _OUTST_
+#ENDLOOP
+------------------------------------------
+VALUE DATE OF PAYMENT:_VDATE_    _CCY1_
+#ENDIF
+
+#IF _SLOGAN_
+PRODUCT SLOGAN :-
+----------------------------
+_SLOGAN_
+#ENDIF
+#EB
+#RF
+
+AUTHORIZED SIGNATORY
+FOR _BRANCHNAME_
+#EF

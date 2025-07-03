@@ -1,0 +1,36 @@
+create or replace function fn_get_module_amount wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+e64 3f5
+cagcwkdLV5zOiCkqY7xHTva5KXIwg0MrACAFfC/Nbg9SupF3fNMXbe438Ra65+mrXT4CSVFn
+69EuwhS1nYDMkRS6UmaUoQfTOVYIvDDG/rnDd2VqCaHOOnCqVQAx+MYscp27iv74xsEHsJEX
+1Y2xrGpi6zGnKUOKdGfH2A02k+o+sWnsgoOMDyv2jCHjaMLyPdPwtvtiakRyUPoqnDE/y+ji
+02SCHcndJN/lpgIrlBY3JteJotdloJSCWje0NJ0oJng6YUPs1jSUvQVXtcw4y8Gbzzn2/rEj
+WxvHcG2Q6NiFgrm/aPrprkHRzyVdFiDb8na0xozeh1QmWkkAaB79aMB5TYU16nxdOc3Z4rEZ
+EVy7ylXGCTtx3gIujdNuoecKEA86RZkPnQGOBxO+hw/Yq0Qu7g6YNObCcf9kyY9o5+INJS68
+zZ4fQXGH1+bKuonxvf0gzhbIVcCnulyOAdT4h262wWPWtk44V70NJPucC3SRzaQoZmcapClJ
+mqrEm8lLmxD57pj88hfXvgCTTHbYSJ0YYxouv6DUmi+xgznm03QhI9qudv+CQxMJe1XfYzvC
+JsllBeGQhKSPZPqvyiuJ1ovfAZvo9APzxQGsuZqnwtsaF13Mo28v/U+wJI+nDKpgxUq7wOwX
+jmEFu0YJmN9CwO5cb6iAwSbfQvVDsX+w4rEdEw/WeLW8J82+fDSGxdK9wPfNv3jJzFrAqZxv
+jfgPM8fwIUJye1rJiXm3M4kRIjFSLV2FWnlOdhddq/xXbbQPF+65G2cOAPY0EAbqk854/oqP
+wZqDvRBd26HWPX//JvrtqYLclHtHlfxE/hsGGTRAEoI5/skW3uuhg3SP+SHkapKmq9twyXuk
+6OsGypI2I1lj+g+zAXt53FAXdEbLMILsIsmpIhAzLyzTeJp9t+vnGtD/eEJG94DOq9C4dNC4
+Tee0PuH5BTo3T3skpapuLCDmj5BOC8gdV3rmoyrmM1gFbN1+V2HY528P+ab9SnQ5
+
+/

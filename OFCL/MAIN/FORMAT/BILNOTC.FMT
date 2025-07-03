@@ -1,0 +1,80 @@
+#B
+                                    LOAN BILLING ADVICE
+DATE : _TDATE_
+TO   : _CACUST_
+       _ADDR1_
+       _ADDR2_
+       _ADDR3_
+       _ADDR4_
+REF  : _REF_
+
+_FIXFT_Rate Loan Repayment Notification
+**************************************************************************************
+Please be advised that the below _FIXFT_Rate outstanding loan
+under the above referenced facility is scheduled to mature.
+
+          Libor Currency      : _COMPCCY_
+          Libor Amount        : _OUTBAL_
+          Maturity Date       : _MDATE_
+
+Interest is due and payable on the maturing _FIXFT_Rate loan as
+calculated below :
+
+         Interest Due Period  :  _CASTDATE_  to _CAENDT_
+
+Amount       Interest  Day         From           To          # of     Interest
+Funded       Rate      Basis       Date           Date          Days     Due
+--------------------------------------------------------------------------------------
+#LOOP
+
+_CALCBAMT_    _CALCRT_ _INTBASIS_ _CASTDT_     _CAENDDT_    _CADAYS_ _CALCAMT_
+#ENDLOOP
+
+
+          Due Currency         :_COMPCCY_
+          Past Due               :_PASTDUE_
+          Interest Due         :_CALINT_
+          Total Interest       :_CATOTAMT_
+
+Component                    Amount     
+---------------------------------------------------------------------------------------
+#LOOP		  
+_COMPDESC_                 _COMPAMT_ 	    	  
+#ENDLOOP
+
+
+Funds Movement  - Please Remit
+**************************************************************************************
+Please arrange to remit the Payment based on the following details :
+
+          Remittance Date      :_RDATE_
+          Remittance Currency  :_COMPCCY_
+          Remittance Amount    : _GDUE_
+
+Please find below the wiring instructions :
+
+          Bank                 :  _BANK_
+          Bank Code #          :  _BCODE_
+          Account #            :  _BACCOUNT_
+          Account Name         :  _BANAME_
+          Ref                  :  _BREF_
+          Attn                 :  Loan Operations
+
+Contact
+**************************************************************************************
+Regards,
+
+
+
+_BANKNAME_
+123 Front Street West
+18th Floor
+Toronto, ON  M5J 2M3
+
+
+Should any of the above details change prior to the due date, a revised billing will
+be sent to you.This is a computer generated advice and if issued without alteration,
+does not require a signature.
+
+
+#EB

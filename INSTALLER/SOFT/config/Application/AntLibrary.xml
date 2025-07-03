@@ -1,0 +1,2949 @@
+
+<project name="FCUBSInstaller_FCJInit">
+<import file="AntLibrary_PM.xml" as="RefPM"/>
+<import file="AntLibrary_OBCL.xml" as="RefOBCL"/>
+	<property environment="env"/>
+	<target name="AntLibrary" depends="RefPM.AntLibrary_PM, RefOBCL.AntLibrary_OBCL">
+	     <path id="FCJJPSProviderLib">
+			<fileset dir="${jarslib}/plugin-bpel">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="FCUBSUserAuthenticatorLib">
+			<fileset dir="${WL_HOME}/server/lib">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="FCUBSSMServiceLib">
+			<fileset dir="C:\Oracle\Middleware\Oracle_Home\wlserver\server\lib">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<path id="ServiceLib">
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+<!--			<pathelement location="${destination}/lib/ucp.jar"/>-->
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${WL_HOME}/server/lib/weblogic.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${lib}/jsr173_api.jar"/>
+			<pathelement location="${lib}/xbean.jar"/>
+			<pathelement location="${lib}/atm_isoxml.jar"/>
+			<pathelement location="${lib}/xalan-2.7.2.jar"/>
+		    <pathelement location="${lib}/xerces.jar"/-->
+		</path>
+		
+		<path id="MonitorLib">
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+<!--			<pathelement location="${destination}/lib/ucp.jar"/>-->
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${WL_HOME}/server/lib/weblogic.jar"/>
+			<pathelement location="${destPath}/${destfolder}/Service/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${lib}/jsr173_api.jar"/>
+			<pathelement location="${lib}/xbean.jar"/>
+			<pathelement location="${lib}/atm_isoxml.jar"/>
+			<pathelement location="${lib}/xalan-2.7.2.jar"/>
+		    <pathelement location="${lib}/xerces.jar"/-->
+		</path>
+		
+		<path id="FELib">
+			<pathelement location="${jarslib}/installer/ant-1.10.15/lib/ant.jar"/>
+			<!--<pathelement location="${jarslib}/application/commons-httpclient-3.0.jar"/>			-->
+			<pathelement location="${destPath}/${destfolder}/SilentUtility/lib/SilentUtility.jar"/>
+			<!--<pathelement location="${jarslib}/application/httpclient-4.3.3.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/httpcore-4.3.2.jar"/>-->
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>
+			<!--commented as a part of multipart-config java api both commons-fileupload-1.3.1.jar and commons-io-2.16.1.jar-->
+			<!--<pathelement location="${jarslib}/application/commons-fileupload-1.3.1.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/commons-io-2.16.1.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/application/xmlbeans-5.2.1.jar"/>-->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>	
+		</path>
+		<path id="SilentUtilityLib">
+			 <fileset dir="${jarslib}">
+                <include name="*/**.jar"/>
+            </fileset>	
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>			
+			<pathelement location="${JavaPath}/lib/tools.jar"/>
+			<pathelement location="${jarslib}/odt/jaxb-xjc-2.2.11.jar"/>
+		</path>
+		
+		<path id="FCJUtilityLib">
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+<!--			<pathelement location="${jarslib}/oracle/ucp.jar"/> -->
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+
+			<!--<pathelement location="${jarslib}/application/commons-collections-4.0.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			
+			 <!--FCUBS_14.6_33239189 start-->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+           <!--FCUBS_14.6_33239189 Ends-->		   
+		   <fileset dir="${jarslib}/kafka/">
+				<include name="*.jar"/>				
+			</fileset>
+			
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>
+			<!-- <pathelement location="${jarslib}/application/javadbf-0.4.0.jar"/> -->
+			<pathelement location="${jarslib}/installer/compiler_unshaded_deploy.jar"/>
+			<pathelement location="${jarslib}/application/sshd-core-2.14.0.jar"/>
+			<pathelement location="${jarslib}/application/sshd-sftp-2.14.0.jar"/>
+			<pathelement location="${jarslib}/application/sshd-common-2.14.0.jar"/>
+			<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>
+			<pathelement location="${jarslib}/rest/commons-lang3-3.17.0.jar"/>
+			<pathelement location="${jarslib}/fcpm/jersey-client-1.19.1.jar"/>
+			<!-- Changes for NAB FC08 starts-->
+			<!--commented as a part of multipart-config java api-->
+			<!--<pathelement location="${jarslib}/application/commons-fileupload-1.3.1.jar"/>-->
+			<!-- Changes for NAB FC08 ends-->
+
+		</path>
+
+		<path id="FCJCoreEntitiesLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${jarslib}/plugin-bpel/collections.jar"/>
+		</path>
+
+		<path id="FCJCoreDAOOracleLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<pathelement location="${jarslib}/application/javaee/javaee-api-8.0.1.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-api-4.0.1.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+
+		<path id="FCJBatchLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="FCJGeneralEJBLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceEJB/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="FCJSMSLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="FCJBpelLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+
+			<pathelement location="${jarslib}/plugin-bpel/bpm-${destfolder}.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/bpm-services.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/orabpel.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/xml.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/soa-${destfolder}-mgmt.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/fabric-common.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/identitystore.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/identityutils.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/jps-api.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/jps-sidm-api.jar"/>
+			<!-- SOA 12C Changes-->
+			<pathelement location="${jarslib}/plugin-bpel/ojdl.jar"/>
+			<!-- SOA 12C Changes-->
+			<pathelement location="${jarslib}/plugin-bpel/fabric-runtime.jar"/>
+			<!-- SOA 12C Changes-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-bpel">
+				<include name="xmlparserv2*.jar"/>
+			</fileset>
+			<!--12.0.2 SOATEAM Starts-->
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.bpm-services.client.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.bpm-services.interface.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.common.model.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.project.draw.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.project.model.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.core.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.ui.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/	.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/mdsrt.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/rulesdk2.jar"/>
+			<pathelement location="${jarslib}/plugin-bpel/identitydirectory.jar"/>
+			<!-- SOA 11.1.1.7 Change-->
+			<pathelement location="${jarslib}/plugin-bpel/oracle.bpm.common.model.jar"/>
+			<!-- SOA 12C Changes-->
+			<!--12.0.2 SOATEAM Ends-->
+			<!--12.2 LIBOVD Starts-->
+			<pathelement location="${jarslib}/plugin-bpel/ovd.jar"/>
+			<!--12.2 LIBOVD Ends-->
+		</path>
+		<!-- FCJScheduler-->
+		<path id="FCJSchedulerLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJBulker/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJCoreDAOOracle/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/> 
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/application/jsoup-1.18.1.jar"/><!--  new jar added -->
+			<pathelement location="${jarslib}/application/sshd-core-2.14.0.jar"/>
+			<pathelement location="${jarslib}/application/sshd-sftp-2.14.0.jar"/>
+			<pathelement location="${jarslib}/application/sshd-common-2.14.0.jar"/><!--  new jar added -->
+			<pathelement location="${jarslib}/rest/commons-lang3-3.17.0.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-crypto/bcprov-jdk15-145.jar"/>
+			<pathelement location="${jarslib}/plugin-crypto/bcmail-jdk15-145.jar"/>-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/commons-io-2.16.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<!--FCUBS_144_CD_SOFR_Changes_32089596 start-->
+			<fileset dir="${jarslib}/pdfbox/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--FCUBS_144_CD_SOFR_Changes_32089596 end-->
+		</path>
+                <path id="FCJBulkerLib"><!--bulker jar changes-->
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+            <pathelement location="${jarslib}/common/commons-io-2.16.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/fcm/osdt_core.jar"/>
+			<pathelement location="${jarslib}/fcm/osdt_xmlsec.jar"/>
+			<!--<pathelement location="${jarslib}/fcm/j2ssh-core.jar"/>-->
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<!-- <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/> -->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="FCJNeoWebLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+            <pathelement location="${destPath}/${destfolder}/FCJBulker/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJSMS/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJCoreDAOOracle/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJGeneralEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJBatch/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJMBean/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELGateway/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCISSchedulerEJB/classes"/>
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+
+
+			<pathelement location="${jarslib}/application/flux.jar"/>
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!--commented as a part of multipart-config java api-->
+			<!--<pathelement location="${jarslib}/application/commons-fileupload-1.3.1.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/commons-httpclient-3.0.jar"/> -->
+			<!--<pathelement location="${jarslib}/application/httpclient-4.3.3.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/httpcore-4.3.2.jar"/>-->
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>
+			<!--commented as a part of third party jar removal java api-->
+			<!--<pathelement location="${jarslib}/application/commons-discovery-0.5.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>
+			<!--Changes made for BOTG ends-->
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--commented as a part of third party jar remove using java api-->
+			<!--<pathelement location="${jarslib}/plugin-reports/fontbox-3.0.3.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/pdfbox-3.0.3.jar"/>-->
+
+			<!-- BIB Consumer Sync Changes Starts Here -->
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<!-- BIB Consumer Sync Changes Ends Here -->
+			<pathelement location="${jarslib}/jackson/jackson-annotations-2.18.0.jar"/>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<!-- FCJPlatoReST changes starts -->
+		<path id="FCJPlatoReSTLib">
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+            <pathelement location="${destPath}/INFRA/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceEJB/classes"/>
+			<pathelement location="${jarslib}/jackson/jackson-databind-2.18.0.jar"/>
+			<pathelement location="${jarslib}/jackson/jackson-annotations-2.18.0.jar"/>
+			<pathelement location="${jarslib}/jackson/jackson-core-2.18.0.jar"/>
+			<pathelement location="${jarslib}/fcpm/javax.servlet.javax.servlet-api.jar"/>
+			<pathelement location="${jarslib}/common/jettison-1.5.4.jar"/>
+			<pathelement location="${jarslib}/rest/guava-32.1.3-android.jar"/>
+			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>
+		</path>
+		<!-- FCJPlatoReST changes ends -->
+
+		<!--Changes made for BOTG starts-->
+		<path id="FCJWebTabLib">
+		    <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJSMS/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJCoreDAOOracle/classes"/>
+			<!--login/logout changes -->
+			<pathelement location="${destPath}/${destfolder}/FCJNeoWeb/war/WEB-INF/classes"/>
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<!--Changes made for BOTG ends-->
+		<!--path id="FLEXCUBE_DMS_AdapterLib">
+  <pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+    <pathelement location="${destPath}/${destfolder}/FCJNeoWeb/war/WEB-INF/classes"/>
+    <pathelement location="${jarslib}/application/axis.jar"/>    
+    <fileset dir="${jarslib}/application">
+          <include name="jaxrpc.jar"/>
+       </fileset>  
+
+  </path-->
+		<path id="FCJRTTLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJBatch/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJGeneralEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-crypto/bcprov-jdk15-145.jar"/>
+			<pathelement location="${jarslib}/plugin-crypto/bcmail-jdk15-145.jar"/>-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+		</path>
+
+		<path id="FcisInsulationAdapterLib">
+		</path>
+		<path id="ExtAdapterLib">
+			<pathelement location="${destPath}/ADAPTERS/FCExternal/ExtAdapter/classes"/>
+          <!--FCUBS_144_CD_SOFR_Changes_32089596 start-->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+          <!--FCUBS_144_CD_SOFR_Changes_32089596-->
+		    <fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="FCJExtPricingLib">
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${jarslib}/common/saaj-impl-1.3.4.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMExtPricingLib">			
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${destPath}/INFRA/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/INFRA/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/INFRA/ELCMDto/classes"/>		
+             <fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>			
+		</path>
+		<path id="FCJROFCSchedulerLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31242924 start-->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31242924 end-->
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/application/jsoup-1.18.1.jar"/><!--  new jar added -->
+			<pathelement location="${jarslib}/rest/commons-lang3-3.17.0.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-crypto/bcprov-jdk15-145.jar"/>
+			<pathelement location="${jarslib}/plugin-crypto/bcmail-jdk15-145.jar"/>-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/jettison-1.5.4.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<!--FCUBS_144_CD_SOFR_Changes_32089596 start-->
+			<fileset dir="${jarslib}/pdfbox/">
+				<include name="*.jar"/>
+			</fileset>
+            <!--FCUBS_144_CD_SOFR_Changes_32089596 end-->
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<pathelement location="${destPath}/ADAPTERS/ROFCScheduler/FCJScheduler/classes"/>
+		</path>		
+		<path id="FCJROFCFCJNeoWebLib">
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/flux.jar"/>			
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>			
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ADAPTERS/ROFCScheduler/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ADAPTERS/ROFCScheduler/FCJNeoWeb/war/WEB-INF/classes"/>
+		</path>
+		<path id="FCJOBCLFCJNeoWebLib">
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/flux.jar"/>			
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>			
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>			
+			<pathelement location="${destPath}/${destfolder}/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJNeoWeb/war/WEB-INF/classes"/>
+		</path>
+		<path id="FCJROFCBranchNeoWebLib">
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${jarslib}/application/flux.jar"/>			
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>			
+			<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+		<!-- 	<pathelement location="${jarslib}/common/ojdbc6.jar"/> -->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<pathelement location="${jarslib}/oracle/ucp.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJNeoWeb/war/WEB-INF/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+            <pathelement location="${destPath}/INFRA/FCJBulker/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJSMS/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJCoreDAOOracle/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJGeneralEJB/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJBatch/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJMBean/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/INFRA/ELGateway/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceEJB/classes"/>
+			<pathelement location="${destPath}/INFRA/FCISSchedulerEJB/classes"/>
+		</path>
+		<path id="FCJROFCBranchLib">
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${jarslib}/application/flux.jar"/>			
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>			
+			<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+		<!-- 	<pathelement location="${jarslib}/common/ojdbc6.jar"/> -->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<pathelement location="${jarslib}/oracle/ucp.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+            <pathelement location="${destPath}/INFRA/FCJBulker/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJSMS/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJCoreDAOOracle/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJGeneralEJB/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJBatch/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJMBean/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/INFRA/ELGateway/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/INFRA/FCServiceEJB/classes"/>
+			<pathelement location="${destPath}/INFRA/FCISSchedulerEJB/classes"/>
+		</path>
+		<path id="Callout_AdapterLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+		</path>
+
+		<path id="FcisMDBAdapterLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+		</path>
+
+
+		<path id="Oracle_IPM_ADAPTERLib">
+			<pathelement location="${destPath}/${destfolder}/FCJNeoWeb/war/WEB-INF/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/jaxrpc.jar"/-->
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<!-- <pathelement location="${jarslib}/application/commons-httpclient-3.0.jar"/> -->
+			<!--<pathelement location="${jarslib}/application/httpclient-4.3.3.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/httpcore-4.3.2.jar"/>-->
+		</path>
+
+		<path id="FCJMBeanLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+		</path>
+
+		<!-- 12.1 changes -->
+		<path id="FCServiceUtilLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+		</path>
+
+		<path id="FCServiceEJBLib">
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<pathelement location="${jarslib}/Library/xml-apis-2.11.0.jar"/>
+			<pathelement location="${jarslib}/Library/xercesImpl-2.11.0.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJInsulation/classes"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="FCServiceRouterLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="GWUtilityLib">
+		<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+		<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application">
+				<include name="*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="GWRESTLib">		
+		<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+		<pathelement location="${destPath}/${destfolder}/GWRestHandler/classes"/>
+		<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>
+		<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+		<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>
+		<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>		
+        <!--34414781 JWT token authentication changes start -->
+			<fileset dir="${jarslib}/jwt/">
+				<include name="*.jar"/>				
+			</fileset>
+       <!--334414781 JWT token authentication changes end -->		
+		</path>
+		<path id="ELCMRestLib">		
+		<pathelement location="${destPath}/${destfolder}/ELCMGateway/classes"/>			
+		<pathelement location="${destPath}/${destfolder}/ELCMEJB/classes"/>
+		<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+		<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+		 <pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+		<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>
+		<pathelement location="${jarslib}/rest/swagger-core-1.6.14.jar"/>
+		<pathelement location="${jarslib}/rest/swagger-jaxrs-1.6.14.jar"/>		
+		<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>
+		<pathelement location="${jarslib}/fcpm/javax.inject-2.4.0-b31.jar"/>
+		<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+		</fileset>	
+       <!--34414781 JWT token authentication changes start -->
+			<fileset dir="${jarslib}/jwt/">
+				<include name="*.jar"/>				
+			</fileset>
+       <!--334414781 JWT token authentication changes end -->	
+	   <fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="GWRestEJBLib">		
+		<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+		<pathelement location="${destPath}/${destfolder}/GWRestHandler/classes"/>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>	
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="GWRestHandlerLib">
+		<pathelement location="${destPath}/${destfolder}/FCServiceEJB/classes"/>
+		<pathelement location="${destPath}/${destfolder}/FCServiceRouter/classes"/>	
+		<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>			
+		</path>
+		<path id="Rest_ServiceLib">		
+		<pathelement location="${destPath}/${destfolder}/GWREST/classes"/>	
+		<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+		<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>
+		<pathelement location="${jarslib}/rest/swagger-core-1.6.14.jar"/>
+		<pathelement location="${jarslib}/rest/swagger-jaxrs-1.6.14.jar"/>
+		<pathelement location="${jarslib}/rest/swagger-models-1.6.14.jar"/>
+		<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>
+		<pathelement location="${jarslib}/fcpm/javax.inject-2.4.0-b31.jar"/>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>	
+		</path>
+		<path id="Rest_ServiceRecompLib">				
+			<pathelement location="${destPath}/${destfolder}/GWREST/classes"/>	
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>
+			<pathelement location="${jarslib}/rest/swagger-core-1.6.14.jar"/>
+			<pathelement location="${jarslib}/rest/swagger-jaxrs-1.6.14.jar"/>
+			<pathelement location="${jarslib}/rest/swagger-models-1.6.14.jar"/>
+			<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>
+			<pathelement location="${jarslib}/fcpm/javax.inject-2.4.0-b31.jar"/>			
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>	
+			<pathelement location="${WL_HOME}/server/lib/weblogic.jar"/>			
+		</path>
+		<path id="GWMsgProcEJBLib">
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+		</path>
+		<path id="GWEJBClientLib">
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${destPath}/${destfolder}/GWMsgProcEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceUtil/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCServiceRouter/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+		</path>
+		<path id="GWEJBLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		    <pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWEJBClient/classes"/>
+		</path>
+		<path id="GWHTTPLib">
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWEJBClient/classes"/>
+		</path>
+		<path id="GWMDBLib">
+		    <pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWEJBClient/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="GWWSLib">
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWEJBClient/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWEJB/classes"/>
+		</path>
+		<!-- 12.1 changes -->
+
+		<path id="DCBranchLib">
+			<pathelement location="${destination}/${destfolder}/FCJUtility/classes"/>
+
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!--commented as a part of multipart-config using java api-->
+			<!--<pathelement location="${jarslib}/application/commons-fileupload-1.3.1.jar"/> -->
+			<!--<pathelement location="${jarslib}/application/commons-httpclient-3.0.jar"/>	-->
+			<!--<pathelement location="${jarslib}/application/httpclient-4.3.3.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/httpcore-4.3.2.jar"/>-->
+			<!--commented as a part of third party jar removal java api-->
+			<!--<pathelement location="${jarslib}/application/commons-discovery-0.5.jar"/>-->
+			<pathelement location="${jarslib}/application/javaee.jar"/>
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="commons-net-2.0*.jar"/>
+				<include name="quartz*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--commented as a part of third party jar remove using java api-->
+			<!--<pathelement location="${jarslib}/plugin-reports/fontbox-3.0.3.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/pdfbox-3.0.3.jar"/>-->
+			<!-- DC Changes-->
+			<pathelement location="${jarslib}/application/poi-3.2-FINAL-20081019.jar"/>
+		</path>
+
+		<path id="RADToolLib">
+			<pathelement location="${destination}/${destfolder}/FCJUtility/classes"/>
+		</path>
+
+		<path id="lib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+		</path>
+
+		<path id = "ELCM_FCJUTILITYLib">
+
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+<!--			<pathelement location="${jarslib}/oracle/ucp.jar"/> -->
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>
+			<!-- <pathelement location="${jarslib}/application/javadbf-0.4.0.jar"/> -->
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="ELCMControllerLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+		</path>
+
+		<path id="ELCMEntitiesLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+		</path>
+
+		<path id="ELGatewayLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMController/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<pathelement location="${jarslib}/plugin-bpel/xml.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+<!--32694909 elcm kafka changes -->
+			<fileset dir="${jarslib}/kafka/">
+				<include name="*.jar"/>
+				
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+<!--32694909 elcm kafka changes -->	
+		</path>
+
+		<path id="ELCMEJBLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMKernelJpa/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMKernel/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>	
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="ElWebServiceLib">
+			<pathelement location="${destination}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destination}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destination}/${destfolder}/ELGateway/classes"/>
+			<pathelement location="${jarslib}/application/javaee.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink_1.0.0.0_11-1-1-1-0.jar"/>
+		</path>
+
+		<path id="ElGwClientLib">
+			<pathelement location="${destination}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destination}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destination}/${destfolder}/ELGateway/classes"/>
+			<pathelement location="${jarslib}/application/javaee.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink_1.0.0.0_11-1-1-1-0.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="ELCMDTOLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>			
+			<pathelement location="${jarslib}/jackson/jackson-annotations-2.18.0.jar"/>	
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMDtoLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>			
+			<pathelement location="${jarslib}/jackson/jackson-annotations-2.18.0.jar"/>	
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMUtilityLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>					
+			<pathelement location="${jarslib}/rest/swagger-annotations-1.6.14.jar"/>
+			<pathelement location="${jarslib}/rest/swagger-core-1.6.14.jar"/>
+			<pathelement location="${jarslib}/rest/swagger-jaxrs-1.6.14.jar"/>		
+			<pathelement location="${jarslib}/rest/javax.ws.rs.javax.ws.rs-api.jar"/>		
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+		</path>
+		<path id="ELCMCommonLib">
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMWebLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMGateway/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMWeb1Lib">
+			<pathelement location="${destPath}/${destfolder}/ELCMGateway/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="FCJInsulationLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/GWUtility/classes"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+		<path id="ELCMGatewayLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEJB/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMKernelJpa/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+	                <pathelement location="${jarslib}/application/jsoup-1.18.1.jar"/>
+			<pathelement location="${jarslib}/rest/commons-lang3-3.17.0.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMKernelSQLJLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/ojdbc14.jar"/>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+		</path>
+		<path id="ELCMKernelLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMKernelJpa/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+				<include name="runtime12.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>	
+			<!--32694909 elcm kafka changes -->	
+			 <fileset dir="${jarslib}/kafka/">
+				<include name="*.jar"/>
+				
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--32694909 elcm kafka changes -->	
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+                        <pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+		<path id="ELCMKernelJpaLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+				<include name="runtime12.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELWebServicesLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELGateway/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+		</path>
+
+		<path id="ELGatewayClientLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELGateway/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+		</path>
+
+		<!--For POJO-->
+		<path id="ELCMUtilityPojoLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/ojdbc14.jar"/>
+
+		</path>
+
+		<path id="ELCMKernelPojoLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMKernelSQLJ/classes"/>
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/ojdbc8.jar"/><!-- 30798696 changes -->
+		</path>
+
+		<path id="ELCMDtoPojoLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+
+		</path>
+
+		<path id="ELCMCommonPojoLib">
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+
+		</path>
+
+		<path id="ELCMKernelSQLJPojoLib">
+			<pathelement location="${destPath}/${destfolder}/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMUtility/classes"/>
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/ojdbc14.jar"/>
+
+		</path>
+		<path id="INSTALLERLib">
+
+		</path>
+	<!--	<ant antfile="AntLibrary_PM.xml" />-->
+		
+	<!--	<include file="AntLibrary_PM.xml"/>-->
+	
+		<!--SMS start-->
+		<path id="SMCommonLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<path id="SMDtoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<path id="SMEntitiesLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="javax.persistence-2.1.0.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/SMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+						
+		<path id="SMUtilityLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+			
+		<path id="SMKernelLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+			<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMKernelDao/classes"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<path id="SMEJBLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>	
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMKernelDao/classes"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			
+		</path>
+				
+		<path id="SMKernelDaoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/org.eclipse.persistence_1.0.0.0_2-0.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMEntities/classes"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		 <path id="SMGatewayLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="${jarslib}/spring/">
+					<include name="*.jar"/>
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+				<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>					
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/SMDto/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/SMEjb/classes"/>
+				<pathelement location="${destPath}/${destfolder}/SMKernelDao/classes"/>
+				<pathelement location="${destPath}/${destfolder}/SMKernel/classes"/>
+				<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+				
+			</path>		
+			<path id="SMWebLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<fileset dir="${jarslib}/application/javaee/">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="${jarslib}/spring/">
+					<include name="*.jar"/>
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>				
+				<pathelement location="${destPath}/${destfolder}/SMGateway/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>	
+				<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			    </fileset>
+						
+			</path>
+			
+		<!--SMS end -->
+		<path id="OBCLExtAdapterLib">			 
+		<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>		
+		<path id="OBCLCalcEngineLib">	
+		<pathelement location="${jarslib}/application/apache-logging-log4j.jar"/>
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson">
+				<include name="*.jar"/>
+			</fileset>			
+		</path>		
+		<!--OFCL start-->
+		<path id="COCommonLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<path id="CODtoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>
+		</path>
+		
+		<path id="COEntitiesLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="javax.persistence-2.1.0.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+		<!--<pathelement location="${destPath}/${destfolder}/COEntitiesLib/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/SMCommon/classes"/> -->
+		</path>
+						
+		<path id="COUtilityLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>
+			
+		</path>
+			
+		<path id="COKernelLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+			<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+			
+		</path>
+		
+		<path id="COEJBLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset><!--Added by Rakesh Weblogic/JEE Dependency Removal - ODT Products-->
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COGateway/classes"/>
+									
+		</path>
+		
+		 <!--<path id="COGatewayLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.jar"/>
+				<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>					
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/CODto/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/COEjb/classes"/>
+				<pathelement location="${destPath}/${destfolder}/COKernelDao/classes"/>
+				<pathelement location="${destPath}/${destfolder}/COKernel/classes"/>
+				
+		</path>	-->
+			
+		<path id="COKernelDaoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/org.eclipse.persistence_1.0.0.0_2-0.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			
+		</path>
+		
+		<!--<path id="COWebLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+				<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+				<pathelement location="${destPath}/${destfolder}/COGateway/classes"/>
+								
+		</path>-->
+		
+		<path id="PICommonLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/COCommon/classes"/>
+		</path>
+		
+		<path id="PIDtoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/PICommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+		</path>
+		
+		<path id="PIEntitiesLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/fcpm/">
+			<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/PIDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COEntities/classes"/>
+			
+		</path>
+						
+		<path id="PIUtilityLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/fcpm/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/PICommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+		</path>
+
+		<path id="PIAppsLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/fcpm/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PICommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			
+		</path>		
+		
+					
+		<path id="PIKernelDaoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/org.eclipse.persistence_1.0.0.0_2-0.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIApps/classes"/>
+		</path>
+		
+		<path id="PIKernelLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+			<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PICommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIApps/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/CODto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIEntities/classes"/>
+			
+		</path>
+		
+		<path id="PIEJBLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-elcm">
+			<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset><!--Added by Rakesh Weblogic/JEE Dependency Removal - ODT Products-->
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/PICommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIDto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIApps/classes"/>
+			<pathelement location="${destPath}/${destfolder}/PIKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernelDao/classes"/>
+			<pathelement location="${destPath}/${destfolder}/COKernel/classes"/>
+		
+		</path>
+		
+		<path id="PIWebLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>				
+				<pathelement location="${destPath}/${destfolder}/COWeb/classes"/>		
+						
+		</path>
+			
+		<!--OFCL end -->
+		
+		<!--VAMS start-->
+		<path id="VACommonLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		
+		<path id="VADtoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>
+		</path>
+		
+		<path id="VAEntitiesLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee">
+				<include name="javax.persistence-2.1.0.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/VADto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>
+		</path>
+						
+		<path id="VAUtilityLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>
+		</path>
+			
+		<path id="VAKernelLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+			<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<!--<pathelement location="${jarslib}/application/serializer-2.7.2.jar"/> -->
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VADto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAKernelDao/classes"/>
+		</path>
+		
+		<path id="VAEJBLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAKernel/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VADto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAKernelDao/classes"/>
+			
+		</path>
+				
+		<path id="VAKernelDaoLib">			
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/javaee/javax.persistence-2.1.0.jar"/>
+			<pathelement location="${jarslib}/application/javaee/org.eclipse.persistence_1.0.0.0_2-0.jar"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VADto/classes"/>
+			<pathelement location="${destPath}/${destfolder}/VAEntities/classes"/>
+		</path>
+		
+		 <path id="VAGatewayLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+				<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>					
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/VACommon/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/VAUtility/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/VADto/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/VAEjb/classes"/>
+				<pathelement location="${destPath}/${destfolder}/VAKernelDao/classes"/>
+				<pathelement location="${destPath}/${destfolder}/VAKernel/classes"/>
+				
+			</path>		
+			<path id="VAWebLib">					
+				<fileset dir="${jarslib}/plugin-elcm">		
+					<include name="*.jar"/>		
+				</fileset>
+				<pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+				<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+				<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>				
+				<pathelement location="${destPath}/${destfolder}/VAGateway/classes"/>		
+				<pathelement location="${destPath}/${destfolder}/VAUtility/classes"/>		
+						
+			</path>
+			
+		<!--VAMS end -->
+		<!--30617181 start-->
+		<path id="OBTRExtAdapterLib">
+			<!--30811824 start-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--31347182 start-->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31347182 End-->
+		</path>
+		<!--31347182 start-->
+		<path id="OBTRCalcEngineLib">	
+			<pathelement location="${jarslib}/application/apache-logging-log4j.jar"/>
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>			
+		</path>
+		<!--31347182 End-->
+		<path id="OBTFExtAdapterLib">
+			<!--30811824 start-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar" />
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--OBTF_14.6_SOFR_33138129 Start -->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar" />
+			</fileset>
+			<!--OBTF_14.6_SOFR_33138129 End -->
+		</path>
+		<!--OBTF_14.6_SOFR_33138129 Start-->
+		<path id="OBTFCalcEngineLib">
+			<pathelement location="${jarslib}/application/apache-logging-log4j.jar" />
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar" />
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar" />
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar" />
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar" />
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar" />
+			</fileset>
+		</path>
+		<!--OBTF_14.6_SOFR_33138129 End-->
+		<path id="OBTRExtPricingLib">
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${jarslib}/common/saaj-impl-1.3.4.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="OBTFExtPricingLib">
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${jarslib}/common/saaj-impl-1.3.4.jar"/>
+			<!-- OBTF_JEE_Changes starts -->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!-- OBTF_JEE_Changes ends -->
+		</path>
+		<path id="FCJOBTRSchedulerLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31242924 start-->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31242924 end-->
+			<!--31335094 start-->
+			<fileset dir="${jarslib}/pdfbox/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31335094 end-->
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/application/commons-logging-1.3.3.jar"/><!--31335094-->
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/application/jsoup-1.18.1.jar"/><!--  new jar added -->
+			<pathelement location="${jarslib}/rest/commons-lang3-3.17.0.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-crypto/bcprov-jdk15-145.jar"/>
+			<pathelement location="${jarslib}/plugin-crypto/bcmail-jdk15-145.jar"/>-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/jettison-1.5.4.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<!--30811824 start-->
+			<pathelement location="${destPath}/ADAPTERS/OBTRExternal/OBTRExtAdapter/classes"/>
+			<!--30811824 end-->
+		</path>		
+		<path id="FCJOBTRFCJNeoWebLib">
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/flux.jar"/>			
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>			
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJScheduler/classes"/>
+			<!--Bug#35340262 EA Changes Start -->
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<!--Bug#35340262 EA Changes End -->
+			<!--30811824 start-->
+			<pathelement location="${destPath}/ADAPTERS/OBTRExternal/OBTRExtAdapter/classes"/>
+			<!--30811824 end-->
+		</path>
+		<path id="FCJOBTFSchedulerLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31242924 start-->
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--31242924 end-->
+			
+			<!--BUG#32074250 Changes Starts-->
+			<fileset dir="${jarslib}/pdfbox/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--BUG#32074250 Changes Ends-->
+			
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<!--pathelement location="${jarslib}/application/axis.jar"/-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/application/jsoup-1.18.1.jar"/><!--  new jar added -->
+			<pathelement location="${jarslib}/rest/commons-lang3-3.17.0.jar"/>
+			<!--<pathelement location="${jarslib}/plugin-crypto/bcprov-jdk15-145.jar"/>
+			<pathelement location="${jarslib}/plugin-crypto/bcmail-jdk15-145.jar"/>-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/jettison-1.5.4.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<!--30831147 start-->
+			<pathelement location="${destPath}/ADAPTERS/OBTFExternal/OBTFExtAdapter/classes"/>
+			<!--30831147 end-->
+		</path>		
+		<path id="FCJOBTFFCJNeoWebLib">
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/> --><!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<pathelement location="${jarslib}/application/flux.jar"/>			
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--Changes made for BOTG starts-->
+			<!--<pathelement location="${jarslib}/botg_app/jsr311-api-1.1.1.jar"/>-->
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>			
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-reports/BIPublisher-client-stub.jar"/>			
+			<pathelement location="${jarslib}/ebodirect_sync/ConsumerSync-client-lib.jar"/>
+			<pathelement location="${destPath}/INFRA/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJScheduler/classes"/>
+			<!--Bug#35912893 start-->
+			<pathelement location="${destPath}/INFRA/FCJScheduler/classes"/>
+			<!--Bug#35912893 ends-->
+			<!--30831147 start-->
+			<pathelement location="${destPath}/ADAPTERS/OBTFExternal/OBTFExtAdapter/classes"/>
+			<!--30831147 end-->
+		</path>
+		<!--30617181 end-->
+		<!--FCUBS_144_CD_SOFR_Changes_32089596 start-->
+		<path id="FCUBSCalcEngineLib">	
+			<pathelement location="${jarslib}/application/apache-logging-log4j.jar"/>
+			<pathelement location="${jarslib}/botg_app/javax.ws.rs.jar"/>
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>			
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/jackson/">
+				<include name="*.jar"/>
+			</fileset>			
+		</path>
+		<!--FCUBS_144_CD_SOFR_Changes_32089596 End-->
+	</target>
+	
+	<target name="GwLib" >
+
+		<path id="GW_EJBLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<!--	<pathelement location="${desthome}/GW/GW_Util/classes"/> -->
+		</path>
+
+		<path id="GW_MDBLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar" />
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar" />
+			<pathelement location="${desthome}/GW/GW_Util/classes" />
+		</path>
+
+		<path id="GW_HTTPLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar" />
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${desthome}/GW/GW_Util/classes" />
+		</path>
+
+		<path id="GW_UtilLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar" />
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+		</path>
+
+		<path id="WSLib">
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar" />
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/application/saaj-api.jar"/>
+			<pathelement location="${desthome}/GW/GW_Util/classes"/>
+		</path>
+		<path id="SwitchLib">
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+<!--			<pathelement location="${destination}/lib/ucp.jar"/>-->
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+			<pathelement location="${WL_HOME}/server/lib/weblogic.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${lib}/jsr173_api.jar"/>
+			<pathelement location="${lib}/xbean.jar"/>
+			<pathelement location="${lib}/atm_isoxml.jar"/>
+			<pathelement location="${lib}/xalan-2.7.2.jar"/>
+		    <pathelement location="${lib}/xerces.jar"/-->
+		</path>
+
+		<!-- ___________________________________________________________________________________________________________________ -->
+
+		<path id = "ELCM_FCJUTILITYStandAloneLib">
+
+			<!--<pathelement location="${jarslib}/application/xml-resolver-1.2.jar"/>-->
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+<!--			<pathelement location="${jarslib}/oracle/ucp.jar"/>-->
+			<fileset dir="${jarslib}/oracle/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-quartz/commons-transaction-1.2.jar"/>-->
+			<pathelement location="${jarslib}/plugin-quartz/commons-net-3.11.1.jar"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<!--<pathelement location="${jarslib}/common/xml-apis-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<pathelement location="${jarslib}/application/poi-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-5.3.0.jar"/>
+			<pathelement location="${jarslib}/application/poi-ooxml-full-5.3.0.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!-- <pathelement location="${jarslib}/application/javadbf-0.4.0.jar"/> -->
+		</path>
+
+
+		<path id="ELCMEntitiesStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMDto/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+				<include name="xmlparserv2.jar.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+		</path>
+
+		<path id="ELGatewayStandAloneLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMController/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<pathelement location="${jarslib}/common/log4j-api-2.24.1.jar"/>
+			<pathelement location="${jarslib}/common/log4j-core-2.24.1.jar"/>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="quartz-2.4.0.jar"/>
+				<include name="quartz-jobs-2.4.0.jar"/> <!--new jar added -->
+				<!--<include name="c3p0-0.9.1.2.jar"/>--> <!-- new jar added -->
+				<include name="slf4j-api-2.0.16.jar"/>
+			</fileset>
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<pathelement location="${jarslib}/plugin-bpel/xml.jar"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+
+		</path>
+
+		<path id="ELCMEJBStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMDto/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMKernel/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMKernelJpa/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMDTOStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMDtoStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+		</path>
+		<path id="ELWebServicesStandAloneLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELGateway/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+		</path>
+		<!-- changes for structure change of elcm starts -->
+		<path id="ELCMUtilityStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/FCJUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+		</path>
+		<path id="ELCMCommonStandAloneLib">
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMWebStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMGateway/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMEJB/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMWeb1StandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMGateway/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMGatewayStandAloneLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMKernel/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMDto/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMEJB/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMKernelJpa/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/plugin-quartz">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+		</path>
+		<path id="ELCMKernelSQLJStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMDto/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/ojdbc14.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+		</path>
+		<path id="ELCMKernelStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/FCJUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMDto/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMKernelJpa/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMEntities/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+				<include name="runtime12.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<path id="ELCMKernelJpaStandAloneLib">
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/FCJUtility/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMDto/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMCommon/classes"/>
+			<pathelement location="${destPath}/APPLICATION/FCJELCM/ELCMUtility/classes"/>
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="com.oracle.toplink*.jar"/>
+				<include name="runtime12.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+			<!--<pathelement location="${jarslib}/plugin-elcm/toplink-essentials.jar"/>-->
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+		<!-- changes for structure change of elcm ends -->
+		<path id="ELGatewayClientStandAloneLib">
+			<pathelement location="${destPath}/${destfolder}/FCJUtility/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELCMEntities/classes"/>
+			<pathelement location="${destPath}/${destfolder}/ELGateway/classes"/>
+			<fileset dir="${jarslib}/application/javaee/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/application/javaee/javax.ejb_3.0.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.mail-1.4.5.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.transaction-3.1.2.2.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.servlet-3.1.1.jar"/>
+            <pathelement location="${jarslib}/application/javaee/javax.persistence_1.0.0.0_1-0-2.jar"/-->
+			<fileset dir="${jarslib}/plugin-elcm">
+				<include name="xmlparserv2*.jar"/>
+				<include name="com.oracle.toplink*.jar"/>
+			</fileset>
+			<fileset dir="${jarslib}/spring/">
+				<include name="*.jar"/>
+			</fileset>
+			<!--pathelement location="${jarslib}/plugin-elcm/com.oracle.toplink*.jar"/>
+            <pathelement location="${jarslib}/plugin-elcm/xmlparserv2.jar"/-->
+		</path>
+
+		<!--BOTG -->
+
+		<path id="BOTGLib">
+			<pathelement location="${destPath}/BOTG/Server/${destfolder}EJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/BpelEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/CashBookEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/CashMonitorEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/CommonServicesEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/ConversationCaptureEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/CustomerDashboardEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/DashBoardEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/LeadCaptureEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/MainEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/PendingConversationEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/ReminderCaptureEJB/classes"/>
+			<pathelement location="${destPath}/BOTG/Server/SuspenseEntriesEJB/classes"/>
+			<pathelement location="${jarslib}/botg/javaee-api-5.jar"/>
+			<pathelement location="${jarslib}/botg/org.eclipse.persistence_1.2.0.0_2-3.jar"/>
+			<pathelement location="${jarslib}/botg/com.sun.jersey.client_1.0.0.0_1-9.jar"/>
+			<pathelement location="${jarslib}/botg/com.sun.jersey.core_1.0.0.0_1-9.jar"/>
+			<pathelement location="${jarslib}/botg/javax.jsp_1.3.0.0_2-1.jar"/>
+			<pathelement location="${jarslib}/botg/javax.servlet-3.1.1.jar"/>
+			<pathelement location="${jarslib}/botg/javax.ws.rs.jar"/>
+			<pathelement location="${jarslib}/botg/org.codehaus.jackson.core.asl_1.0.0.0_1-8-3.jar"/>
+			<pathelement location="${jarslib}/botg/org.codehaus.jackson.mapper.asl_1.0.0.0_1-8-3.jar"/>
+		</path>
+
+
+		<path id="FCMCoreLib">
+			<pathelement location="${destPath}/Payments/${destfolder}/FCMessaging/PMIntegration/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMIntegration/classes"/>
+			<!--<pathelement location="${jarslib}/common/xercesImpl-2.11.0.jar"/>-->
+			<pathelement location="${jarslib}/common/ojdbc6.jar"/>
+			<!-- <pathelement location="${jarslib}/application/xalan-2.7.2.jar"/> -->
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/fcm/osdt_xmlsec.jar"/>
+			<pathelement location="${jarslib}/fcm/osdt_core.jar"/>
+			<!--<pathelement location="${jarslib}/fcm/j2ssh-core.jar"/>-->
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+		</path>
+		
+		<path id="PMCommonLib">
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+		</path>
+		<path id="PMJobExcecutorLib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMJobFramework/PMCommon/classes"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+		</path>
+		<path id="PMSchedulerLib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMJobFramework/PMCommon/classes"/>
+			<pathelement location="${jarslib}/application/javaee/javax.jms-3.1.2.2.jar"/>
+			<pathelement location="${jarslib}/application/javaee/javax.ejb_3.2.0.jar"/>
+		</path>
+		<path id="PMSchedulerJobsLib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMJobFramework/PMCommon/classes"/>
+		</path>
+
+		<path id="PMIntegrationLib">
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+		<path id="PMEntitiesLib">
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+		<path id="PMExternalLib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PM${destfolder}/classes"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+		<path id="PM${destfolder}Lib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMEntities/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMMessages/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMIntegration/classes"/> 
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+		</path>
+		<path id="PMMessagesLib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMIntegration/classes"/> 
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/translator.jar"/>
+			<pathelement location="${jarslib}/plugin-elcm/runtime12.jar"/>
+		</path>
+		<path id="PMServiceEJBLib">
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMMessages/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMIntegration/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PM${destfolder}/classes"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+		<path id="PMServiceMDBLib">
+	        <pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMEntities/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMMessages/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PMIntegration/classes"/>
+			<pathelement location="${destPath}/Payments/ADAPTERS/PMGateway/PM${destfolder}/classes"/>
+			<pathelement location="${jarslib}/common/commons-codec-1.17.1.jar"/>
+		</path>
+
+	</target>
+	
+</project>

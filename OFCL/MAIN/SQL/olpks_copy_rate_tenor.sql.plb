@@ -1,0 +1,34 @@
+CREATE OR REPLACE PACKAGE BODY olpks_copy_rate_tenor wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+c55 34f
+9V4HFOH0Uek9qbziU0PEy9265P4wg0OnmiDrfC/GQg21GBI1KVBNBCWH54TApLDwWs1w2gEQ
+wi+DtuPcC5Za+Iat2t5OjLl7N6AIaij0Q05Mz5pyMdyVzhLfH3xeMavfD2Sdz79PeLEkaNew
+BdW/EoF5xx2gfNL5p7HxBeahhWPVGlLskzhu8Uo9n/u2bsy+WMnxlnbqWKnm4XLNwlgEQOgA
+TseY4ts+bLSmDvwbleSf7S2cUIMotly6VH/XH1mdIqjDmbr29CnlCXwpXoYN3/IdsVOi9By3
+l/ozC9ok3UJGBMyeSL003T/iPdPnzGMP3Jgwu0Do0JlrRIPmiZlNYYZZyWeSZTQQWx1MCWQB
+iOiAZq5D39mOST1gEXwM2pntJqpTZvbXif/bNMjSu35iZgr2WelxwMw6g1FalI2NDlb89qZP
+dcrdqTMTbdu0nBcXwWQlFHnwWHU9Tt5jTH1Z8WWu3LdMVKnimA+HobaGuf/PFgi22beJksim
+16tJrdXw3TU3EQsNT9T+YOMAtCxQDSSRCqKfl2HlphxH8fWjQkEWXEYRK+pIlfKWWqiCUjFL
+6R75nA49nRAohCQ/QnpLHDk0XiNNFs5FD7Yu+Z3MbzVjDyZfNwugV8oJpMZKbi8y59jVRMLG
+SnYOYEr7/UPGsS98pO939CwdiZwYk8SR1Aat+CiEq/sSfpHwR6jrYB4LiuBxJYTOZTiTzPmW
+zkFwxoGlKqOEZVN70FJ24atSXaPO3aiSnh/NB0lnTy/gcpbyCvsv7W/trgyCI3JVv2Mzvkq1
+8TOq9wbSGNbxZtVjC7TKcAXMbc6S1rY7KQNPTkcN4w==
+
+/

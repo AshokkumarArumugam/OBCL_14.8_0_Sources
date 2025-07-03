@@ -1,0 +1,188 @@
+<project name="FCUBS_7-2_GW" default="all" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property environment="env"/>  
+	<property name="source" value="."/>
+	<property name="ibm_was_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="ibm_was_ext" value="${ibm_was_home}/lib/ext"/>
+
+	<property name="user_home" value="${env.USER_HOME}"/>
+	<property name="src_ejb" value="../../src"/>
+	<property name="src_common" value="../../src/common"/>
+	<property name="config" value="../../config"/>
+	<property name="ejb_lib" value="../../lib"/>
+	<property name="src_gw_ejb" value="${src_ejb}/com/iflex/fcubs/gw/ejb"/>
+	<!-- KERNEL73 starts /-->
+	<!-- Controller functionality moved to Bean starts
+	<property name="src_contr_ejb" value="${src_common}/com/iflex/fcubs/gwcontrollers/ejb"/>
+	Controller functionality moved to Bean starts ends -->
+	<!-- KERNEL73 ends /-->
+	<property name="src_srvc_db" value="${src_common}/com/iflex/fcubs/gwservices/db"/>
+	<property name="src_srvc_db_in_bnd" value="${src_common}/com/iflex/fcubs/gwservices/db/inbound"/>
+	<property name="src_srvc_xml" value="${src_common}/com/iflex/fcubs/gwservices/xml"/>
+	<property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_db" value="${src_common}/com/iflex/fcubs/gwutil/db"/>
+	<property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_xml" value="${src_common}/com/iflex/fcubs/gwutil/xml"/>
+	<property name="build" value="../../build"/>
+	<property name="dist" value="../../dist"/>
+
+	<path id="compile.classpath">
+		<pathelement location="${ibm_was_home}/lib/j2ee.jar"/>
+		<pathelement location="${ejb_lib}/ojdbc14.jar"/>
+	</path>
+
+  <target name="all" depends="clean_build, make_dir, compile_common, compile_ejb, do_ejb_jar, do_jar, do_ear, clean "/>
+
+	<target name="clean_build">
+ 		<delete dir="${build}"/>
+	</target>
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/META-INF"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/META-INF"/>
+
+		<!-- Create the time stamp -->
+		<copy todir="${dist}/META-INF">
+			<fileset dir="${config}">
+				<include name="ejb-jar.xml"/>
+			</fileset>
+		</copy>
+		<copy todir="${build}/META-INF">
+			<fileset dir="${config}">
+				<include name="application.xml"/>
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_db}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_db}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+
+		<javac 
+			srcdir="${src_srvc_db_in_bnd}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_xml}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_xml}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_db}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<!-- KERNEL73 starts /-->
+		<!-- Controller functionality moved to Bean starts starts
+		<javac 
+			srcdir="${src_contr_ejb}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		Controller functionality moved to Bean starts ends -->
+		<!-- KERNEL73 ends /-->
+	</target>
+
+	<!-- Compile the java code -->
+	<target name="compile_ejb" depends="compile_common"> 
+		<javac srcdir="${src_gw_ejb}" destdir="${dist}" debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- KERNEL10.3 changes starts -->
+	<target name="do_ejb_jar">
+		<jar destfile="${build}/GW_EJB.jar" basedir="${dist}">
+			<exclude name="**/gwutil/**"/>
+			<exclude name="**/gwservices/**"/>
+			<exclude name="**/gw/ejb/GWEJBLocal.class"/>
+			<exclude name="**/gw/ejb/GWEJBLocalBusiness.class"/>
+			<exclude name="**/gw/ejb/GWEJBLocalHome.class"/>
+			<exclude name="**/gw/ejb/GWEJBBean.class"/>
+			<exclude name="**/META-INF/*.xml"/>	
+		</jar>
+	</target> 
+	<!-- KERNEL10.3 changes ends -->
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_jar" depends="compile_ejb">
+		<jar destfile="${build}/GW_EJB_Bean.jar" 
+			basedir="${dist}">
+		</jar>
+	</target>
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_ear" depends="do_jar">
+		<ear destfile="${source}/GW_EJB_Bean.ear" appxml="${build}/META-INF/application.xml">
+			<fileset dir="${build}" includes="GW_EJB_Bean.jar"/>
+		</ear>
+
+		<move file="${source}/GW_EJB_Bean.ear" todir="${build}"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${dist}"/>
+		<delete dir="${build}/META-INF"/>
+	</target>
+</project>

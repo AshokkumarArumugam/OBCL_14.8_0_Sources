@@ -1,0 +1,18 @@
+CREATE OR REPLACE VIEW sytv_gl_master AS
+SELECT A."GL_CODE",
+A."GL_DESC",
+'C' Type,
+A."CATEGORY",
+A."BLOCK",
+A."RECORD_STAT",
+A."ONCE_AUTH",
+A."AUTH_STAT",
+A."MOD_NO",
+A."MAKER_ID",
+A."MAKER_DT_STAMP",
+A."CHECKER_ID",
+A."CHECKER_DT_STAMP"
+FROM  STTMS_CORE_GLMASTER A
+/
+create or replace synonym SYTVS_GL_MASTER for sytv_gl_master
+/

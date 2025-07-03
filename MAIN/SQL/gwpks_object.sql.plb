@@ -1,0 +1,29 @@
+CREATE OR REPLACE Package Body Gwpks_Object wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+579 1b6
+rIrUBNAmKRKU95B4rIpbZvWlMwswg2MJLq7byo7SimQwgO0joAhpFm200SHPfSNms4oB7XUR
+Bpof8p1hS3lp3NCceIIgBIPTsWxsqaKBntLBTobZGMTrCHP9dUUZe4/cUQ2CdvYbV4pTY6KC
+Geeg6o4Us2DA3bn8MXMWZokI4puwLA5h1o5MT6XlWgPFYhfYcmPb0GM0BZGfS4jH6g0JcAmI
+oXEBPaAILvYo+NRAAmoGxN75PwFTqqm9A3wvCjZb7RiYMPevxhjIT3YC059vlmxf/8vKcDy2
+uIKqGMqPYWUExP+9qKnCCQRMkdQvuJzABIsGZoHwAK+X2tSbCJwzjrd+IwddW4oNeGiw6nXe
+mLrkjsG9llWCAlletev4hVKv5CVOvuXHkM0w2yinC5hSkuKy0mM7jZR99HBMcXPhfTMiOA==
+
+
+/

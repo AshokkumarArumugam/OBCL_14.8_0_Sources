@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--XML Schema created as part of 12.1_Input_Validation-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="FCUBS_HEADER">
+        <xs:complexType>
+		<xs:all>
+			<xs:element name="SOURCE" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="UBSCOMP" type="AlpNumType" minOccurs='0' />
+                        <xs:element name="USERID" type="USERIDType" minOccurs='0' />
+                        <xs:element name="BRANCH" type="BRANCHType" minOccurs='0' />
+                        <xs:element name="SERVICE" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="DEPARTMENT" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="OPERATION" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="MULTITRIPID" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="FUNCTIONID" type="FUNCTIONIDType" minOccurs='0' />
+                        <xs:element name="ACTION" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="MSGSTAT" type="AlpNumUndType" minOccurs='0'/>
+                        <xs:element name="MODULEID" type="AlpNumUndType" minOccurs='0' />
+                        <xs:element name="DSNNAME" type="AlpNumUndType" minOccurs='0'/>
+                        <xs:element name="MSGID" type="AlpNumUndType" minOccurs='0'/>
+						<xs:element name="CORRELID" type="AlpNumUndAsttype" minOccurs='0'/>
+						<xs:element name="SOURCE_OPERATION" type="AlpNumUndAsttype" minOccurs='0'/>
+                        <xs:element name="EXT_TRIP_ID" type="AlpNumUndType" minOccurs='0' />                                                
+                        <xs:element name="DEBUG_MODE" type="DEBUGFlagType" minOccurs='0'/>
+						<xs:element name="SNAPSHOTID" type="AlpNumType" minOccurs='0'/>
+						<xs:element name="DESTINATION" type="AlpNumUndType" minOccurs='0'/>
+                        <!--<xs:element name="FCUBS_DEBUG_RESP" minOccurs='0'>
+                            <xs:complexType>
+                                <xs:all>
+                                        <xs:element name="AP_DEBUG" type="DEBUGFlagType" minOccurs='0' />
+                                        <xs:element name="DB_DEBUG" type="DEBUGFlagType" minOccurs='0' />
+                                        <xs:element name="WB_DEBUG" type="DEBUGFlagType" minOccurs='0' />
+                                 </xs:all>
+                            </xs:complexType>
+                        </xs:element>-->
+                        <xs:element name="APP_SESSIONID" type="SESSIONIDType" minOccurs='0' />
+                        <xs:element name="ENTITY" type="AlpNumUndType" minOccurs='0'/>
+                        <xs:element name="MAKERREMARKS" type="RemarksType" minOccurs='0'/>
+                        <xs:element name="MAKEROVDREMARKS" type="RemarksType" minOccurs='0'/>
+                        <xs:element name="CHECKERREMARKS" type="RemarksType" minOccurs='0'/>
+                        <xs:element name="PKVALS" type="PkVals" minOccurs='0' /> <!--Fix for 24464158-->
+                        <xs:element name="PKFIELDS" type="AlpNumUndHyType" minOccurs='0'/>
+                        <xs:element name="ADDL" minOccurs='0' >
+                            <xs:complexType>
+                                <xs:sequence><!-- 12.1 Bpel Changes-->
+                                <xs:element name="PARAM" maxOccurs="unbounded" minOccurs='0'><!-- 12.1 Bpel Changes-->
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                        <xs:element name="NAME" type="AlpNumUndHyType" minOccurs='0'/> <!--12_1_RETRO_12_2_23664539-->
+                                        <xs:element name="VALUE" type="AlpNumUndHyPctType" minOccurs='0'/><!--12_1_RETRO_12_2_23664539,12.1 Bpel Changes-->
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                                </xs:sequence><!-- 12.1 Bpel Changes-->
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="SQNO" type="AlpNumTilType" minOccurs='0'/>
+                        <!--<xs:element name="SEQLIST" type="AlpNumTilType" minOccurs='0'/>
+						<xs:element name="TIMELOG" type="AlpNumTilType" minOccurs='0'/>
+						<xs:element name="DBTIME" type="AlpNumTilType" minOccurs='0'/>-->
+		</xs:all>
+	</xs:complexType>	
+</xs:element>
+<xs:simpleType name="AlpNumUndType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z_0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AlpNumType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AlpNumTilType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z_~0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AlpNumUndHyType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z_~\- 0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AlpNumUndHyPctType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z_~;:%&lt;&gt;#\- 0-9.*()!@|=\p{IsKatakana}\p{IsHiragana}\p{IsCJKUnifiedIdeographs}\p{IsHalfwidthandFullwidthForms}]*" /> <!-- 23664539,22349365,9NT1606_12_4_RETRO_12_0_3_26441049, 9NT1606_12_4_RETRO_12_0_3_26744505 Changes--> <!-- changes for allowing japaneese characters as part of PKVALS-->
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="USERIDType">
+		<xs:restriction base="xs:string">
+                        <xs:maxLength value="320" /> <!-- Common_Entity_Length_Changes-->
+			<xs:pattern value="[-a-zA-Z0-9@._*]*" /> <!-- Common_Entity_Length_Changes-->
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="BRANCHType">
+		<xs:restriction base="xs:string">
+		      <xs:maxLength value="6" />  <!-- Common_Entity_Length_Changes-->
+			<xs:pattern value="[a-zA-Z0-9]*"/> <!-- Common_Entity_Length_Changes-->
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="FUNCTIONIDType">
+		<xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+			<xs:pattern value="[a-zA-Z0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="DEBUGFlagType">
+		<xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                        <xs:pattern value="[a-zA-Z]*"/>
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="SESSIONIDType">
+		<xs:restriction base="xs:string">
+                        <xs:pattern value="[a-zA-Z!-_0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="AlpNumUndAsttype">
+		<xs:restriction base="xs:string">
+                        <xs:pattern value="[a-zA-Z*_0-9]*" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="RemarksType">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+</xs:simpleType>
+<!--Fix for 24464158-->
+<xs:simpleType name="PkVals">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+</xs:simpleType>
+</xs:schema>

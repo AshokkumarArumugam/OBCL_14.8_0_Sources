@@ -1,0 +1,301 @@
+﻿<?xml version="1.0"?>
+<FORM TITLE="">
+  <SCREEN NAME="CVS_MAIN" TITLE="Ủy quyền" POSITION="template" HEIGHT="450"
+          WIDTH="620" TMP_SCR_TYPE="medium" VERSION_BTN_REQD="N">
+
+    <HEADER>
+      <PAGE NAME="CVS_MAIN" ID="CVS_MAIN" HEIGHT="100">
+        <LABEL/>
+        <SECTION ID="HDR_SEC1" HEIGHT="">
+          <PARTITION ID="HDR_SEC1_PART1" NAME="HDR_SEC1_PART1" WIDTH="100"></PARTITION>
+        </SECTION>
+        <SECTION ID="HDR_SEC2" HEIGHT="">
+          <PARTITION ID="HDR_SEC2_PART1" NAME="HDR_SEC2_PART1" WIDTH="100"></PARTITION>
+        </SECTION>
+      </PAGE>
+    </HEADER>
+  </SCREEN>
+  <BLOCK SCREEN="CVS_MAIN" TYPE="Multiple Entry" TABPAGE="CVS_MAIN"
+         SECTION="HDR_SEC1" PARTITION="HDR_SEC1_PART1">
+    <ID>BLK_STTB_RECORD_LOG</ID>
+    <LABEL>ghi lại chi tiết</LABEL>
+    <DATAPAGESIZE>3</DATAPAGESIZE>
+    <WIDTH>474</WIDTH>
+    <HEIGHT>130</HEIGHT>
+    <ABS_POS>20,40</ABS_POS>
+    <DBT>STTB_RECORD_LOG</DBT>
+    <READ_ONLY>-1</READ_ONLY>
+    <EVENT>
+      <NAME>onClick</NAME>
+      <FUNCTION>fnChangeColor();fnShowValue_field()</FUNCTION>
+    </EVENT>
+    <FIELD TABPAGE="All">
+      <NAME>MOD_NO</NAME>
+      <ID>AUTH38</ID>
+      <TYPE>TEXT</TYPE>
+      <TABINDEX></TABINDEX>
+      <REQUIRED>-1</REQUIRED>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>2</SIZE>
+      <READ_ONLY>-1</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>NUMBER</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH></MAXLENGTH>
+      <LABEL>Số chỉnh sửa</LABEL>
+      <DBC>MOD_NO</DBC>
+    </FIELD>
+    <FIELD TABPAGE="All">
+      <NAME>RECORD_STAT</NAME>
+      <ID>AUTH54</ID>
+      <TYPE>TEXT</TYPE>
+      <ROWS></ROWS>
+      <COLS></COLS>
+      <SIZE>2</SIZE>
+      <LABEL>Trạng thái sửa đổi</LABEL>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH></MAXLENGTH>
+      <AUTHSCRN>0</AUTHSCRN>
+      <READ_ONLY>-1</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>CHAR</DTYPE>
+      <SIZE></SIZE>
+      <WIDTH></WIDTH>
+      <DBC>RECORD_STAT</DBC>
+      <LEGEND>Modification Status</LEGEND>
+    </FIELD>
+    <FIELD TABPAGE="All">
+      <NAME>MAKER_ID</NAME>
+      <ID>AUTH46</ID>
+      <TYPE>TEXT</TYPE>
+      <TABINDEX></TABINDEX>
+      <REQUIRED>0</REQUIRED>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>16</SIZE>
+      <READ_ONLY>-1</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>VARCHAR2</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH>12</MAXLENGTH>
+      <LABEL>Xác thực người tạo</LABEL>
+      <DBC>MAKER_ID</DBC>
+    </FIELD>
+    <FIELD TABPAGE="All">
+      <NAME>MAKER_DT_STAMP</NAME>
+      <ID>AUTH48</ID>
+      <TYPE>TEXT</TYPE>
+      <TABINDEX></TABINDEX>
+      <REQUIRED>0</REQUIRED>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>30</SIZE>
+      <READ_ONLY>-1</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>DATE</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH>7</MAXLENGTH>
+      <LABEL>Nhãn ngày của người tạo</LABEL>
+      <DBC>MAKER_DT_STAMP</DBC>
+    </FIELD>
+    <!--
+    <FIELD QRY_COL="" RSLT_COL="">
+      <NAME>MOD_DETAILS</NAME>
+      <ID>AUTH86</ID>
+      <TYPE>TEXTAREA</TYPE>
+      <ACCESSKEY>
+      </ACCESSKEY>
+      <REQUIRED>0</REQUIRED>
+      <AUTHSCRN>0</AUTHSCRN>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>-1</HIDDEN>
+      <ROWS>1</ROWS>
+      <COLS>50</COLS>
+      <DBC>MOD_DETAILS</DBC>
+    </FIELD>
+    -->
+  </BLOCK>
+  <!--
+  <BLOCK SCREEN="CVS_MAIN" TYPE="Single Entry">
+    <ID>AUTH_MAIN</ID>
+    <FIELD TABPAGE="All" ROW="" COL="">
+      <ID>FLDSET_UNAUTH_VERSIONS</ID>
+      <NAME>FLDSET_UNAUTH_VERSIONS</NAME>
+      <TYPE>FIELDSET</TYPE>
+      <HIDDEN>0</HIDDEN>
+      <ABS_POS>0,30</ABS_POS>
+      <WIDTH>570</WIDTH>
+      <HEIGHT>160</HEIGHT>
+      <SHOWIN>All</SHOWIN>
+      <LEGEND>
+        <![CDATA[Audit Log]]>
+      </LEGEND>
+    </FIELD>
+    <FIELD TABPAGE="All" ROW="" COL="" QRY_COL="" RSLT_COL="">
+      <NAME>btn_ok</NAME>
+      <ID>AUTH8</ID>
+      <TYPE>BUTTON</TYPE>
+      <REQUIRED>0</REQUIRED>
+      <SRC>Images/Ok.gif</SRC>
+      <AUTHSCRN>0</AUTHSCRN>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <EVENT>
+        <NAME>OnClick</NAME>
+        <FUNCTION>fnSave()</FUNCTION>
+      </EVENT>
+      <ABS_POS>510,500</ABS_POS>
+    </FIELD>
+    <FIELD TABPAGE="All" ROW="" COL="" QRY_COL="" RSLT_COL="">
+      <NAME>btn_Exit</NAME>
+      <ID>AUTH9</ID>
+      <TYPE>BUTTON</TYPE>
+      <REQUIRED>0</REQUIRED>
+      <SRC>Images/Exit2.gif</SRC>
+      <AUTHSCRN>0</AUTHSCRN>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <EVENT>
+        <NAME>OnClick</NAME>
+        <FUNCTION>fnExit()</FUNCTION>
+      </EVENT>
+      <ABS_POS>510,550</ABS_POS>
+    </FIELD>
+  </BLOCK>
+  -->
+  <BLOCK SCREEN="CVS_MAIN" TABPAGE="CVS_MAIN" TYPE="Multiple Entry"
+         SECTION="HDR_SEC2" PARTITION="HDR_SEC2_PART1">
+    <ID>BLK_STTB_FIELD_LOG</ID>
+    <LABEL>Chi tiết trường</LABEL>
+    <ABS_POS>185,42</ABS_POS>
+    <WIDTH>474</WIDTH>
+    <HEIGHT>200</HEIGHT>
+    <DATAPAGESIZE></DATAPAGESIZE>
+    <DBT>STTB_FIELD_LOG</DBT>
+    <FIELD TABPAGE="All">
+      <NAME>FIELD_NAME</NAME>
+      <ID>AUTH33</ID>
+      <TYPE>TEXT</TYPE>
+      <TABINDEX></TABINDEX>
+      <REQUIRED>0</REQUIRED>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>20</SIZE>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>VARCHAR2</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH>30</MAXLENGTH>
+      <LABEL>Tên trường</LABEL>
+      <DBC>FIELD_NAME</DBC>
+    </FIELD>
+    <FIELD TABPAGE="All">
+      <NAME>OLD_VALUE</NAME>
+      <ID>AUTH34</ID>
+      <TYPE>TEXT</TYPE>
+      <TABINDEX></TABINDEX>
+      <REQUIRED>0</REQUIRED>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>20</SIZE>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>VARCHAR2</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH>2000</MAXLENGTH>
+      <LABEL>Giá trị cũ</LABEL>
+      <DBC>OLD_VALUE</DBC>
+    </FIELD>
+    <FIELD TABPAGE="All">
+      <NAME>NEW_VALUE</NAME>
+      <ID>AUTH35</ID>
+      <TYPE>TEXT</TYPE>
+      <TABINDEX></TABINDEX>
+      <REQUIRED>0</REQUIRED>
+      <AUTHSCRN></AUTHSCRN>
+      <SIZE>20</SIZE>
+      <READ_ONLY>0</READ_ONLY>
+      <DISABLED>0</DISABLED>
+      <HIDDEN>0</HIDDEN>
+      <DTYPE>VARCHAR2</DTYPE>
+      <CHECKED>0</CHECKED>
+      <SUMMARY/>
+      <SHOWIN></SHOWIN>
+      <MAXLENGTH>2000</MAXLENGTH>
+      <LABEL>Giá trị mới</LABEL>
+      <DBC>NEW_VALUE</DBC>
+    </FIELD>
+  </BLOCK>
+  <BLOCK SCREEN="CVS_MAIN" TABPAGE="CVS_MAIN" TYPE="Single Entry" VIEW="Single Entry"
+         ROW="" COL="">
+    <ID>BLK_STD_BUTTONS_IMG</ID>
+    <LABEL/>
+    <ABS_POS/>
+    <WIDTH/>
+    <HEIGHT/>
+    <DATAPAGESIZE/>
+    <DATASRC>DETB_RTL_TELLER</DATASRC>
+    <OKCANCEL>-1</OKCANCEL>
+    <FIELD TABPAGE="CVS_MAIN">
+      <NAME>BTN_OK</NAME>
+      <ID>kal18</ID>
+      <TYPE>BUTTON</TYPE>
+      <TABINDEX/>
+      <AUTHSCRN/>
+      <SIZE/>
+      <READ_ONLY/>
+      <DISABLED/>
+      <HIDDEN/>
+      <CHECKED/>
+      <SUMMARY/>
+      <SHOWIN/>
+      <VALUE>Ok</VALUE>
+      <ABS_POS/>
+      <SRC>Images/Ok.gif</SRC>
+      <EVENT>
+        <NAME>onclick</NAME>
+        <FUNCTION>fnSave(event)</FUNCTION>
+      </EVENT>
+    </FIELD>
+    <FIELD TABPAGE="CVS_MAIN">
+      <NAME>BTN_EXIT</NAME>
+      <ID>kal20</ID>
+      <TYPE>BUTTON</TYPE>
+      <TABINDEX/>
+      <AUTHSCRN/>
+      <SIZE/>
+      <READ_ONLY/>
+      <DISABLED/>
+      <HIDDEN/>
+      <CHECKED/>
+      <SUMMARY/>
+      <SHOWIN/>
+      <VALUE>Exit</VALUE>
+      <ABS_POS/>
+      <SRC>Images/Exit2.gif</SRC>
+      <EVENT>
+        <NAME>onclick</NAME>
+        <FUNCTION>fnExit(event)</FUNCTION>
+      </EVENT>
+    </FIELD>
+  </BLOCK>
+</FORM>
+
+
+
+ 

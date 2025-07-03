@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-ejb-jar PUBLIC "-//Evermind//DTD Enterprise JavaBeans 1.1 runtime//EN" "http://xmlns.oracle.com/ias/dtds/orion-ejb-jar.dtd">
+<orion-ejb-jar>
+    <enterprise-beans>
+        <message-driven-deployment 
+                name="GW_MDB_Bean"
+                connection-factory-location="MDBQCF" 
+                destination-location="MDB_QUEUE" 
+                listener-threads="100" 
+                subscription-name="GW_MDB_Bean_Sub" 
+                transaction-timeout="172800">
+
+            <!-- Resource Ref mappings -->
+            <resource-ref-mapping name="FLEXTEST.WORLD" location="FLEXTEST.WORLD" />
+            <resource-ref-mapping name="MDBQCF" location="MDBQCF" />
+
+            <!-- Resource Ref Environment mappings -->
+            <resource-env-ref-mapping name="MDB_QUEUE_RESPONSE" location="MDB_QUEUE_RESPONSE" />
+            <resource-env-ref-mapping name="MDB_QUEUE_DLQ" location="MDB_QUEUE_DLQ" />
+			<resource-env-ref-mapping name="SW_MDB_QUEUE_RESPONSE" location="SW_MDB_QUEUE_RESPONSE" />
+        </message-driven-deployment>
+    </enterprise-beans>
+    <assembly-descriptor>
+        <default-method-access>
+            <security-role-mapping impliesAll="true" name="default-ejb-caller-role"/>
+        </default-method-access>
+    </assembly-descriptor>
+</orion-ejb-jar>

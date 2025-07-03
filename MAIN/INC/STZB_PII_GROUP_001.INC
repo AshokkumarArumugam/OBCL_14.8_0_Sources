@@ -1,0 +1,66 @@
+PROMPT PROCESSING FOR STZB_PII_GROUP_001
+
+BEGIN
+INSERT INTO STZB_PII_GROUP
+(PII_GROUP,PII_DESC)
+ VALUES 
+('CI',
+'Customer Contact Information'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO STZB_PII_GROUP
+(PII_GROUP,PII_DESC)
+ VALUES 
+('CN',
+'Customer Name'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO STZB_PII_GROUP
+(PII_GROUP,PII_DESC)
+ VALUES 
+('DI',
+'Demographic Information'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO STZB_PII_GROUP
+(PII_GROUP,PII_DESC)
+ VALUES 
+('FI',
+'Financial Information'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO STZB_PII_GROUP
+(PII_GROUP,PII_DESC)
+ VALUES 
+('OI',
+'Other Information'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO STZB_PII_GROUP
+(PII_GROUP,PII_DESC)
+ VALUES 
+('UI',
+'Unique Identifiers'
+)
+;
+END;
+/
+
+
+
+commit;

@@ -1,0 +1,558 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta>
+<meta content="utf-8" http-equiv="encoding"></meta>
+<title>FLEXCUBE UBS Integration Gateway</title>
+<script type="text/javascript">
+	
+	function initServiceHome() {
+		var ua = (navigator.userAgent).toUpperCase();
+		var src = "";
+		if (ua.indexOf("MSIE") != -1 || (ua.indexOf("TRIDENT") != -1 && ua.indexOf("RV") != -1)) {
+			src = "BrowserIE.js";
+		} else {
+			src = "BrowserNonIE.js";
+		}
+
+		var script = document.createElement('script');
+		script.setAttribute('src', src);
+		script.setAttribute('type', 'text/javascript');
+		document.getElementsByTagName("head")[0].appendChild(script);
+
+		if (script.readyState) { //IE
+			script.onreadystatechange = (function() {
+				if (script.readyState == "loaded" || script.readyState == "complete") {
+					script.onreadystatechange = null;
+					setHeights();
+					MenuDetails();
+				}
+			});
+		} else { //Others
+			script.onload = (function() {
+				setHeights();
+				MenuDetails();
+			});
+		}
+
+	}
+</script>
+<style type="text/css">
+html, body, blockquote, pre, abbr, h1, acronym, address, em, img, sub,
+	sup, a, form, label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+}
+
+html, body, #wrapper {
+	min-height: 100%; /*Sets the min height to the
+					 height of the viewport.*/
+	width: 100%;
+	height: 100%; /*Effectively, this is min height
+				for IE5+/Win, since IE wrongly expands
+				 an element to enclose its content.
+				 This mis-behavior screws up modern 
+				 browsers*/
+}
+
+html>body, html>body #wrapper {
+	height: auto; /*this undoes the IE hack, hiding it
+						from IE using the child selector*/
+	margin-top: 0px;
+}
+
+body {
+	margin: 0px;
+	font-family: Arial, helvetica, sans-serif;
+}
+
+#wrapper {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#main {
+	margin: 0px; /*Modify value as needed for 
+				footer height.*/
+	height: auto;
+	padding: 0px;
+}
+
+a {
+	color: #0000FF
+}
+
+h2 {
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	font: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	margin-left: 16px;
+}
+
+legend {
+	font-size: .8em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	padding: 2px;
+	font-weight: bold;
+}
+
+p {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	margin-left: 10px;
+	/*padding-left:8px;*/
+	padding-right: 8px;
+	color: #606060;
+}
+
+/*h2 {
+	padding:8px;
+}*/
+em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#navbar {
+	display: block;
+	margin: 0px;
+	height: 27px;
+	background-image: url(Images/navbarbkg.gif);
+	background-repeat: repeat-x;
+}
+
+.contentframe {
+	height: 100%;
+	display: block;
+	clear: both;
+}
+
+#resultframe {
+	padding-left: 5px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	background-color: #85c3f6;
+	text-align: left;
+	white-space: nowrap;
+	font-weight: bold;
+	height: 28px;
+	border-right: 2px solid #FFFFFF;
+	position: relative;
+	top: expression(offsetParent.scrollTop);
+}
+
+#searchframe {
+	padding-left: 5px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #dfdede;
+	border-bottom: 1px solid #919191;
+	text-align: right;
+	white-space: nowrap;
+	display: none;
+}
+
+#resultPane {
+	display: block;
+	float: left;
+	width: 25%;
+	border-right: 2px solid #919191;
+	padding-top: 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#leftpane {
+	display: block;
+	float: left;
+	width: 25%;
+	border-right: 2px solid #919191;
+	padding-top: 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#rightpane {
+	float: left;
+	width: 73.5%;
+	background-color: #f7f7f7;
+	border-left: 1px solid #7b7b7b;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#footer {
+	clear: both;
+	display: block;
+	width: 100%;
+	height: 30px;
+	position: relative;
+	z-index: 10; //
+	bottom: 0px;
+	margin-bottom: 0px;
+	background-color: #daecff;	
+	background-repeat: repeat-x;
+}
+
+#footer label {
+	color: #ffffff;
+	font-size: 11px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom:10px;
+}
+
+#divLoader {
+	position: absolute;
+	left: expression(offsetParent.clientWidth-130 + 'px');
+	top: 50px;
+	width: 90px;
+	display: block;
+	margin: 0px;
+	height: 18px;
+	background-color: #ffcc00; /*#003062;*/
+	color: black;
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.copyrightframe {
+	display: block;
+	border: 1px solid #bdbdbd;
+	/*padding:5px;
+	margin-bottom:5px;
+	margin-top:5px;*/
+	background-color: #f0f0f0;
+}
+
+.generictext {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+}
+
+.generictable {
+	
+}
+
+.generictable td, th {
+	border: 1px solid #85c3f6;
+	padding: 8px;
+	font-size: .8em;
+	/*letter-spacing:1px;	*/
+}
+
+.generictable th {
+	background-color: #daecff;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.datatable td, th, caption {
+	border: 1px solid #85c3f6;
+	padding: 8px;
+	font-size: 13px;
+	/*letter-spacing:1px;	*/
+	background-color: #FFFFFF;
+	text-align: left;
+}
+
+.datatable caption {
+	font-weight: bold;
+	color: #CC6600;
+}
+
+.datatable th {
+	white-space: nowrap;
+	vertical-align: top
+}
+
+.subth {
+	background-color: #e2f2ff;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.generictable td {
+	background-color: #ffffff;
+	width: 98%;
+}
+
+.genericlist {
+	list-style-type: circle;
+	margin-left: 15px;
+	padding-left: 10px;
+}
+
+.genericlist li {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	vertical-align: middle;
+	margin-left: 18px;
+}
+
+.primarynav {
+	list-style: none;
+	border: 0;
+	margin: 0;
+	padding: 3px;
+	padding-left: 16px;
+}
+
+.primarynav li {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	vertical-align: middle;
+	color: #000000;
+	display: block;
+	float: left;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.nestedlist {
+	margin-left: 7px;
+	padding: 0;
+	border: none;
+	list-style: none;
+	color: #0000FF;
+}
+
+.nestedlist li {
+	margin-left: 5px;
+	margin-top: 3px;
+	text-decoration: none;
+	width: 100%;
+	letter-spacing: 1px;
+}
+
+.nestedlist li img {
+	vertical-align: text-top;
+}
+
+.nestedlist  a {
+	text-decoration: none;
+	width: 100%;
+	font-size: .8em;
+	vertical-align: text-top;
+	letter-spacing: 1px;
+}
+
+.nestedlist a:hover {
+	color: #FF6600;
+}
+
+.L1container {
+	width: 45%;
+	margin: 10px;
+	padding: 8px;
+	vertical-align: top;
+	border: none;
+}
+
+.L1container legend {
+	width: 100%;
+	padding: 5px;
+	background-color: #daecff;
+	border: 1px solid #cbddf0;
+	margin-left: -8px;
+	display: block;
+}
+
+.L2container {
+	margin: 20px;
+	padding: 8px;
+	vertical-align: top;
+	border: none;
+	background-color: #F4F4F4;
+}
+
+.L3container {
+	padding: 8px;
+	vertical-align: top;
+	border: none;
+}
+
+.TitleBar {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	vertical-align: middle;
+	color: #000000;
+	display: block;
+	height: 48px;
+	font-weight: bold;
+	white-space: nowrap;
+	background-image: url(Images/headerbkg.gif);
+	background-repeat: repeat-x;
+}
+
+.Inputbutton {
+	background-image: url(Images/search.gif);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	width: 15px;
+	height: 15px;
+	border: 0px;
+	vertical-align: middle;
+	cursor: hand;
+}
+
+.Search {
+	height: 15px;
+	border: 1px solid #919191;
+	vertical-align: middle
+}
+
+.GrphBtns {
+	background-color: white;
+	FONT-FAMILY: Verdana, Arial;
+	border: none;
+	cursor: hand;
+	height: 15px;
+	width: auto;
+	COLOR: blue;
+	font-size: 12px;
+}
+
+.bars {
+	scrollbar-face-color: #EBF5FF;
+	scrollbar-base-color: #EBF5FF;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: #F3F3F3;
+	scrollbar-shadow-color: #EBF5FF;
+	scrollbar-highlight-color: #EBF5FF;
+	scrollbar-3dlight-color: #78AAFF;
+	scrollbar-darkshadow-Color: #78AAFF;
+}
+
+.Contentdescription {
+	margin: 20px;
+	padding: 8px;
+	vertical-align: top;
+	border: 1px solid #858585;
+	background-color: #fffdec;
+	width: 50%;
+	font-size: .8em;
+	line-height: 1.2;
+}
+
+#modalContainer {
+	background-color: transparent;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 10000;
+	background-image: url(tp.png);
+	/* required by MSIE to prevent actions on lower z-index elements */
+}
+
+#alertBox {
+	position: relative;
+	width: 250px;
+	min-height: 80px;
+	margin-top: 240px;
+	border: 2px solid #000;
+	background-color: #F2F5F6;
+	padding-bottom: 5px;
+	background-image: url(Images/alertImg.bmp);
+	background-repeat: no-repeat;
+	background-position: 20px 30px;
+}
+
+#modalContainer>#alertBox {
+	position: fixed;
+}
+
+#alertBox h1 {
+	margin: 0;
+	font: bold 0.8em arial;
+	background-color: #284484; /*#dfdede;/*#0033e0;/*#006699;/*#78919B;*/
+	color: #FFF;
+	border-bottom: 1px solid #000;
+	padding: 2px 0 2px 5px;
+	padding-bottom: 5px;
+}
+
+#alertBox p {
+	font: 12px arial;
+	height: 40px;
+	padding-left: 17px;
+	margin-left: 55px;
+	padding-top: 5px;
+}
+
+#alertBox #closeBtn {
+	display: block;
+	position: relative;
+	margin: 5px auto;
+	padding: 3px;
+	border: 1px solid #000;
+	width: 70px;
+	font: 0.7em verdana, arial;
+	text-transform: uppercase;
+	text-align: center;
+	color: #000;
+	background-color: #dfdede; /*#0033e0;/*#006699;/*#78919B;*/
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+</style>
+</head>
+<body class="bars" onload="initServiceHome();"> 
+	<div id="wrapper" style="height: 90%;">
+		<div id="Branding" class="TitleBar">
+			<img src="Images/i-flexlogo.gif" width="73" height="47"
+				title="i-flex logo" style="float: right;"></img>
+			<ul class="primarynav" style="float: right;">
+				<li><a accesskey="0" href="#" onclick="javascript:disp_alert()"
+					style="color: #0000FF; position: relative; top: 3px; right: 75px;">Access
+						Key Details</a></li>
+			</ul>
+			<img src="Images/FCUBStitle.gif" width="333" height="46"
+				title="Flexcube UBS Gateway Integration"></img>
+		</div>
+		<div id="navbar"></div>
+		<div id="divServices" class="contentframe" style="display: block;">
+		</div>
+		<div id="divOperations" class="contentframe" style="display: none;">
+		</div>
+		<div id="divLoadIndicator" class="contentframe" style="display: none">
+		</div>
+		<div id="divListOfXSDs" class="contentframe" style="display: none;">
+		</div>
+		<div id="divXSDDesc" class="Contentdescription" style="display: none;">
+		</div>
+		<div id="divLoader" class="divLoader" style="display: none;"></div>
+		<div id="leftpane" style="display: none; height: 300px;"></div>
+		<div id="resultPane" style="display: none; height: 300px;"></div>
+		<div id="rightpane" style="display: none;"></div>
+		<input type="hidden" id="SelectedXSD"></input>
+		
+		</div>
+	
+</body>
+</html>

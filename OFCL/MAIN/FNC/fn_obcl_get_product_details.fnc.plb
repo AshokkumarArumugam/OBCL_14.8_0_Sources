@@ -1,0 +1,36 @@
+CREATE OR REPLACE FUNCTION fn_obcl_get_product_details wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+929 3c5
+PkAxrJKG5TZ9IL1PfhqkOEJsY9swgzsrLiATZy/NMZ3gSLTxC2z3I/SNauFt1kWKJVWV8K4K
+36j0Y4VIvd6WzKoSyX8U30tTJ9mvYcmaExBO7ohRX1t7b3a538n4zYuzaMFjOod+IE8g8scT
+nA+x0K6GdxoJRpMO7qX0rVb0dOLjek9Kj7tBd32N89i+r1rlATQaymWyrGNPiajefmUPWHX2
+Rcjb5ZCosKhGw7d1JqovZ2MhN+feSVcK7iQ2EXOwovGiss5PDqpfALd2z6gEbHbgAmHMHggp
+ZosRKCZPYskmIT3QLUl1se+zjBNlljwTElQgl2KJKK1oACBIl4GfgsNSIGUs8G4NWD73+qkV
+lWwwzC8aXxJO+9INGvNUpZNDoL2mZ8xgLbCF2Di0ZnY2CD+OCZSFVw2VIKjTNnwfLmQlM/Mf
+ZahHcO/M1vrQvSiDyEZxxqGndODlgtUEhmPzp3VAEOfV3fAON8hrzOx9PL360lyxuXKJy/Do
+BObZhzFZ1AsAJ0UMmRfpbjoiYLhcr5UeJtct1XuUx/NKPLM+/BEyTEcLKixdsvWst8F9KB+8
+nfZutQYZh8Br2qRvofePRjz0IwXLkSMRfL3M7PJq5qW/2JbqwyU8JBzROHHQrNTMsf5BCpDQ
+OSO9uwX0pS9aU6CBIfkYvW5rV1ErGZG/vgBAuUM/C03Utu3LET2PjKOWSt7weMXdriL8MYif
+dJ6frPb8XdLS2KsCkL4gf5/ObzrQweQmRyBrQVNQWWhAK7up43zpO/CbSyVcBQ1HUDSWwuoG
+T3lbaCifvXq8bL6F2eBztr828ubwnTxDHV3pLWKPFdacH2lPiDmNWZ/gVZNXTxL4yO0UdGKk
+Etb+BT+BuaMClvujSvayXlcTFcbroxhUBhOswvu3IZWJ3k/wmkMuKPV3iWqi71tmSEYsfAMO
+RXOff7WlnuDcNTE=
+
+/

@@ -1,0 +1,29 @@
+create or replace function fn_ol_get_asset_ratio wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+34f 1e2
+SYfE/VsdDUAUul/eydG5yk6z+rQwg2MJr9xqfHRDq6oC0JAhLuP2Ma95ACsmMgzsp1IYn6ZG
+RnXbM7Vm+hjsb1IVBxbcQZpOAzQebHgB786S3q4sM81D4NDBA9qdSpz+XuHFGDyL8AQuvi3s
+vyurw2MOq1rBEiW/HkRTbHnkO4kkqB1cAAWsdBIEkgxfVDfJ6/Y1KR5fKmlbTk1WMqSYn4VC
+afyeDKiGBwmmw8aUwTl/4Tfrf/DslKyDKehgjV/OAtkqKFbUn+R9tyZDDXhUiwEM4DzzVRHC
+6ITT6uKlkhl02H+vaXYbTwDvBtDNY5/Yf6HQEduUm8otBkY6xIcUCSwYyGZAzCbFgpN4eWrC
+fd5y7Jx3U5UPmY5QFETl42amECJz3OKlGbX/Se7aFARc3rYopKRYTy82HCyg9IVhr5OenndT
+3k7XpSTdB266JK24nqzwUnukRV7o5QWOVBjSi/3ZZ6/9
+
+/

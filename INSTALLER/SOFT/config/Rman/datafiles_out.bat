@@ -1,0 +1,12 @@
+cd C:\DESTINATION-DIR
+zip C:\BKP-DEMO\USERS01.DBF.zip USERS01.DBF
+zip C:\BKP-DEMO\SYSAUX01.DBF.zip SYSAUX01.DBF
+zip C:\BKP-DEMO\SYSTEM01.DBF.zip SYSTEM01.DBF
+zip C:\BKP-DEMO\FCJ103_01.DBF.zip FCJ103_01.DBF
+zip C:\BKP-DEMO\UNDOTBS01.DBF.zip UNDOTBS01.DBF
+cd C:\BKP-DEMO 
+tar rvf C:\BKP-DEMO\Install_dbf.tar USERS01.DBF.zip
+tar rvf C:\BKP-DEMO\Install_dbf.tar SYSAUX01.DBF.zip
+tar rvf C:\BKP-DEMO\Install_dbf.tar SYSTEM01.DBF.zip
+tar rvf C:\BKP-DEMO\Install_dbf.tar FCJ103_01.DBF.zip
+tar rvf C:\BKP-DEMO\Install_dbf.tar UNDOTBS01.DBF.zip

@@ -1,0 +1,35 @@
+CREATE OR REPLACE FUNCTION fn_ol_get_bill_todate wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+646 388
+unCmWJVf/ZG8BxItiBZzJmEnoGswgxCJLiCMfC9A/p6d4NHV03lGnw3E8CN8cAlhSi7wKcb6
+8v0J6ROylGvVO4ksD9A3G2wUdmYGiHI0TiLfUv+EjefLCjvReJJjTYHrIwOzMr5xdwIeXwli
+3ti+qUbWcMWF9RZT8RTDP/4lyc9c0D6QU8saGwFB4Y9vbywgs39jIjlEsHExsuKCn2xcvl0v
+8+lVFMeWAEchCaFaMqIcguvhMCIoTW7sZ8h86E7DvfACfg0m/VCTFUxJUTUiTl4mzdmFCzd4
+CPHNSO1WcE7SkhewH9mqHsHgwSiSphk/mogtmhLXD24LejKQYQK3zGCERMebfOY+vU+k9qQT
+X0bVOBSq7K9WxglHUjrbxcobI6oubER9WLLqUL1lrUaAfZUHA1B66mIYhDntgsyQs7pWOIJg
+xkXQahYELAq5w7r9eXeQGO9z67OLeHvcAvFqLRFl+zuki2GzBcLfS9LACKpbCuXkmXJDYeJv
+cirYnpket5VU9CJGIZXWuVGRy2hB01EL9/3pl1ZYSKT6/9M/xkBp3Ly6IP9QehWtcvXF6Yks
+dvY4nwpr402IIhJZIGWQCkYB+V/lSOvGVQPNQAS/qbPljL2QmYJ7/8HV0h6eP9wFgRmyZWuI
+tvs4IqFep0Y2CnhrIDz9PMeVl4+zk7gkcKZV9lzRmtH3aqxIB6J8C1zJ6c5/sdQ7EqggdMq3
+Sl5fpcYLqE4bb5FyMWfTHIcsXw2hF0Cgf9B4AtwW/Rswptxxx2KqSZe9hDHWIuQ/BT2lw9iX
+5anlTZrlzSP44VUH6A9SXzKDrpEkyeZbuW9FfG4BPFDU72UWcM7vgAqe+BfEX/KtgLsF4noX
+yQQd4V9DrN4eFPxpFRjOm8vCXWuz
+
+/

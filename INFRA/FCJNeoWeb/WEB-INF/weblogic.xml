@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+        xmlns:wls="http://www.bea.com/ns/weblogic/90"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd 
+        http://www.bea.com/ns/weblogic/90 http://www.bea.com/ns/weblogic/90/weblogic-web-app.xsd">		
+	<wls:library-ref>
+        <wls:library-name>jax-rs</wls:library-name>
+    </wls:library-ref>
+        <context-root>{APP_CONTEXT}</context-root>
+    <wls:session-descriptor>
+		{PERSISTENCE_STORE_TYPE}
+        <!--MAA-UI-02-->
+        <wls:cookie-secure>{HTTPS_ENABLED}</wls:cookie-secure>  
+        <wls:url-rewriting-enabled>false</wls:url-rewriting-enabled>
+	{JSESSION_NAME}
+    </wls:session-descriptor>
+	<container-descriptor>
+		<prefer-application-packages>
+		  <package-name>org.apache.poi.*</package-name>
+		  <package-name>org.apache.xmlbeans.*</package-name>
+		  <package-name>com.google.common.*</package-name>
+		  <package-name>org.apache.commons.*</package-name>
+		  <package-name>org.openxmlformats.*</package-name>
+		  <package-name>schemaorg_apache_xmlbeans.*</package-name>
+		  <package-name>org.quartz.*</package-name>
+	   </prefer-application-packages>
+	   <prefer-application-resources>
+		  <resource-name>schemaorg_apache_xmlbeans/system/sXMLCONFIG/TypeSystemHolder.class</resource-name>
+		  <resource-name>schemaorg_apache_xmlbeans/system/sXMLLANG/TypeSystemHolder.class</resource-name>
+		  <resource-name>schemaorg_apache_xmlbeans/system/sXMLSCHEMA/TypeSystemHolder.class</resource-name>
+		  <resource-name>schemaorg_apache_xmlbeans/system/sXMLTOOLS/TypeSystemHolder.class</resource-name>
+	   </prefer-application-resources>
+	</container-descriptor>
+</wls:weblogic-web-app>

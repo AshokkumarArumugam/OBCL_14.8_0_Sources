@@ -1,0 +1,36 @@
+create or replace function olfn_chg_acc wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+5ed 33f
+DnI1f6wbzGNu318EAL3UT/92Kbkwg/DDr0qDfC/NPToYvsP7vWufBV7My69Z5qD0t4PLTNxv
+4UUAoMo7tEEzhtphtiB9QOWtrU6KWEIgQZANrB5Rb7j5OnORMyQc10idB6HbBNXwpxVaR19N
+N5ThtBuNz5CXmFgHUtbm/YdkuDYZ2AkuUlu0Y5kYYVHIbbPA9CU5KRNg0zLVRNI+ysXDIZLM
+VWA8Cqf4l1bDkM9B0VbsK4N9ISymvyzn++ZTAVGg4n1NopLBMtXSbsTy/iSghu0Z331eUkhX
+mssJEJsqpa9aBtt7b5nJ1lySUKFRpQrr2ISMEfRCqBkz+WzMBYuHWCsfY+zBTRIwZXdB8mB+
+AtnfT3glU5UU0UJ6bQj1rSKkKOoDbbUtAEfVNwSmh4em4ugR+vBBfkH/B8FzlYpyB4wAHq7L
+vrQDCzbuJIjxrJ4MXasE9bY2FkbieWsiLy1ZPDw1MibVlPJCOSFWo55ixPP4YWChi/0z8TQp
+V+AmVPsB/X1liWqGX4H/yDL0P+pHsb4pTLaadxL+HuTPRd0B/ufcuAliuAjAQpdfboLenj+a
+32Q5J8y4IRk1Xg7JkAR+Rxc1p2XrDOli8ecmAaGn18xEreFn5V7dQ2SoiNxRwYqbSeq5U6FO
+zvhaVtpA782thJ9Z2mIXVdebtrlIi1ZxUwo1tu8Co5xUzP9SZUo5aF2zKuC/5FVxdVJDYH4u
+p3R2vxKg0lo51PlMvhC7CYPPe1soRpyF4oZ3grzhTIVD1WX+GBQsNWTMyNHYEhb4FPXHS8PO
+nkZOb6hI6ckPsOOnbb+qpqkXqQg=
+
+/
+Create or replace synonym olfns_olchg_acc for olfn_chg_acc
+/

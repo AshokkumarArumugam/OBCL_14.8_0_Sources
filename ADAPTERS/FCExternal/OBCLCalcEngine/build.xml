@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir="." default="build" name="OBCLCalcEngine">
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.8" />
+	<property name="source" value="1.8" />
+	<path id="Web-App-Libraries.libraryclasspath">
+		<pathelement location="WebContent/WEB-INF/lib/jackson-annotations-2.9.8.jar" />
+		<pathelement location="WebContent/WEB-INF/lib/jackson-core-2.9.8.jar" />
+		<pathelement location="WebContent/WEB-INF/lib/jackson-databind-2.9.8.jar" />
+		<pathelement location="WebContent/WEB-INF/lib/jackson-dataformat-yaml-2.9.8.jar" />		
+		<pathelement location="WebContent/WEB-INF/classes" />
+	</path>
+	<path id="EAR Libraries.libraryclasspath" />
+	
+	<path id="OBCLCalcEngine.classpath">
+		<pathelement location="build/classes" />
+		<path refid="Web-App-Libraries.libraryclasspath" />
+		<path refid="EAR Libraries.libraryclasspath" />
+	</path>
+	<target name="init">
+		<mkdir dir="build/classes" />
+		<copy includeemptydirs="false" todir="build/classes">
+			<fileset dir="src">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="build/classes">
+			<fileset dir="WebContent/WEB-INF/lib">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="build/classes" />
+	</target>
+	<target name="compile">
+		<mkdir dir="build/classes" />
+		<javac srcdir="src" destdir="build/classes" classpathref="Web-App-Libraries.libraryclasspath" />
+	</target>
+	<presetdef name="javac">
+		<javac includeantruntime="false" />
+	</presetdef>
+	<target depends="clean" name="cleanall" />
+	<target depends="build-subprojects,build-project" name="build" />
+	<target name="build-subprojects" />
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src" />
+			<src path="WebContent/WEB-INF/lib" />
+			<classpath refid="OBCLCalcEngine.classpath" />
+		</javac>
+	</target>
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
+	<target name="DateDiffTest">
+		<java classname="com.ofss.fcc.calcengine.utils.DateDiffTest" failonerror="true" fork="yes">
+			<classpath refid="OBCLCalcEngine.classpath" />
+		</java>
+	</target>
+	<target name="Test">
+		<java classname="com.ofss.fcc.calcengine.utils.Test" failonerror="true" fork="yes">
+			<classpath refid="OBCLCalcEngine.classpath" />
+		</java>
+	</target>
+	<target name="war" description="Bundles the application as a WAR file" depends="clean, build">
+		<mkdir dir="WebContent/WEB-INF/classes" />
+
+		<copy includeemptydirs="false" todir="WebContent/WEB-INF/classes">
+			<fileset dir="build/classes">
+				<include name="**/*.class" />
+			</fileset>
+		</copy>
+
+		<war destfile="OBCLCalcEngine.war" basedir="WebContent" needxmlfile="false">
+		</war>
+	</target>
+</project>

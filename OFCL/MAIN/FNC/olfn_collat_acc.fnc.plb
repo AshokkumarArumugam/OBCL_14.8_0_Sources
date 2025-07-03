@@ -1,0 +1,34 @@
+create or replace function olfn_collat_acc wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+49c 2c5
+SphJp4hMg89S36/7AW85HIBSWUIwg/DDLiAFfHRVXPmUNHSfqcoERZCrzo+FWSdHp3H0ufG3
+L5FVfMoDN6/tgcbQ+cgeVrJ8pOETchQsmozCO4kaWdUR/yQnvyf/wQseSrC2ojePt9pll4ho
+e2M1kZ7bXuBdhOC5p+9Krk2FoZAGbBlq5lbh1sOIRCLLWLIZrXEmIXs7XWkMWTJRlm0yBxtE
+rfKfgo+5tu/d44qFk1GsXrKbmHeNUY3YVjof+QbvpPJ28qEpGnpH8hAcI48ZWEZTvuUYsuwN
+fazpwiwHoM602XxRNUuvTOh1EhgTJ8TF8B4sUXyc7mXbRRD5TuRz8rTNDBAnqioy52jSJ7n4
+tByXZDxciUOfDYSbuCHEUYz9522t8uF/8h3IPiWmtytLKkWmkF44sBtqFNimJMVlB2fPEmdq
+GdeT25wapuH3TY5n43jEhr6BHdFG6gV9dgdk5ibHwZDnscTbe/lIh/xvg4au46g2MBAQ/QsE
+M1Uh0TtCGEb0Stp7DJ3I2QpDPtHGbATp/cQRrWJb0GgKSTYexC2KAMxKRCh+Sfr5zaQPIZAh
+PiOheyQGWK0cQWQrdLN9PpZMIYBv1pxqY0XgNrWhTdoQsf1ub3hzoTBSHsnTv0UykHjgNO4i
+hahoDFaYnY2H1UTsdQ5E+UPjpfr+UgT/m7BXmtrDKZJqD986Yjk=
+
+/
+Create or replace synonym olfns_collat_acc for olfn_collat_acc
+/

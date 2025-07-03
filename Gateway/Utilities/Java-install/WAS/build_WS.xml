@@ -1,0 +1,217 @@
+<project name="FCUBS_7-2_GW" default="all" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property environment="env"/>
+	<property name="source" value="."/>
+	<property name="ibm_was_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="batch_files" value="${env.KERNEL_INSTALL_DIR}/GW_WS/setup/WAS"/>
+	<property name="user_home" value="${env.USER_HOME}"/>
+	<property name="service_name" value="${env.SERVICE_NAME}"/>
+	<property name="ibm_was_ext" value="${ibm_was_home}/lib/ext"/>
+	<property name="src_ws" value="../../src"/>
+	<property name="src_ws_output" value="../../src/output"/>
+
+	<property name="src_common" value="../../src/common"/>
+	<property name="config" value="../../config"/>
+	<property name="ws_lib" value="../../lib"/>
+	<property name="config_wsdl" value="../../config/wsdl"/>
+	<property name="src_gw_ws" value="${src_ws}/com/iflex/fcubs/gw/ws"/>
+	<property name="src_gw_ejb" value="${src_common}/com/iflex/fcubs/gw/ejb"/>
+	<property name="src_gw_ws_types" value="${src_ws}/com/iflex/fcubs/gw/ws/types"/>
+	<property name="src_srvc_ejb_client" value="${src_common}/com/iflex/fcubs/gwservices/ejb"/>
+	<property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_xml" value="${src_common}/com/iflex/fcubs/gwutil/xml"/>
+	<property name="build" value="../../build/${service_name}"/>
+	<property name="dist" value="../../dist"/>
+
+	<!--taskdef name="endptenabler"
+			classname="com.ibm.websphere.ant.tasks.endptEnabler"
+			classpath="${env.APP_SERVER_HOME}/lib/wsanttasks.jar"/-->
+	<taskdef name="wsdl2java"
+			classname="com.ibm.websphere.ant.tasks.WSDL2Java"
+			classpath="${env.APP_SERVER_HOME}/lib/wsanttasks.jar"/>
+
+	<path id="compile.classpath">
+		<pathelement location="${ibm_was_home}/lib/j2ee.jar"/>
+		<pathelement location="${ibm_was_home}/lib/webservices.jar"/>
+	</path>
+
+  <target name="all" depends="clean_build, make_dir, compile_common,  wsdl_2_java, copy_interface, compile_ws, do_jar, do_ear,clean "/>
+
+	<target name="clean_build">
+ 		<delete dir="${build}"/>
+ 		<delete dir="${src_gw_ws_types}"/>
+	</target>
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/META-INF"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/WEB-INF/wsdl"/>
+		<mkdir dir="${dist}/WEB-INF/classes"/>
+
+		<!-- Create the time stamp -->
+		<copy todir="${dist}/WEB-INF">
+			<fileset dir="${config}">
+				<include name="web_WS_${service_name}.xml"/>
+				<include name="webservices_${service_name}.xml"/>
+			</fileset>
+		</copy>
+		<copy todir="${dist}/WEB-INF/wsdl">
+			<fileset dir="${config_wsdl}">
+				<include name="${service_name}.wsdl"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${build}/META-INF">
+			<fileset dir="${config}">
+				<include name="application_WS_${service_name}.xml"/>
+			</fileset>
+		</copy>
+		<!-- KERNEL10.0 Change STARTS -->
+		<!-- copy file="${config}/GW_WS_Prop.xml" todir="${user_home}"/ -->
+		<!-- KERNEL10.0 Change ENDS -->
+		<move file="${dist}/WEB-INF/web_WS_${service_name}.xml" tofile="${dist}/WEB-INF/web.xml"/>
+		<move file="${dist}/WEB-INF/webservices_${service_name}.xml" tofile="${dist}/WEB-INF/webservices.xml"/>
+		<move file="${build}/META-INF/application_WS_${service_name}.xml" tofile="${build}/META-INF/application.xml"/>
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac
+			srcdir="${src_gw_ejb}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemote.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemoteHome.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_xml}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac
+			srcdir="${src_srvc_ejb_client}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- ****************************************************************
+         ** Generates the service interface from the service wsdl.     **
+         ** ************************************************************* -->
+    <target name="wsdl_2_java" depends="compile_common">
+        <echo message="-----> Generating the SEI and wrapper java files from the service wsdl"/>
+		<wsdl2java url="${config_wsdl}/${service_name}.wsdl"
+			output="${src_ws_output}"
+			role="server"
+			container="web"
+			verbose="false">
+		</wsdl2java>
+        <echo message="-----> Deleting extra files"/>
+        <delete>
+            <fileset dir="${src_ws_output}" includes="com/**/ws/*.java"/>
+        </delete>
+    </target>
+
+    <target name="copy_interface" depends="wsdl_2_java">
+		<copy todir="${src_ws}">
+			<fileset dir="${src_ws_output}"  includes="com/**/ws/**"/>
+		</copy>
+		<copy todir="${dist}/WEB-INF">
+			<fileset dir="${src_ws_output}/WEB-INF">
+				<include name="*.xmi"/>
+				<include name="${service_name}_mapping.xml"/>
+			</fileset>
+		</copy>
+        <delete dir="${src_ws_output}"/>
+    </target>
+
+	<!-- Compile the java code -->
+	<target name="compile_ws" depends="copy_interface">
+		<javac
+			srcdir="${src_gw_ws_types}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+		    <include name="${service_name}SEI.java"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+
+		<javac srcdir="${src_gw_ws}" destdir="${dist}/WEB-INF/classes" debug="on">
+		    <include name="${service_name}Impl.java"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_jar" depends="compile_ws">
+		<jar destfile="${build}/${service_name}.war"
+			basedir="${dist}">
+		</jar>
+	</target>
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_ear" depends="do_jar">
+		<ear destfile="${source}/${service_name}.ear" appxml="${build}/META-INF/application.xml">
+			<fileset dir="${build}" includes="${service_name}.war"/>
+		</ear>
+		<move file="${source}/${service_name}.ear" todir="${build}"/>
+	</target>
+
+	<!--target name="enable_endpoint"  depends="do_ear">
+		<endptenabler earfile="${build}/${service_name}.ear">
+			<property key="verbose" value="false"/>
+			<property key="${service_name}.transports" value="http"/>
+			<property key="${service_name}.http.rounterModuleName" value="${service_name}_HTTPRouter.war"/>
+			<property key="${service_name}.http.contextRoot" value="/${service_name}"/>
+		</endptenabler>
+	</target-->
+
+	<target name="clean">
+ 		<delete dir="${dist}"/>
+		<delete dir="${build}/META-INF"/>
+	</target>
+</project>

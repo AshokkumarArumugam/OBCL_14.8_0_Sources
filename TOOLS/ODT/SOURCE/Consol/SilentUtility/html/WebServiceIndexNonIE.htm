@@ -1,0 +1,1985 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta content="utf-8" http-equiv="encoding" />
+<title>FLEXCUBE UBS Integration Gateway</title>
+<script type="text/javascript">
+	var x, y;
+	if (self.innerHeight) // all except Explorer
+	{
+		x = self.innerWidth;
+		y = self.innerHeight;
+	} else if (document.documentElement
+			&& document.documentElement.clientHeight)
+	// Explorer 6 Strict Mode
+	{
+		x = document.documentElement.clientWidth;
+		y = document.documentElement.clientHeight;
+	} else if (document.body) // other Explorers
+	{
+		x = document.body.clientWidth;
+		y = document.body.clientHeight;
+
+	}
+
+	function setHeights() {
+		document.getElementById("leftpane").style.height = y - 95 + "px";
+		document.getElementById("rightpane").style.height = y - 95 + "px";
+		document.getElementById("resultPane").style.height = y - 95 + "px";
+		//document.getElementById("contentframe").style.height = y-95+"px";
+		document.getElementById("wrapper").style.height = y - 95 + "px";
+
+		//document.getElementById("footer").style.height = 20+"px";                
+
+	}
+	function disp_alert() {
+		var Text = '';
+		Text = " 1: HOME                             \t \r\n";
+		Text += " 4: SEARCH                            \t\r\n";
+		Text += " 0: ACCESS KEY DETAILS";
+		alert(Text);
+	}
+</script>
+<style type="text/css">
+html, body, blockquote, pre, abbr, h1, acronym, address, em, img, sub,
+	sup, a, form, label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+}
+
+html, body, #wrapper {
+	min-height: 100%; /*Sets the min height to the
+					 height of the viewport.*/
+	width: 100%;
+	height: 100%; /*Effectively, this is min height
+				for IE5+/Win, since IE wrongly expands
+				 an element to enclose its content.
+				 This mis-behavior screws up modern 
+				 browsers*/
+}
+
+html>body, html>body #wrapper {
+	height: auto; /*this undoes the IE hack, hiding it
+						from IE using the child selector*/
+	margin-top: 0px;
+}
+
+body {
+	margin: 0px;
+	font-family: Arial, helvetica, sans-serif;
+}
+
+#wrapper {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#main {
+	margin: 0px; /*Modify value as needed for 
+				footer height.*/
+	height: auto;
+	padding: 0px;
+}
+
+a {
+	color: #0000FF
+}
+
+h2 {
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	font: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	margin-left: 16px;
+}
+
+legend {
+	font-size: .8em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	padding: 2px;
+	font-weight: bold;
+}
+
+p {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	margin-left: 10px;
+	/*padding-left:8px;*/
+	padding-right: 8px;
+	color: #606060;
+}
+
+/*h2 {
+	padding:8px;
+}*/
+em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#navbar {
+	display: block;
+	margin: 0px;
+	height: 27px;
+	background-image: url(Images/navbarbkg.gif);
+	background-repeat: repeat-x;
+}
+
+.contentframe {
+	height: 100%;
+	display: block;
+	clear: both;
+}
+
+#resultframe {
+	padding-left: 5px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	background-color: #85c3f6;
+	text-align: left;
+	white-space: nowrap;
+	font-weight: bold;
+	height: 28px;
+	border-right: 2px solid #FFFFFF;
+	position: relative;
+	top: expression(offsetParent.scrollTop);
+}
+
+#searchframe {
+	padding-left: 5px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #dfdede;
+	border-bottom: 1px solid #919191;
+	text-align: right;
+	white-space: nowrap;
+	display: none;
+}
+
+#resultPane {
+	display: block;
+	float: left;
+	width: 25%;
+	border-right: 2px solid #919191;
+	padding-top: 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#leftpane {
+	display: block;
+	float: left;
+	width: 25%;
+	border-right: 2px solid #919191;
+	padding-top: 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#rightpane {
+	float: left;
+	width: 73.5%;
+	background-color: #f7f7f7;
+	border-left: 1px solid #7b7b7b;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#footer {
+	clear: both;
+	display: block;
+	width: 100%;
+	height: 30px;
+	position: relative;
+	z-index: 10; //
+	bottom: 0px;
+	margin-bottom: 0px;
+	background-color: #daecff;	
+	background-repeat: repeat-x;
+}
+
+#footer label {
+	color: #ffffff;
+	font-size: 11px;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom:10px;
+}
+
+#divLoader {
+	position: absolute;
+	left: expression(offsetParent.clientWidth-130 + 'px');
+	top: 50px;
+	width: 90px;
+	display: block;
+	margin: 0px;
+	height: 18px;
+	background-color: #ffcc00; /*#003062;*/
+	color: black;
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+.copyrightframe {
+	display: block;
+	border: 1px solid #bdbdbd;
+	/*padding:5px;
+	margin-bottom:5px;
+	margin-top:5px;*/
+	background-color: #f0f0f0;
+}
+
+.generictext {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+}
+
+.generictable {
+	
+}
+
+.generictable td, th {
+	border: 1px solid #85c3f6;
+	padding: 8px;
+	font-size: .8em;
+	/*letter-spacing:1px;	*/
+}
+
+.generictable th {
+	background-color: #daecff;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.datatable td, th, caption {
+	border: 1px solid #85c3f6;
+	padding: 8px;
+	font-size: 13px;
+	/*letter-spacing:1px;	*/
+	background-color: #FFFFFF;
+	text-align: left;
+}
+
+.datatable caption {
+	font-weight: bold;
+	color: #CC6600;
+}
+
+.datatable th {
+	white-space: nowrap;
+	vertical-align: top
+}
+
+.subth {
+	background-color: #e2f2ff;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.generictable td {
+	background-color: #ffffff;
+	width: 98%;
+}
+
+.genericlist {
+	list-style-type: circle;
+	margin-left: 15px;
+	padding-left: 10px;
+}
+
+.genericlist li {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	vertical-align: middle;
+	margin-left: 18px;
+}
+
+.primarynav {
+	list-style: none;
+	border: 0;
+	margin: 0;
+	padding: 3px;
+	padding-left: 16px;
+}
+
+.primarynav li {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	vertical-align: middle;
+	color: #000000;
+	display: block;
+	float: left;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.nestedlist {
+	margin-left: 7px;
+	padding: 0;
+	border: none;
+	list-style: none;
+	color: #0000FF;
+}
+
+.nestedlist li {
+	margin-left: 5px;
+	margin-top: 3px;
+	text-decoration: none;
+	width: 100%;
+	letter-spacing: 1px;
+}
+
+.nestedlist li img {
+	vertical-align: text-top;
+}
+
+.nestedlist  a {
+	text-decoration: none;
+	width: 100%;
+	font-size: .8em;
+	vertical-align: text-top;
+	letter-spacing: 1px;
+}
+
+.nestedlist a:hover {
+	color: #FF6600;
+}
+
+.L1container {
+	width: 45%;
+	margin: 10px;
+	padding: 8px;
+	vertical-align: top;
+	border: none;
+}
+
+.L1container legend {
+	width: 100%;
+	padding: 5px;
+	background-color: #daecff;
+	border: 1px solid #cbddf0;
+	margin-left: -8px;
+	display: block;
+}
+
+.L2container {
+	margin: 20px;
+	padding: 8px;
+	vertical-align: top;
+	border: none;
+	background-color: #F4F4F4;
+}
+
+.L3container {
+	padding: 8px;
+	vertical-align: top;
+	border: none;
+}
+
+.TitleBar {
+	font-size: .8em;
+	/*letter-spacing:1px;*/
+	vertical-align: middle;
+	color: #000000;
+	display: block;
+	height: 48px;
+	font-weight: bold;
+	white-space: nowrap;
+	background-image: url(Images/headerbkg.gif);
+	background-repeat: repeat-x;
+}
+
+.Inputbutton {
+	background-image: url(Images/search.gif);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	width: 15px;
+	height: 15px;
+	border: 0px;
+	vertical-align: middle;
+	cursor: hand;
+}
+
+.Search {
+	height: 15px;
+	border: 1px solid #919191;
+	vertical-align: middle
+}
+
+.GrphBtns {
+	background-color: white;
+	FONT-FAMILY: Verdana, Arial;
+	border: none;
+	cursor: hand;
+	height: 15px;
+	width: auto;
+	COLOR: blue;
+	font-size: 12px;
+}
+
+.bars {
+	scrollbar-face-color: #EBF5FF;
+	scrollbar-base-color: #EBF5FF;
+	scrollbar-arrow-color: black;
+	scrollbar-track-color: #F3F3F3;
+	scrollbar-shadow-color: #EBF5FF;
+	scrollbar-highlight-color: #EBF5FF;
+	scrollbar-3dlight-color: #78AAFF;
+	scrollbar-darkshadow-Color: #78AAFF;
+}
+
+.Contentdescription {
+	margin: 20px;
+	padding: 8px;
+	vertical-align: top;
+	border: 1px solid #858585;
+	background-color: #fffdec;
+	width: 50%;
+	font-size: .8em;
+	line-height: 1.2;
+}
+
+#modalContainer {
+	background-color: transparent;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 10000;
+	background-image: url(tp.png);
+	/* required by MSIE to prevent actions on lower z-index elements */
+}
+
+#alertBox {
+	position: relative;
+	width: 250px;
+	min-height: 80px;
+	margin-top: 240px;
+	border: 2px solid #000;
+	background-color: #F2F5F6;
+	padding-bottom: 5px;
+	background-image: url(Images/alertImg.bmp);
+	background-repeat: no-repeat;
+	background-position: 20px 30px;
+}
+
+#modalContainer>#alertBox {
+	position: fixed;
+}
+
+#alertBox h1 {
+	margin: 0;
+	font: bold 0.8em arial;
+	background-color: #284484; /*#dfdede;/*#0033e0;/*#006699;/*#78919B;*/
+	color: #FFF;
+	border-bottom: 1px solid #000;
+	padding: 2px 0 2px 5px;
+	padding-bottom: 5px;
+}
+
+#alertBox p {
+	font: 12px arial;
+	height: 40px;
+	padding-left: 17px;
+	margin-left: 55px;
+	padding-top: 5px;
+}
+
+#alertBox #closeBtn {
+	display: block;
+	position: relative;
+	margin: 5px auto;
+	padding: 3px;
+	border: 1px solid #000;
+	width: 70px;
+	font: 0.7em verdana, arial;
+	text-transform: uppercase;
+	text-align: center;
+	color: #000;
+	background-color: #dfdede; /*#0033e0;/*#006699;/*#78919B;*/
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+</style>
+<script type="text/javascript">
+	var ALERT_TITLE = "Search Result";
+	var ALERT_BUTTON_TEXT = "Ok";
+
+	if (document.getElementById) {
+		window.alert = function(txt) {
+			createCustomAlert(txt);
+		}
+	}
+
+	function createCustomAlert(txt) {
+		d = document;
+
+		if (d.getElementById("modalContainer"))
+			return;
+
+		mObj = d.getElementsByTagName("body")[0].appendChild(d
+				.createElement("div"));
+		mObj.id = "modalContainer";
+		mObj.style.height = d.documentElement.scrollHeight + "px";
+
+		alertObj = mObj.appendChild(d.createElement("div"));
+		alertObj.id = "alertBox";
+		if (d.all && !window.opera)
+			alertObj.style.top = document.documentElement.scrollTop + "px";
+		alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)
+				/ 2 + "px";
+		alertObj.style.visiblity = "visible";
+
+		h1 = alertObj.appendChild(d.createElement("h1"));
+		h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+		msg = alertObj.appendChild(d.createElement("p"));
+		msg.appendChild(d.createTextNode(txt));
+
+		btn = alertObj.appendChild(d.createElement("a"));
+		btn.id = "closeBtn";
+		btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+		btn.href = "#";
+		btn.focus();
+		btn.onclick = function() {
+			removeCustomAlert();
+			return false;
+		}
+
+		alertObj.style.display = "block";
+
+	}
+
+	function removeCustomAlert() {
+		document.getElementsByTagName("body")[0].removeChild(document
+				.getElementById("modalContainer"));
+	}
+
+	function toggle(a) {
+		var e = document.getElementById(a);
+		myBody = document.getElementsByTagName("body")[0];
+		var x = document.getElementById("Release");
+		myBodyElements = myBody.getElementsByTagName("span");
+		for (var i = 0; i < myBodyElements.length; i++) {
+			if (myBodyElements[i] != e && myBodyElements[i] != x) {
+				if (myBodyElements[i].style.display == "block") {
+					myBodyElements[i].style.display = "none";
+				}
+			}
+		}
+
+		if (e.style.display == "none") {
+			e.style.display = "block";
+		} else {
+			e.style.display = "none";
+		}
+
+		return true;
+	}
+
+	function toggleUl(a) {
+		var e = document.getElementById(a);
+		myBody = document.getElementsByTagName("body")[0];
+		var x = document.getElementById("Release");
+		myBodyElements = myBody.getElementsByTagName("ul");
+
+		if (e.style.display == "none") {
+			e.style.display = "block";
+		} else {
+			e.style.display = "none";
+		}
+
+		return true;
+	}
+
+	/////////////////// navigation Functions.......................................  
+	function NavService(service) {
+		generateNavBar(2, service);
+	}
+
+	function NavOperation(Operation) {
+		generateNavBar(3, Operation);
+	}
+
+	function NavXSD(XSDName) {
+		generateNavBar(4, XSDName);
+	}
+
+	function generateNavBar(num, value) {
+		var i = 0;
+		var Content = NavContent.split("</li>");
+		NavContent = '';
+		for (i = 0; i < num - 1; i++) {
+			NavContent += Content[i];
+			NavContent += "</li>";
+		}
+		NavContent += "<li style='cursor:hand;' onclick=\"regenerateNavBar('"
+				+ num + "');\">&nbsp;&#8250;&nbsp;<a href='#'>";
+		NavContent += value;
+		NavContent += "</a></li>";
+		document.getElementById('navbar').innerHTML = NavContent;
+
+	}
+
+	function regenerateNavBar(num) {
+		var i = 0;
+		var Content = NavContent.split("</li>");
+
+		NavContent = '';
+		for (i = 0; i < num; i++) {
+			NavContent += Content[i];
+			NavContent += "</li>";
+		}
+		count = i;
+		document.getElementById('navbar').innerHTML = NavContent;
+		navigateToDiv(num);
+	}
+
+	function navigateToDiv(num) {
+		switch (num) {
+
+		case "1": {
+			document.getElementById('divServices').style.display = "block";
+			document.getElementById('divOperations').style.display = "none";
+			document.getElementById('divListOfXSDs').style.display = "none";
+			document.getElementById('leftpane').style.display = "none";
+			document.getElementById('rightpane').style.display = "none";
+			document.getElementById('resultPane').style.display = "none";
+			break;
+		}
+		case "2": {
+			document.getElementById('divServices').style.display = "none";
+			document.getElementById('divOperations').style.display = "block";
+			document.getElementById('divListOfXSDs').style.display = "none";
+			document.getElementById('leftpane').style.display = "none";
+			document.getElementById('rightpane').style.display = "none";
+			document.getElementById('resultPane').style.display = "none";
+
+			break;
+		}
+		case "3": {
+			document.getElementById('resultPane').style.display = "none";
+			document.getElementById('divServices').style.display = "none";
+			document.getElementById('divOperations').style.display = "none";
+			document.getElementById('divListOfXSDs').style.display = "block";
+			document.getElementById('leftpane').style.display = "none";
+			document.getElementById('rightpane').style.display = "none";
+
+			break;
+		}
+
+		case "4": {
+			document.getElementById('divServices').style.display = "none";
+			document.getElementById('divOperations').style.display = "none";
+			document.getElementById('divListOfXSDs').style.display = "none";
+			document.getElementById('leftpane').style.display = "block";
+			document.getElementById('rightpane').style.display = "block";
+			document.getElementById('resultPane').style.display = "none";
+
+			break;
+
+		}
+		}
+	}
+	function MenuDetails() {
+
+		loadXML("FCUBSServiceOperationList.xml");
+		document.getElementById('navbar').innerHTML = NavContent;
+		getServices(xmlDoc);
+		
+	}
+	/////////////////function to create home page with list of services....................................
+	function getServices(xmlDoc) {
+
+		var menuContent = '';
+		menuContent = "<h2>FLEXCUBE UBS Integration Gateway</h2>";
+		menuContent += "<p>";
+		menuContent += "Integration of different applications and solutions is a key area in today\'s systems. A variety of specialized applications deployed on disparate platforms and using different infrastructure need to be able to communicate and integrate seamlessly with FLEXCUBE UBS in order to exchange data. The FLEXCUBE UBS Integration Gateway (referred to as Gateway) will cater to these integration needs.";
+		menuContent += "</p>";
+		menuContent += "<p>";
+		menuContent += "The integration needs supported by the Gateway can be broadly categorized from the perspective of the Gateway as follows:";
+		menuContent += "</p>";
+		menuContent += "<ul>";
+		menuContent += "<li><span class='generictext'><em>Inbound application integration</em> used when any external system needs to add, modify or query information within FLEXCUBE UBS.</span></li>";
+		menuContent += "<li><span class='generictext'><em>Outbound application integration</em> used when any external system needs to be notified of the various events that occur within FLEXCUBE UBS.</span></li>";
+		menuContent += "</ul>";
+		menuContent += " <fieldset class='L1container' style='width:90%;'>";
+		menuContent += "<legend>Inbound Application Integration - Services</legend>";
+		menuContent += "<p>";
+		menuContent += "FLEXCUBE UBS Inbound Application Gateway provides XML based Services. These services consist of one or more Operations. These operations can be invoked by any external system to perform the relevant operation in FLEXCUBE UBS. The services supported by the Gateway are listed below:";
+		menuContent += "</p>";
+		menuContent += "</fieldset></br></br>";
+		menuContent += "<div id='divServiceList' style='height:50%;width: 93%;overflow-y:auto;'>";
+		menuContent += "<ul class='genericlist' >";
+
+		var x = xmlDoc.getElementsByTagName("SERVICE_NAME");
+		var SelectVal = '';
+		var Service_Description = '';
+		for (var i = 0; i < x.length; i++) {
+			var value = x[i].childNodes[0].nodeValue;
+			var next = x[i].nextSibling;
+			if (next.nodeName == "SERVICE_DESCRIPTION") {
+				Service_Description = next.childNodes[0].nodeValue;
+
+			}
+			menuContent += "<li id='SERVICE_" + i +"' title = '"+ Service_Description +"' ><a href= '#' onclick = \"getOperations('"
+					+ value + "');NavService('" + value + "');\">";
+			menuContent += value;
+			menuContent += "</a></li>";
+		}
+		menuContent += "</ul></br>";
+		menuContent += "</div><br><br><br><div id='footer'><legend>FLEXCUBE UBS Integration Gateway © 2016, Oracle and/or	its affiliates. All rights reserved.</legend></div>";
+		document.getElementById('divServices').innerHTML = menuContent;
+	}
+
+	//////////////////function to create list of operations in accordance to selected Service.....................
+	function getOperations(Service) {
+
+		loadXML("FCUBSServiceOperationList.xml");
+		var x = xmlDoc.getElementsByTagName("SERVICE_NAME");
+		var menuContent = '';
+
+		for (var i = 0; i < x.length; i++) {
+
+			var value = x[i].childNodes[0].nodeValue;
+			if (value == Service) {
+				menuContent += "<fieldset class='L2container'>";
+				menuContent += "<legend>";
+				menuContent += Service;
+				menuContent += "</legend>";
+
+				var next = x[i].nextSibling;
+				menuContent += "<p>";
+				if (next.nodeName == "SERVICE_DESCRIPTION") {
+					menuContent += next.childNodes[0].nodeValue;
+
+				}
+				menuContent += "FLEXCUBE supports the following   operations under this service:</p>";
+				next = next.nextSibling;
+				menuContent += "<div id='divOperationList' style='height:100%;overflow-y:auto;'>";
+				menuContent += "<ul class='genericlist' >";
+
+				next = next.nextSibling.nextElementSibling;
+				while (next.nodeName != "EndOfList") {
+
+					var Desc = next.nextSibling.nextSibling;
+					var Operation_name = next.childNodes[0].nodeValue;
+					var SelectVal = value + "~" + next.childNodes[0].nodeValue
+							+ "~" + Desc.childNodes[0].nodeValue;
+
+					next = Desc;
+					var Operation_description = next.childNodes[0].nodeValue;
+					if (Operation_description == "*") {
+						Operation_description = "";
+					}
+					menuContent += "<li  ><a href='#' title='"
+							+ Operation_description + "' onclick=\"getlist('"
+							+ SelectVal + "');NavOperation('" + Operation_name
+							+ "');\">";
+					menuContent += Operation_name;
+					menuContent += "</a></li>";
+
+					next = next.nextSibling.nextElementSibling;
+				}
+
+				menuContent += "</ul>";
+				menuContent += "</div><br><br><div id='footer'><legend>FLEXCUBE UBS Integration Gateway © 2016, Oracle and/or	its affiliates. All rights reserved.</legend></div>";
+				break;
+			}
+		}
+
+		document.getElementById('divServices').style.display = "none";
+		document.getElementById('divOperations').style.display = "block";
+		document.getElementById('divOperations').innerHTML = menuContent;
+	}
+
+	///////////////Func to get list of XSDs for selected Operation............................
+	function getlist(SelectVal) {
+
+		if (xmlDoc != null) {
+			xmlDoc.async = false;
+			xmlDoc.resolveExternals = false;
+			loadXML("FCUBSServiceList.xml");
+			var selectedVal = SelectVal.split('~');
+			var x = xmlDoc.getElementsByTagName("SERVICE_NAME");
+			for (var i = 0; i < x.length; i++) {
+				if (x[i].getAttribute("name") == selectedVal[0]) {
+
+					var next = x[i].childNodes[1];
+					if (next.getAttribute("name") == selectedVal[1]) {
+
+						var tableContent = '';
+						tableContent += "<fieldset class='L2container'>";
+						tableContent += "<legend>";
+						tableContent += selectedVal[1];
+						tableContent += "</legend>";
+						tableContent += "<p>";
+						tableContent += selectedVal[2];
+						tableContent += "It involves the following messages:</p>";
+						document.getElementById('divListOfXSDs').scrollTop = 0;
+						tableContent += "<ul  class='genericlist' >";
+						next = next.childNodes[1];
+						while (next.nodeName != "EndOfList") {
+							var value = next.childNodes[0].nodeValue;
+							var Desc = next.nextSibling.nextSibling;
+
+							var Description = '';
+							if (Desc.childNodes[0].nodeValue == "*") {
+								Description = "";
+
+							} else {
+								Description = Desc.childNodes[0].nodeValue;
+							}
+							tableContent += "<li  ><a href='#'  onMouseover=\"getDesc('"
+									+ Description
+									+ "');\" onMouseout = \"hideDesc();\"  onclick=\"hideDesc();getDetails('"
+									+ value + "');NavXSD('" + value + "'); \">";
+							tableContent += next.childNodes[0].nodeValue;
+							tableContent += "</a></li>";
+							next = next.nextElementSibling;
+							next = next.nextElementSibling;
+						}
+						tableContent += "</ul>";
+						tableContent += "<sub>* Click on the messages for detailed information. </sub>";
+						tableContent += "</fieldset> <br><br><div id='footer'><legend>FLEXCUBE UBS Integration Gateway © 2016, Oracle and/or	its affiliates. All rights reserved.</legend></div>";
+						document.getElementById('divOperations').style.display = "none";
+						document.getElementById('divListOfXSDs').style.display = "block";
+						document.getElementById("divListOfXSDs").innerHTML = tableContent;
+
+					}
+				}
+
+			}
+
+		}
+
+	}
+	function getDesc(Description) {
+		if (Description) {
+			document.getElementById("divXSDDesc").innerHTML = Description;
+			document.getElementById('divXSDDesc').style.display = "block";
+		}
+
+	}
+	function hideDesc() {
+		document.getElementById('divXSDDesc').style.display = "none";
+
+	}
+
+	//////////////TO display Basic Description of Selected XSD.................................
+
+	function getXSDDescription(XSDName) {
+		var File = XSDName.split('.');
+		document.getElementById('SelectedXSD').value = File[0];
+
+		if (xmlDoc != null) {
+			xmlDoc.async = false;
+			loadXML(File[0] + ".xml");
+
+		}
+		var Content = '';
+		var Name = XSDName.split('.');
+		Content = "<fieldset class='L2container' >";
+		Content += "<legend>";
+		Content += Name[0];
+		Content += "</legend>";
+		var x = xmlDoc.getElementsByTagName("XSDName");
+		for (var i = 0; i < x.length; i++) {
+			Content += "<p>";
+			if (x[i].getElementsByTagName("XSDComment").length > 0
+					&& x[i].getElementsByTagName("XSDComment")[0].childNodes[0].nodeValue != "*") {
+				Content += x[i].getElementsByTagName("XSDComment")[0].childNodes[0].nodeValue;
+			}
+			Content += "</p>";
+			Content += "<table class='generictable' width='98%' align='center' border='0' cellspacing='0' cellpadding='0'>";
+			Content += "<tr>";
+			Content += "<th scope='row'>Namespace</th>";
+			Content += "<td>";
+			if (x[i].getElementsByTagName("NameSpace")[0].childNodes[0].nodeValue != "*") {
+				Content += x[i].getElementsByTagName("NameSpace")[0].childNodes[0].nodeValue;
+			}
+			//        Content += x[i].getElementsByTagName("NameSpace")[0].childNodes[0].nodeValue;
+			Content += "</td>";
+			Content += "</tr>";
+			Content += "<tr>";
+			Content += "<th scope='row'>Root Node </th>";
+			Content += "<td><span style='color:blue;'>";
+			Content += x[i].getElementsByTagName("RootNode")[0].childNodes[0].nodeValue;
+			Content += "</span></td>";
+			Content += "</tr>";
+			Content += "</table>";
+			Content += "<br>";
+
+			Content += "</fieldset>";
+		}
+		return Content;
+
+	}
+
+	//////////////////To Get details about the nodes of Selected XSD....................................
+	var XSDDescContent = '';
+	function getDetails(XSDName) {
+
+		var bodyContent = "&nbsp;&nbsp;Processing...";
+		eval(' document.getElementById("divLoader").style.display="block"; document.getElementById("divLoader").innerHTML =bodyContent;');
+		var height = 10;
+		var width = 180;
+		var left = (screen.availWidth / 2 - width / 2 - 5);
+		var top = ((screen.availHeight - screen.availHeight / 20) / 2 - height / 2);
+		
+		XSDDescContent = '';
+		var File = XSDName.split('.');
+		document.getElementById('SelectedXSD').value = File[0];
+
+		if (xmlDoc != null) {
+			xmlDoc.async = false;
+			try{
+				loadXML(File[0] + ".xml");
+			}catch(e) {
+				alert('XSD details are missing. ');
+				return false;
+			}
+			XSDDescContent = getXSDDescription(XSDName);
+			getData(xmlDoc);
+		}
+		var mainWindow = window.open("Load1.htm", "",
+				"help:0;resizable:1;status:no;dialogWidth:180px;dialogHeight:10px;dialogTop:"
+						+ top + "px;dialogLeft:" + left + "px;");
+		mainWindow.close();
+		document.getElementById('divLoader').style.display = "none";
+	}
+
+	var openImg = new Image();
+	openImg.src = "Images/plus.gif";
+	var closedImg = new Image();
+	closedImg.src = "Images/minus.gif";
+
+	function swapFolder(value) {
+		objImg = document.getElementById("IMG_" + value);
+		if (objImg.src.indexOf("Images/minus.gif") > -1)
+			objImg.src = openImg.src;
+		else
+			objImg.src = closedImg.src;
+	}
+
+	var mainCount = 0;
+	var CountNodes = 0;
+
+	function getData(xmlDoc) {
+
+		var subString = '';
+		var bodyContent = '';
+		var rightPaneContent = '';
+		var x = xmlDoc.getElementsByTagName("NodeDetails");
+		document.getElementById("leftpane").innerHTML = "";
+		if (x.length == 0) {
+			alert('XSD details are missing. ');
+			return false;
+		}
+		var j = 0;
+		CountNodes = 0;
+		for (var i = 0; i < x.length; i++) {
+			var y = x[i].getElementsByTagName("XSD_NODE_1")[0].nextElementSibling;
+
+			if (y == null || y.nodeName == "EndOfList") {
+				var value = x[i].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue;
+				var nodeContent = CheckNodeType(
+						xmlDoc,
+						x[i].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue,
+						2);
+
+				if (nodeContent == "TRUE") {
+					subString = getOtherElements(
+							xmlDoc,
+							x[i].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue,
+							2, "");
+
+					var c = 1;
+					var val = c + "~" + value + "~" + "*";
+					if (subString != "") {
+
+						bodyContent = '';
+						bodyContent += "<ul class='nestedlist' >";
+						bodyContent += "<a href='#' onclick=\"toggle('"
+								+ value
+								+ "');swapFolder('"
+								+ value
+								+ "');\"><img id='IMG_"+ value +"' src='Images/plus.gif' /></a>";
+						bodyContent += "<a href='#'  id='"
+								+ value
+								+ "1' style='font-size:.71em;' onclick=\"getNodeDetails('"
+								+ val + "'); \" />";
+						bodyContent += value;
+						bodyContent += "</a>";
+						bodyContent += "<span id ='"+ value +"' class='branch' name='details'  style='border:1;font-size:small;color:blue; border-color:Teal;display: none;'  >";
+
+						bodyContent += subString;
+
+						bodyContent += "</span></br>";
+						bodyContent += "</ul>";
+						document.getElementById('divListOfXSDs').style.display = "none";
+						document.getElementById('leftpane').style.display = "block";
+						document.getElementById("leftpane").innerHTML += bodyContent;
+					}
+				}
+			}
+		}
+		var Content = "<div id='searchframe'><input class='Search' Value='Search' size='20' type='text' id='findit' onclick = 'ClearText();'  onBlur = 'getText();' accesskey='4'/>&nbsp;<input class='Inputbutton' type='submit' value='' onclick='CompletePageSearch();'></div>";
+		rightPaneContent = " <fieldset class='L3container' style='display:block' >";
+		//rightPaneContent +="<legend>FCUBS_REQ_ENV</legend>";
+		rightPaneContent += "<p>A standard XML message in FLEXCUBE UBS Envelope format should contain two main   components (nodes):</p>";
+		rightPaneContent += "<p><span style='color:blue;'>FCUBS_HEADER</span>: This is a standard node that would form the header for FLEXCUBE UBS Envelope. Information to identify the partner system, service, operation, user and branch etc., will form the tags in this node. Entire processing in FLEXCUBE UBS Messaging Database Layer is based upon the information provided in this node.</p>";
+		rightPaneContent += "<p><span style='color:blue;'>FCUBS_BODY</span>: Contents of this node would vary from message to message based on the context of the message. Thus, this node will contain the actual payload of the message.</p>";
+		rightPaneContent += "</fieldset>";
+
+		document.getElementById('rightpane').style.display = "block";
+		document.getElementById("rightpane").innerHTML = Content
+				+ XSDDescContent + rightPaneContent;
+
+	}
+
+	function getOtherElements(xmlDoc, name, num, parent) {
+		CountNodes = CountNodes + 1;
+		var substring = '';
+		var returnStr = '';
+		var val = "XSD_NODE_" + num;
+
+		var x = xmlDoc.getElementsByTagName(val);
+
+		if (x.length > 0) {
+			for (var i = 0; i < x.length; i++) {
+				var next = x[i].nextElementSibling;
+				var previous = x[i].previousElementSibling;
+
+				if (next == null || next.nodeName == "EndOfList") {
+					subString = '';
+					if (previous.childNodes[0].nodeValue == name) {
+						if (num > 4) {
+							var pre = previous.previousElementSibling;
+							if (pre.childNodes[0].nodeValue == parent) {
+								subString = getOtherElements(xmlDoc,
+										x[i].childNodes[0].nodeValue, num + 1,
+										name);
+								if (subString != "") {
+									var value = num + "~"
+											+ x[i].childNodes[0].nodeValue
+											+ "~"
+											+ previous.childNodes[0].nodeValue;//+"~"+ AttributesList +"~"+ RestrictionList;alert(value);
+									var Nodevalue = num + "~"
+											+ x[i].childNodes[0].nodeValue
+											+ CountNodes + "~"
+											+ previous.childNodes[0].nodeValue;
+									returnStr += "<li class='nestedlist' >";
+									returnStr += "<a href='#' onclick=\"toggleUl('"
+											+ x[i].childNodes[0].nodeValue
+											+ CountNodes
+											+ "');swapFolder('"
+											+ x[i].childNodes[0].nodeValue
+											+ CountNodes
+											+ "');\"><img id='IMG_"+ x[i].childNodes[0].nodeValue + CountNodes +"' src='Images/plus.gif'  /></a>";
+									//returnStr += "<input type='button'  id='"+ x[i].childNodes[0].nodeValue +"1' style=\"color:blue; border:0; background: #fff;cursor:hand;font-family: Verdana, Arial, Helvetica, sans-serif;TEXT-ALIGN: left;\"   value='"+ x[i].childNodes[0].nodeValue +"' onclick=\"getNodeDetails('"+ value +"');ChangeFontWeight('"+ value +"'); \">";
+									returnStr += "<a href='#' id='"
+											+ x[i].childNodes[0].nodeValue
+											+ CountNodes
+											+ "1'   onclick=\"getNodeDetails('"
+											+ value + "');ChangeFontWeight('"
+											+ Nodevalue + "'); \">";
+									returnStr += x[i].childNodes[0].nodeValue;
+									returnStr += "</a>";
+									returnStr += "<ul class='nestedlist' id ='"+ x[i].childNodes[0].nodeValue + CountNodes +"' style='border:1;font-size:small;color:blue; border-color:Teal;display: none;'>";
+									returnStr += subString;
+									returnStr += "</ul>";
+									returnStr += "</li>";
+									CountNodes = CountNodes + 1;
+								} else {
+									CountNodes = CountNodes + 1;
+									var value = num + "~"
+											+ x[i].childNodes[0].nodeValue
+											+ "~"
+											+ previous.childNodes[0].nodeValue;// +"~"+ AttributesList +"~"+ RestrictionList;alert(value);
+									var Nodevalue = num + "~"
+											+ x[i].childNodes[0].nodeValue
+											+ CountNodes + "~"
+											+ previous.childNodes[0].nodeValue;
+									returnStr += "<li class='nestedlist' >";
+									returnStr += "<img id='IMG_"+ x[i].childNodes[0].nodeValue + CountNodes +"' src='Images/blue.gif' />";
+									//returnStr += "<input type='button'  id='"+ x[i].childNodes[0].nodeValue +"1' style=\"color:blue;font-size:.9em; border:0; background: #fff;cursor:hand;font-family: Verdana, Arial, Helvetica, sans-serif;TEXT-ALIGN: left;\"   value='&nbsp;"+ x[i].childNodes[0].nodeValue +"' onclick=\"getNodeDetails('"+ value +"');ChangeFontWeight('"+ value +"'); \">";
+									returnStr += "<a  href='#' id='"
+											+ x[i].childNodes[0].nodeValue
+											+ CountNodes
+											+ "1'    onclick=\"getNodeDetails('"
+											+ value + "');ChangeFontWeight('"
+											+ Nodevalue + "'); \">";
+									returnStr += x[i].childNodes[0].nodeValue;
+									returnStr += "</a>";
+									returnStr += "<ul class='nestedlist' id ='"+ x[i].childNodes[0].nodeValue + CountNodes +"' style='border:1;font-size:small;color:blue; border-color:Teal;display: none;'>";
+									returnStr += subString;
+									returnStr += "</ul>";
+									returnStr += "</li>";
+								}
+							}
+
+						} else {
+							subString = getOtherElements(xmlDoc,
+									x[i].childNodes[0].nodeValue, num + 1, name);
+							if (subString != "") {
+								var value = num + "~"
+										+ x[i].childNodes[0].nodeValue + "~"
+										+ previous.childNodes[0].nodeValue;//+"~"+ AttributesList +"~"+ RestrictionList;alert(value);
+								var Nodevalue = num + "~"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes + "~"
+										+ previous.childNodes[0].nodeValue;
+								returnStr += "<li class='nestedlist' >";
+								returnStr += "<a href='#' onclick=\"toggleUl('"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "');swapFolder('"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "');\"><img id='IMG_"+ x[i].childNodes[0].nodeValue + CountNodes +"' src='Images/plus.gif'  /></a>";
+								//returnStr += "<input type='button'  id='"+ x[i].childNodes[0].nodeValue +"1' style=\"color:blue; border:0; background: #fff;cursor:hand;font-family: Verdana, Arial, Helvetica, sans-serif;TEXT-ALIGN: left;\"   value='"+ x[i].childNodes[0].nodeValue +"' onclick=\"getNodeDetails('"+ value +"');ChangeFontWeight('"+ value +"'); \">";
+								returnStr += "<a href='#' id='"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "1'   onclick=\"getNodeDetails('"
+										+ value + "');ChangeFontWeight('"
+										+ Nodevalue + "'); \">";
+								returnStr += x[i].childNodes[0].nodeValue;
+								returnStr += "</a>";
+								returnStr += "<ul class='nestedlist' id ='"+ x[i].childNodes[0].nodeValue + CountNodes +"' style='border:1;font-size:small;color:blue; border-color:Teal;display: none;'>";
+								returnStr += subString;
+								returnStr += "</ul>";
+								returnStr += "</li>";
+								CountNodes = CountNodes + 1;
+							} else {
+								CountNodes = CountNodes + 1;
+								var value = num + "~"
+										+ x[i].childNodes[0].nodeValue + "~"
+										+ previous.childNodes[0].nodeValue;// +"~"+ AttributesList +"~"+ RestrictionList;alert(value);
+								var Nodevalue = num + "~"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes + "~"
+										+ previous.childNodes[0].nodeValue;
+								returnStr += "<li class='nestedlist' >";
+								returnStr += "<img id='IMG_"+ x[i].childNodes[0].nodeValue + CountNodes +"' src='Images/blue.gif' />";
+								//returnStr += "<input type='button'  id='"+ x[i].childNodes[0].nodeValue +"1' style=\"color:blue;font-size:.9em; border:0; background: #fff;cursor:hand;font-family: Verdana, Arial, Helvetica, sans-serif;TEXT-ALIGN: left;\"   value='&nbsp;"+ x[i].childNodes[0].nodeValue +"' onclick=\"getNodeDetails('"+ value +"');ChangeFontWeight('"+ value +"'); \">";
+								returnStr += "<a  href='#' id='"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "1'    onclick=\"getNodeDetails('"
+										+ value + "');ChangeFontWeight('"
+										+ Nodevalue + "'); \">";
+								returnStr += x[i].childNodes[0].nodeValue;
+								returnStr += "</a>";
+								returnStr += "<ul class='nestedlist' id ='"+ x[i].childNodes[0].nodeValue + CountNodes +"' style='border:1;font-size:small;color:blue; border-color:Teal;display: none;'>";
+								returnStr += subString;
+								returnStr += "</ul>";
+								returnStr += "</li>";
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		return returnStr;
+	}
+
+	function CheckNodeType(xmlDoc, name, num) {
+
+		var returnStr = "FALSE";
+		var val = "XSD_NODE_" + num;
+
+		var x = xmlDoc.getElementsByTagName(val);
+
+		if (x.length > 0) {
+			for (var i = 0; i < x.length; i++) {
+				var next = x[i].nextElementSibling;
+				var previous = x[i].previousElementSibling;
+
+				if (next == null || next.nodeName == "EndOfList") {
+
+					if (previous.childNodes[0].nodeValue == name) {
+						if (x[i].childNodes[0].nodeValue == "FCUBS_HEADER"
+								|| x[i].childNodes[0].nodeValue == "FCUBS_BODY")
+							returnStr = "TRUE";
+					}
+				}
+			}
+		}
+		return returnStr;
+	}
+
+	function ChangeFontWeight(value) {
+		var SelectedNode = value.split('~');
+		var z = document.getElementById(SelectedNode[1] + "1");
+		myBody = document.getElementsByTagName("body")[0];
+
+		myBodyElements = myBody.getElementsByTagName("a");
+		for (var i = 0; i < myBodyElements.length; i++) {
+			if (myBodyElements[i] != z) {
+				if (myBodyElements[i].style.fontWeight == "bold") {
+					myBodyElements[i].style.fontWeight = "normal";
+				}
+			}
+		}
+		if (z.style.fontWeight == "bold") {
+			z.style.fontWeight = "bold";
+		} else {
+			z.style.fontWeight = "bold";
+		}
+
+	}
+
+	function selectSingleNode(xmlDoc, strXMLPath) {
+		var oEvaluator = new XPathEvaluator();
+		var oResult = oEvaluator.evaluate(strXMLPath, xmlDoc, null,
+				XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+		return oResult.singleNodeValue;
+	}
+
+	function selectNodes(xmlDoc, strXMLPath) {
+		var oEvaluator = new XPathEvaluator();
+		var oResult = oEvaluator.evaluate(strXMLPath, xmlDoc, null,
+				XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+		var aNodes = new Array;
+		if (oResult != null) {
+			var oElement = oResult.iterateNext();
+			while (oElement) {
+				aNodes.push(oElement);
+				oElement = oResult.iterateNext();
+			}
+		}
+		return aNodes;
+	}
+
+	function getNodeText(textNode) {
+		return textNode.textContent;
+	}
+	
+	function getExtNode(EXTNodes, parent) {
+		var nodeTmp;
+		for(i=0;i<EXTNodes.length; i++) {
+			console.log(EXTNodes[i].childNodes[EXTNodes[i].childNodes.length-2].nodeValue);
+			if(getNodeText(EXTNodes[i].childNodes[EXTNodes[i].childNodes.length-2])==parent) {
+				nodeTmp = EXTNodes[i];
+				break;
+			}
+				
+		}
+		return nodeTmp;
+	}
+
+	function getNodeDetails(value) {
+
+		var AttributesList = '';
+		var RestrictionList = '';
+		var Description = '';
+		var Comment = '';
+		var DataType = '';
+		var File = document.getElementById('SelectedXSD').value;
+		if (xmlDoc != null) {
+			xmlDoc.async = false;
+			loadXML(File + ".xml");
+
+		}
+		var rightPaneContent = '';
+		rightPaneContent = "<div id='searchframe'><input class='Search' Value='Search' size='20' type='text' id='findit' onclick = 'ClearText();'  onBlur = 'getText();'>&nbsp;<input class='Inputbutton' type='submit' value='' onclick='CompletePageSearch();'></div>";
+		var SelectedNode = value.split('~');
+		var val = "XSD_NODE_" + SelectedNode[0];
+		var x = xmlDoc.getElementsByTagName(val);
+		var Node = xmlDoc.getElementsByTagName("NodeDetails");
+		var EXTNodes = selectNodes(xmlDoc, ("//NodeDetails[NodeName='"
+				+ SelectedNode[1] + "']"));
+
+		var EXTNode = getExtNode(EXTNodes, SelectedNode[2]);
+		
+		if (selectSingleNode(EXTNode, "Comment") != null) {
+			Comment = getNodeText(selectSingleNode(EXTNode, "Comment"));
+			if(Comment.indexOf("![CDATA") != -1)
+			Comment = Comment.substring(8, Comment.length - 2);
+		}
+		if (selectSingleNode(EXTNode, "DataType") != null)
+			DataType = getNodeText(selectSingleNode(EXTNode, "DataType"));
+
+		for (var i = 0; i < 100; i++) {
+			if (selectSingleNode(EXTNode, "ATTR_" + i) != null) {
+				AttributesList += getNodeText(selectSingleNode(EXTNode, "ATTR_"
+						+ i))
+						+ "|";
+
+			}
+			if (selectSingleNode(EXTNode, "RESTR_" + i) != null) {
+				RestrictionList += getNodeText(selectSingleNode(EXTNode,
+						"RESTR_" + i))
+						+ "|";
+
+			}
+			if (selectSingleNode(EXTNode, "ATTR_" + i) != null
+					&& selectSingleNode(EXTNode, "RESTR_" + i) == null) {
+				break;
+			}
+		}
+
+		/*for(var z =0;z < Node.length;z++)
+        {
+           if( Node[z].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue == SelectedNode[1])
+           {
+              var a = Node[z].getElementsByTagName("EndOfList")[0];
+              a = a.previousElementSibling;
+              if(a.nodeName == val)
+              {
+                if(Node[z].getElementsByTagName(val)[0].childNodes[0].nodeValue == SelectedNode[1])
+                {
+                    var previous = Node[z].getElementsByTagName(val)[0].previousElementSibling;
+                    if(previous.childNodes[0].nodeValue==SelectedNode[2] || SelectedNode[2] == "*" )
+                    {
+                                next = Node[z].getElementsByTagName("EndOfList")[0]; 
+                                attr=next.nextElementSibling;
+				                       
+                                while(attr.nodeName != "EndOfAttrList")
+                                {
+                                    AttributesList +=attr.childNodes[0].nodeValue +"|";
+                                    attr = attr.nextElementSibling;
+                                }
+                                var restr = attr.nextElementSibling;
+                                while(restr.nodeName != "EndOfRestrList")
+                                {
+                                    RestrictionList +=restr.childNodes[0].nodeValue +"|";
+                                    restr = restr.nextElementSibling; 
+                                }
+                                Description = Node[z].getElementsByTagName("Description")[0].childNodes[0].nodeValue;
+                                Comment     = Node[z].getElementsByTagName("Comment")[0].childNodes[0].nodeValue;
+                                DataType    = Node[z].getElementsByTagName("DataType")[0].childNodes[0].nodeValue;
+                                if(Description == "*")
+                                {
+                                   Description = "";
+                                }
+                                if(Comment == "*")
+                                {
+                                   Comment = "";
+                                }
+                                break;                 
+                    }
+                  }
+                }
+           }
+        }*/
+		 
+		if (x.length > 0) {
+			for (var i = 0; i < x.length; i++) {
+				if (x[i].childNodes[0].nodeValue == SelectedNode[1]) {
+					var previous = x[i].previousElementSibling;
+					if (previous.childNodes[0].nodeValue == SelectedNode[2]
+							|| SelectedNode[2] == "*") {
+						rightPaneContent += "<fieldset class='L3container'>";
+						rightPaneContent += "<legend>";
+						rightPaneContent += SelectedNode[1];
+						rightPaneContent += "</legend>";
+						rightPaneContent += "<p>";
+						//                           rightPaneContent +=Comment;
+						rightPaneContent += "</p>";
+						rightPaneContent += "<table class='datatable' width='100%' border='0' cellspacing='0' cellpadding='0'>";
+						rightPaneContent += "<tr>";
+						rightPaneContent += "<th class='subth' scope='col'>Attributes</th>";
+						rightPaneContent += "<th class='subth' scope='col'>Description</th>";
+						rightPaneContent += "</tr>";
+						rightPaneContent += "<tr>";
+						rightPaneContent += "<th scope='row'>Name</th>";
+						rightPaneContent += "<td>";
+						rightPaneContent += SelectedNode[1];
+						rightPaneContent += "</td>";
+						rightPaneContent += "</tr>";
+						rightPaneContent += "<tr>";
+						rightPaneContent += "<th scope='row'>Description</th>";
+						rightPaneContent += "<td>";
+						if (Comment != "") {
+							rightPaneContent += Comment;
+						} else {
+							rightPaneContent += Description;
+						}
+						rightPaneContent += "</td>";
+						rightPaneContent += "</tr>";
+						if (DataType != "*") {
+							rightPaneContent += "<tr>";
+							rightPaneContent += "<th scope='row'>DataType</th>";
+							rightPaneContent += "<td style='font-weight:bold;color:#CC6600;'>";
+							rightPaneContent += DataType;
+							rightPaneContent += "</td>";
+							rightPaneContent += "</tr>";
+						}
+						var Attr = AttributesList.split("|");
+						if (Attr.length > 1) {
+							rightPaneContent += "<th scope='row'>Attributes </th>";
+							rightPaneContent += "<td><table class='datatable' width='100%' border='0' cellspacing='0' cellpadding='0'>";
+							rightPaneContent += "<tr>";
+							rightPaneContent += "<th class='subth' width='30%' scope='col'>Attributes</th>";
+							rightPaneContent += "<th class='subth' scope='col'>Description</th>";
+							rightPaneContent += "</tr>";
+
+							for (var j = 0; j < Attr.length - 1; j++) {
+								var AttrNodes = Attr[j].split("^");
+								rightPaneContent += "<tr>";
+								rightPaneContent += "<th scope='row'>";
+								rightPaneContent += AttrNodes[0];
+								rightPaneContent += "</th>";
+								rightPaneContent += "<td>";
+								rightPaneContent += AttrNodes[1];
+								rightPaneContent += "</td>";
+								rightPaneContent += "</tr>";
+
+							}
+							rightPaneContent += "</table>";
+							rightPaneContent += "</td></tr>";
+						}
+						var Restr = RestrictionList.split("|");
+						if (Restr.length > 1) {
+							rightPaneContent += "<tr>";
+							rightPaneContent += "<th scope='row'>Restrictions </th>";
+							rightPaneContent += "<td><table class='datatable' width='100%' border='0' cellspacing='0' cellpadding='0'>";
+							rightPaneContent += "<tr>";
+							rightPaneContent += "<th class='subth' width='30%' scope='col'>Restrictions</th>";
+							rightPaneContent += "<th class='subth' scope='col'>Description</th>";
+							rightPaneContent += "</tr>";
+
+							for (var j = 0; j < Restr.length - 1; j++) {
+								var RestrNodes = Restr[j].split("^");
+								rightPaneContent += "<tr>";
+								rightPaneContent += "<th scope='row'>";
+								rightPaneContent += RestrNodes[0];
+								rightPaneContent += "</th>";
+								rightPaneContent += "<td>";
+								rightPaneContent += RestrNodes[1];
+								rightPaneContent += "</td>";
+								rightPaneContent += "</tr>";
+							}
+
+							rightPaneContent += "</table>";
+							rightPaneContent += "</td></tr>";
+						}
+						rightPaneContent += "</table>";
+						rightPaneContent += "<p>&nbsp;</p>";
+						rightPaneContent += "</fieldset>";
+						document.getElementById("rightpane").innerHTML = rightPaneContent;
+						break;
+					}
+				}
+			}
+		}
+
+	}
+
+	//////////////////SEARCH ELEMENTS..........................................
+	function ChangeFont() {
+
+		myBody = document.getElementsByTagName("body")[0];
+		myBodyElements = myBody.getElementsByTagName("a");
+		for (var i = 0; i < myBodyElements.length; i++) {
+			if (myBodyElements[i].style.fontWeight == "bold") {
+				myBodyElements[i].style.fontWeight = "normal";
+			}
+		}
+	}
+
+	var SearchedElements = '';
+	var CountSearchedElements = 0;
+
+	function CompletePageSearch() {
+		ChangeFont();
+		var bodyContent = "&nbsp;&nbsp;Processing...";
+		eval(' document.getElementById("divLoader").style.display="block"; document.getElementById("divLoader").innerHTML =bodyContent;');
+		var height = 10;
+		var width = 180;
+		var left = (screen.availWidth / 2 - width / 2 - 5);
+		var top = ((screen.availHeight - screen.availHeight / 20) / 2 - height / 2);
+		var mainWindow;
+		mainWindow = window.showModelessDialog("Load1.htm", "",
+				"help:0;resizable:1;status:no;dialogWidth:180px;dialogHeight:10px;dialogTop:"
+						+ top + "px;dialogLeft:" + left + "px;");
+
+		document.getElementById('resultpane').style.display = "";
+		var File = document.getElementById('SelectedXSD').value;
+		if (xmlDoc != null) {
+			xmlDoc.async = false;
+			loadXML(File + ".xml");
+
+		}
+
+		getSearchData(xmlDoc);
+		mainWindow.close();
+		document.getElementById('divLoader').style.display = "none";
+		if (CountSearchedElements != 0)
+			alert(CountSearchedElements + " matches found");
+		else
+			alert("Sorry! No matches found");
+
+	}
+
+	function getSearchData(xmlDoc) {
+
+		CountSearchedElements = 0;
+		var node = document.getElementById('findit').value;
+		node = node.toUpperCase();
+		var subString = '';
+		var bodyContent = '';
+		var rightPaneContent = '';
+		var Content = "<div id='resultframe'><span class='generictext'><em>Search Results</em></span></div>";
+		var x = xmlDoc.getElementsByTagName("NodeDetails");
+		document.getElementById("resultpane").innerHTML = "";
+		document.getElementById("resultpane").innerHTML = Content;
+		var j = 0;
+		CountNodes = 0;
+		for (var i = 0; i < x.length; i++) {
+			var y = x[i].getElementsByTagName("XSD_NODE_1")[0].nextSibling;
+
+			if (y.nodeName == "EndOfList") {
+				var value = x[i].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue;
+				var nodeContent = CheckNodeType(
+						xmlDoc,
+						x[i].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue,
+						2);
+				if (nodeContent == "TRUE") {
+					subString = getOtherSearchElements(
+							xmlDoc,
+							x[i].getElementsByTagName("NodeName")[0].childNodes[0].nodeValue,
+							2);
+
+					var c = 1;
+					var val = c + "~" + value + "~" + "*";
+					if (subString != "") {
+						var NodeValue = value.toUpperCase();
+
+						bodyContent = '';
+						bodyContent += "<ul class='nestedlist' >";
+						bodyContent += "<a href='#'onclick=\"toggleSeachNodes('"
+								+ value
+								+ "_1');swapFolder1('"
+								+ value
+								+ "'); \" ><img id='IMG1_"+ value +"' src='Images/minus.gif' /></a>";
+						if (NodeValue.indexOf(node) != -1) {
+							bodyContent += "<a href='#'  id='"
+									+ value
+									+ "2' style='color:red;font-size:.71em;' onclick=\"getNodeDetails('"
+									+ val + "'); \" >";
+							bodyContent += value;
+							bodyContent += "</a>";
+							SearchedElements += value + "2" + "~";
+							CountSearchedElements = CountSearchedElements + 1;
+						} else {
+							bodyContent += "<a href='#'  id='"
+									+ value
+									+ "2' style='font-size:.71em;' onclick=\"getNodeDetails('"
+									+ val + "'); \" />";
+							bodyContent += value;
+							bodyContent += "</a>";
+						}
+
+						bodyContent += "<span id ='"+ value +"_1' class='branch' name='details'  style='border:1;font-size:small;color:blue; border-color:Teal;display:block;'  >";
+						bodyContent += subString;
+						bodyContent += "</span>";
+						bodyContent += "</ul>";
+						document.getElementById('divListOfXSDs').style.display = "none";
+						document.getElementById('leftpane').style.display = "none";
+						document.getElementById('resultpane').style.display = "block";
+						document.getElementById("resultpane").innerHTML += bodyContent;
+					}
+				}
+				//                         else
+				//                         {
+				//                         bodyContent='';
+				//                         //bodyContent += "<img id='IMG_"+ value +"' src='Images/plus.gif' onclick=\"toggle('"+ value +"');swapFolder('"+ value +"'); \"/>";                       
+				//                         bodyContent += "<img  src='Images/blue.gif' />";
+				//                         var NodeValue  = value.toUpperCase();
+				//                         if(NodeValue.indexOf(node) != -1 )
+				//                             {
+				//                                bodyContent += "<a href='#'  id='"+ value +"2' style='color:red;font-size:.71em;' onclick=\"getNodeDetails('"+ val +"'); \" >";
+				//                                bodyContent += value;
+				//                                bodyContent += "</a>"; 
+				//                                SearchedElements += value +"2"+"~";
+				//                                CountSearchedElements = CountSearchedElements + 1;
+				//                             }
+				//                             else
+				//                             {
+				//                                bodyContent += "<a href='#'  id='"+ value +"2' style='font-size:.71em;' onclick=\"getNodeDetails('"+ val +"'); \" />";
+				//                                bodyContent += value;
+				//                                bodyContent += "</a>"; 
+				//                             }
+				////                         bodyContent += "<a href='#'  id='"+ value +"1' style='font-size:.71em;' onclick=\"getNodeDetails('"+ val +"'); \" >";
+				////                         bodyContent += "&#8250;  "+ value;
+				////                         bodyContent += "</a>";
+				//                         bodyContent += "<span id ='"+ value +"1' class='branch' name='details'  style='font-size:small;color:blue; display: none;'  >";
+				//                         bodyContent +="<ul class='nestedlist' >";
+				//                         bodyContent += subString;
+				//                         bodyContent +="</ul>";
+				//                         bodyContent +="</span></br>";   
+				//                         document.getElementById('divListOfXSDs').style.display="none";
+				//                         document.getElementById('leftpane').style.display="none";  
+				//                         document.getElementById('resultpane').style.display="block";      
+				//                         document.getElementById("resultpane").innerHTML +=bodyContent;
+				//                         }
+
+			}
+		}
+		var Content = "<div id='searchframe'><input class='Search' Value='Search' size='20' type='text' id='findit' onclick = 'ClearText();' onBlur = 'getText();' accesskey='4'>&nbsp;<input class='Inputbutton' type='submit' value='' onclick='CompletePageSearch();'></div>";
+		rightPaneContent = " <fieldset class='L3container' style='display:block' >";
+		//rightPaneContent +="<legend>FCUBS_REQ_ENV</legend>";
+		rightPaneContent += "<p>A standard XML message in FLEXCUBE UBS Envelope format should contain two main   components (nodes):</p>";
+		rightPaneContent += "<p><span style='color:blue;'>FCUBS_HEADER</span>: This is a standard node that would form the header for FLEXCUBE UBS Envelope. Information to identify the partner system, service, operation, user and branch etc., will form the tags in this node. Entire processing in FLEXCUBE UBS Messaging Database Layer is based upon the information provided in this node.</p>";
+		rightPaneContent += "<p><span style='color:blue;'>FCUBS_BODY</span>: Contents of this node would vary from message to message based on the context of the message. Thus, this node will contain the actual payload of the message.</p>";
+		rightPaneContent += "</fieldset>";
+
+		document.getElementById('rightpane').style.display = "block";
+		document.getElementById("rightpane").innerHTML = Content
+				+ XSDDescContent + rightPaneContent;
+
+	}
+
+	function getOtherSearchElements(xmlDoc, name, num) {
+		CountNodes = CountNodes + 1;
+		var substring = '';
+		var returnStr = '';
+		var val = "XSD_NODE_" + num;
+
+		var node = document.getElementById('findit').value;
+		node = node.toUpperCase();
+
+		var x = xmlDoc.getElementsByTagName(val);
+
+		if (x.length > 0) {
+			for (var i = 0; i < x.length; i++) {
+				var next = x[i].nextSibling;
+				var previous = x[i].previousSibling;
+
+				if (next.nodeName == "EndOfList") {
+					subString = '';
+					if (previous.childNodes[0].nodeValue == name) {
+						subString = getOtherSearchElements(xmlDoc,
+								x[i].childNodes[0].nodeValue, num + 1);
+						if (subString != "") {
+							var value = num + "~"
+									+ x[i].childNodes[0].nodeValue + "~"
+									+ previous.childNodes[0].nodeValue;//+"~"+ AttributesList +"~"+ RestrictionList;alert(value);
+							var Nodevalue = num + "~"
+									+ x[i].childNodes[0].nodeValue + CountNodes
+									+ "~" + previous.childNodes[0].nodeValue;
+							returnStr += "<li class='nestedlist' >";
+							returnStr += "<a href='#' onclick=\"toggleUlSeachNodes('"
+									+ x[i].childNodes[0].nodeValue
+									+ CountNodes
+									+ "_1');swapFolder1('"
+									+ x[i].childNodes[0].nodeValue
+									+ CountNodes
+									+ "'); \" ><img id='IMG1_"+ x[i].childNodes[0].nodeValue + CountNodes +"' src='Images/minus.gif' /></a>";
+							//returnStr += "<input type='button'  id='"+ x[i].childNodes[0].nodeValue +"1' style=\"color:blue; border:0; background: #fff;cursor:hand;font-family: Verdana, Arial, Helvetica, sans-serif;TEXT-ALIGN: left;\"   value='"+ x[i].childNodes[0].nodeValue +"' onclick=\"getNodeDetails('"+ value +"');ChangeFontWeight('"+ value +"'); \">";
+							var NodeValue = x[i].childNodes[0].nodeValue;
+							NodeValue = NodeValue.toUpperCase();
+							if (NodeValue.indexOf(node) != -1) {
+
+								returnStr += "<a href='#' id='"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "2' style='color:red;'   onclick=\"getNodeDetails('"
+										+ value
+										+ "');ChangeFontWeightSearchNodes('"
+										+ Nodevalue + "'); \">";
+								SearchedElements += x[i].childNodes[0].nodeValue
+										+ CountNodes + "2" + "~";
+								CountSearchedElements = CountSearchedElements + 1;
+							} else {
+
+								returnStr += "<a href='#' id='"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "2'    onclick=\"getNodeDetails('"
+										+ value
+										+ "');ChangeFontWeightSearchNodes('"
+										+ Nodevalue + "'); \">";
+
+							}
+							returnStr += x[i].childNodes[0].nodeValue;
+							returnStr += "</a>";
+							returnStr += "<ul class='nestedlist' id ='"+ x[i].childNodes[0].nodeValue + CountNodes +"_1' style='border:1;font-size:small;color:blue; border-color:Teal;display: block;'>";
+							returnStr += subString;
+							returnStr += "</ul>";
+							returnStr += "</li>";
+							CountNodes = CountNodes + 1;
+						} else {
+							CountNodes = CountNodes + 1;
+							var value = num + "~"
+									+ x[i].childNodes[0].nodeValue + "~"
+									+ previous.childNodes[0].nodeValue;// +"~"+ AttributesList +"~"+ RestrictionList;alert(value);
+							var Nodevalue = num + "~"
+									+ x[i].childNodes[0].nodeValue + CountNodes
+									+ "~" + previous.childNodes[0].nodeValue;
+							returnStr += "<li class='nestedlist' >";
+							returnStr += "<img id='IMG1_"+ x[i].childNodes[0].nodeValue + CountNodes +"' src='Images/blue.gif' />";
+							//returnStr += "<input type='button'  id='"+ x[i].childNodes[0].nodeValue +"1' style=\"color:blue;font-size:.9em; border:0; background: #fff;cursor:hand;font-family: Verdana, Arial, Helvetica, sans-serif;TEXT-ALIGN: left;\"   value='&nbsp;"+ x[i].childNodes[0].nodeValue +"' onclick=\"getNodeDetails('"+ value +"');ChangeFontWeight('"+ value +"'); \">";
+							var NodeValue = x[i].childNodes[0].nodeValue;
+							NodeValue = NodeValue.toUpperCase();
+							if (NodeValue.indexOf(node) != -1) {
+								returnStr += "<a href='#' id='"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "2' style=\"color:Red; \"    onclick=\"getNodeDetails('"
+										+ value
+										+ "');ChangeFontWeightSearchNodes('"
+										+ Nodevalue + "'); \">";
+								CountSearchedElements = CountSearchedElements + 1;
+							} else {
+								returnStr += "<a href='#' id='"
+										+ x[i].childNodes[0].nodeValue
+										+ CountNodes
+										+ "2'    onclick=\"getNodeDetails('"
+										+ value
+										+ "');ChangeFontWeightSearchNodes('"
+										+ Nodevalue + "'); \">";
+							}
+							returnStr += x[i].childNodes[0].nodeValue;
+							returnStr += "</a>";
+							returnStr += "<ul class='nestedlist' id ='"+ x[i].childNodes[0].nodeValue + CountNodes +"' style='border:1;font-size:small;color:blue; border-color:Teal;display: none;'>";
+							returnStr += subString;
+							returnStr += "</ul>";
+							returnStr += "</li>";
+						}
+
+					}
+				}
+			}
+
+		}
+		return returnStr;
+	}
+
+	function swapFolder1(value) {
+		objImg = document.getElementById("IMG1_" + value);
+		if (objImg.src.indexOf("Images/minus.gif") > -1)
+			objImg.src = openImg.src;
+		else
+			objImg.src = closedImg.src;
+	}
+
+	function ClearText() {
+		document.getElementById('findit').value = '';
+	}
+	function getText() {
+		if (document.getElementById('findit').value == "")
+			document.getElementById('findit').value = "Search";
+	}
+
+	function toggleUlSeachNodes(a) {
+		var e = document.getElementById(a);
+		myBody = document.getElementsByTagName("body")[0];
+		var x = document.getElementById("Release");
+		myBodyElements = myBody.getElementsByTagName("ul");
+
+		if (e.style.display == "none") {
+			e.style.display = "block";
+		} else {
+			e.style.display = "none";
+		}
+
+		return true;
+	}
+
+	function toggleSeachNodes(a) {
+		var e = document.getElementById(a);
+		myBody = document.getElementsByTagName("body")[0];
+		var x = document.getElementById("ResultPane");
+		myBodyElt = myBody.getElementsByTagName("div");
+		for (var j = 0; j < myBodyElt.length; j++) {
+			if (myBodyElt[j] == x) {
+				myBodyElements = myBodyElt[j].getElementsByTagName("span");
+
+				for (var i = 0; i < myBodyElements.length; i++) {
+					if (myBodyElements[i] != e) {
+						if (myBodyElements[i].style.display == "block") {
+							myBodyElements[i].style.display = "none";
+						}
+					}
+
+				}
+			}
+		}
+
+		if (e.style.display == "none") {
+			e.style.display = "block";
+		} else {
+			e.style.display = "none";
+		}
+
+		return true;
+	}
+
+	function ChangeFontWeightSearchNodes(value) {
+		var SelectedNode = value.split('~');
+		var z = document.getElementById(SelectedNode[1] + "2");
+		myBody = document.getElementsByTagName("body")[0];
+		var x = document.getElementById("ResultPane");
+		myBodyElt = myBody.getElementsByTagName("div");
+		for (var j = 0; j < myBodyElt.length; j++) {
+			if (myBodyElt[j] == x) {
+				myBodyElements = myBodyElt[j].getElementsByTagName("a");
+
+				for (var i = 0; i < myBodyElements.length; i++) {
+					if (myBodyElements[i] != z) {
+						if (myBodyElements[i].style.fontWeight == "bold") {
+							myBodyElements[i].style.fontWeight = "normal";
+						}
+					}
+				}
+			}
+		}
+
+		if (z.style.fontWeight == "bold") {
+			z.style.fontWeight = "bold";
+		} else {
+			z.style.fontWeight = "bold";
+		}
+
+	}
+	function loadXML(file) {
+		if (xmlDoc != null) {
+			xmlDoc.async = false;
+			try{
+			xmlDoc.load(file);
+			}
+			catch(e) {
+			
+			try //Google Chrome
+			  {
+			   var xmlhttp = new window.XMLHttpRequest();
+			   xmlhttp.open("GET", file, false);
+			   xmlhttp.send(null);
+			   xmlDoc = xmlhttp.responseXML.documentElement;
+			  }
+			  catch(e)
+			  {
+			   error=e.message;
+			  }
+			}
+		}
+	}
+</script>
+</head>
+<body class="bars" onload="setHeights();MenuDetails();">
+	<script type="text/javascript">
+		var NavContent = '';
+		var count = 1;
+		var type = "home";
+		NavContent = "<ul class='primarynav'><li  onclick=\"regenerateNavBar('"
+				+ count + "');\"><a href='#' accesskey='1'>Home</a></li>";
+
+		var xmlDoc = null;
+		var ua = (navigator.userAgent).toUpperCase();
+		if (ua.indexOf("MSIE") != -1
+				|| (ua.indexOf("TRIDENT") != -1 && ua.indexOf("RV") != -1)) {
+			try {
+				xmlDoc = new ActiveXObject("Msxml2.DOMDocument.6.0");
+			} catch (e) {
+				xmlDoc = new ActiveXObject("Msxml2.DOMDocument.4.0");
+			}
+		} else {
+
+			xmlDoc = document.implementation.createDocument("", "", null);
+		}
+
+		/*if (window.ActiveXObject)
+		{// code for IE
+		    xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+		}
+		else if (document.implementation.createDocument)
+		{// code for Mozilla, Firefox, Opera, etc.
+		    xmlDoc=document.implementation.createDocument("","",null);
+		}
+		else
+		{
+		    alert('Your browser cannot handle this script');
+		}*/
+
+		//////Script to disable right click
+		var message = "";
+
+		function clickIE() {
+			if (document.all) {
+				(message);
+				return false;
+			}
+		}
+		function clickNS(e) {
+			if (document.layers || (document.getElementById && !document.all)) {
+				if (e.which == 2 || e.which == 3) {
+					(message);
+					return false;
+				}
+			}
+		}
+		if (document.layers) {
+			document.captureEvents(Event.MOUSEDOWN);
+			document.onmousedown = clickNS;
+		} else {
+			document.onmouseup = clickNS;
+			document.oncontextmenu = clickIE;
+		}
+
+		document.oncontextmenu = new Function("return false");
+	</script>
+	<div id="wrapper" style="height: 90%;">
+		<div id="Branding" class="TitleBar">
+			<img src="Images/i-flexlogo.gif" width="73" height="47"
+				title="i-flex logo" style="float: right;" />
+			<ul class="primarynav" style="float: right;">
+				<li><a accesskey="0" href="#" onclick="javascript:disp_alert()"
+					style="color: #0000FF; position: relative; top: 3px; right: 75px;">Access
+						Key Details</a></li>
+			</ul>
+			<img src="Images/FCUBStitle.gif" width="333" height="46"
+				title="Flexcube UBS Gateway Integration" />
+		</div>
+		<div id="navbar"></div>
+		<div id="divServices" class="contentframe" style="display: block;">
+		</div>
+		<div id="divOperations" class="contentframe" style="display: none;">
+		</div>
+		<div id="divLoadIndicator" class="contentframe" style="display: none">
+		</div>
+		<div id="divListOfXSDs" class="contentframe" style="display: none;">
+		</div>
+		<div id="divXSDDesc" class="Contentdescription" style="display: none;">
+		</div>
+		<div id="divLoader" class="divLoader" style="display: none;"></div>
+		<div id="leftpane" style="display: none; height: 300px;"></div>
+		<div id="resultPane" style="display: none; height: 300px;"></div>
+		<div id="rightpane" style="display: none;"></div>
+		<input type="hidden" id="SelectedXSD" />
+		
+		</div>
+	
+</body>
+</html>

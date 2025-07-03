@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="{REF_LOCATION}/ELCMEntities" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>{INIT_DS}</jta-data-source>
+        <jar-file>ELCMEntities.jar</jar-file>
+		    <properties>
+            <property name="eclipselink.session.customizer" value="com.ofss.elcm.ELSessionCustomizer"/>
+            <property name="eclipselink.target-server" value="{TARGET}"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="javax.persistence.jtaDataSource" value="{INIT_DS}"/>
+          <!--<property name="eclipselink.cache.coordination.protocol" value="jms"/>
+		            <property name="eclipselink.cache.coordination.jms.topic" value="@TOPIC@"/>
+		            <property name="eclipselink.cache.coordination.jms.factory" value="@CONNECTION_FACTORY@"/>
+		            <property name="eclipselink.cache.coordination.jndi.user" value="weblogic"/>
+		            <property name="eclipselink.cache.coordination.jndi.password" value="welcome1"/>-->
+            <property name="eclipselink.cache.coordination.@SERVER1@" value="@HOST:PORT@"/>
+            <property name="eclipselink.cache.coordination.@SERVER2@" value="@HOST:PORT@"/>
+        </properties>
+    </persistence-unit>
+	<persistence-unit name="{REF_LOCATION}/ELCMRepEntities" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>{INIT_DS}</jta-data-source>
+        <jar-file>ELCMEntities.jar</jar-file>		
+        <properties>
+            <property name="eclipselink.session.customizer" value="com.ofss.elcm.ELSessionCustomizer"/>
+            <property name="eclipselink.target-server" value="{TARGET}"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="javax.persistence.jtaDataSource" value="{INIT_DS}"/>
+        </properties>
+    </persistence-unit>
+	<persistence-unit name="UtilSchedulerEM" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>{INIT_DS}</jta-data-source>
+        <jar-file>ELCMEntities.jar</jar-file>		
+        <properties>
+            <property name="eclipselink.session.customizer" value="com.ofss.elcm.ELSessionCustomizer"/>
+            <property name="eclipselink.target-server" value="{TARGET}"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="javax.persistence.jtaDataSource" value="{INIT_DS}"/>
+        </properties>
+    </persistence-unit>
+</persistence>

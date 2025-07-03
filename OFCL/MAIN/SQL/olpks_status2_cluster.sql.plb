@@ -1,0 +1,32 @@
+CREATE OR REPLACE PACKAGE BODY olpks_status2_cluster wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+623 2c5
+SqXCym297EJ4zYNEhIYjK6dV9Jkwgzu3ciATfI6pvwKdBlVaGuVbGzslVMWIMC+OxslhMae3
+lA2gbaf3xciEY/kIDb3eE57CWROucLz+anIsrfTJFOnnQjSp15Lu6jseyTGKJw+a2L8yXkg3
+Wr8RreK3mRw4cedGV1mAvkHZjrzz8y70pcbIobFrgBKM0Pk9sApSj3uo6IjHkFY3BGpm7UcX
+JkhPIRelQ6vPaV4hpt0iasG9MHOk3BuxHHoANboAS/NMYC2uV5tXgdEz3n4BkX+Rof5wg8uK
+zPGs6cWCY7boxzd76WO9uhGILjJZbyVuYgZZvdM+YnyzX4TUh0oy7nsHAb5C/4hlRGTZS5+B
+m810Y0d1iKbMzqfEu4DY3sZfEwbVrUdRL+icBO5TKIdN+SJWT7Y1ixcIwwppgKDIngLNQDRD
+XpeE5pY9BgAhn6Q35S9HFsY+0zx7Jb5wlJvCnrnFc0tigRAxfQGBTR4TT5KfOlQSM5ujYInX
+SLo75RJTBUg/T12YJ/KOESDkgEa+7cmxOkiK4Uh2tpuVoN9CwnE72bpUkLkLKNlkd1l5vJp9
+8mxG8oqKq8g+S53/91Jx5YKN/VDnDg80JEbSvnjKiZX40to3/ogw5iaEhRK9rkDSEs61omh3
+15pYVwSlZMXLGyKalSLX2F8z2rA6WScm48UaqnVcpe6ILFnWcw==
+
+/

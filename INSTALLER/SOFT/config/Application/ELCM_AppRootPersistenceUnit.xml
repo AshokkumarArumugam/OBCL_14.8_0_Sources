@@ -1,0 +1,20 @@
+<application>
+    <persistence-unit name="{REF_LOCATION}APPROOT/ELCMEntities" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>{SMS_DS}</jta-data-source>
+        <jar-file>ELCMEntities.jar</jar-file>
+        <properties>
+            <property name="eclipselink.session.customizer" value="com.ofss.elcm.ELSessionCustomizer"/>
+            <property name="eclipselink.target-server" value="{TARGET}"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+            <property name="javax.persistence.jtaDataSource" value="{SMS_DS}"/>
+          <!--<property name="eclipselink.cache.coordination.protocol" value="jms"/>
+		            <property name="eclipselink.cache.coordination.jms.topic" value="@TOPIC@"/>
+		            <property name="eclipselink.cache.coordination.jms.factory" value="@CONNECTION_FACTORY@"/>
+		            <property name="eclipselink.cache.coordination.jndi.user" value="weblogic"/>
+		            <property name="eclipselink.cache.coordination.jndi.password" value="welcome1"/>-->
+            <property name="eclipselink.cache.coordination.@SERVER1@" value="@HOST:PORT@"/>
+            <property name="eclipselink.cache.coordination.@SERVER2@" value="@HOST:PORT@"/>
+        </properties>
+    </persistence-unit>
+</application>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://fcubs.ofss.com/service/FCUBSCoreentitiesService"
+    xmlns="http://fcubs.ofss.com/service/FCUBSCoreentitiesService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="UBS-Messaging.xsd"/>
+    <xs:include schemaLocation="ST-ExternalConsumerLoan-Types.xsd"/>
+    <xs:element name="MODIFYEXTERNALCONSUMERLOAN_IOPK_RES">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="FCUBS_HEADER" type="FCUBS_HEADERType"/>
+                <xs:element name="FCUBS_BODY">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:choice>
+                                <xs:element
+                                    name="Sttms-Core-Consumerloan-Account-PK" type="ExternalConsumerLoan-PK-Type"/>
+                                <xs:element
+                                    name="Sttms-Core-Consumerloan-Account-IO" type="ExternalConsumerLoan-Modify-IO-Type"/>
+                            </xs:choice>
+                            <xs:element maxOccurs="unbounded"
+                                minOccurs="0" name="FCUBS_ERROR_RESP" type="ERRORType"/>
+                            <xs:element maxOccurs="unbounded"
+                                minOccurs="0" name="FCUBS_WARNING_RESP" type="WARNINGType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

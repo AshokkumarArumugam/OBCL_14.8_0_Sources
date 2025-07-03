@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--*****************************************************************************
+    ** Unit Name: GW_EJB_Prop.xml
+    **
+    ** Date:      16-Jun-2006
+    **
+    ** Author:    i-flex
+    **
+    ** Copyright © ** Copyright 2005- 2009 by Oracle Financial Services Software Limited.
+    **                   10-11, SDF I, SEEPZ, Andheri (East),
+    **                   Mumbai - 400 096.
+    **                   India
+    **
+    ** This source is part of the Flexcube XML Gateway and is copyrighted by Oracle Financial Services Software Limited.
+    **
+    ** All rights reserved.  No part of this work may be reproduced, stored in a
+    ** retrieval system, adopted or transmitted in any form or by any means,
+    ** electronic, mechanical, photographic, graphic, optic recording or otherwise,
+    ** translated in any language or computer language, without the prior written
+    ** permission of Oracle Financial Services Software Limited.
+    **
+    *******************************************************************************
+    **============================   XSD RELATED PROPERTIES   ======================
+    **
+    **
+    ** XSD_PATH - Absolute path to the XSD File. Specify only the path. Not
+    **             the file name. File separator must be "/". There must be a
+    **             "/" at the end.
+    **===========================================================================
+    ** FCUBS_ENVELOPE_XSD - This property specifies the name of the XSD against
+    **                       which the incoming  messages are validated.
+    **
+    **
+    **============================   DATABASE RELATED PROPERTIES   =================
+    **
+    **
+    ** MAX_CLOB_LEN -  Maximum length of the message to consider it as String
+    **	               Message.Ex : If the length MAX_CLOB_LEN=32512 and if the
+    **                 message length is > 32512 then it is converted to CLOB before
+    **                 sending to Database for processing.
+    **===========================================================================
+    **
+    ** DB_TIMEOUT   - This is the timeout in SECONDS for which the FCUBS EJB Gateway
+    **                will wait for PL/SQL to finish it's processing. If database did
+    **                not return withih this timeout, the call to PL/SQL will be
+    **                assumed to be failed.
+    **  Examples:
+    ** =========
+    **  a. DB_TIMEOUT=200
+    **===========================================================================
+    ** <UBSCOMP>_MSG_SCHEMA_CON_POOLNAME -  This is the JNDI lookup name of the JDBC
+    **                                      connection pool from which the GWInterface
+    **                                      will look for the database connection.
+    **                                      A JDBC connection pool with this JDNI name
+    **                                      should be prepared in the application server.
+	**
+	**  Possible values for <UBSCOMP>
+	**  1. FCUBS
+	**  2. FCIS
+	**
+    **  Examples:
+    **  ========-
+    **  a. FCUBS_MSG_SCHEMA_CON_POOLNAME=FLEXTEST.WORLD
+    **  b. FCIS_MSG_SCHEMA_CON_POOLNAME=FCIS_MSG_SCHEMA
+    **
+    **=============================   MISCELLANEOUS PROPERTIES   =======================
+    **
+    **
+    ** LOGGER_PATH - Absolute path to the gw_ejb_logger.xml file along with file name.
+    **	             NOTE: File separator must be "/".
+    **================================================================================
+ -->
+<configuration>
+    <appSettings>
+        <add key="XSD_PATH" value="D:/Kernel10.0/GW_EJB/XSD/"/>
+        <add key="FCUBS_ENVELOPE_XSD" value="FCUBS_REQ_ENV.xsd"/>
+        <add key="MAX_CLOB_LEN" value="32512"/>
+        <add key="DB_TIMEOUT" value="20"/>
+        <add key="FCUBS_MSG_SCHEMA_CON_POOLNAME" value="FLEXTEST.WORLD"/>
+        <add key="FCUBS_MSG_SCHEMA_CON_POSS_REQD" value="N"/>
+        <add key="FCUBS_MSG_SCHEMA_CON_POSSPOOLNAME" value="POSSTEST.WORLD"/>
+        <add key="FCIS_MSG_SCHEMA_CON_POOLNAME" value="FCIS_MSG_SCHEMA"/>
+        <add key="LOGGER_PATH" value="D:/Kernel10.0/GW_EJB/config/gw_ejb_logger.xml"/>
+		<add key="DISTRIBUTED_INSTALLATION" value="N"/>
+		<!-- Next two properties define application server specific property
+		     for getting Transaction Manager context. 
+			 For Websphere application server only APP_SERVER_TRANSACTION_MANAGER_CLASS
+			 needs to be defined as factory class com.ibm.ws.Transaction.TransactionManagerFactory. And 
+			 APP_SERVER_TRANSACTION_MANAGER_JNDI needs to be left blank. 
+			 For OC4J, JBOSS and WEBLOGIC APP_SERVER_TRANSACTION_MANAGER_JNDI
+			 needs to be defined with following..  
+			 WEBLOGIC : javax.transaction.TransactionManager
+			 JBOSS    : java:/TransactionManager
+			 OC4J     : java:comp/pm/TransactionManager   
+			 And APP_SERVER_TRANSACTION_MANAGER_CLASS needs to be blank-->
+		<add key="APP_SERVER_TRANSACTION_MANAGER_CLASS" value="com.ibm.ws.Transaction.TransactionManagerFactory"/>
+		<add key="APP_SERVER_TRANSACTION_MANAGER_JNDI" value=""/>
+		<!-- Changes ends -->
+    </appSettings>
+</configuration>

@@ -1,0 +1,27 @@
+CREATE OR REPLACE PROCEDURE PR_UPDATE_OUTBOUND wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+2c2 148
+mYKWBdzJipokXcyPDAQFzd0Oolgwg2PxLUhqfHSi2vjVV99n6OI3OaPgtmthFMjDBS61tR/3
+VhTfLx3pOMvsSsaYW2xKp3HJrNtsSQfybMmkC8u5AELMd1ampfB+IIUswfv5ePq2A/BKSiMU
+kW4oI1fTEhbGsE8Wj1mu0LYOdNqCJT0Haxx9WThvpJnXCdR6EI3JXm7cJbbnPnqhsX+lyp30
+VIaA0ZAaky28FntJAzczZikER5cavT9Iw6qv8X7eEd8yljv6P5QBdKwrEHSqjZNk2C8z3Cqk
+c6Py16B5NuOj/jb8mHE40gmNjmhDzcvMQrc7
+
+/

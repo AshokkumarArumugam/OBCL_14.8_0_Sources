@@ -1,0 +1,16 @@
+@echo on
+
+@REM JAVA HOME 
+set JAVA_HOME=%APP_SERVER_HOME%\jdk
+
+@REM J2EE HOME 
+set J2EE_HOME=%APP_SERVER_HOME%\j2ee\home
+
+@REM ORACLE HOME 
+set ORACLE_HOME=%APP_SERVER_HOME%
+
+@REM ANT HOME
+set ANT_HOME=%APP_SERVER_HOME%\ant
+
+set path=%path%;%JAVA_HOME%\bin;%ANT_HOME%\bin;
+

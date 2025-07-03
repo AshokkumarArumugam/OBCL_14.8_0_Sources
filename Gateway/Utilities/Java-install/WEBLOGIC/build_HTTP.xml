@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="FCUBS_7-2_GW" default="all" basedir=".">
+
+    <!-- set global properties for this build -->
+    <property environment="env"/>  
+    <property name="source" value="."/>
+    <property name="wl_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="j2ee_home" value="${env.J2EE_HOME}"/>
+
+    <property name="src_http" value="../../src"/>
+    <property name="src_common" value="../../src/common"/>
+    <property name="config" value="../../config"/>
+    <property name="http_lib" value="../../lib"/>
+    <property name="src_gw_http" value="${src_http}/com/iflex/fcubs/gw/http"/>
+    <property name="src_gw_ejb" value="${src_common}/com/iflex/fcubs/gw/ejb"/>
+    <property name="src_srvc_ejb_client" value="${src_common}/com/iflex/fcubs/gwservices/ejb"/>
+    <property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+    <property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+    <property name="build" value="../../build"/>
+    <property name="dist" value="../../dist"/>
+
+	<path id="compile.classpath">
+		<pathelement location="${j2ee_home}/lib/weblogic.jar"/>
+		<pathelement location="${j2ee_home}/lib/api.jar"/>
+    </path>
+
+  <target name="all" depends="init, clean_build, clean_class, make_dir, compile_http, compile_common, do_war, do_ear, clean"/>
+  <!-- ,  do_war, do_ear, clean"/>-->
+
+	<target name="init">
+		<echo message="NOTE : Make Sure that EJB has setup already "/>
+	</target>
+
+	<!-- Delete build folder -->
+	<target name="clean_build">
+ 		<delete dir="${build}"/>
+	</target>
+
+	<!-- Delete classes folder -->
+	<target name="clean_class">
+		<delete dir="${dist}"/>
+	</target>
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/META-INF"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/WEB-INF/classes"/>
+
+		<!-- Create the time stamp -->
+		<copy todir="${build}/META-INF">
+			<fileset dir="${config}">
+				<include name="application.xml"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac 
+			srcdir="${src_gw_ejb}"
+			destdir="${dist}/WEB-INF/classes"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		
+		<taskdef name="rmic" classname="org.apache.tools.ant.taskdefs.Rmic" />
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemote.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemoteHome.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}/WEB-INF/classes"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}/WEB-INF/classes"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_ejb_client}"
+			destdir="${dist}/WEB-INF/classes"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Compile the java code -->
+	<target name="compile_http" depends="compile_common"> 
+		<javac srcdir="${src_gw_http}" destdir="${dist}/WEB-INF/classes"  
+		       debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_war" depends="compile_http">
+		<war destfile="${build}/GW_HTTP_Servlet.war" webxml="${config}/web.xml">
+			<fileset dir="${dist}"/>
+		</war>
+		
+	</target>
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_ear" depends="do_war">
+
+		<ear destfile="${source}/GW_HTTP_Servlet.ear" appxml="${build}/META-INF/application.xml" >
+			<fileset dir="${build}"  includes="GW_HTTP_Servlet.war"/>
+		</ear>
+		<move file="${source}/GW_HTTP_Servlet.ear" todir="${build}" />
+	</target>
+
+	<target name="clean">
+ 		<delete dir="${dist}"/>
+		<delete dir="${build}/META-INF"/>
+	</target>
+</project>

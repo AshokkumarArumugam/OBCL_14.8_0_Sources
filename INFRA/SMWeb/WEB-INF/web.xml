@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+         <display-name>Security Management Gateway</display-name>
+  <listener>
+		<listener-class>com.ofss.sms.FCStartUpListener</listener-class>
+	</listener> 
+  <servlet>
+    <description></description>	
+    <display-name>SMGWServlet</display-name>
+    <servlet-name>SMGWServlet</servlet-name>
+    <servlet-class>com.ofss.sms.servlet.SMGWServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>     
+   <servlet>
+    <description></description>
+    <display-name>SMGWClientController</display-name>
+    <servlet-name>SMGWClientController</servlet-name>
+    <servlet-class>com.ofss.sms.client.SMGWClientController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SMGWClientController</servlet-name>
+    <url-pattern>/SMGWClientController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SMGWServlet</servlet-name>
+    <url-pattern>/SMGWServlet</url-pattern>
+  </servlet-mapping>
+   <!-- Spring Context Initialization  -->
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>
+            org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+        </param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>com.ofss.sms</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+  <welcome-file-list>
+   <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <env-entry>
+        <env-entry-name>RES_APP_NAME</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>{REF_LOCATION}</env-entry-value>
+ </env-entry>
+ </web-app>

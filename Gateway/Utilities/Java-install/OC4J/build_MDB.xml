@@ -1,0 +1,232 @@
+<project name="FCUBS_7-2_GW" default="all" basedir=".">
+<!-- 08-Dec-2006 FCC73ITR1 SFR-001 Conversion SFR-Schema Setup -->
+	<!-- set global properties for this build -->
+	<property environment="env"/>  
+	<property name="source" value="."/>
+	<property name="oc4j_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="oc4j_ext_lib" value="${oc4j_home}/j2ee/home/applib"/>
+
+	<property name="user_home" value="${env.USER_HOME}"/>
+	<property name="src_mdb" value="../../src"/>
+	<property name="src_common" value="../../src/common"/>
+	<property name="config" value="../../config"/>
+	<property name="config_as" value="../../config/${env.APP_SERVER_NAME}"/>
+	<property name="mdb_lib" value="../../lib"/>
+	<property name="src_gw_mdb" value="${src_mdb}/com/iflex/fcubs/gw/mdb"/>
+	<!-- KERNEL73 starts /-->
+	<!-- Controller functionality moved to Bean starts starts
+	<property name="src_contr_mdb" value="${src_common}/com/iflex/fcubs/gwcontrollers/mdb"/>
+	Controller functionality moved to Bean ends-->
+	<!-- KERNEL73 ends /-->
+	<property name="src_srvc_db" value="${src_common}/com/iflex/fcubs/gwservices/db"/>
+	<property name="src_srvc_db_in_bnd" value="${src_common}/com/iflex/fcubs/gwservices/db/inbound"/>
+	<property name="src_srvc_jms" value="${src_common}/com/iflex/fcubs/gwservices/jms"/>
+	<property name="src_srvc_xml" value="${src_common}/com/iflex/fcubs/gwservices/xml"/>
+	<property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_db" value="${src_common}/com/iflex/fcubs/gwutil/db"/>
+	<property name="src_util_jms" value="${src_common}/com/iflex/fcubs/gwutil/jms"/>
+	<property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_xml" value="${src_common}/com/iflex/fcubs/gwutil/xml"/>
+	<property name="build" value="../../build"/>
+	<property name="dist" value="../../dist"/>
+	<property name="rar" value="../../rar"/>
+
+	<path id="compile.classpath">
+		<pathelement location="${oc4j_home}/j2ee/home/lib/javax77.jar"/>
+		<pathelement location="${oc4j_home}/j2ee/home/lib/ejb.jar"/>
+        <pathelement location="${oc4j_home}/webservices/lib/saaj-api.jar"/>
+        <pathelement location="${oc4j_home}/j2ee/home/lib/oc4j-internal.jar"/>
+        <pathelement location="${oc4j_home}/j2ee/home/lib/jms.jar"/>
+        <pathelement location="${oc4j_home}/j2ee/home/oc4j.jar"/>
+        <pathelement location="${oc4j_home}/j2ee/home/oc4jclient.jar"/> 
+		<pathelement location="${mdb_lib}/ojdbc14.jar"/>
+	</path>
+
+  <target name="all" depends="clean_build, clean_class, make_dir, do_WebSphereMQ_rar, compile_common,  compile_mdb, do_jar, do_ear, clean "/>
+
+	<!-- Delete build folder -->
+	<target name="clean_build">
+ 		<delete dir="${build}"/>
+	</target>
+
+	<!-- Delete classes folder -->
+	<target name="clean_class">
+		<delete dir="${dist}"/>
+	</target>
+
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/META-INF"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/META-INF"/>
+
+		<copy file="${config}/ejb-jar.xml" todir="${dist}/META-INF"/>
+		<copy file="${config_as}/orion-ejb-jar.xml" todir="${dist}/META-INF"/>
+
+		<copy todir="${build}/META-INF">
+			<fileset dir="${config}">
+				<include name="application.xml"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_db}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_db}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+
+		<javac 
+			srcdir="${src_srvc_db_in_bnd}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_jms}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_xml}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_xml}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_db}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_jms}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<!-- KERNEL73 starts /-->
+		<!-- Controller functionality moved to Bean starts
+		<javac 
+			srcdir="${src_contr_mdb}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		Controller functionality moved to Bean ends-->
+		<!-- KERNEL73 ends /-->
+	</target>
+
+	<!-- Compile the java code -->
+	<target name="compile_mdb" depends="compile_common"> 
+		<javac srcdir="${src_gw_mdb}" destdir="${dist}" debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Make a standard mdb jar file, including XML deployment descriptors -->
+
+	
+	<target name="do_jar" depends="compile_mdb">
+		<jar destfile="${build}/GW_MDB_Bean.jar" basedir="${dist}"/>
+	</target>
+
+	<target name="delete jars dir">
+		<delete dir="${build}/jars"/>
+	</target>
+	<!-- Make a standard mdb rar file, including XML deployment descriptors -->
+    <target name="do_WebSphereMQ_rar" depends="do_rar"/>
+    <target name="check-cond">
+        <condition property="cond-is-true">
+            <and>
+                <equals arg1="${env.IS_ENTERPRISE_QUEUE_WebSphereMQ}" arg2="true" />
+            </and>
+        </condition>
+    </target>
+    <target name="do_rar" depends="check-cond" if="cond-is-true">
+        <echo message="Creating WebSphere MQ RAR"/>
+
+        <mkdir dir="${rar}/META-INF"/>
+
+        <copy file="${config_as}/oc4j-connectors.xml" todir="${build}/META-INF"/>
+        <copy file="${config_as}/orion-application.xml" todir="${build}/META-INF"/>
+
+        <copy file="${config_as}/ra.xml" todir="${rar}/META-INF"/>
+        <copy file="${config_as}/oc4j-ra.xml" todir="${rar}/META-INF"/>
+        <copy file="${env.APP_SERVER_HOME}/j2ee/home/connectors/OracleASjms/OracleASjms/gjra.jar" todir="${rar}"/>
+
+        <jar destfile="${build}/WebSphereMQ.rar" basedir="${rar}"/>
+        <delete dir="${rar}"/>
+
+		<copy todir="${oc4j_ext_lib}">
+			<fileset dir="${env.IBM_WEBSPHERE_MQ_INSTALL_DIR}/java/lib">
+				<include name="**.jar"/>
+			</fileset>
+		</copy>
+    </target>
+
+	<!-- Make a standard mdb ear file, including XML deployment descriptors -->
+	<target name="do_ear" depends="do_jar">
+
+		<jar destfile="${build}/GW_MDB_Bean.ear" basedir="${build}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${dist}"/>
+		<delete dir="${build}/META-INF"/>
+	</target>
+</project>

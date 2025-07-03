@@ -1,0 +1,27 @@
+CREATE OR REPLACE FUNCTION FN#_FORGET_CUST wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+128 124
+2OgOCEIYQZqcRINDa8vBuqT7AdEwgzLI154VZ3RGAP4+4WYN6c83QX7XPKwbAXhtI4PW2CSc
+K6BR0CC6zDWl8XSCfA/jwomhrzYYQNwt/8xxyfBf2T/z1vOTvl8qMzlkaa6aFfPQkbrgjqYR
+jgq9CYts/+eethp1H3cbx1l5ImINHpVXIdPcyl+GVFyExGSWW5pTVc2DoNwEbJrFs2+3pniI
+p1UCeUuHyvvZ4Q03n588nZJPSFMsEEQyx9Kc1c7G/08TXkztuCwO7GIugBo6u3jxr7aQnQkR
+
+
+/

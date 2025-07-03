@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+    <project name="FCUBS_7-2_GW" default="all" basedir="." xmlns:oracle="antlib:oracle"  >
+
+    <!-- Import for OC4J ant integration. 
+    <import file="ant-oracle.xml"/>-->
+
+	<!-- set global properties for this build -->
+	<property environment="env"/>
+	<property name="source" value="."/>
+	<property name="oc4j_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="user_home" value="${env.USER_HOME}"/>
+	<property name="service_name" value="${env.SERVICE_NAME}"/>
+	<property name="oc4j_ext_lib" value="${oc4j_home}/j2ee/home/applib"/>
+	<property name="src_ws" value="../../src"/>
+	<property name="src_ws_output" value="../../src/output"/>
+	<property name="src_common" value="../../src/common"/>
+	<property name="config" value="../../config"/>
+	<property name="ws_lib" value="../../lib"/>
+	<property name="config_wsdl" value="../../config/wsdl"/>
+	<property name="src_gw_ws" value="${src_ws}/com/iflex/fcubs/gw/ws"/>
+	<property name="src_gw_ejb" value="${src_common}/com/iflex/fcubs/gw/ejb"/>
+	<property name="src_gw_ws_types" value="${src_ws}/com/iflex/fcubs/gw/ws/types"/>
+	<property name="src_srvc_ejb_client" value="${src_common}/com/iflex/fcubs/gwservices/ejb"/>
+	<property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_xml" value="${src_common}/com/iflex/fcubs/gwutil/xml"/>
+	<property name="build" value="../../build/${service_name}"/>
+	<property name="dist" value="../../dist"/>
+
+	<path id="compile.classpath">
+        <pathelement location="${oc4j_home}/j2ee/home/oc4j.jar"/>
+        <pathelement location="${oc4j_home}/j2ee/home/lib/ejb.jar"/>
+		<pathelement location="${oc4j_home}/j2ee/home/rmic.jar"/>
+        <pathelement location="${oc4j_home}/j2ee/home/lib/javax77.jar"/>
+		<pathelement location="${oc4j_home}/webservices/lib/saaj-api.jar"/>
+	</path>
+
+  <target name="all" depends="init, clean_build, make_dir, compile_common,  generate_interface, copy_interface, compile_ws, do_jar, gen-ear,  clean "/>
+
+    <target name="init" unless="env.SERVICE_NAME">
+        <fail message="SERVICE_NAME property must be set."/>
+    </target>
+
+	<target name="clean_build">
+ 		<delete dir="${build}"/>
+ 		<delete dir="${src_gw_ws_types}"/>
+	</target>
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<mkdir dir="${src_ws_output}"/>
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/WEB-INF"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/WEB-INF/wsdl"/>
+        <mkdir dir="${dist}/WEB-INF/classes"/>
+
+        <!-- Create the time stamp -->
+		<!-- KERNEL10.0 Change STARTS -->
+		<!-- copy file="${config}/GW_WS_Prop.xml" todir="${user_home}"/ -->
+		<!-- KERNEL10.0 Change ENDS -->
+		<copy file="${config_wsdl}/${service_name}.wsdl" todir="${dist}/WEB-INF/wsdl"/>
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac
+			srcdir="${src_gw_ejb}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemote.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemoteHome.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_xml}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac
+			srcdir="${src_srvc_ejb_client}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	
+	<!-- ****************************************************************
+         ** Generates the service types from the service wsdl.     **
+         ** ************************************************************* -->
+    <target name="generate_interface" depends="compile_common">
+        <oracle:genInterface wsdl="${config_wsdl}/${service_name}.wsdl"
+            unwrapParameters="false"
+            output="${src_ws_output}"
+            packageName="com.iflex.fcubs.gw.ws.types"
+			serviceName="${service_name}"
+			overwriteBeans="false">
+            <classpath>
+                <pathelement location="${oc4j_home}\webservices\lib\wsa.jar"/>
+            </classpath>
+        </oracle:genInterface>
+    </target>
+
+	<target name="copy_interface" depends="generate_interface">
+		
+		<copy todir="${src_ws}">
+			<fileset dir="${src_ws_output}" includes="com/**/ws/**"/>
+		</copy>
+
+		<copy file="${src_ws_output}/${service_name}-java-wsdl-mapping.xml" 
+		      todir="${dist}/WEB-INF"/>
+	</target>
+
+	<!-- Compile the java code -->
+	<target name="compile_ws" depends="copy_interface">
+
+		<javac srcdir="${src_gw_ws_types}" destdir="${dist}/WEB-INF/classes" debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+
+		<javac srcdir="${src_gw_ws}" destdir="${dist}/WEB-INF/classes" debug="on">
+		    <include name="${service_name}Impl.java"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+   <!-- FCC73ITR1 SFR-1  Starts -->
+
+    <target name="generate_dds" depends="compile_ws">
+        <oracle:genDDs wsdl="${config_wsdl}/${service_name}.wsdl"
+            className="com.iflex.fcubs.gw.ws.${service_name}Impl"
+            interfaceName="com.iflex.fcubs.gw.ws.types.${service_name}SEI"
+            context="${service_name}"
+            mappingFileName="${dist}/WEB-INF/${service_name}-java-wsdl-mapping.xml"
+            output="${dist}/WEB-INF"
+			serviceName="${service_name}"
+			uri="${service_name}">
+            <classpath>
+                <pathelement location="${oc4j_home}\webservices\lib\wsa.jar"/>
+                <pathelement location="${dist}"/>
+            </classpath>
+        </oracle:genDDs>
+    </target>
+    
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_jar" depends="generate_dds">
+		 <!--Copy config s web.xml to dist -->
+        <copy todir="${dist}/WEB-INF">
+                <fileset dir="${config}">
+                    <include name="web_WS_${service_name}.xml"/>
+                </fileset>
+        </copy>
+        <move file="${dist}/WEB-INF/web_WS_${service_name}.xml" tofile="${dist}/WEB-INF/web.xml"/>
+        <jar destfile="${build}/${service_name}.war"
+			basedir="${dist}">
+		</jar>
+	</target>
+
+    <target name="gen-ear" depends="compile_common">
+		<copy todir="${build}/META-INF">
+			<fileset dir="${config}">
+				<include name="application_WS_${service_name}.xml"/>
+			</fileset>
+		</copy>
+		<move file="${build}/META-INF/application_WS_${service_name}.xml" tofile="${build}/META-INF/application.xml"/>
+
+		<jar destfile="${build}/${service_name}.ear"
+			basedir="${build}">
+		</jar>
+    </target>
+
+   <!-- FCC73ITR1 SFR-1  Ends -->
+
+	<target name="clean">
+ 		<delete dir="${dist}"/>
+		<delete dir="${src_ws_output}"/>
+		<delete dir="${build}/META-INF"/>
+	</target>
+</project>

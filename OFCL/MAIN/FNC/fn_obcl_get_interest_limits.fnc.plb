@@ -1,0 +1,36 @@
+CREATE OR REPLACE FUNCTION fn_obcl_get_interest_limits wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+b84 3d5
+RT8yT+UEhexScbmyPReCfvHlkdIwgw0rTCATfI5Vgp0GvPd+3onDgwzMHHR12+wtWHnCM/qD
+o4Ng/NM+AYMMDZoiE6ZEmy0nGnqomh4S4nIAuHZjVmlGglMPHtfQBUlzyEMjDf8DeTNuHrA9
+clz5elr1ZjB1OZ6DKDhLomZUylKtwI+1QaL44S1w+7sJ2loC3VZTQtCD/GDH5b1eVHAmIWx/
+zCU8iybh3LeWCYxGfXec6SVxygzStH6ZMG71eDMRNpk48kAwu8hh94J2dzyuyGctesyqEfyZ
+2Amv3cFu4NupWgOLoCym5YT6oN03y3UlXnDeigv76oJ1Ixt+Gxu+qWeWKvDDcRZkBAsuS1bc
+Zn+VYMgs2QvprMZweIXyCoGK2fCY2yCZhHvDwEE1Ys0YHNvmtD7AxinYKxGCjDw92KhlclLP
+eklHFEC0rsGGon0GAY/A/BwEqW3NB2GjJKk6Bt/IJMm4tfYQE2TfHl6ajNrSVvf3Y/rF9MBB
+tFJ2wUfJV0nD2oef6jmQf7LGlBfJaSonDX2BYkjVwECTsM/taP2mlv4YHwxz2mSJUEg0p6Jy
+m384FNwLeT8cU7KzX9IHNbHGcKv3GXyoSmnyPft1yV1+GvqicI4c6Hkf2v1SW2ujLRlpMqzQ
+FPd5TZ/YeIkVX23f5i13mLhOcoPFmuduXAGj8a3a0Q1mNB2KkvEx60ySoAMWfnTdK8K7FCMS
+sIu/p2X2e7ZpmUduAP7fyNQ+0Uc77uBlWEVBA8Gd34zAHRZoprnC5Pj8Kb5H0WJX5sMG5erT
+lD/MQIlaLjYPW1ct/vOwpaKGQ+hsqA/9EhPWiCjaOMO4IHvZuY/+xapGfphVfu6XApychDJd
+6if/iCjtqlDAKaSGQ4kLq2m4tXZqOd7R3vJ0lxxgfKSvwaExng/sE26gWQ4Uf/XFT8uHBf0N
+kgQcq6ykNdsh/h3lwVQyXO4Qzpl6guRe
+
+/

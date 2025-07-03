@@ -1,0 +1,29 @@
+CREATE OR REPLACE Package Body olpks_ud_batch_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+2e1 1c2
+2/Jfmq4tm8BOYG3LivcE74uVqcgwg2PxLq7hfy9A7QZkdbqofxw00y6DuYqAVIODeZSusptr
+onHnVng/NM2nTRZb0+wuv/7NR3qCIOUWLFB0N/pdRCvZgcY8zei5MmhZGVWRxHkrT2cK9qml
+boem8gxK9D3nvdlF7zBR7MHDmoEO5yZ0A+bOeGesR8nE8pgzjAyRoUipbhoZxoFncJ0HzGS7
+TswU+1AoR3eeSJ4+ypTc3vVfq0G/jQuj5I+66GAL7YUaVvcYUMxJ33e91/FRQELNPBOTGrau
+GFsjPIrfgVE/1jrUE6WWfWmxEW35KIB2XBF9RU5ujKbewHeUzlXVUJLmJQjgrRMVBjZ/YMPQ
+bCcAXxVrP/LZ5UTO7qpy/GMk0YWXcX5qJwVu7mpSd2NgduramvS7QnMC5+xWPQ7A3/RRhmFl
+wLSdkuEXAtsE
+
+/

@@ -1,0 +1,13 @@
+@echo on
+
+@REM JAVA HOME 
+set JAVA_HOME=%APP_SERVER_HOME%\java
+
+@REM ANT HOME
+set ANT_HOME=%APP_SERVER_HOME%\bin;
+
+set PATH=%PATH%;%JAVA HOME%\bin;%ANT_HOME%;
+
+set classpath = %CLASSPATH%;
+
+set ANT_OPTS=-Xmx512M

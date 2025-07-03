@@ -1,0 +1,28 @@
+create or replace package body olpks_os wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+31e 181
+XA1vbEq4oJxArBVXwBq94hNImNkwg1XI1ydqfC9GEo1B4CCfDoklHDLxeZNvn5Go+jdup/kU
+IaC0ObC7DzHRsnklGsH/3jgHVSDUpaBdCWcJF/Z9GZKx+5j7U4yckfL0QvyezFx9sWDdGAWg
+jzPRvJ1MS3CF/ZAjXPaFKm8NThECgMG+IHZGLS2r9QNZRmOXzFE13pYaS1/xS0wI/MfZEWYa
+JY6sFliqt/qCh3U7X56QkM6C4HbHBAE2G2j0Vtyck0ujY0Mf+QZ6aHSC025+ApFm3l3wLVey
+UsPqszKgeQhj/TO0u5KyIiJ0Exe0vMSu+EyxYGvVm7K1qcaPuM4XGCRRLL+/vZu/wr0HULVW
+dZs8jT6kPEpMEKbyvdD5
+
+/

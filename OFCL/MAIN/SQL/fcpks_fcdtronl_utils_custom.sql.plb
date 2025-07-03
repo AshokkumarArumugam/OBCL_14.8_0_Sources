@@ -1,0 +1,32 @@
+create or replace package body FCPKS_FCDTRONL_UTILS_CUSTOM wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+7de 2d5
+ew9f4C2xHrWo/gATVXxK/j6Bp8gwg81crxgFfC/NMnOURa03ASg+9WtIb5GTn6KR+o1dVYsh
+iRS65l6YtP84OCS88QsXtsSTqyPFzY9qfKvtQoLsB4JZi1drFomz4ZUUE/bjoZGJjnbAalM5
+8fbvXkYN/vinPqERidUYUXyIAcj8NlUL6clULtTj3iiThknuswX6zZgFUnDQ5ux8s+hLBOkh
+R7cTfkFnHjeOfWqk7MqCjPhuHH1zjjrQ2bsP9jBx4uzlVmFL9t8Fq6eYRT6daynS/4Byck0B
+tvXq2vUNWyw6etJkmIw3DenU+BLDoqfsTpAXunR6HgWW/0R/RwlfRJEY5uayL8KpWF1WFZmP
+Wf3aSlsqJFm+eV7KWBPuzl5H2/CTduGdi4EDTBe40EwAxjZHZoziqf2bROdKDQsFxx5PKeHn
+2h2srVtvgcpmroQjvZm2nx5bYf1oahRxQHWYs25BD6ZZjfGe4199S68I++nMt9U4jaitlVGa
+oxeWmYN590zAT5QTIw1gUvuTDUCRVaaTIq/YaEgrT0+pIPzULFtqDD1FMVyV6M6s7CfEIi59
+/P2N65x8c6IRixwzFgiv8vuh1edj0AFSw0ArXJNrn3OBgEgTrq7FMpNkacQGLcd7xV0opnvC
+f4uSdTuNxtUJEQGCafB3i51++S4xiTJOsfyLdv4kjv+tKjYZPY3BDZPBtTGvEyyuvfr3
+
+/

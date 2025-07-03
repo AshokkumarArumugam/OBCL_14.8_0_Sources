@@ -1,0 +1,31 @@
+create or replace function olfn_log_translation wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+5d4 1d2
+SZW4/4zbNmvJcDr+Ooek8kw3QvQwgzuJNfbWfARAvzudBu3ekz60jX8b2rQhYfcETOW5Fu1+
+dBgVPIwkPw9Fa2HVfqC9Fttqt0ma/j9gAuC+WpTsVfZMzezEJ7UtOyS/BXMSXmod2QEN+g1p
+1YlryR5pcnyfDkKHET2qe5NKtFAe5KyVQ18V1u3MipE0OmoE0K64lFvZS4lw0wJmF5GrOPtM
+5rBw812CPNNCrJtE1UM5HcqvcBFBJMt+iDNQOkNpF469lJcPeLzhBISU+qz2XiEkU7w+mbzT
+lyecCwwnELJesvvC0rBetRxlLgMeqWpoyB7oVHU5pNdyRtxuj09CZlHjfKkJQRAfOuwK2aSu
+A1eOpHQlNn8AA53pssKu77NFLgVFuAUr69e2u853TlTmUg1G41bfOtrff0hSH7Soq+m3jd2n
+BnKqwxz8d1y7BjifWnxTOuHd0c4q
+
+/
+Create or replace synonym olfns_log_translation for olfn_log_translation
+/

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5">
+    <display-name>FCUBSCcyServiceWebApp</display-name>
+    <servlet>
+        <description>Web Service FCUBSCcyServiceSEI</description>
+        <servlet-name>FCUBSCcyServiceServlethttp</servlet-name>
+        <servlet-class>com.iflex.fcubs.gw.ws.FCUBSCcyServiceImpl</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FCUBSCcyServiceServlethttp</servlet-name>
+        <url-pattern>/FCUBSCcyService</url-pattern>
+    </servlet-mapping>
+    <env-entry>
+        <description>Property File Path</description>
+        <env-entry-name>propertyPath</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>{GatewayPropFilePath}</env-entry-value>
+    </env-entry>
+    <ejb-ref>
+        <ejb-ref-name>GWEJB</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.iflex.fcubs.gw.ejb.GWEJBRemoteHome</home>
+        <remote>com.iflex.fcubs.gw.ejb.GWEJBRemote</remote>
+    </ejb-ref>
+</web-app>

@@ -1,0 +1,48 @@
+<ROFC_SCHEDULER_web>
+
+<!-- Balli Changes :Start -->
+	<filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>OBCLFileProcessing</servlet-name>
+    </filter-mapping>
+	<!-- Bharathish BIP Advice generation for Outgoing browser start -->
+	<filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <servlet-name>OBCLReportHandleRequest</servlet-name>
+    </filter-mapping>
+	<!-- Bharathish BIP Advice generation for Outgoing browser end -->
+	<!-- Balli Changes :end -->
+	
+	<!-- balli changes starts-->
+	<servlet>
+        <servlet-name>OBCLFileProcessing</servlet-name>
+        <servlet-class>com.ofss.infra.web.OBCLFileProcessing</servlet-class>
+        <multipart-config>
+                <max-file-size>1048576</max-file-size>       
+        </multipart-config>
+    </servlet>
+	<!-- balli changes ends-->
+	<!-- Bharathish BIP Advice generation for Outgoing browser start -->
+	<servlet>
+        <servlet-name>OBCLReportHandleRequest</servlet-name>
+        <servlet-class>com.ofss.infra.web.OBCLReportHandleRequest</servlet-class>
+        <multipart-config>
+                <max-file-size>1048576</max-file-size>       
+        </multipart-config>
+    </servlet>
+	<!-- Bharathish BIP Advice generation for Outgoing browser end -->
+	<!-- balli changes starts -->
+    <servlet-mapping>
+        <servlet-name>OBCLFileProcessing</servlet-name>
+        <url-pattern>/OBCLFileProcessing</url-pattern>
+    </servlet-mapping>
+	<!-- balli changes ends -->
+	<!-- Bharathish BIP Advice generation for Outgoing browser start -->
+	<servlet-mapping>
+        <servlet-name>OBCLReportHandleRequest</servlet-name>
+        <url-pattern>/OBCLReportHandleRequest</url-pattern>
+    </servlet-mapping>
+	<!-- Bharathish BIP Advice generation for Outgoing browser end -->
+	
+	 <!--  Removed EJB reference mapping for 36940858 Weblogic/JEE Dependency Removal - ODT Products //Commented for 36940858 Weblogic/JEE Dependency Removal - ODT Products -->
+</ROFC_SCHEDULER_web>

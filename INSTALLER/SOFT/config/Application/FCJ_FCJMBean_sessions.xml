@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toplink-sessions version="10g Release 3 (10.1.3.3.0)"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <session xsi:type="server-session">
+            <name>FCTBSessionName</name>
+            <primary-project xsi:type="xml">META-INF/MBeanToplinkFCTBMap.xml</primary-project>
+            <login xsi:type="database-login">
+                  <platform-class>oracle.toplink.platform.database.oracle.Oracle10Platform</platform-class>
+                  <external-connection-pooling>true</external-connection-pooling>
+                  <sequencing>
+                        <default-sequence xsi:type="table-sequence">
+                              <name>Default</name>
+                              <preallocation-size>1</preallocation-size>
+                        </default-sequence>
+                  </sequencing>
+                  <datasource lookup="string">{datasource-jndi}</datasource>
+            </login>
+            <connection-pools>
+                  <read-connection-pool>
+                        <name>ReadConnectionPool</name>
+                  </read-connection-pool>
+                  <write-connection-pool>
+                        <name>default</name>
+                  </write-connection-pool>
+            </connection-pools>
+            <connection-policy />
+      </session>
+</toplink-sessions>
+
+

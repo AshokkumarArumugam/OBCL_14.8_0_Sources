@@ -1,0 +1,50 @@
+<report_web>
+
+<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<servlet-name>FCReportClientHandler</servlet-name>
+</filter-mapping>
+<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<servlet-name>FCReportHandleRequest</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	  <filter-name>AuthenticationFilter</filter-name>
+	  <servlet-name>FCExtReportClientServlet</servlet-name>
+</filter-mapping>
+
+  <servlet>
+    <servlet-name>FCReportClientHandler</servlet-name>
+    <servlet-class>com.ofss.infra.web.FCReportClientHandler</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>FCReportHandleRequest</servlet-name>
+  <servlet-class>com.ofss.infra.web.FCReportHandleRequest</servlet-class>
+  <multipart-config>
+                        <max-file-size>1048576</max-file-size>       
+                </multipart-config>
+ </servlet> 
+
+ <servlet>
+        <servlet-name>FCExtReportClientServlet</servlet-name>
+        <servlet-class>com.ofss.infra.web.FCExtReportClientServlet</servlet-class>
+    </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FCReportClientHandler</servlet-name>
+    <url-pattern>/FCReportClientHandler</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>FCReportHandleRequest</servlet-name>
+    <url-pattern>/FCReportHandleRequest</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+        <servlet-name>FCExtReportClientServlet</servlet-name>
+        <url-pattern>/FCExtReportClientServlet</url-pattern>
+    </servlet-mapping>  
+	
+
+</report_web>

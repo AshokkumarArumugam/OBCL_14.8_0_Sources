@@ -1,0 +1,2008 @@
+PROMPT PROCESSING FOR OLZM_DATE_CONVERSION_001
+
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'1',
+'Ã¤Â¸â‚¬Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'10',
+'Ã¥ÂÂÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'11',
+'Ã¥ÂÂÃ¤Â¸â‚¬Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'12',
+'Ã¥ÂÂÃ¤ÂºÅ’Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'13',
+'Ã¥ÂÂÃ¤Â¸â€°Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'14',
+'Ã¥ÂÂÃ¥â€ºâ€ºÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'15',
+'Ã¥ÂÂÃ¤Âºâ€Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'16',
+'Ã¥ÂÂÃ¥â€¦Â­Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'17',
+'Ã¥ÂÂÃ¤Â¸Æ’Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'18',
+'Ã¥ÂÂÃ¥â€¦Â«Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'19',
+'Ã¥ÂÂÃ¤Â¹ÂÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'2',
+'Ã¤ÂºÅ’Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'20',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'21',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¤Â¸â‚¬Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'22',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¤ÂºÅ’Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'23',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¤Â¸â€°Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'24',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¥â€ºâ€ºÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'25',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¤Âºâ€Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'26',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¥â€¦Â­Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'27',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¤Â¸Æ’Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'28',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¥â€¦Â«Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'29',
+'Ã¤ÂºÅ’Ã¥ÂÂÃ¤Â¹ÂÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'3',
+'Ã¤Â¸â€°Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'30',
+'Ã¤Â¸â€°Ã¥ÂÂÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'31',
+'Ã¤Â¸â€°Ã¥ÂÂÃ¤Â¸â‚¬Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'4',
+'Ã¥â€ºâ€ºÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'5',
+'Ã¤Âºâ€Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'6',
+'Ã¥â€¦Â­Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'7',
+'Ã¤Â¸Æ’Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'8',
+'Ã¥â€¦Â«Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DATE',
+'9',
+'Ã¤Â¹ÂÃ¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'FRI',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¤Âºâ€'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'MON',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¤Â¸â‚¬'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'SAT',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¥â€¦Â­'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'SUN',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¦â€”Â¥'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'THU',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¥â€ºâ€º'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'TUE',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¤ÂºÅ’'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'DAY',
+'WED',
+'Ã¦ËœÅ¸Ã¦Å“Å¸Ã¤Â¸â€°'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'APR',
+'Ã¥â€ºâ€ºÃ¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'AUG',
+'Ã¥â€¦Â«Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'DEC',
+'Ã¥ÂÂÃ¤ÂºÅ’Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'FEB',
+'Ã¤ÂºÅ’Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'JAN',
+'Ã¤Â¸â‚¬Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'JUL',
+'Ã¤Â¸Æ’Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'JUN',
+'Ã¥â€¦Â­Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'MAR',
+'Ã¤Â¸â€°Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'MAY',
+'Ã¤Âºâ€Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'NOV',
+'Ã¥ÂÂÃ¤Â¸â‚¬Ã¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'OCT',
+'Ã¥ÂÂÃ¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'MONTH',
+'SEP',
+'Ã¤Â¹ÂÃ¦Å“Ë†'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'1999',
+'Ã¤Â¸â‚¬Ã¤Â¹ÂÃ¤Â¹ÂÃ¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2000',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2001',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2002',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2003',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2004',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2005',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2006',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2007',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2008',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2009',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã©â€ºÂ¶Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2010',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2011',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2012',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2013',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2014',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2015',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2016',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2017',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2018',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2019',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2020',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2021',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2022',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2023',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2024',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2025',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2026',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2027',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2028',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2029',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2030',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2031',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2032',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2033',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2034',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2035',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2036',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2037',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2038',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2039',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Â¸â€°Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2040',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2041',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2042',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2043',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2044',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2045',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2046',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2047',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2048',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2049',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('CHI',
+'YEAR',
+'2050',
+'Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¤Âºâ€Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'1999',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¥â€¦Â«Ã¥ÂÂÃ¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2000',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¥â€¦Â«Ã¥ÂÂÃ¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2001',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2002',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2003',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2004',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2005',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2006',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2007',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2008',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2009',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2010',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¹ÂÃ¥ÂÂÃ¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2011',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã§â„¢Â¾Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2012',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2013',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2014',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2015',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2016',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2017',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2018',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2019',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2020',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2021',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2022',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2023',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2024',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2025',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2026',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2027',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2028',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2029',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2030',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â‚¬Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2031',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã©â€ºÂ¶Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2032',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2033',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2034',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2035',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2036',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2037',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2038',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2039',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2040',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤ÂºÅ’Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2041',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¥ÂÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2042',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¤Â¸â‚¬Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2043',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¤ÂºÅ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2044',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¤Â¸â€°Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2045',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¥â€ºâ€ºÃ¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2046',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¤Âºâ€Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2047',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¥â€¦Â­Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2048',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¤Â¸Æ’Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2049',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¥â€¦Â«Ã¥Â¹Â´'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZM_DATE_CONVERSION
+(LANG,TYPE,INTERNAL_VALUE,EXTERNAL_VALUE
+)
+ VALUES 
+('TWD',
+'YEAR',
+'2050',
+'Ã¤Â¸Â­Ã¨ÂÂ¯Ã¦Â°â€˜Ã¥Å“â€¹Ã¤Â¸â‚¬Ã¤Â¸â€°Ã¤Â¹ÂÃ¥Â¹Â´'
+)
+;
+END;
+/
+
+
+
+commit;

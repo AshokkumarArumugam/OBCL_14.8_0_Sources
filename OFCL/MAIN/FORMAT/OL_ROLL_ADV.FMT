@@ -1,0 +1,109 @@
+#B
+#IF _NORMAL_
+DATE : _TDATE_
+REFERENCE NO.  : _REF_
+
+Customer       :_CUSTOMER_
+
+Agent CIF      :_AGNTCIF_
+
+Liability CIF  :_LIABCIF_
+
+
+
+#SC
+_ADD1_
+_ADD2_
+_ADD3_
+_ADD4_
+
+
+
+#EC
+
+RE: Loan Booking
+
+Dear Mr/Ms. _CUSTOMER_
+
+Loan has been booked for the amount  _NEWAMT_ on _BDATE_
+for the period of  _VALDT_ to _MDATE_.
+
+
+Please remit funds to RABO, NA using the wiring instructions below:
+
+RABO Bank
+ABA:  021000089
+A/C NO : _ICCFACC_
+Ref _CUSTOMER_
+Attn:  (loan admin)
+#ENDIF
+#IF _CONSOL_
+
+DATE : _TDATE_
+
+Customer       :_CUSTOMER_
+
+#SC
+_ADD1_
+_ADD2_
+_ADD3_
+_ADD4_
+
+
+
+
+#EC
+
+RE: Consolidated Rollover Booking
+
+Dear Mr/Ms. _CUSTOMER_
+
+Your below mentioned loans had be processed with Consolidated Rollover.
+
+Below are List of contracts being consolidated linked with commitment contract: _COMMITCONTREFNO_
+#LOOP
+_PARENTCONTREFNO_
+#ENDLOOP
+
+New contract reference number : _CONSOLCONTREFNO_
+
+#ENDIF
+#IF  _SPLIT_
+
+DATE : _TDATE_
+
+Customer       :_CUSTOMER_
+
+#SC
+_ADD1_
+_ADD2_
+_ADD3_
+_ADD4_
+
+
+
+
+#EC
+
+RE: Split Rollover Booking
+
+Dear Mr/Ms. _CUSTOMER_
+
+Your below mentioned loan had be processed with Split Rollover.
+
+Parent Contract Reference No.: _REF_
+
+New contract reference numbers :
+#LOOP
+_SPLITCONTREFNO_
+#ENDLOOP
+
+
+#ENDIF
+If you have any queries, kindly contact the Branch (loan admin tel number).
+
+Thank you,
+
+(loan admin name)
+---------------------------------------------------------------------------------------
+#EB

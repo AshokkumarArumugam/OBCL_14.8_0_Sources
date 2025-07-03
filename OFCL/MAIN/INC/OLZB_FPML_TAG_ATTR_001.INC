@@ -1,0 +1,912 @@
+PROMPT PROCESSING FOR OLZB_FPML_TAG_ATTR_001
+
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Agnt.fpml:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Agnt.fpml:partyId',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Agnt.qfn:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Borr.fpml:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Borr.fpml:partyId',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Borr.qfn:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Coborr.fpml:partyId',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Coborr.qfn:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Lend.fpml:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Lend.fpml:partyId',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('Lend.qfn:party',
+1,'id',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('dealSummary.fpml:instrumentId',
+1,'instrumentIdScheme',
+'http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('expiryDate.fpml:businessCenter',
+1,'businessCenterScheme',
+'http://www.fpml.org/coding-scheme/business-center-6-5'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('facilitySummary.fpml:instrumentId',
+1,'instrumentIdScheme',
+'http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:FpML',
+1,'version',
+'4-6'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:FpML',
+2,'xsi:type',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:FpML',
+3,'xmlns:fpml',
+'http://www.fpml.org/2009/FpML-4-6'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:FpML',
+4,'xmlns:xsi',
+'http://www.w3.org/2001/XMLSchema-instance'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:FpML',
+5,'xmlns:qfn',
+'http://www.qfnetworks.com/2007/QFN'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:FpML.fpml:header.fpml:messageId',
+1,'messageIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/internal/msgidSchema'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:agentBankPartyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:borrowerPartyReference',
+1,'href',
+'Borrower'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:contractId',
+1,'contractIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/BankofAmerica/Internal/contract-id'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:conversationId',
+1,'conversationIdScheme',
+'http://msgidSchema/'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:copyTo',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:floatingRateIndex',
+1,'floatingRateIndexScheme',
+'http://www.fpml.org/coding-scheme/floating-rate-index-1-0.xml'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:instrumentId',
+1,'instrumentIdScheme',
+'http://www.fpml.org/spec/2002/instrument-id-CUSIP-1-0'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:interestDayBasis',
+1,'dayCountFractionScheme',
+'www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:lenderPartyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:messageId',
+1,'messageIdScheme',
+'http://msgidSchema/'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:partyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:pricingChangeReason',
+1,'pricingChangeReasonScheme ',
+'http://www.stormnetworks.com/coding-scheme/SLM/pricing-change'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:sendTo',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:sentBy',
+1,'partyIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/external/party-id-markit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpml:sublimit',
+1,'xsi:type',
+'fpml:LcSublimit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpmlloanContract.fpmlamount.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpmlsublimit.SS.CLA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpmlsublimit.SS.OLA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('fpmlsublimit.SS.fpml:sublimitId',
+1,'sublimitIdScheme',
+'http://www.bankofamerica.com/schemes/id/sublimitId'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('loanContractSummary.OA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('loanContractSummary.fpml:contractId',
+1,'contractIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/BankofAmerica/Internal/contract-id'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('loanContractSummary.fpml:partyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('maturityDate.fpml:businessCenter',
+1,'businessCenterScheme',
+'http://www.fpml.org/coding-scheme/business-center-6-5'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('minimumAssignment.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('minimumHolding.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('projIntAmount.GA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('projIntAmount.SA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:agentBankPartyReference',
+1,'href',
+'Agent'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:agentPartyReference',
+1,'href',
+'Agent'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:beneficiaryPartyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:borrowerPartyReference',
+1,'href',
+'Borrower'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:bulked',
+1,'version',
+'4-6'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:bulked',
+2,'xsi:type',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:coBorrowerPartyReference',
+1,'href',
+'coBorrower'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:counterParty',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:creditContacts',
+1,'contactScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/Storm/Internal/contact'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:industry',
+1,'industryCodeScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/external/naics'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:jurisdiction',
+1,'corporateJuridictionIdScheme',
+'http://www.fpml.org/coding-scheme/governing-law'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:lenderPartyReference',
+1,'href',
+'Lender'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:messageId',
+1,'messageIdScheme',
+'http://www.stormnetworks.com/coding-scheme/SLM/BankofAmerica/Internal/message-id'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:notice',
+1,'version',
+'4-6'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:notice',
+2,'type',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:partyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:restrictedParties',
+1,'href',
+'restrictedParties'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfn:sublimit',
+1,'xsi:type',
+'fpml:LcSublimit'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfncontract.fpmlamount.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfnsublimit.SS.CLA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfnsublimit.SS.OLA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('qfnsublimit.SS.fpml:sublimitId',
+1,'sublimitIdScheme',
+'http://www.bankofamerica.com/schemes/id/sublimitId'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('reason.location',
+1,'reason.locationType',
+'xpath'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('sublimitSummary.CLA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('sublimitSummary.OLA.fpml:currency',
+1,'currencyScheme',
+'http://www.fpml.org/ext/iso4217-2001-08-15'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('sublimitSummary.fpml:sublimitId',
+1,'sublimitIdScheme',
+'http://www.bankofamerica.com/schemes/id/sublimitId'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('terminationDate.fpml:businessCenter',
+1,'businessCenterScheme',
+'http://www.fpml.org/coding-scheme/business-center-6-5'
+)
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('tradeId.fpml:partyReference',
+1,'href',
+'')
+;
+END;
+/
+BEGIN
+INSERT INTO OLZB_FPML_TAG_ATTR
+(TAG_NAME,ATTR_SERIAL_NO,ATTR_NAME,ATTR_VALUE
+)
+ VALUES 
+('tradeId.fpml:tradeId',
+1,'tradeIdScheme',
+'http://www.party.com/fpml/trade-id'
+)
+;
+END;
+/
+
+
+
+commit;

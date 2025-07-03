@@ -1,0 +1,30 @@
+CREATE OR REPLACE FUNCTION fn_pre_ol_contract_upld_cstm wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+3cb 21b
+qEpuD31LrOgztDq5KzOcpFTpC1gwgzu3Lq5qfHRArbvqzqcuqxHKUjgGyA0xK2IMrLebUsJQ
+fQ4lEcw+BqzOzVNjt87TW1TLK5Ha0A/G+iEqzFrYNzI1KFxgQ0ArAczqsQrsQRzfeKAj2Lv4
+ShWUaxhaut4GpvT7EzlLg2J6k6RboGDrCRuLqbbEShzkQrKk+isf6d8rio8YwdOMvtuMtTgQ
+/KTX9cG0iCuoSGO8CxP4MaSDoYkMncegDxRKb57wJZqFHWCMnj6rdVQKjSHIMDOBvOL07GxA
+HS3sGgMdB3dIkhUnfzZrGHsKmwZvm1HRa7zZcHPD2Pw0Vj8QwOB8uX9OA9u3Xi9goDfck93D
+8BL8ZQniQmJ2U3XVue9HlCNw9oOZkqHszjt62GROLp8dckIQW5NcjZRu5zBC+6roQhwMK7G4
+JNftzMFqIrHUc7N9uFYii/UdXXZP3M/dP1urFe4vSoDWQGKHxBej6w1XjYN4AOwE6EB2xfkP
+cSU2XSzmJut/6SJWxhIgjyqaVg==
+
+/

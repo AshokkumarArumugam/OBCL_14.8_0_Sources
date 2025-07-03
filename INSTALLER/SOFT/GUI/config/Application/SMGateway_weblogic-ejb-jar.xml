@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<weblogic-ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-ejb-jar.xsd"
+                  xmlns="http://www.bea.com/ns/weblogic/weblogic-ejb-jar">
+ <weblogic-enterprise-bean>
+    <ejb-name>SMGWEJBBean</ejb-name>
+	<enable-call-by-reference>true</enable-call-by-reference>
+    <jndi-name>{REF_LOCATION}/ejb/SMGWEJBBean#com.ofss.sms.ejb.ISMGWEJBLocal</jndi-name>
+	<local-jndi-name>{REF_LOCATION}/ejb/local/SMGWEJBBean#com.ofss.sms.ejb.ISMGWEJBLocal</local-jndi-name>
+ </weblogic-enterprise-bean>
+  <weblogic-enterprise-bean>
+  <ejb-name>SMGWMDB</ejb-name>
+   <message-driven-descriptor>
+   <pool>
+    <max-beans-in-free-pool>200</max-beans-in-free-pool>
+    <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+   </pool>
+   <destination-jndi-name>SMMDB_REQ_Q</destination-jndi-name>
+   <initial-context-factory>weblogic.jndi.WLInitialContextFactory</initial-context-factory>
+   <provider-url>{PROVIDER_URL}</provider-url>
+   <!--<provider-url></provider-url>-->
+   <connection-factory-jndi-name>SMMDBQCF</connection-factory-jndi-name>
+   <jms-polling-interval-seconds>20</jms-polling-interval-seconds>
+  </message-driven-descriptor>
+   <transaction-descriptor>
+      <trans-timeout-seconds>3600</trans-timeout-seconds>
+    </transaction-descriptor>
+ <resource-description>
+   <res-ref-name>SMMDBQCF</res-ref-name>
+   <jndi-name>SMMDBQCF</jndi-name>
+  </resource-description>
+  <resource-env-description>
+   <resource-env-ref-name>SMMDB_REQ_Q</resource-env-ref-name>
+   <jndi-name>SMMDB_REQ_Q</jndi-name>
+  </resource-env-description>
+  <resource-env-description>
+   <resource-env-ref-name>SMMDB_RES_Q</resource-env-ref-name>
+   <jndi-name>SMMDB_RES_Q</jndi-name>
+  </resource-env-description>
+   </weblogic-enterprise-bean>
+   
+   
+ <!--Added Ends-->
+ 
+</weblogic-ejb-jar>
+

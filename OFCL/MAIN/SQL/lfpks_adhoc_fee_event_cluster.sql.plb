@@ -1,0 +1,33 @@
+CREATE OR REPLACE PACKAGE BODY lfpks_adhoc_fee_event_Cluster wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+d12 302
+53Xs93d4LaSqUMMUa6AwrVsDEggwg81cTCCDfI5V1eSenbPyXCrNjUnGvKjz1NxzNcbrlOED
+UWNp82XeCarkbonQwg1MhRzGEOOKtCIivCK8SYx+WltnZpVJFA96EJa4e6pUcrjuAJIsPw3p
+p5yVPCDnKkzmRSxgBNCQkd9c8dvTgrKFdxbHb1BLNlO2qW6jfOqIqwwNOxKRLCYUXLXoDOyi
+QAvFduT92+OjsF7aQgLA0aJRopcpNogTNOB/6Oxsw6redLb2U8fK0MrNcGDygzY1wFlstbZA
+bi5bkFk7Me5aeBhneBvvlOXOuIFiNSU3wzVamCHEcmQl/sPHX6wGCmAe5Er7PuuXdZxxxNY4
+d3yXa0D9N6BiMTbuQXrYHwRDVvNS3yFaQlEE1KbnhkvZzbtOch9C4X4wyFzpYUTbLwvsno8q
+s1o++8PfQPs7jcsBAiwsEETHWUwXLD1jgo4mLV3XeOlX23e9/TY+2ylFVqVf5VF8f4CVHIuq
+G7EqurJrMIVzvVonRaTTr8qNgRYHhbJIgvAyhuVJBhkulkz3MAIx1O+6JCKNutDJM4/BAbn3
+rsS8fUz+mg/Yc2Fo2KcKIBoWFwMVH5VRR05PkS2TJN/WVX9hgzWBHbxlheUnTCgZSS+gC7ZQ
+QEZkaFWFE8MGKWX+x8LkBVJBT9eQ5+rfnjafE8bDdUsSFswsEqKdBa0ytgGKldzRn8Att22Q
+5KqfwFK3YEibvIDDnwmuEl6XhUaCb/W165YYgrEI
+
+/

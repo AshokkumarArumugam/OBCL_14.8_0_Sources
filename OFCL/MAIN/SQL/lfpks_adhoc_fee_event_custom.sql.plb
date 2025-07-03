@@ -1,0 +1,33 @@
+CREATE OR REPLACE PACKAGE BODY lfpks_adhoc_fee_event_Custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+d12 30a
+PeQ8xZyqliQFn49NoWLzkRXztYgwg81cTCCDfI5V1eSenbPyXCrNjUnGvKjzSpCS1kqw1TY4
+6Yxp95ElGvnOrd6pwsw5MYZTKPekBcbGscb+GomyKaZaDs51VsGWmsduR0E8Xm4XiMkkwlw3
+2EdtgYJr6Axa/pEvJKj18TFUodPyWSrKXqH8Vg4487hJpq0NcEgJIacnuv6F3+Ch5flMnG62
+PkpNuKUgL70N3Maf5MtDCeNa9HXrf2XfP8bgoiptTfnA31lN7q83aNag1qGJoPOsXQQM+Ul0
+vnXLe4i6649anDYOchvvlOW4v4FiNQY3w4daLuwFweopgOWtOYcIXIwyP4Cpid4BR7riBa98
+JwRDaWpsynkM34dTWygesmCtDKJ1y7IJHD5AqKYVhbvAtfjk2ekc+/25kVz3eft/28jU4TAu
+IWnypo0Xaqk88vjCFf7QvKwxsOID8PwliBi0VMDSLvPLqDIVIzWeUlPRgXrW5RZf14ctmDpP
++nnXK9aWHMAS4dMTSAc2fOMBAJeouNb4wwtVUyn0S7+xbeoUcThF+sg7Tw+XZoSCEJfJQ2WE
+Ij7CNL8FtTAt/xjAA6PYvPc0btxOVnLBQ8A6t0d4vCJPRAV8YYM1gR28ZVoKJ0woImCPDQvv
+UEDOZH5IXRaNuMJUyYLCzgVShw/X1qXqpzDh14uolNS7uQx33tB9v9oHSFFf7YP6Pdzin8AN
+t7Vy3Ny++nuW4p8ltPrGG8w6oQDNTaf3rQtcJbXSmYKdsQY=
+
+/

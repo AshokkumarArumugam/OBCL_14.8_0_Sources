@@ -1,0 +1,105 @@
+CREATE OR REPLACE FORCE VIEW lbvw_party_contracts ( MODULE, 
+CONTRACT_REF_NO, USER_REF_NO, COUNTERPARTY, BRANCH, 
+PRODUCT, PRODUCT_TYPE, PAYMENT_METHOD, ROLLOVER_ALLOWED, 
+CURRENCY, AMOUNT, ORIGINAL_START_DATE, CLUSTER_ID, 
+CLUSTER_SIZE, BOOKING_DATE, VALUE_DATE, MATURITY_TYPE, 
+MATURITY_DATE, DFLT_SETTLE_AC, DFLT_SETTLE_AC_BRANCH, DFLT_SETTLE_CCY, 
+REL_REFERENCE, USER_DEFINED_STATUS, CONTRACT_SCHEDULE_TYPE, LIQ_BACK_VALUED_SCHEDULES, 
+PRINCIPAL_LIQUIDATION, REVOLVING_COMMITMENT, HOLIDAY_CCY, VERIFY_FUNDS, 
+SCHEDULE_MOVEMENT, IGNORE_HOLIDAYS, DEDUCT_TAX_ON_CAPITALISATION, MOVE_ACROSS_MONTH, 
+CASCADE_SCHEDULES, LIQUIDATE_OD_SCHEDULES, SCHEDULE_DEFINITION_BASIS, APPLY_CHARGE, 
+TAX_SCHEME, BORROWER_REF_NO, SYNDICATION_REF_NO, DRAWDOWN_NUMBER, 
+PARTICIPANT_ID, PARTICIPANT_NAME, PARTICIPATION_RATIO, PARTICIPATION_AMOUNT, 
+PARTICIPANT_PRODUCT, PARTICIPANT_PRODUCT_TYPE, DR_SETTLE_AC_BRANCH, DR_SETTLE_ACCOUNT, 
+CR_SETTLE_AC_BRANCH, CR_SETTLE_ACCOUNT, CREDIT_LINE, VERSION_NO, 
+EVENT_SEQ_NO, LEAD_AGENT , TRANCHE_REF_NO,DEPARTMENT_CODE,TREASURY_SOURCE) AS 
+/*----------------------------------------------------------------------------------------------------
+**
+** File Name	: lbvw_party_contracts VW
+**
+** Module      : Syndication Loans and Commitments
+**
+This source is part of the Oracle Banking Corporate Lending  Software Product. 
+Copyright © 2007 - 2019  Oracle and/or its affiliates.  All rights reserved.   
+No part of this work may be reproduced, stored in a retrieval system, adopted or transmitted 
+in any form or by any means, electronic, mechanical, photographic, graphic, optic recording
+or otherwise, translated in any language or computer language, without the prior written permission 
+of Oracle and/or its affiliates. 
+Oracle Financial Services Software Limited.
+Oracle Park, Off Western Express Highway,
+Goregaon (East), 
+Mumbai - 400 063, India.
+----------------------------------------------------------------------------------------------------
+Change History 
+	28-mar-2006 Flexcube V.CL Release 7.0 Backoffice Related Changes,Darshana
+---------------------------------------------------------------------------------------------------
+*/
+SELECT
+  B.MODULE,
+  A.CONTRACT_REF_NO,
+  B.USER_REF_NO,
+  B.COUNTERPARTY,
+  B.BRANCH,
+  B.PRODUCT,
+  B.PRODUCT_TYPE,
+  B.PAYMENT_METHOD,
+  B.ROLLOVER_ALLOWED,
+  B.CURRENCY,
+  B.AMOUNT,
+  B.ORIGINAL_START_DATE,
+  B.CLUSTER_ID,
+  B.CLUSTER_SIZE,
+  B.BOOKING_DATE,
+  B.VALUE_DATE,
+  B.MATURITY_TYPE,
+  B.MATURITY_DATE,
+  B.DFLT_SETTLE_AC,
+  B.DFLT_SETTLE_AC_BRANCH,
+  B.DFLT_SETTLE_CCY,
+  B.REL_REFERENCE,
+  B.USER_DEFINED_STATUS,
+  B.CONTRACT_SCHEDULE_TYPE,
+  B.LIQ_BACK_VALUED_SCHEDULES,
+  B.PRINCIPAL_LIQUIDATION,
+  B.REVOLVING_COMMITMENT,
+  B.HOLIDAY_CCY,
+  B.VERIFY_FUNDS,
+  B.SCHEDULE_MOVEMENT,
+  B.IGNORE_HOLIDAYS,
+  B.DEDUCT_TAX_ON_CAPITALISATION,
+  B.MOVE_ACROSS_MONTH,
+  B.CASCADE_SCHEDULES,
+  B.LIQUIDATE_OD_SCHEDULES,
+  B.SCHEDULE_DEFINITION_BASIS,
+  B.APPLY_CHARGE,
+  B.TAX_SCHEME,
+  B.BORROWER_REF_NO,
+  B.SYNDICATION_REF_NO,
+  B.DRAWDOWN_NUMBER,
+  A.PARTY_ID,
+  A.PARTY_NAME,
+  A.PARTICIPATION,
+  A.PARTICIPATION_AMOUNT,
+  A.PARTY_PRODUCT_CODE,
+  A.PARTY_PRODUCT_TYPE,
+  A.DR_SETTLE_AC_BRANCH,
+  A.DR_SETTLE_ACCOUNT,
+  A.CR_SETTLE_AC_BRANCH,
+  A.CR_SETTLE_ACCOUNT,
+  A.CREDIT_LINE,
+  A.VERSION_NO,
+  A.EVENT_SEQ_NO,
+  A.LEAD_AGENT,
+  B.TRANCHE_REF_NO,
+  C.DEPARTMENT_CODE,
+  C.TREASURY_SOURCE
+FROM
+  oltbs_contract_party   A,
+  lbtbs_contract_master  B,
+  oltbs_contract	 C
+WHERE
+  A.CONTRACT_REF_NO       = B.CONTRACT_REF_NO AND
+  B.CONTRACT_REF_NO	  = C.CONTRACT_REF_NO
+/
+CREATE OR REPLACE SYNONYM lbvws_party_contracts FOR lbvw_party_contracts
+/

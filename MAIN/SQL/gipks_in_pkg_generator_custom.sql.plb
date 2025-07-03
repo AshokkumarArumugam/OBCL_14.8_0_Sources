@@ -1,0 +1,32 @@
+CREATE OR REPLACE PACKAGE BODY gipks_in_pkg_generator_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+71c 29d
+j5obMEvapGGO1P9/PR846qdinkowg823r0gTZy9AEmKuf3jgPgZQC2Lqo6c47WVWEZODXSFR
+y8JpcXb7pyOFar/7C62Nt3fNbBhFW9v///lOcvwTiQiUtuc/02gV6CNTICblKe4/hBPC0RNR
+BSqgGcRVuVtLR/u4h7qmJtxXOb5g589SjQluvY/MBnJnyXBy+1ELfkj+Ip4m3AZPH49Bv8JU
+z1LuCPM51zpNlA5PmZY92wed1epa/iPD7LI+TawZWg/6vceV8FmORhhTYMnIpdQOK1ZmauTn
+gh7qxf29iIAGoanKlM8B7JZY+fUAw88yY46X56EtBMbdQ9NfE7BmqobhDRy6V0VawIL6cRrx
+ZdcGitiXxt6BeQXqAcyiZVcZxCnF0BBuZXKOfCIIeoKhWfuCiqDjS0ZLhYLEnUNHdvAbsZcJ
+E6KFiUTZiD789McBsjguND5t4hTkMY0uTH76jprEAR5CuX65X0JFijMuTD39hTMeMjFhL9+n
+The7M3goAvD/s5ePssagW5c6YaIeMVbMF3CdPPrbQ72nSFTDBZvL5ZJDzE6HSyTfuEvzwhb9
+z1TUT+mDQbX7zon2Oiz5/rIkO8SYc1WdX91NpTk5OCdDm1J9NSRd51jiZW16Y9U14ZQnydMQ
+MIo6Bw/7X9uU
+
+/

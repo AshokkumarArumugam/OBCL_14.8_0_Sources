@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="FCUBS_7-2_GW" default="all" basedir=".">
+<!-- 08-Dec-2006 FCC73ITR1 SFR-001 Conversion SFR-Schema Setup -->
+	<!-- set global properties for this build -->
+	<property environment="env"/>  
+	<property name="source" value="."/>
+	<property name="wl_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="j2ee_home" value="${env.J2EE_HOME}"/>
+
+	<property name="src_ejb" value="../../src"/>
+	<property name="src_common" value="../../src/common"/>
+	<property name="config" value="../../config"/>
+	<property name="config_as" value="../../config/${env.APP_SERVER_NAME}"/>
+	<property name="ejb_lib" value="../../lib"/>
+	<property name="src_gw_ejb" value="${src_ejb}/com/iflex/fcubs/gw/ejb"/>
+	<property name="src_srvc_db" value="${src_common}/com/iflex/fcubs/gwservices/db"/>
+	<property name="src_srvc_db_in_bnd" value="${src_common}/com/iflex/fcubs/gwservices/db/inbound"/>
+	<property name="src_srvc_xml" value="${src_common}/com/iflex/fcubs/gwservices/xml"/>
+	<property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_db" value="${src_common}/com/iflex/fcubs/gwutil/db"/>
+	<property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_xml" value="${src_common}/com/iflex/fcubs/gwutil/xml"/>
+	<property name="build" value="../../build"/>
+	<property name="dist" value="../../dist"/>
+
+	<path id="compile.classpath">
+		<pathelement location="${j2ee_home}/lib/weblogic.jar"/>
+		<pathelement location="${j2ee_home}/lib/api.jar"/>
+		<pathelement location="${j2ee_home}/lib/ojdbc14.jar"/>
+	</path>
+
+	<target name="all" depends="clean_build, clean_class, make_dir, compile_common,  compile_ejb, do_ejb_jar, do_jar, do_ear, clean "/>
+
+	<!-- Delete the build folder -->
+	<target name="clean_build">
+ 		<delete dir="${build}"/>
+	</target>
+
+	<!-- Delete the classes folder -->
+	<target name="clean_class">
+		<delete dir="${dist}"/>
+	</target>
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/META-INF"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/META-INF"/>
+
+		<copy file="${config}/ejb-jar.xml" todir="${dist}/META-INF"/>
+		<copy file="${config_as}/weblogic-ejb-jar.xml" todir="${dist}/META-INF"/>
+		<copy todir="${build}/META-INF">
+			<fileset dir="${config}">
+				<include name="application.xml"/>
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}"
+		    debug="on">
+		    <classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_db}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_db}"
+			destdir="${dist}"
+		    debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+
+		<javac 
+			srcdir="${src_srvc_db_in_bnd}"
+			destdir="${dist}"
+		    debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_xml}"
+			destdir="${dist}"
+		    debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_xml}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_srvc_db}"
+			destdir="${dist}"
+			debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+		<!-- Compile the java code -->
+	<target name="compile_ejb" depends="compile_common"> 
+		<javac srcdir="${src_gw_ejb}" destdir="${dist}"
+               debug="on">
+			   
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+		<!-- KERNEL10.3 changes starts -->
+	<target name="do_ejb_jar">
+		<jar destfile="${build}/GW_EJB.jar" basedir="${dist}">
+			<exclude name="**/gwutil/**"/>
+			<exclude name="**/gwservices/**"/>
+			<exclude name="**/gw/ejb/GWEJBLocal.class"/>
+			<exclude name="**/gw/ejb/GWEJBLocalBusiness.class"/>
+			<exclude name="**/gw/ejb/GWEJBLocalHome.class"/>
+			<exclude name="**/gw/ejb/GWEJBBean.class"/>
+			<exclude name="**/META-INF/*.xml"/>	
+		</jar>
+	</target> 
+	<!-- KERNEL10.3 changes ends -->
+
+	<!-- Make a standard ejb jar file, including XML deployment descriptors -->
+	<target name="do_jar" depends="compile_ejb">
+		<jar destfile="${build}/GW_EJB_Bean.jar" 
+		basedir="${dist}"> 
+		</jar>
+
+	</target> 
+	
+		<!-- Make a standard ejb ear file, including XML deployment descriptors --> 
+		<target name="do_ear" depends="do_jar"> 
+		<!-- #######Following statements are added for installer#######  -->
+			<jar destfile="${build}/GW_EJB_Bean.ear" basedir="${build}"/> 
+		</target> 
+	<target name="clean">
+		<delete dir="${dist}"/>
+		<delete dir="${build}/META-INF"/>
+	</target>
+</project>

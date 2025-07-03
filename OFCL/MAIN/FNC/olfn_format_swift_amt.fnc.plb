@@ -1,0 +1,32 @@
+CREATE OR REPLACE FUNCTION olfn_format_swift_amt wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+3c3 21f
+67vbxIGSP8Cg/CK9PxnlsDdDOaowgxBeLiCsZy/NXD+VaN2JG+AgDRwrdvW3Aaj4ONDbbaG3
+o7c8Gh+qzxcBNSJ+/mcVE/7JGRMCR5d3peYVKYalk6TcD8ZzvpL5QiRuCnMIdPPZmdWyuL0l
+i9XD62drLfIVSib12Xd6j3vO/uMYjtobo+nSehPR56fm6mxeVixcPHWbbvTyC73iL2zqMIye
+usuvQLpvg7rSTR55YDu+If6e1Wi4iBGOdUXxS1r3LvtMnFjFwLhkqw3ojT18q8N7dVkZYU0v
+oxGIexuI5pXrly7gJgtAas+WDFCfY/AYewMGFBxgQCR1x3LSDBvxPuJO5D2yGJ4Mrwlfq1a5
+RwTNt85xPB26n8aYv/qCfdmnfB0D6YjIKf/UJrrrF8ycg7pRCeegq46rxuXfDXj323NCrv+V
+Te5pPbF6rLZrcR1yIyxfBffMetBIVHb/5maYhJNzLAieoaTAJUyWf5acfOjGLrkLgTDEqf59
+GVxQ5PYGJ00tXL9Ye4DbcXrk4bofzks=
+
+/
+CREATE or replace SYNONYM olfns_format_swift_amt FOR olfn_format_swift_amt
+/

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd">
+  <display-name>SMGateway</display-name>
+  <enterprise-beans>  		         
+    <session>
+        <ejb-name>SMGWEJBBean</ejb-name>
+        <mapped-name>ejb/{REF_LOCATION}/SMGateway.jar/SMGWEJBBean</mapped-name>
+        <ejb-class>com.ofss.sms.ejb.SMGWEJBBean</ejb-class>
+        <session-type>Stateless</session-type>
+        <transaction-type>Container</transaction-type>
+        <env-entry>
+          <env-entry-name>RES_APP_NAME</env-entry-name>
+          <env-entry-type>java.lang.String</env-entry-type>
+          <env-entry-value>{REF_LOCATION}</env-entry-value>
+        </env-entry>
+		<persistence-context-ref>
+                <persistence-context-ref-name>{REF_LOCATION}/SMEntities</persistence-context-ref-name>
+                <persistence-unit-name>{REF_LOCATION}/SMEntities</persistence-unit-name>
+        </persistence-context-ref>
+    </session> 
+       <message-driven>
+        <display-name>Gateway MDBBean</display-name>
+        <ejb-name>SMGWMDB</ejb-name>
+        <ejb-class>com.ofss.sms.mdb.SMGWMDB</ejb-class>
+        <messaging-type>javax.jms.MessageListener</messaging-type>
+        <transaction-type>Container</transaction-type>
+        <env-entry>
+            <env-entry-name>RES_APP_NAME</env-entry-name>
+            <env-entry-type>java.lang.String</env-entry-type>
+            <env-entry-value>{REF_LOCATION}</env-entry-value>
+        </env-entry>
+    </message-driven>      
+    
+    </enterprise-beans>
+</ejb-jar>
+				
+				

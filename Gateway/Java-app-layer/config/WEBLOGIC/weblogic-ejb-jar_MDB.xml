@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE weblogic-ejb-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN" "http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd">
+
+<weblogic-ejb-jar>
+
+    <weblogic-enterprise-bean>
+		<!-- EJB Reference Name -->
+        <ejb-name>GW_MDB_Bean</ejb-name>
+
+		<message-driven-descriptor>
+			<pool>
+		        <max-beans-in-free-pool>200</max-beans-in-free-pool>
+		        <initial-beans-in-free-pool>5</initial-beans-in-free-pool>
+		    </pool>
+		    <destination-jndi-name>MDB_QUEUE</destination-jndi-name>
+			<connection-factory-jndi-name>MDBQCF</connection-factory-jndi-name>
+		</message-driven-descriptor>
+		
+		
+		<!-- EJB Reference Descriptions STARTS-->
+        <reference-descriptor>
+			<!-- EJB Resource Reference Descriptions STARTS-->
+           <resource-description>
+              <res-ref-name>FLEXTEST</res-ref-name>
+              <jndi-name>FLEXTEST</jndi-name>
+           </resource-description>
+		   <resource-description>
+              <res-ref-name>MDBQCF</res-ref-name>
+              <jndi-name>MDBQCF</jndi-name>
+           </resource-description>
+		   <!-- EJB Resource Reference Descriptions ENDS-->
+
+		   <!-- EJB Resource environment Reference Descriptions STARTS-->
+		   <resource-env-description>
+				<res-env-ref-name>MDB_QUEUE_RESPONSE</res-env-ref-name>
+				<jndi-name>MDB_QUEUE_RESPONSE</jndi-name>
+			</resource-env-description>
+			<resource-env-description>
+				<res-env-ref-name>MDB_QUEUE_DLQ</res-env-ref-name>
+				<jndi-name>MDB_QUEUE_DLQ</jndi-name>
+			</resource-env-description>	
+			<resource-env-description>
+				<res-env-ref-name>SW_MDB_QUEUE_RESPONSE</res-env-ref-name>
+				<jndi-name>SW_MDB_QUEUE_RESPONSE</jndi-name>
+			</resource-env-description>	
+			<!-- EJB Resource environment Reference Descriptions ENDS-->
+        </reference-descriptor>		
+		<!-- EJB Reference Descriptions ENDS-->
+
+    </weblogic-enterprise-bean>
+
+
+</weblogic-ejb-jar>

@@ -1,0 +1,28 @@
+create or replace function fn_ol_sysdate wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+2c8 195
+2S7g/ucDf8lq/YjF77UD817iL8MwgwIJLq5GfC+BR2R9suMKua8EhGr7p/v0ad95MdvrkT1R
+G/j3pn9/7sYM93VpnzLc1xPQ/hlZhvE7kaN8CaSlU2qLCkJVYZcGygz/Wo5ayjdL+eN0RKWy
+uFYGVKkU2EeEj6DGhBxLPWqTcXJgWIt8S32i8dmIJ5OoFD7rWelhP47hDFjJBiPXf/utQ590
+YtEAMYKzQwR7THvHXTpGeWXHzuAp/y75p9yPayGsS1mgRu7utOnJlopSVdu5ewgUoIbi798p
+uw78rlyGLeWrPfzSaOwtlnIsSXFY8iC5u0icF2yKpXmaUSs3zcaHc7guG/6QSeKLOmAxY974
+JBnBIxIwQngmLhzXGcbOqMFCJ/ttfZV4IfLUNg==
+
+/

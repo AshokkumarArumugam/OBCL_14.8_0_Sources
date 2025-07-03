@@ -1,0 +1,31 @@
+CREATE OR REPLACE Package Body olpks_vdbal_custom wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+6c9 280
+NKaIMj/A6zV/cnMF/SMNW+hC4gQwg5W3NSATfI7Gv7mwMHjTJvw4sRG3X3PKTdTJ1P8lt40b
+ooTvaWyRg2ssP99rGqNj33legaSmC521+AX57V9Q9tPvRvFVZ15VcxkxJAoF6QGc+EwFfsr6
+lqbRQbKpWaEYRxY2b9SMrUfjUV5RvEooKajU9LggpkBr9GRlAZjQzMpCuL2v68KaywgAqfgS
+ddBJ0YhETvy2D5ZlrPyinuNGsi4VWJAtyLj9oQEmWeuisBbSFscda5Rrg8Vf2MjI468FARd9
+GoVW/25BXgswzk4rkIjuOWLvkk2GW2ROUcPE11uWJX3EWFIHgL3B3zjWiGRsWatRI43xy2Iq
+vqcmmquIieDRVTtxKRO1b1/aeQKDFu7dt3b0MOYYHT4WHky+xXBMBQUQkzsjojzXPNET1+h+
+eOlVOaSkxm7JmuYDImwXSw6Nr4c2wY6C0Ct4tccYSEkjGMVb/o5zWPUyPG3CxStpPLCN/AO4
+mIE+zr+TaA0BXtZ+qpQFpPUOwSRTmGj1hX3N6UbBzlDhctO14Me4oduIgwZzsgi8K1eEtm4d
+tXKmnSdvgSmFLOqqyorQbc/Ki0FMW1NPjXqY//gmagjcvOQdq7ZB1w==
+
+/

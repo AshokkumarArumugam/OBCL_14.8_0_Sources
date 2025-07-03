@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp_ID">
+    <display-name>HTTP Servlet Gateway</display-name>
+    <servlet id="Servlet_1">
+        <servlet-name>GWHttpServlet</servlet-name>
+        <servlet-class>com.iflex.fcubs.gw.http.servlets.GWHttpServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping id="ServletMapping_1">
+        <servlet-name>GWHttpServlet</servlet-name>
+        <url-pattern>/GWHttpServlet</url-pattern>
+    </servlet-mapping>
+	<!-- KERNEL10.0 Property file Path Change STARTS -->
+	<env-entry>
+			 <description>Property File Path</description>
+			 <env-entry-name>propertyPath</env-entry-name>
+			 <env-entry-value>D:/Iflex/FCJ/Kernel/</env-entry-value>
+			 <env-entry-type>java.lang.String</env-entry-type> 
+    </env-entry>
+	<!-- KERNEL10.0 Property file Path Change ENDS -->
+    <ejb-local-ref id="EjbLocalRef">
+        <ejb-ref-name>GW_EJB_Bean</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local-home>com.iflex.fcubs.gw.ejb.GWEJBLocalHome</local-home>
+        <local>com.iflex.fcubs.gw.ejb.GWEJBLocal</local>
+        <ejb-link>GW_EJB_Bean</ejb-link> 
+    </ejb-local-ref>
+</web-app>

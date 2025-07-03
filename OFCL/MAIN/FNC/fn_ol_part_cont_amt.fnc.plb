@@ -1,0 +1,35 @@
+create or replace function fn_ol_part_cont_amt wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+650 398
+l67FzI4Re4rpoQQ05x4ZwEOGnRIwg43DzNDrfHSLKnOUPzW6zCE50IpAiegZO1EuDPFKgT57
+N2dJr0DohrWGGjHsE0haXQH2fqozF6oI6OolKzusu1u/5Ck/JG5BaLGG7voA5CPsv9yG1CZv
+xUTaa0Mrff52e7G9edWTMuYxd4kXq3lklE28PmkXjfpIpCvaYhaWS0VLAlLCXCuZ3l59Anw5
+zX3+g8uk4s9UsyfNogs3DYEDhWAEbSOo7GHqn5ucwKafauozo4zxal2kCTnS94RTd+U0vJta
+1J4SRDRTkaXUGVnd2sz+VIP9AjYK1QKVBMyPEGNNLjn2iW9gCXb/RBdfUhZdMnuHIb2OC4gK
+iXk4J6sHLaioP+D7+YZxaygFfWE3HwwCUe7qb8VGpp1+zO+TsOxRnzy4p8zURsXuAU+JWTR2
+VQBsd0AUI1LY9G4tSEWHbJDsIcc4LJ3hJl/X9M/1yfR4xqTFJxQ/G2ciMvd44CSuea2giYiL
+LxqrGdx/3VwIerNS4Tmtj0rYw6wHkHS1suyEA5Zi7jYr9Uid78CrBx2lZDFfamu3vEiqPHIP
+ekKHcbbJ+Wg7a6Ixp+dOw3EDONSWkgZ+epPkkMaTtGGOHTbf1IPUNsMdzCujFr4yHCN5QLm3
+Uu07JwNTsCnwYdnil07jdNJJW/2N+opmpGZLMnWiUAQx8eoDy5CB8eXfFwjdVYBUrBeQVsqq
+nH+Y6emItz0IOM0pB1PEu6fZ5C7TopjdauU8rNJ6R+CM5O3r0t3ZUN+tpb1fT8TQF5ReOtyc
+VNL+bdyYpRci9h6IT/tB3Ma2ehyP9eTHzjMwzn/Z6vk77zXqE5SBdvbWa4NT6008bD2OpGVv
+H84xvJe4li1OI0d1TwKsp+VQOdEN2+fmqMg9Cp2UlBPv
+
+/

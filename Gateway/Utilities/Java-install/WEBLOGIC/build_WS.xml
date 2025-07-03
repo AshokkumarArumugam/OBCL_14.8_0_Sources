@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+    <project name="FCUBS_7-2_GW" default="all" basedir="." xmlns:oracle="antlib:oracle"  >
+
+    <!-- Import for OC4J ant integration. 
+    <import file="ant-oracle.xml"/>-->
+
+	<!-- set global properties for this build -->
+	<property environment="env"/>
+	<property name="source" value="."/>
+	<property name="wl_home" value="${env.APP_SERVER_HOME}"/>
+	<property name="j2ee_home" value="${env.J2EE_HOME}"/>
+
+	<property name="service_name" value="${env.SERVICE_NAME}"/>
+	<property name="config_as" value="../../config/${env.APP_SERVER_NAME}"/>
+	<property name="oc4j_ext_lib" value="${oc4j_home}/j2ee/home/applib"/>
+	<property name="src_ws" value="../../src"/>
+	<property name="src_ws_output" value="../../src/output"/>
+	<property name="src_common" value="../../src/common"/>
+	<property name="config" value="../../config"/>
+	<property name="ws_lib" value="../../lib"/>
+	<property name="config_wsdl" value="../../config/wsdl"/>
+	<property name="src_gw_ws" value="${src_ws}/com/ofss/fcubs/gw/ws"/>
+	<property name="src_gw_ejb" value="${src_common}/com/iflex/fcubs/gw/ejb"/>
+	<property name="src_gw_ws_types" value="${src_ws}/com/ofss/fcubs/gw/ws/types"/>
+	<property name="src_srvc_ejb_client" value="${src_common}/com/iflex/fcubs/gwservices/ejb"/>
+	<property name="src_util" value="${src_common}/com/iflex/fcubs/gwutil"/>
+	<property name="src_util_log" value="${src_common}/com/iflex/fcubs/gwutil/logging"/>
+	<property name="src_util_xml" value="${src_common}/com/iflex/fcubs/gwutil/xml"/>
+	<property name="build" value="../../build"/>
+	<property name="dist" value="../../dist"/>
+
+	<path id="compile.classpath">
+        <pathelement location="${j2ee_home}/lib/weblogic.jar"/>
+		<pathelement location="${j2ee_home}/lib/api.jar"/>
+		<pathelement location="${j2ee_home}/lib/wlclient.jar"/>
+	</path>
+	<taskdef name="wsdlc" classname="weblogic.wsee.tools.anttasks.WsdlcTask" classpath="${j2ee_home}/lib/weblogic.jar"/>
+	<taskdef name="jwsc" classname="weblogic.wsee.tools.anttasks.JwscTask" classpath="${j2ee_home}/lib/weblogic.jar"/>
+
+	
+  <target name="all" depends="init, clean_build, make_dir, compile_common,  generate-from-wsdl, build-service, do_ear, clean"/>
+
+    <target name="init" unless="env.SERVICE_NAME">
+        <fail message="SERVICE_NAME property must be set."/>
+    </target>
+
+	<target name="clean_build">
+ 		<delete dir="${build}/${service_name}"/>
+		<!--
+ 		<delete dir="${src_gw_ws_types}"/>
+		-->
+	</target>
+
+	<!-- Create the build directory structure used by compile
+	and copy the deployment descriptors into it-->
+	<target name="make_dir">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<mkdir dir="${src_ws_output}"/>
+		<mkdir dir="${build}"/>
+		<mkdir dir="${build}/${service_name}" /> 
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dist}/jwsDir"/>
+		<mkdir dir="${dist}/implDir"/>
+		<mkdir dir="${dist}/WEB-INF/classes"/>
+
+        <!-- Create the time stamp -->
+		<!-- KERNEL10.0 Change STARTS -->
+		<!-- copy file="${config}/GW_WS_Prop.xml" todir="${user_home}"/ -->
+		<!-- KERNEL10.0 Change ENDS -->
+		<copy file="${config_wsdl}/${service_name}.wsdl" todir="${dist}/WEB-INF/wsdl"/>
+	</target>
+
+	<target name="compile_common" depends="make_dir">
+		<javac
+			srcdir="${src_gw_ejb}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<!-- KERNEL11.0 Change rmic task de-supported in ant 1.7 - Starts  -->
+		<!--<taskdef name="rmic" classname="org.apache.tools.ant.taskdefs.Rmic" />
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemote.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>
+		<rmic base="${dist}/WEB-INF/classes" includes="**/GWEJBRemoteHome.class">
+			<compilerarg value="-iiop"/>
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</rmic>-->
+		<!-- KERNEL11.0 Change rmic task de-supported in ant 1.7 - Ends-->
+		<javac 
+			srcdir="${src_util}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_log}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac 
+			srcdir="${src_util_xml}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+		<javac
+			srcdir="${src_srvc_ejb_client}"
+			destdir="${dist}/WEB-INF/classes"
+            debug="on">
+			<classpath>
+				<path refid="compile.classpath"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="generate-from-wsdl">
+		<wsdlc
+			type= "JAXWS"
+			srcWsdl="${config_wsdl}/${service_name}.wsdl"
+			destJwsDir="${dist}/jwsDir"
+			destImplDir="${dist}/implDir"
+			packageName="com.ofss.fcubs.gw.ws.types" />
+		<copy file="${config}/web.xml" tofile="${dist}/WEB-INF/web.xml" overwrite="true"/>
+	</target>
+
+	<target name="build-service" depends="generate-from-wsdl">
+			<jwsc 
+				srcdir="${src_ws}" 
+				destdir="${build}/${service_name}"	
+				>
+				<module contextPath="${service_name}" name="${service_name}">				
+					<jws file="com/ofss/fcubs/gw/ws/${service_name}Impl.java" compiledWsdl="${dist}/jwsDir/${service_name}_wsdl.jar" type="JAXWS"/>
+					  <FileSet dir="${dist}/WEB-INF/classes" >
+						<exclude name="com/ofss/**/ws/*.classes" />
+					  </FileSet>
+					  <descriptor file="${dist}/WEB-INF/web.xml" />
+					  <descriptor file="${config_as}/weblogic.xml" />
+				</module>
+			</jwsc>
+		</target>
+   
+    <target name="do_ear" depends="build-service">
+		<ear destfile="${build}/${service_name}/${service_name}.ear" appxml="${build}/${service_name}/META-INF/application.xml">
+				<fileset dir="${build}/${service_name}" includes="${service_name}.war"/>
+		</ear>
+		
+    </target>
+
+   <!-- FCC73ITR1 SFR-1  Ends -->
+
+	<target name="clean">
+		
+		<delete dir="${src_ws_output}"/>
+		<delete dir="${build}/META-INF"/>
+		<delete>
+			<fileset dir="${build}/${service_name}" excludes="${service_name}.ear"/>
+		</delete>
+		<delete dir="${build}/${service_name}/META-INF"/>
+		<delete dir="${dist}/implDir"/>
+		<delete dir="${dist}/WEB-INF"/>
+		
+	</target>
+</project>

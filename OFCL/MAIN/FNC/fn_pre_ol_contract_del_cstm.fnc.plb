@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION fn_pre_ol_contract_del_cstm wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+2fe 1da
+1rhiCp6NMiu8a+iS6SPz7Fyo/OYwgzsJLUgVfC/NbmRT16KelMP85neovR/j558jn4NIb6xp
+ZrMa8kwyNXMze8grlMN0lHhuzyL4VRI/SsccJqK4VOqSDT717T3ZRWXX4N7S5UuVE0IpAXvT
+cfPUcanwRsSIHOEY6PtVMMvkeGXwom/PX1D7bXFMy1eZFnXZmR3Zk/EpiNPG0ja0Dd1GxUnL
+ay8+OXbT3v5uhudS8bgFBAt1ruKCJfjp0PSJQt1LZeleK3JpK+g5Az5wc4diLpPqwX7g4rtX
+xnSAv91XTrrLJHeOQ33azo44PKMg/dBeoOZ3jqGs18+1IqpSCxeLaiPMSG2Uz4nJHenrd7Jf
+BIqfyrteHtRogZC2crojCYHNEfwoOYRPcyLrMRdyhXqJGCOkyFuEKEhbSG3XIp27il6wfMsJ
+MfJdC+O+/+cNWiiqV+OJPQuZJov5PR+RKcSC
+
+/

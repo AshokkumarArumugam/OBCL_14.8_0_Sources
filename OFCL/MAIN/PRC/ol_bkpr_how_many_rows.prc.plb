@@ -1,0 +1,31 @@
+create or replace procedure ol_bkpr_how_many_rows wrapped 
+a000000
+b2
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+377 258
+mnzchKPPlqB9QMPY0HlW1sMXNLUwg/Dxr9yGfC9AvgawdZknrMV3wDWDimat/0ajV5+lV3mt
+k7jm4JxmM6krBu6ISdffip70cYq0tSRO1zCju44rkIC0c1/+0HKWCDj+q6pVAHP0lpixmsoU
+9JbP5U6mDnnd1dKlzVvDAYT3SEdY9rNgvBvBmX/YDs90wjYuZxFpRFcCg5g5zshwA+bQZobt
+rxEB1nBMpoxk88mbi5Gnmd4Krrkpp1Rp4/zfQ0AN0idsc0KfvFSlJjkFKmxlB8YvsSVf3QIW
+CPK6zH8uZ7RIhIj4ztuF4t71FqKQU5yKBCnwxzumtLAG8Rf44IkefoXcTmvoiDTtJkMx+8Ra
+6C3aO9JGiMQBvCghJGg7lpsog572eX/FF0XUy0FDdvWWq5nsnxzETUVQgLXDXgtpCn1VQPmX
+39V5L8LMc3PTbzpUikbJ3Vrxy7U3odZnfYQnZBOftiMqsOwzHbQ5rXTUln9ROyMOKUjP6B1P
+Ukb4r/3PyjZIlGE12tVKQkdWU91qYAZ1HwXBroqBqA3odYvE/mrDNiwSCA/izJymMlW1Iyb0
+LCR/H4C7UR2DYA==
+
+/
